@@ -121,6 +121,16 @@ def mkQApp(name: str):
     app = mkQApppg(name)
     apply_styling_rules(app)
 
+    # 安装界面翻译：Qt 自带语言包（L1）+ PyMoDAQ 语言包（L2），见 pymodaq_gui.i18n
+    try:
+        from pymodaq_gui.i18n import install_translators
+
+        install_translators(app)
+    except Exception as exc:  # 翻译问题不应影响启动
+        import logging
+
+        logging.getLogger(__name__).warning(f"安装界面翻译失败：{exc}")
+
     return app
 
 
