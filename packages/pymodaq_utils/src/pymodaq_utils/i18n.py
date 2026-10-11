@@ -363,7 +363,13 @@ def cmd_pack(args) -> int:
         target_dir = package_dir.joinpath(*TRANSLATIONS_DIRNAME)
         for ts_file in sorted(target_dir.glob(f"{package}_*.ts")):
             contexts = _read_ts(ts_file)
-            language = contexts.pop("_language", {}).get("", "")
+            language = (contexts.pop("_language", {}).get("", "") or "").strip()
+            if not language:
+                # pylupdate6 生成的 .ts 不带 language 属性（Qt Linguist 才会写），
+                # 因此从文件名推断：<包名>_<语言>.ts
+                stem = ts_file.stem
+                if stem.startswith(f"{package}_"):
+                    language = stem[len(package) + 1:]
             if not language:
                 print(f"跳过 {ts_file.name}：缺少 language 属性")
                 continue
