@@ -182,7 +182,7 @@ class PythonEnvironment:
         if self._path.is_file():
             logger.error('Trying to save a PythonEnvironment that was already saved. They should not be modified.')
         else:
-            with open(self._path, 'w') as f:
+            with open(self._path, 'w', encoding='utf-8') as f:
                 header = [f'# executable: {sys.executable}', f'# version: {sys.version}', '']
                 f.writelines(map(lambda p : p + '\n', header + list(self._packages)))
     
@@ -190,7 +190,7 @@ class PythonEnvironment:
     def _from_stream(stream, filename=None):
         env = PythonEnvironment(filename=filename)
         with stream as s:
-            lines = map(lambda l : l.decode().strip(), s.readlines())
+            lines = map(lambda l : l.decode('utf-8', errors='replace').strip(), s.readlines())
             packages = filter(lambda l : l and l != '' and not l.startswith('#'), lines)
             env.extend(packages)
         return env
