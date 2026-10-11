@@ -18,6 +18,7 @@ from pymodaq_gui.messenger import dialog
 from pymodaq_gui.utils import CustomApp
 from pymodaq_gui.utils.enums import MenuToolbarNames
 from pymodaq_gui.utils.file_io import select_file
+from qtpy import QtCore
 
 
 logger = set_logger(get_module_name(__file__))
@@ -211,27 +212,27 @@ class MonacoApp(CustomApp):
         return monaco_widget
 
     def setup_menus_and_toolbars(self, menubar: QtWidgets.QMenuBar = None):
-        self.add_menu(MenuToolbarNames.FILE, 'File', parent_menu=menubar)
-        self.add_menu('files', 'Recent Files', parent_menu=MenuToolbarNames.FILE)
+        self.add_menu(MenuToolbarNames.FILE, QtCore.QCoreApplication.translate('MonacoApp', 'File'), parent_menu=menubar)
+        self.add_menu('files', QtCore.QCoreApplication.translate('MonacoApp', 'Recent Files'), parent_menu=MenuToolbarNames.FILE)
 
         self.add_toolbar('file', 'File', parent=self.mainwindow, add_break=False)
 
     def setup_actions(self):
-        self.add_action('new', 'New File', 'draft', 'Create a new file',
+        self.add_action('new', QtCore.QCoreApplication.translate('MonacoApp', 'New File'), 'draft', QtCore.QCoreApplication.translate('MonacoApp', 'Create a new file'),
                         toolbar='file', menu='file', auto_menu=True,
                         shortcut=QKeySequence(Qt.Modifier.CTRL | Qt.Key.Key_N))
-        self.add_action('load', 'Open File', 'file_open', 'Load file ',
+        self.add_action('load', QtCore.QCoreApplication.translate('MonacoApp', 'Open File'), 'file_open', QtCore.QCoreApplication.translate('MonacoApp', 'Load file '),
                         toolbar='file', menu='file', auto_menu=True,
                         shortcut=QKeySequence(Qt.Modifier.CTRL | Qt.Key.Key_O))
-        self.add_action('save', 'Save File', 'file_save', 'Save file',
+        self.add_action('save', QtCore.QCoreApplication.translate('MonacoApp', 'Save File'), 'file_save', QtCore.QCoreApplication.translate('MonacoApp', 'Save file'),
                         toolbar='file', menu='file', auto_menu=True,
                         shortcut=QKeySequence(Qt.Modifier.CTRL | Qt.Key.Key_S))
-        self.add_action('save_as', 'Save File As', 'save_as', 'Save file As',
+        self.add_action('save_as', QtCore.QCoreApplication.translate('MonacoApp', 'Save File As'), 'save_as', QtCore.QCoreApplication.translate('MonacoApp', 'Save file As'),
                         toolbar='file', menu='file', auto_menu=True,
                         shortcut=QKeySequence(Qt.Modifier.CTRL | Qt.Modifier.SHIFT | Qt.Key.Key_S))
-        self.add_action('save_copy_as', 'Save a Copy As', 'save_as', 'Save a copy of the file as',
+        self.add_action('save_copy_as', QtCore.QCoreApplication.translate('MonacoApp', 'Save a Copy As'), 'save_as', QtCore.QCoreApplication.translate('MonacoApp', 'Save a copy of the file as'),
                         toolbar='file', menu='file', auto_menu=True)
-        self.add_action('run_file', 'Run current File', 'start', 'Run the currently selected file',
+        self.add_action('run_file', QtCore.QCoreApplication.translate('MonacoApp', 'Run current File'), 'start', QtCore.QCoreApplication.translate('MonacoApp', 'Run the currently selected file'),
                         toolbar='file', menu='file', auto_menu=True,)
 
     def connect_things(self):

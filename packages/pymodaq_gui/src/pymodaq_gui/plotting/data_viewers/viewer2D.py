@@ -553,42 +553,42 @@ class View2D(ActionManager, QtCore.QObject):
 
     def setup_actions(self):
 
-        self.add_action('position', '(,)')
-        self.add_action('red', 'Red Channel', 'r_icon', tip='Show/Hide Red Channel', checkable=True)
-        self.add_action('green', 'Green Channel', 'g_icon', tip='Show/Hide Green Channel', checkable=True)
-        self.add_action('blue', 'Blue Channel', 'b_icon', tip='Show/Hide Blue Channel', checkable=True)
+        self.add_action('position', QtCore.QCoreApplication.translate('View2D', '(,)'))
+        self.add_action('red', QtCore.QCoreApplication.translate('View2D', 'Red Channel'), 'r_icon', tip='Show/Hide Red Channel', checkable=True)
+        self.add_action('green', QtCore.QCoreApplication.translate('View2D', 'Green Channel'), 'g_icon', tip='Show/Hide Green Channel', checkable=True)
+        self.add_action('blue', QtCore.QCoreApplication.translate('View2D', 'Blue Channel'), 'b_icon', tip='Show/Hide Blue Channel', checkable=True)
         self.get_action('red').setChecked(True)
         self.get_action('green').setChecked(True)
         self.get_action('blue').setChecked(True)
 
-        self.add_action('autolevels', 'AutoLevels', 'fit_page_height',
+        self.add_action('autolevels', QtCore.QCoreApplication.translate('View2D', 'AutoLevels'), 'fit_page_height',
                         tip='Scale Histogram to Min/Max intensity', checkable=True)
-        self.add_action('auto_levels_sym', 'AutoLevels Sym.', 'fit_page_height',
-                        tip='Make the autoscale of the histograms symetric with respect to 0', checkable=True)
+        self.add_action('auto_levels_sym', QtCore.QCoreApplication.translate('View2D', 'AutoLevels Sym.'), 'fit_page_height',
+                        tip=QtCore.QCoreApplication.translate('View2D', 'Make the autoscale of the histograms symetric with respect to 0'), checkable=True)
 
-        self.add_action('histo', 'Histogram', 'bar_chart', tip='Show/Hide Histogram', checkable=True)
+        self.add_action('histo', QtCore.QCoreApplication.translate('View2D', 'Histogram'), 'bar_chart', tip='Show/Hide Histogram', checkable=True)
         self.add_action('roi', 'ROI', 'calculate', tip='Show/Hide ROI Manager', checkable=True)
 
-        self.add_action('link_lineouts', 'Link Lineouts', 'link', tip='Link Lineouts',
+        self.add_action('link_lineouts', QtCore.QCoreApplication.translate('View2D', 'Link Lineouts'), 'link', tip=QtCore.QCoreApplication.translate('View2D', 'Link Lineouts'),
                         checkable=True, checked=True, visible=False,
                         icon_color=self.get_theme().red, icon_checked_color=self.get_theme().green)
 
-        self.add_action('isocurve', 'IsoCurve', 'altitude', tip='Show/Hide Isocurve', checkable=True)
-        self.add_action('aspect_ratio', 'Aspect Ratio', 'aspect_ratio', tip='Fix Aspect Ratio', checkable=True, checked=True)
-        self.add_action('crosshair', 'CrossHair', 'add_2', tip='Show/Hide data Crosshair', checkable=True)
-        self.add_action('ROIselect', 'ROI Select', 'select',
+        self.add_action('isocurve', QtCore.QCoreApplication.translate('View2D', 'IsoCurve'), 'altitude', tip='Show/Hide Isocurve', checkable=True)
+        self.add_action('aspect_ratio', QtCore.QCoreApplication.translate('View2D', 'Aspect Ratio'), 'aspect_ratio', tip=QtCore.QCoreApplication.translate('View2D', 'Fix Aspect Ratio'), checkable=True, checked=True)
+        self.add_action('crosshair', QtCore.QCoreApplication.translate('View2D', 'CrossHair'), 'add_2', tip='Show/Hide data Crosshair', checkable=True)
+        self.add_action('ROIselect', QtCore.QCoreApplication.translate('View2D', 'ROI Select'), 'select',
                         tip='Show/Hide ROI selection area', checkable=True)
-        self.add_action('flip_ud', 'Flip UD', 'flip',
+        self.add_action('flip_ud', QtCore.QCoreApplication.translate('View2D', 'Flip UD'), 'flip',
                         tip='Flip the image up/down', checkable=True,
                         rotate=90)
-        self.add_action('flip_lr', 'Flip LR', 'flip',
+        self.add_action('flip_lr', QtCore.QCoreApplication.translate('View2D', 'Flip LR'), 'flip',
                         tip='Flip the image left/right', checkable=True)
-        self.add_action('rotate', 'Rotate', 'rotate_90_degrees_cw',
-                        tip='Rotate the image', checkable=True)
-        self.add_action('opposite', 'Opposite', 'remove',
-                        tip='Take the opposite of the image', checkable=True)
-        self.add_action('legend', 'Legend', 'RGB',
-                        tip='Show the legend', checkable=True)
+        self.add_action('rotate', QtCore.QCoreApplication.translate('View2D', 'Rotate'), 'rotate_90_degrees_cw',
+                        tip=QtCore.QCoreApplication.translate('View2D', 'Rotate the image'), checkable=True)
+        self.add_action('opposite', QtCore.QCoreApplication.translate('View2D', 'Opposite'), 'remove',
+                        tip=QtCore.QCoreApplication.translate('View2D', 'Take the opposite of the image'), checkable=True)
+        self.add_action('legend', QtCore.QCoreApplication.translate('View2D', 'Legend'), 'RGB',
+                        tip=QtCore.QCoreApplication.translate('View2D', 'Show the legend'), checkable=True)
 
     def update_colors(self, colors: list):
         for ind, roi_meta in enumerate(self.roi_manager.ROIs):
@@ -1185,7 +1185,7 @@ def main(data_distribution='uniform'):
 
     widget_button = QtWidgets.QWidget()
     widget_button.setLayout(QtWidgets.QHBoxLayout())
-    button = QtWidgets.QPushButton('New Data')
+    button = QtWidgets.QPushButton(QtCore.QCoreApplication.translate('viewer2D', 'New Data'))
     ndata = QtWidgets.QSpinBox()
     widget_button.layout().addWidget(button)
     widget_button.layout().addWidget(ndata)

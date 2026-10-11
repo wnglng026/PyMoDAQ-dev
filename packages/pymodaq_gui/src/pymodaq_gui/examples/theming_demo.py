@@ -135,7 +135,7 @@ class ThemingDemo(QtWidgets.QWidget):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle('PyMoDAQ — Theming Demo (status colors + icons)')
+        self.setWindowTitle(QtCore.QCoreApplication.translate('ThemingDemo', 'PyMoDAQ — Theming Demo (status colors + icons)'))
         self._content_widget = None
         self._toolbar = None
         self._actions = []
@@ -150,7 +150,7 @@ class ThemingDemo(QtWidgets.QWidget):
         self._root.setContentsMargins(20, 20, 20, 20)
 
         # Title
-        title = QtWidgets.QLabel('PyMoDAQ — Theming Demo')
+        title = QtWidgets.QLabel(QtCore.QCoreApplication.translate('ThemingDemo', 'PyMoDAQ — Theming Demo'))
         font = title.font()
         font.setPointSize(font.pointSize() + 3)
         font.setBold(True)
@@ -159,10 +159,10 @@ class ThemingDemo(QtWidgets.QWidget):
         self._root.addWidget(title)
 
         subtitle = QtWidgets.QLabel(
-            'A shared six-state status vocabulary for LEDs, icons, and status bars,\n'
+            QtCore.QCoreApplication.translate('ThemingDemo', 'A shared six-state status vocabulary for LEDs, icons, and status bars,\n'
             'plus a MaterialIcon toolbar rebuilt from scratch on every theme change --\n'
             'colors are baked into a pixmap once, at construction, so repainting them\n'
-            'in place is not an option. Use the combobox below to switch themes live.'
+            'in place is not an option. Use the combobox below to switch themes live.')
         )
         subtitle.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         subtitle.setWordWrap(True)
@@ -189,9 +189,9 @@ class ThemingDemo(QtWidgets.QWidget):
         self._theme_combo.currentTextChanged.connect(self._on_theme_changed)
         theme_row.addWidget(self._theme_combo)
 
-        self._play_button = QtWidgets.QPushButton('▶ Play')
+        self._play_button = QtWidgets.QPushButton(QtCore.QCoreApplication.translate('ThemingDemo', '▶ Play'))
         self._play_button.setCheckable(True)
-        self._play_button.setToolTip('Cycle through all themes automatically')
+        self._play_button.setToolTip(QtCore.QCoreApplication.translate('ThemingDemo', 'Cycle through all themes automatically'))
         self._play_button.toggled.connect(self._on_play_toggled)
         theme_row.addWidget(self._play_button)
 
@@ -293,7 +293,7 @@ class ThemingDemo(QtWidgets.QWidget):
         layout.addWidget(_hline())
 
         # ── Live LED demo ───────────────────────────────────────────────
-        demo_box = QtWidgets.QGroupBox('Live demo — click the LED to cycle through states')
+        demo_box = QtWidgets.QGroupBox(QtCore.QCoreApplication.translate('ThemingDemo', 'Live demo — click the LED to cycle through states'))
         demo_layout = QtWidgets.QHBoxLayout(demo_box)
         demo_layout.setSpacing(12)
 
@@ -330,7 +330,7 @@ class ThemingDemo(QtWidgets.QWidget):
 
         # ── Material icon toolbar ───────────────────────────────────────
         toolbar_box = QtWidgets.QGroupBox(
-            'Material icon toolbar — status-tinted + checkable actions'
+            QtCore.QCoreApplication.translate('ThemingDemo', 'Material icon toolbar — status-tinted + checkable actions')
         )
         toolbar_layout = QtWidgets.QVBoxLayout(toolbar_box)
 
@@ -410,10 +410,10 @@ class ThemingDemo(QtWidgets.QWidget):
 
     def _on_play_toggled(self, checked: bool):
         if checked:
-            self._play_button.setText('■ Stop')
+            self._play_button.setText(QtCore.QCoreApplication.translate('ThemingDemo', '■ Stop'))
             self._cycle_timer.start()
         else:
-            self._play_button.setText('▶ Play')
+            self._play_button.setText(QtCore.QCoreApplication.translate('ThemingDemo', '▶ Play'))
             self._cycle_timer.stop()
 
     def _on_interval_changed(self, value: int):

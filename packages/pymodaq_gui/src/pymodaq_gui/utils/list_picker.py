@@ -1,5 +1,6 @@
 from qtpy.QtCore import QObject
 from qtpy import QtWidgets
+from qtpy import QtCore
 
 
 class ListPicker(QObject):
@@ -26,7 +27,7 @@ class ListPicker(QObject):
         buttonBox.rejected.connect(self.dialog.reject)
 
         vlayout.addWidget(buttonBox)
-        self.dialog.setWindowTitle('Select an entry in the list')
+        self.dialog.setWindowTitle(QtCore.QCoreApplication.translate('ListPicker', 'Select an entry in the list'))
 
         res = self.dialog.show()
 

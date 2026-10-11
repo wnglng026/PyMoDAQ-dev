@@ -29,6 +29,7 @@ from pymodaq_gui.plotting.data_viewers.viewer0D import Viewer0D
 from pymodaq_gui import foreground_color
 from pymodaq_gui.utils.dock import Dock
 from pymodaq_gui.plotting.utils.plot_utils import DetachablePanel
+from qtpy import QtCore
 
 logger = set_logger(get_module_name(__file__))
 
@@ -489,29 +490,29 @@ class View1D(ActionManager, QObject):
         self.ROIselect.setVisible(self.is_action_checked('ROIselect'))
 
     def setup_actions(self):
-        self.add_action('roi', 'Math', 'calculate', 'Do Math using ROI', checkable=True)
+        self.add_action('roi', QtCore.QCoreApplication.translate('View1D', 'Math'), 'calculate', QtCore.QCoreApplication.translate('View1D', 'Do Math using ROI'), checkable=True)
         self._actions['do_math'] = self.get_action('roi')  # for backcompatibility
-        self.add_action('crosshair', 'Crosshair', 'add_2', 'Show data cursor', checkable=True)
-        self.add_action('aspect_ratio', 'AspectRatio', 'aspect_ratio', 'Fix the aspect ratio',
+        self.add_action('crosshair', QtCore.QCoreApplication.translate('View1D', 'Crosshair'), 'add_2', QtCore.QCoreApplication.translate('View1D', 'Show data cursor'), checkable=True)
+        self.add_action('aspect_ratio', QtCore.QCoreApplication.translate('View1D', 'AspectRatio'), 'aspect_ratio', QtCore.QCoreApplication.translate('View1D', 'Fix the aspect ratio'),
                         checkable=True)
-        self.add_action('scatter', 'Scatter', 'scatter_plot', 'Switch between line or scatter plots',
+        self.add_action('scatter', QtCore.QCoreApplication.translate('View1D', 'Scatter'), 'scatter_plot', QtCore.QCoreApplication.translate('View1D', 'Switch between line or scatter plots'),
                         checkable=True)
-        self.add_action('xyplot', 'XYPlotting', 'function',
-                        'Switch between normal or XY representation (valid for 2 channels)',
+        self.add_action('xyplot', QtCore.QCoreApplication.translate('View1D', 'XYPlotting'), 'function',
+                        QtCore.QCoreApplication.translate('View1D', 'Switch between normal or XY representation (valid for 2 channels)'),
                         checkable=True,
                         visible=False)
-        self.add_action('overlay', 'Overlay', 'layers', 'Plot overlays of current data',
+        self.add_action('overlay', QtCore.QCoreApplication.translate('View1D', 'Overlay'), 'layers', QtCore.QCoreApplication.translate('View1D', 'Plot overlays of current data'),
                         checkable=True)
-        self.add_action('errors', 'Errors', 'contrast_square',
-                        'Plot boundaries (~error bars) of the data',
+        self.add_action('errors', QtCore.QCoreApplication.translate('View1D', 'Errors'), 'contrast_square',
+                        QtCore.QCoreApplication.translate('View1D', 'Plot boundaries (~error bars) of the data'),
                         checkable=True)
-        self.add_action('sort', 'Sort Data', 'sort',
-                        'Display data in a sorted fashion with respect to axis',
+        self.add_action('sort', QtCore.QCoreApplication.translate('View1D', 'Sort Data'), 'sort',
+                        QtCore.QCoreApplication.translate('View1D', 'Display data in a sorted fashion with respect to axis'),
                         checkable=True)
-        self.add_action('ROIselect', 'ROI Select', 'select',
+        self.add_action('ROIselect', QtCore.QCoreApplication.translate('View1D', 'ROI Select'), 'select',
                         tip='Show/Hide ROI selection area', checkable=True)
-        self.add_action('x_label', 'x:')
-        self.add_action('y_label', 'y:')
+        self.add_action('x_label', QtCore.QCoreApplication.translate('View1D', 'x:'))
+        self.add_action('y_label', QtCore.QCoreApplication.translate('View1D', 'y:'))
 
     def lock_aspect_ratio(self):
         if self.is_action_checked('aspect_ratio'):

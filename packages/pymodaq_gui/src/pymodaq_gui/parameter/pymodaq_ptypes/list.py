@@ -121,7 +121,7 @@ class ListParameterItem(ListParameterItem):
             item = model.item(i)
             if combo.itemText(i) in unavailable:
                 item.setEnabled(False)
-                item.setToolTip('Not installed')
+                item.setToolTip(QtCore.QCoreApplication.translate('ListParameterItem', 'Not installed'))
             else:
                 item.setEnabled(True)
                 item.setToolTip('')

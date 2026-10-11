@@ -20,6 +20,7 @@ from qtpy.QtCore import Qt
 from qtpy.QtGui import QPalette, QColor
 
 from pymodaq_gui.utils.widget_sync import WidgetSync, SyncMode, BaseWidgetSync
+from qtpy import QtCore
 
 
 class MultipleSyncsExample(QWidget):
@@ -30,22 +31,22 @@ class MultipleSyncsExample(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: ListWidget with separate item and selection syncs\n"
+            QtCore.QCoreApplication.translate('MultipleSyncsExample', "Use Case: ListWidget with separate item and selection syncs\n"
             "✓ items_sync: Controls what items are available (FROM_SYNC)\n"
             "✓ index_sync: Controls which item is selected (BIDIRECTIONAL)\n"
-            "✓ Same widget participates in TWO different syncs!",
+            "✓ Same widget participates in TWO different syncs!"),
         ))
 
         # List widgets
-        lists_group = QGroupBox("2 Synchronized ListWidgets")
+        lists_group = QGroupBox(QtCore.QCoreApplication.translate('MultipleSyncsExample', "2 Synchronized ListWidgets"))
         lists_layout = QHBoxLayout()
 
         self.list1 = QListWidget()
         self.list2 = QListWidget()
 
-        lists_layout.addWidget(QLabel("List 1:"))
+        lists_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('MultipleSyncsExample', "List 1:")))
         lists_layout.addWidget(self.list1)
-        lists_layout.addWidget(QLabel("List 2:"))
+        lists_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('MultipleSyncsExample', "List 2:")))
         lists_layout.addWidget(self.list2)
 
         lists_group.setLayout(lists_layout)
@@ -53,7 +54,7 @@ class MultipleSyncsExample(QWidget):
 
         # SpinBox for index
         index_layout = QHBoxLayout()
-        index_layout.addWidget(QLabel("Selected Index:"))
+        index_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('MultipleSyncsExample', "Selected Index:")))
         self.index_spinbox = QSpinBox()
         self.index_spinbox.setRange(0, 10)
         index_layout.addWidget(self.index_spinbox)
@@ -83,15 +84,15 @@ class MultipleSyncsExample(QWidget):
 
         # Controls
         controls = QHBoxLayout()
-        controls.addWidget(QLabel("Change items:"))
+        controls.addWidget(QLabel(QtCore.QCoreApplication.translate('MultipleSyncsExample', "Change items:")))
 
-        colors_btn = QPushButton("Colors")
+        colors_btn = QPushButton(QtCore.QCoreApplication.translate('MultipleSyncsExample', "Colors"))
         colors_btn.clicked.connect(
             lambda: setattr(self.items_sync, 'value', ["Red", "Green", "Blue", "Yellow"]),
         )
         controls.addWidget(colors_btn)
 
-        fruits_btn = QPushButton("Fruits")
+        fruits_btn = QPushButton(QtCore.QCoreApplication.translate('MultipleSyncsExample', "Fruits"))
         fruits_btn.clicked.connect(
             lambda: setattr(self.items_sync, 'value', ["Apple", "Banana", "Orange", "Grape"]),
         )
@@ -127,14 +128,14 @@ class DynamicPropertiesExample(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: Configuration that grows over time\n"
+            QtCore.QCoreApplication.translate('DynamicPropertiesExample', "Use Case: Configuration that grows over time\n"
             "✓ Start with basic properties (name, version)\n"
             "✓ Add optional properties dynamically (author, license, description)\n"
-            "✓ Remove properties when no longer needed",
+            "✓ Remove properties when no longer needed"),
         ))
 
         # Current state display
-        display_group = QGroupBox("Current Configuration (Live)")
+        display_group = QGroupBox(QtCore.QCoreApplication.translate('DynamicPropertiesExample', "Current Configuration (Live)"))
         display_layout = QVBoxLayout()
 
         self.display = QTextEdit()
@@ -147,17 +148,17 @@ class DynamicPropertiesExample(QWidget):
         layout.addWidget(display_group)
 
         # Fixed properties
-        fixed_group = QGroupBox("Fixed Properties")
+        fixed_group = QGroupBox(QtCore.QCoreApplication.translate('DynamicPropertiesExample', "Fixed Properties"))
         fixed_layout = QVBoxLayout()
 
         name_layout = QHBoxLayout()
-        name_layout.addWidget(QLabel("Name:"))
+        name_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('DynamicPropertiesExample', "Name:")))
         self.name_edit = QLineEdit()
         name_layout.addWidget(self.name_edit)
         fixed_layout.addLayout(name_layout)
 
         version_layout = QHBoxLayout()
-        version_layout.addWidget(QLabel("Version:"))
+        version_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('DynamicPropertiesExample', "Version:")))
         self.version_spin = QSpinBox()
         self.version_spin.setRange(1, 100)
         version_layout.addWidget(self.version_spin)
@@ -168,7 +169,7 @@ class DynamicPropertiesExample(QWidget):
         layout.addWidget(fixed_group)
 
         # Dynamic properties container
-        self.dynamic_group = QGroupBox("Optional Properties (Add Below)")
+        self.dynamic_group = QGroupBox(QtCore.QCoreApplication.translate('DynamicPropertiesExample', "Optional Properties (Add Below)"))
         self.dynamic_layout = QVBoxLayout()
         self.dynamic_group.setLayout(self.dynamic_layout)
         layout.addWidget(self.dynamic_group)
@@ -177,20 +178,20 @@ class DynamicPropertiesExample(QWidget):
         controls_group = QGroupBox("Add/Remove Properties")
         controls_layout = QHBoxLayout()
 
-        self.add_author_btn = QPushButton("+ Author")
+        self.add_author_btn = QPushButton(QtCore.QCoreApplication.translate('DynamicPropertiesExample', "+ Author"))
         self.add_author_btn.clicked.connect(self.add_author)
         controls_layout.addWidget(self.add_author_btn)
 
-        self.add_license_btn = QPushButton("+ License")
+        self.add_license_btn = QPushButton(QtCore.QCoreApplication.translate('DynamicPropertiesExample', "+ License"))
         self.add_license_btn.clicked.connect(self.add_license)
         controls_layout.addWidget(self.add_license_btn)
 
-        self.remove_author_btn = QPushButton("− Author")
+        self.remove_author_btn = QPushButton(QtCore.QCoreApplication.translate('DynamicPropertiesExample', "− Author"))
         self.remove_author_btn.clicked.connect(lambda: self.remove_property('author'))
         self.remove_author_btn.setEnabled(False)
         controls_layout.addWidget(self.remove_author_btn)
 
-        self.remove_license_btn = QPushButton("− License")
+        self.remove_license_btn = QPushButton(QtCore.QCoreApplication.translate('DynamicPropertiesExample', "− License"))
         self.remove_license_btn.clicked.connect(lambda: self.remove_property('license'))
         self.remove_license_btn.setEnabled(False)
         controls_layout.addWidget(self.remove_license_btn)
@@ -236,7 +237,7 @@ class DynamicPropertiesExample(QWidget):
 
         # Create widget
         author_layout = QHBoxLayout()
-        author_layout.addWidget(QLabel("Author:"))
+        author_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('DynamicPropertiesExample', "Author:")))
         self.author_edit = QLineEdit()
         author_layout.addWidget(self.author_edit)
         self.dynamic_layout.addLayout(author_layout)
@@ -260,7 +261,7 @@ class DynamicPropertiesExample(QWidget):
 
         # Create widget
         license_layout = QHBoxLayout()
-        license_layout.addWidget(QLabel("License:"))
+        license_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('DynamicPropertiesExample', "License:")))
         self.license_edit = QLineEdit()
         license_layout.addWidget(self.license_edit)
         self.dynamic_layout.addLayout(license_layout)
@@ -306,15 +307,15 @@ class ComplexScenarioExample(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: Data visualization settings\n"
+            QtCore.QCoreApplication.translate('ComplexScenarioExample', "Use Case: Data visualization settings\n"
             "✓ Channel selection (items + index) - dict sync\n"
             "✓ Color (RGB) - dict sync with bind_dict()\n"
             "✓ Display options (3 checkboxes) - dict sync\n"
-            "✓ Preset buttons load complete configurations",
+            "✓ Preset buttons load complete configurations"),
         ))
 
         # Channels
-        channels_group = QGroupBox("Channels")
+        channels_group = QGroupBox(QtCore.QCoreApplication.translate('ComplexScenarioExample', "Channels"))
         channels_layout = QHBoxLayout()
 
         self.channel_list = QListWidget()
@@ -324,7 +325,7 @@ class ComplexScenarioExample(QWidget):
         layout.addWidget(channels_group)
 
         # Color
-        color_group = QGroupBox("Line Color")
+        color_group = QGroupBox(QtCore.QCoreApplication.translate('ComplexScenarioExample', "Line Color"))
         color_layout = QVBoxLayout()
 
         self.r_slider = self._create_slider("R")
@@ -335,7 +336,7 @@ class ComplexScenarioExample(QWidget):
         color_layout.addLayout(self.g_slider[1])
         color_layout.addLayout(self.b_slider[1])
 
-        self.color_preview = QLabel("Color")
+        self.color_preview = QLabel(QtCore.QCoreApplication.translate('ComplexScenarioExample', "Color"))
         self.color_preview.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.color_preview.setMinimumHeight(40)
         self.color_preview.setAutoFillBackground(True)
@@ -345,12 +346,12 @@ class ComplexScenarioExample(QWidget):
         layout.addWidget(color_group)
 
         # Display options
-        display_group = QGroupBox("Display Options")
+        display_group = QGroupBox(QtCore.QCoreApplication.translate('ComplexScenarioExample', "Display Options"))
         display_layout = QHBoxLayout()
 
-        self.grid_check = QCheckBox("Grid")
-        self.legend_check = QCheckBox("Legend")
-        self.autoscale_check = QCheckBox("Autoscale")
+        self.grid_check = QCheckBox(QtCore.QCoreApplication.translate('ComplexScenarioExample', "Grid"))
+        self.legend_check = QCheckBox(QtCore.QCoreApplication.translate('ComplexScenarioExample', "Legend"))
+        self.autoscale_check = QCheckBox(QtCore.QCoreApplication.translate('ComplexScenarioExample', "Autoscale"))
 
         display_layout.addWidget(self.grid_check)
         display_layout.addWidget(self.legend_check)
@@ -413,9 +414,9 @@ class ComplexScenarioExample(QWidget):
 
         # Presets
         presets = QHBoxLayout()
-        presets.addWidget(QLabel("Presets:"))
+        presets.addWidget(QLabel(QtCore.QCoreApplication.translate('ComplexScenarioExample', "Presets:")))
 
-        default_btn = QPushButton("Default")
+        default_btn = QPushButton(QtCore.QCoreApplication.translate('ComplexScenarioExample', "Default"))
         default_btn.clicked.connect(lambda: self.load_preset(
             ['Ch0', 'Ch1', 'Ch2', 'Ch3'], 0,
             {'r': 255, 'g': 100, 'b': 0},
@@ -423,7 +424,7 @@ class ComplexScenarioExample(QWidget):
         ))
         presets.addWidget(default_btn)
 
-        thermal_btn = QPushButton("Thermal")
+        thermal_btn = QPushButton(QtCore.QCoreApplication.translate('ComplexScenarioExample', "Thermal"))
         thermal_btn.clicked.connect(lambda: self.load_preset(
             ['Temperature', 'Pressure', 'Humidity'], 0,
             {'r': 255, 'g': 0, 'b': 0},
@@ -466,25 +467,25 @@ class InitFromExample(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: Control who initializes whom when binding\n"
+            QtCore.QCoreApplication.translate('InitFromExample', "Use Case: Control who initializes whom when binding\n"
             "✓ init_from='sync' (default) - Widget gets sync's value\n"
             "✓ init_from='widget' - Sync gets widget's value\n"
             "✓ init_from=None - No initialization, preserve both values\n"
-            "✓ Works with bind(), bind_dict(), and bind_properties()",
+            "✓ Works with bind(), bind_dict(), and bind_properties()"),
         ))
 
         # Example 1: Basic init_from modes
-        basic_group = QGroupBox("1. Basic init_from Modes (using bind())")
+        basic_group = QGroupBox(QtCore.QCoreApplication.translate('InitFromExample', "1. Basic init_from Modes (using bind())"))
         basic_layout = QVBoxLayout()
 
         basic_layout.addWidget(QLabel(
-            "WATCH: When you click Bind, observe what value each widget shows!\n"
-            "The widget starts at 100, sync starts at 50 - who wins?",
+            QtCore.QCoreApplication.translate('InitFromExample', "WATCH: When you click Bind, observe what value each widget shows!\n"
+            "The widget starts at 100, sync starts at 50 - who wins?"),
         ))
 
         # Sync value display
         sync_layout = QHBoxLayout()
-        sync_layout.addWidget(QLabel("Sync Value:"))
+        sync_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('InitFromExample', "Sync Value:")))
         self.sync_value_spin = QSpinBox()
         self.sync_value_spin.setRange(0, 200)
         self.sync_value_spin.setValue(50)
@@ -503,15 +504,15 @@ class InitFromExample(QWidget):
 
         # init_from='sync' (default)
         sync_row = QHBoxLayout()
-        sync_row.addWidget(QLabel("init_from='sync':"))
+        sync_row.addWidget(QLabel(QtCore.QCoreApplication.translate('InitFromExample', "init_from='sync':")))
         self.sync_mode_spin = QSpinBox()
         self.sync_mode_spin.setRange(0, 200)
         self.sync_mode_spin.setValue(100)  # Start with different value
         sync_row.addWidget(self.sync_mode_spin)
-        self.bind_sync_btn = QPushButton("Bind (widget ← 50)")
+        self.bind_sync_btn = QPushButton(QtCore.QCoreApplication.translate('InitFromExample', "Bind (widget ← 50)"))
         self.bind_sync_btn.clicked.connect(self.bind_sync_mode)
         sync_row.addWidget(self.bind_sync_btn)
-        self.unbind_sync_btn = QPushButton("Reset")
+        self.unbind_sync_btn = QPushButton(QtCore.QCoreApplication.translate('InitFromExample', "Reset"))
         self.unbind_sync_btn.clicked.connect(self.unbind_sync_mode)
         self.unbind_sync_btn.setEnabled(False)
         sync_row.addWidget(self.unbind_sync_btn)
@@ -520,15 +521,15 @@ class InitFromExample(QWidget):
 
         # init_from='widget'
         widget_row = QHBoxLayout()
-        widget_row.addWidget(QLabel("init_from='widget':"))
+        widget_row.addWidget(QLabel(QtCore.QCoreApplication.translate('InitFromExample', "init_from='widget':")))
         self.widget_mode_spin = QSpinBox()
         self.widget_mode_spin.setRange(0, 200)
         self.widget_mode_spin.setValue(100)
         widget_row.addWidget(self.widget_mode_spin)
-        self.bind_widget_btn = QPushButton("Bind (sync ← 100)")
+        self.bind_widget_btn = QPushButton(QtCore.QCoreApplication.translate('InitFromExample', "Bind (sync ← 100)"))
         self.bind_widget_btn.clicked.connect(self.bind_widget_mode)
         widget_row.addWidget(self.bind_widget_btn)
-        self.unbind_widget_btn = QPushButton("Reset")
+        self.unbind_widget_btn = QPushButton(QtCore.QCoreApplication.translate('InitFromExample', "Reset"))
         self.unbind_widget_btn.clicked.connect(self.unbind_widget_mode)
         self.unbind_widget_btn.setEnabled(False)
         widget_row.addWidget(self.unbind_widget_btn)
@@ -537,15 +538,15 @@ class InitFromExample(QWidget):
 
         # init_from=None
         none_row = QHBoxLayout()
-        none_row.addWidget(QLabel("init_from=None:"))
+        none_row.addWidget(QLabel(QtCore.QCoreApplication.translate('InitFromExample', "init_from=None:")))
         self.none_mode_spin = QSpinBox()
         self.none_mode_spin.setRange(0, 200)
         self.none_mode_spin.setValue(100)
         none_row.addWidget(self.none_mode_spin)
-        self.bind_none_btn = QPushButton("Bind (no change)")
+        self.bind_none_btn = QPushButton(QtCore.QCoreApplication.translate('InitFromExample', "Bind (no change)"))
         self.bind_none_btn.clicked.connect(self.bind_none_mode)
         none_row.addWidget(self.bind_none_btn)
-        self.unbind_none_btn = QPushButton("Reset")
+        self.unbind_none_btn = QPushButton(QtCore.QCoreApplication.translate('InitFromExample', "Reset"))
         self.unbind_none_btn.clicked.connect(self.unbind_none_mode)
         self.unbind_none_btn.setEnabled(False)
         none_row.addWidget(self.unbind_none_btn)
@@ -556,23 +557,23 @@ class InitFromExample(QWidget):
         layout.addWidget(basic_group)
 
         # Example 2: bind_dict with init_from
-        dict_group = QGroupBox("2. bind_dict() - Initialize RGB from sliders OR from sync")
+        dict_group = QGroupBox(QtCore.QCoreApplication.translate('InitFromExample', "2. bind_dict() - Initialize RGB from sliders OR from sync"))
         dict_layout = QVBoxLayout()
 
         dict_layout.addWidget(QLabel(
-            "SCENARIO: You have RGB sliders at specific positions.\n"
+            QtCore.QCoreApplication.translate('InitFromExample', "SCENARIO: You have RGB sliders at specific positions.\n"
             "CHOICE 1: Overwrite sliders with sync's colors (init_from='sync')\n"
             "CHOICE 2: Capture slider positions into sync (init_from='widget')\n"
-            "Try both! Reset sliders between attempts to see the difference.",
+            "Try both! Reset sliders between attempts to see the difference."),
         ))
 
         # Control buttons at top
         control_row = QHBoxLayout()
-        self.reset_sliders_btn = QPushButton("Reset Sliders (R=128, G=64, B=192)")
+        self.reset_sliders_btn = QPushButton(QtCore.QCoreApplication.translate('InitFromExample', "Reset Sliders (R=128, G=64, B=192)"))
         self.reset_sliders_btn.clicked.connect(self.reset_color_sliders)
         control_row.addWidget(self.reset_sliders_btn)
 
-        self.unbind_color_btn = QPushButton("Unbind All")
+        self.unbind_color_btn = QPushButton(QtCore.QCoreApplication.translate('InitFromExample', "Unbind All"))
         self.unbind_color_btn.clicked.connect(self.unbind_color)
         self.unbind_color_btn.setEnabled(False)
         control_row.addWidget(self.unbind_color_btn)
@@ -588,7 +589,7 @@ class InitFromExample(QWidget):
         dict_layout.addLayout(self.color_b_slider[1])
 
         # Color preview
-        self.color_preview = QLabel("Color Preview")
+        self.color_preview = QLabel(QtCore.QCoreApplication.translate('InitFromExample', "Color Preview"))
         self.color_preview.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.color_preview.setMinimumHeight(40)
         self.color_preview.setAutoFillBackground(True)
@@ -598,54 +599,54 @@ class InitFromExample(QWidget):
         # Bind buttons
         bind_row = QHBoxLayout()
 
-        bind_from_sync_btn = QPushButton("Bind: Sliders ← Sync (255, 100, 50)")
+        bind_from_sync_btn = QPushButton(QtCore.QCoreApplication.translate('InitFromExample', "Bind: Sliders ← Sync (255, 100, 50)"))
         bind_from_sync_btn.clicked.connect(self.bind_color_from_sync)
         bind_row.addWidget(bind_from_sync_btn)
 
-        bind_from_widget_btn = QPushButton("Bind: Sync ← Sliders (current)")
+        bind_from_widget_btn = QPushButton(QtCore.QCoreApplication.translate('InitFromExample', "Bind: Sync ← Sliders (current)"))
         bind_from_widget_btn.clicked.connect(self.bind_color_from_widget)
         bind_row.addWidget(bind_from_widget_btn)
 
         dict_layout.addLayout(bind_row)
 
-        self.color_status = QLabel("Not bound. Adjust sliders, then choose a bind option above.")
+        self.color_status = QLabel(QtCore.QCoreApplication.translate('InitFromExample', "Not bound. Adjust sliders, then choose a bind option above."))
         dict_layout.addWidget(self.color_status)
 
         dict_group.setLayout(dict_layout)
         layout.addWidget(dict_group)
 
         # Example 3: bind_dict with per-property init_from
-        props_group = QGroupBox("3. bind_dict() - Per-Property init_from (Mixed Sources)")
+        props_group = QGroupBox(QtCore.QCoreApplication.translate('InitFromExample', "3. bind_dict() - Per-Property init_from (Mixed Sources)"))
         props_layout = QVBoxLayout()
 
         props_layout.addWidget(QLabel(
-            "SCENARIO: A config with 2 properties. Where does each get its initial value?\n"
+            QtCore.QCoreApplication.translate('InitFromExample', "SCENARIO: A config with 2 properties. Where does each get its initial value?\n"
             "We'll bind with MIXED init_from: 'name' from widget, 'enabled' from sync.\n"
             "BEFORE: Widget shows (name='MyWidget', enabled=True), Sync has (name='DefaultName', enabled=False)\n"
-            "AFTER: BOTH will have (name='MyWidget' from widget, enabled=False from sync)",
+            "AFTER: BOTH will have (name='MyWidget' from widget, enabled=False from sync)"),
         ))
 
         # Before state
-        before_box = QGroupBox("BEFORE Binding")
+        before_box = QGroupBox(QtCore.QCoreApplication.translate('InitFromExample', "BEFORE Binding"))
         before_layout = QVBoxLayout()
-        before_layout.addWidget(QLabel("Widget state: name='MyWidget', enabled=True"))
-        before_layout.addWidget(QLabel("Sync state: name='DefaultName', enabled=False"))
+        before_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('InitFromExample', "Widget state: name='MyWidget', enabled=True")))
+        before_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('InitFromExample', "Sync state: name='DefaultName', enabled=False")))
         before_box.setLayout(before_layout)
         before_box.setStyleSheet("QGroupBox {  }")
         props_layout.addWidget(before_box)
 
         # Config widgets
-        config_widget_box = QGroupBox("Widget Controls")
+        config_widget_box = QGroupBox(QtCore.QCoreApplication.translate('InitFromExample', "Widget Controls"))
         config_widget_layout = QVBoxLayout()
 
         config_row1 = QHBoxLayout()
-        config_row1.addWidget(QLabel("Name:"))
+        config_row1.addWidget(QLabel(QtCore.QCoreApplication.translate('InitFromExample', "Name:")))
         self.config_name_edit = QLineEdit()
-        self.config_name_edit.setText("MyWidget")
+        self.config_name_edit.setText(QtCore.QCoreApplication.translate('InitFromExample', "MyWidget"))
         config_row1.addWidget(self.config_name_edit)
         config_widget_layout.addLayout(config_row1)
 
-        self.config_enabled_check = QCheckBox("Enabled")
+        self.config_enabled_check = QCheckBox(QtCore.QCoreApplication.translate('InitFromExample', "Enabled"))
         self.config_enabled_check.setChecked(True)
         config_widget_layout.addWidget(self.config_enabled_check)
 
@@ -654,17 +655,17 @@ class InitFromExample(QWidget):
 
         # Bind button
         bind_buttons = QHBoxLayout()
-        bind_props_btn = QPushButton("Bind with Mixed init_from")
+        bind_props_btn = QPushButton(QtCore.QCoreApplication.translate('InitFromExample', "Bind with Mixed init_from"))
         bind_props_btn.clicked.connect(self.bind_config_properties)
         bind_buttons.addWidget(bind_props_btn)
 
-        self.unbind_config_btn = QPushButton("Unbind & Reset")
+        self.unbind_config_btn = QPushButton(QtCore.QCoreApplication.translate('InitFromExample', "Unbind & Reset"))
         self.unbind_config_btn.clicked.connect(self.unbind_config)
         self.unbind_config_btn.setEnabled(False)
         bind_buttons.addWidget(self.unbind_config_btn)
         props_layout.addLayout(bind_buttons)
 
-        self.config_status = QLabel("Not bound yet. Click 'Bind with Mixed init_from' to see the result!")
+        self.config_status = QLabel(QtCore.QCoreApplication.translate('InitFromExample', "Not bound yet. Click 'Bind with Mixed init_from' to see the result!"))
         self.config_status.setWordWrap(True)
         self.config_status.setStyleSheet("padding: 10px; border: 1px solid #0066cc;")
         props_layout.addWidget(self.config_status)
@@ -756,7 +757,7 @@ class InitFromExample(QWidget):
         self.color_g_slider[0].setValue(64)
         self.color_b_slider[0].setValue(192)
         self.update_color_preview_manual()
-        self.color_status.setText("Sliders reset to R=128, G=64, B=192. Choose a bind option.")
+        self.color_status.setText(QtCore.QCoreApplication.translate('InitFromExample', "Sliders reset to R=128, G=64, B=192. Choose a bind option."))
 
     def unbind_color(self):
         """Unbind color sliders"""
@@ -766,7 +767,7 @@ class InitFromExample(QWidget):
             self.color_sync.unbind(self.color_b_slider[0])
             self.color_sync = None
         self.unbind_color_btn.setEnabled(False)
-        self.color_status.setText("Unbound. You can now try the other bind option!")
+        self.color_status.setText(QtCore.QCoreApplication.translate('InitFromExample', "Unbound. You can now try the other bind option!"))
         self.update_color_preview_manual()
 
     def update_color_preview_manual(self):
@@ -796,9 +797,9 @@ class InitFromExample(QWidget):
         self.update_color_preview(self.color_sync.value)
 
         self.color_status.setText(
-            "✓ Bound with init_from='sync'\n"
+            QtCore.QCoreApplication.translate('InitFromExample', "✓ Bound with init_from='sync'\n"
             "RESULT: Sliders jumped to sync's values (R=255, G=100, B=50)\n"
-            "Try 'Unbind All' then 'Reset Sliders' to test the other mode!",
+            "Try 'Unbind All' then 'Reset Sliders' to test the other mode!"),
         )
         self.unbind_color_btn.setEnabled(True)
 
@@ -869,9 +870,9 @@ class InitFromExample(QWidget):
             self.config_sync.unbind(self.config_name_edit)
             self.config_sync.unbind(self.config_enabled_check)
             self.config_sync = None
-        self.config_name_edit.setText("MyWidget")
+        self.config_name_edit.setText(QtCore.QCoreApplication.translate('InitFromExample', "MyWidget"))
         self.config_enabled_check.setChecked(True)
-        self.config_status.setText("Reset! Try binding again to see the effect.")
+        self.config_status.setText(QtCore.QCoreApplication.translate('InitFromExample', "Reset! Try binding again to see the effect."))
         self.unbind_config_btn.setEnabled(False)
 
     def update_color_preview(self, rgb):
@@ -887,19 +888,19 @@ class AdvancedSyncDemo(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Level 3: Advanced Synchronization")
+        self.setWindowTitle(QtCore.QCoreApplication.translate('AdvancedSyncDemo', "Level 3: Advanced Synchronization"))
         self.setMinimumSize(750, 500)
 
         layout = QVBoxLayout(self)
-        header = QLabel("Advanced Synchronization - Expert Patterns")
+        header = QLabel(QtCore.QCoreApplication.translate('AdvancedSyncDemo', "Advanced Synchronization - Expert Patterns"))
         header.setStyleSheet("font-size: 14pt; font-weight: bold; padding: 10px;")
         layout.addWidget(header)
 
         tabs = QTabWidget()
-        tabs.addTab(MultipleSyncsExample(), "1. Multiple Syncs")
-        tabs.addTab(DynamicPropertiesExample(), "2. Dynamic Properties")
-        tabs.addTab(ComplexScenarioExample(), "3. Complex Scenario")
-        tabs.addTab(InitFromExample(), "4. init_from Parameter")
+        tabs.addTab(MultipleSyncsExample(), QtCore.QCoreApplication.translate('AdvancedSyncDemo', "1. Multiple Syncs"))
+        tabs.addTab(DynamicPropertiesExample(), QtCore.QCoreApplication.translate('AdvancedSyncDemo', "2. Dynamic Properties"))
+        tabs.addTab(ComplexScenarioExample(), QtCore.QCoreApplication.translate('AdvancedSyncDemo', "3. Complex Scenario"))
+        tabs.addTab(InitFromExample(), QtCore.QCoreApplication.translate('AdvancedSyncDemo', "4. init_from Parameter"))
 
         layout.addWidget(tabs)
 

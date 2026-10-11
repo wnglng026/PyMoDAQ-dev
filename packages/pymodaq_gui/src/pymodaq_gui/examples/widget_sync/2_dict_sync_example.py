@@ -19,6 +19,7 @@ from qtpy.QtCore import Qt
 from qtpy.QtGui import QPalette, QColor
 
 from pymodaq_gui.utils.widget_sync import WidgetSync, SyncMode
+from qtpy import QtCore
 
 
 class ComboBoxPropertiesExample(QWidget):
@@ -36,18 +37,18 @@ class ComboBoxPropertiesExample(QWidget):
         ))
 
         # Create 3 synchronized comboboxes
-        combos_group = QGroupBox("3 Synchronized ComboBoxes")
+        combos_group = QGroupBox(QtCore.QCoreApplication.translate('ComboBoxPropertiesExample', "3 Synchronized ComboBoxes"))
         combos_layout = QHBoxLayout()
 
         self.combo1 = QComboBox()
         self.combo2 = QComboBox()
         self.combo3 = QComboBox()
 
-        combos_layout.addWidget(QLabel("View 1:"))
+        combos_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('ComboBoxPropertiesExample', "View 1:")))
         combos_layout.addWidget(self.combo1)
-        combos_layout.addWidget(QLabel("View 2:"))
+        combos_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('ComboBoxPropertiesExample', "View 2:")))
         combos_layout.addWidget(self.combo2)
-        combos_layout.addWidget(QLabel("View 3:"))
+        combos_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('ComboBoxPropertiesExample', "View 3:")))
         combos_layout.addWidget(self.combo3)
 
         combos_group.setLayout(combos_layout)
@@ -81,16 +82,16 @@ class ComboBoxPropertiesExample(QWidget):
 
         # Controls
         controls = QHBoxLayout()
-        controls.addWidget(QLabel("Change to:"))
+        controls.addWidget(QLabel(QtCore.QCoreApplication.translate('ComboBoxPropertiesExample', "Change to:")))
 
-        colors_btn = QPushButton("Colors")
+        colors_btn = QPushButton(QtCore.QCoreApplication.translate('ComboBoxPropertiesExample', "Colors"))
         colors_btn.clicked.connect(
             lambda: setattr(self.combo_sync, 'value',
                           {'items': ["Red", "Green", "Blue"], 'current': "Red"}),
         )
         controls.addWidget(colors_btn)
 
-        fruits_btn = QPushButton("Fruits")
+        fruits_btn = QPushButton(QtCore.QCoreApplication.translate('ComboBoxPropertiesExample', "Fruits"))
         fruits_btn.clicked.connect(
             lambda: setattr(self.combo_sync, 'value',
                           {'items': ["Apple", "Banana", "Orange"], 'current': "Apple"}),
@@ -123,14 +124,14 @@ class RGBSlidersExample(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: RGB color controlled by 3 different sliders\n"
+            QtCore.QCoreApplication.translate('RGBSlidersExample', "Use Case: RGB color controlled by 3 different sliders\n"
             "✓ Single dict: {'r': 128, 'g': 64, 'b': 192}\n"
             "✓ bind_dict() maps each slider to a dict key\n"
-            "✓ Each widget controls one dict value",
+            "✓ Each widget controls one dict value"),
         ))
 
         # RGB sliders
-        sliders_group = QGroupBox("Color Sliders")
+        sliders_group = QGroupBox(QtCore.QCoreApplication.translate('RGBSlidersExample', "Color Sliders"))
         sliders_layout = QVBoxLayout()
 
         self.r_slider = self._create_slider("Red")
@@ -145,7 +146,7 @@ class RGBSlidersExample(QWidget):
         layout.addWidget(sliders_group)
 
         # Color preview
-        self.preview = QLabel("Color Preview")
+        self.preview = QLabel(QtCore.QCoreApplication.translate('RGBSlidersExample', "Color Preview"))
         self.preview.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.preview.setMinimumHeight(80)
         self.preview.setAutoFillBackground(True)
@@ -183,17 +184,17 @@ class RGBSlidersExample(QWidget):
 
         # Presets
         presets = QHBoxLayout()
-        presets.addWidget(QLabel("Presets:"))
+        presets.addWidget(QLabel(QtCore.QCoreApplication.translate('RGBSlidersExample', "Presets:")))
 
-        red_btn = QPushButton("Red")
+        red_btn = QPushButton(QtCore.QCoreApplication.translate('RGBSlidersExample', "Red"))
         red_btn.clicked.connect(lambda: setattr(self.color_sync, 'value', {'r': 255, 'g': 0, 'b': 0}))
         presets.addWidget(red_btn)
 
-        green_btn = QPushButton("Green")
+        green_btn = QPushButton(QtCore.QCoreApplication.translate('RGBSlidersExample', "Green"))
         green_btn.clicked.connect(lambda: setattr(self.color_sync, 'value', {'r': 0, 'g': 255, 'b': 0}))
         presets.addWidget(green_btn)
 
-        blue_btn = QPushButton("Blue")
+        blue_btn = QPushButton(QtCore.QCoreApplication.translate('RGBSlidersExample', "Blue"))
         blue_btn.clicked.connect(lambda: setattr(self.color_sync, 'value', {'r': 0, 'g': 0, 'b': 255}))
         presets.addWidget(blue_btn)
 
@@ -226,19 +227,19 @@ class ConfigurationFormExample(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: Device configuration form\n"
+            QtCore.QCoreApplication.translate('ConfigurationFormExample', "Use Case: Device configuration form\n"
             "✓ Dict: {'exposure': 100, 'gain': 10, 'fps': '60'}\n"
             "✓ bind_dict() for all controls at once\n"
-            "✓ Cleaner than multiple bind_properties() calls",
+            "✓ Cleaner than multiple bind_properties() calls"),
         ))
 
         # Controls
-        controls_group = QGroupBox("Camera Settings")
+        controls_group = QGroupBox(QtCore.QCoreApplication.translate('ConfigurationFormExample', "Camera Settings"))
         controls_layout = QVBoxLayout()
 
         # Exposure
         exp_layout = QHBoxLayout()
-        exp_layout.addWidget(QLabel("Exposure (ms):"))
+        exp_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('ConfigurationFormExample', "Exposure (ms):")))
         self.exposure_spin = QSpinBox()
         self.exposure_spin.setRange(1, 1000)
         exp_layout.addWidget(self.exposure_spin)
@@ -247,18 +248,18 @@ class ConfigurationFormExample(QWidget):
 
         # Gain
         gain_layout = QHBoxLayout()
-        gain_layout.addWidget(QLabel("Gain (dB):"))
+        gain_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('ConfigurationFormExample', "Gain (dB):")))
         self.gain_slider = QSlider(Qt.Orientation.Horizontal)
         self.gain_slider.setRange(0, 40)
         gain_layout.addWidget(self.gain_slider)
-        self.gain_label = QLabel("0")
+        self.gain_label = QLabel(QtCore.QCoreApplication.translate('ConfigurationFormExample', "0"))
         self.gain_label.setMinimumWidth(30)
         gain_layout.addWidget(self.gain_label)
         controls_layout.addLayout(gain_layout)
 
         # FPS
         fps_layout = QHBoxLayout()
-        fps_layout.addWidget(QLabel("Target FPS:"))
+        fps_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('ConfigurationFormExample', "Target FPS:")))
         self.fps_combo = QComboBox()
         self.fps_combo.addItems(["30", "60", "120", "240"])
         fps_layout.addWidget(self.fps_combo)
@@ -307,21 +308,21 @@ class ConfigurationFormExample(QWidget):
 
         # Presets
         presets = QHBoxLayout()
-        presets.addWidget(QLabel("Presets:"))
+        presets.addWidget(QLabel(QtCore.QCoreApplication.translate('ConfigurationFormExample', "Presets:")))
 
-        lowlight_btn = QPushButton("Low Light")
+        lowlight_btn = QPushButton(QtCore.QCoreApplication.translate('ConfigurationFormExample', "Low Light"))
         lowlight_btn.clicked.connect(
             lambda: setattr(self.camera_sync, 'value', {'exposure': 500, 'gain': 30, 'fps': '30'}),
         )
         presets.addWidget(lowlight_btn)
 
-        highspeed_btn = QPushButton("High Speed")
+        highspeed_btn = QPushButton(QtCore.QCoreApplication.translate('ConfigurationFormExample', "High Speed"))
         highspeed_btn.clicked.connect(
             lambda: setattr(self.camera_sync, 'value', {'exposure': 10, 'gain': 5, 'fps': '240'}),
         )
         presets.addWidget(highspeed_btn)
 
-        balanced_btn = QPushButton("Balanced")
+        balanced_btn = QPushButton(QtCore.QCoreApplication.translate('ConfigurationFormExample', "Balanced"))
         balanced_btn.clicked.connect(
             lambda: setattr(self.camera_sync, 'value', {'exposure': 100, 'gain': 10, 'fps': '60'}),
         )
@@ -348,16 +349,16 @@ class HelperMethodsExample(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: Dynamic list management with helper methods\n"
+            QtCore.QCoreApplication.translate('HelperMethodsExample', "Use Case: Dynamic list management with helper methods\n"
             "✓ append_to_list() - Add items safely\n"
             "✓ remove_from_list() - Remove items safely\n"
             "✓ pop_from_list() - Remove by index\n"
             "✓ update_key() - Update individual keys\n"
-            "✓ All methods handle deep copying internally!",
+            "✓ All methods handle deep copying internally!"),
         ))
 
         # Display area
-        display_group = QGroupBox("Current State")
+        display_group = QGroupBox(QtCore.QCoreApplication.translate('HelperMethodsExample', "Current State"))
         display_layout = QVBoxLayout()
 
         self.items_display = QLabel()
@@ -382,57 +383,57 @@ class HelperMethodsExample(QWidget):
         self.update_display()
 
         # Controls
-        controls_group = QGroupBox("List Operations")
+        controls_group = QGroupBox(QtCore.QCoreApplication.translate('HelperMethodsExample', "List Operations"))
         controls_layout = QVBoxLayout()
 
         # Add item controls
         add_layout = QHBoxLayout()
-        add_layout.addWidget(QLabel("Add item:"))
+        add_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('HelperMethodsExample', "Add item:")))
         self.add_input = QLineEdit()
         self.add_input.setPlaceholderText("Enter item name...")
         add_layout.addWidget(self.add_input)
 
-        add_btn = QPushButton("Append")
+        add_btn = QPushButton(QtCore.QCoreApplication.translate('HelperMethodsExample', "Append"))
         add_btn.clicked.connect(self.append_item)
         add_layout.addWidget(add_btn)
         controls_layout.addLayout(add_layout)
 
         # Remove item controls
         remove_layout = QHBoxLayout()
-        remove_layout.addWidget(QLabel("Remove item:"))
+        remove_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('HelperMethodsExample', "Remove item:")))
         self.remove_input = QLineEdit()
         self.remove_input.setPlaceholderText("Enter item name...")
         remove_layout.addWidget(self.remove_input)
 
-        remove_btn = QPushButton("Remove")
+        remove_btn = QPushButton(QtCore.QCoreApplication.translate('HelperMethodsExample', "Remove"))
         remove_btn.clicked.connect(self.remove_item)
         remove_layout.addWidget(remove_btn)
         controls_layout.addLayout(remove_layout)
 
         # Pop item controls
         pop_layout = QHBoxLayout()
-        pop_layout.addWidget(QLabel("Pop by index:"))
+        pop_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('HelperMethodsExample', "Pop by index:")))
         self.pop_spin = QSpinBox()
         self.pop_spin.setRange(-10, 10)
         self.pop_spin.setValue(0)
         pop_layout.addWidget(self.pop_spin)
 
-        pop_btn = QPushButton("Pop")
+        pop_btn = QPushButton(QtCore.QCoreApplication.translate('HelperMethodsExample', "Pop"))
         pop_btn.clicked.connect(self.pop_item)
         pop_layout.addWidget(pop_btn)
 
-        pop_last_btn = QPushButton("Pop Last")
+        pop_last_btn = QPushButton(QtCore.QCoreApplication.translate('HelperMethodsExample', "Pop Last"))
         pop_last_btn.clicked.connect(lambda: self.pop_item(-1))
         pop_layout.addWidget(pop_last_btn)
         controls_layout.addLayout(pop_layout)
 
         # Update current
         current_layout = QHBoxLayout()
-        current_layout.addWidget(QLabel("Set current:"))
+        current_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('HelperMethodsExample', "Set current:")))
         self.current_combo = QComboBox()
         current_layout.addWidget(self.current_combo)
 
-        set_current_btn = QPushButton("Update")
+        set_current_btn = QPushButton(QtCore.QCoreApplication.translate('HelperMethodsExample', "Update"))
         set_current_btn.clicked.connect(self.update_current)
         current_layout.addWidget(set_current_btn)
         controls_layout.addLayout(current_layout)
@@ -456,8 +457,8 @@ class HelperMethodsExample(QWidget):
 
         # Info box
         info = QLabel(
-            "💡 All operations use helper methods that handle deep copying internally.\n"
-            "This prevents the shallow copy bug and ensures proper change detection!",
+            QtCore.QCoreApplication.translate('HelperMethodsExample', "💡 All operations use helper methods that handle deep copying internally.\n"
+            "This prevents the shallow copy bug and ensures proper change detection!"),
         )
         info.setStyleSheet("color: #0288d1; padding: 10px; font-style: italic;")
         info.setWordWrap(True)
@@ -531,11 +532,11 @@ class MixedBindingExample(QWidget):
         ))
 
         # Individual controls
-        controls_group = QGroupBox("Individual Controls")
+        controls_group = QGroupBox(QtCore.QCoreApplication.translate('MixedBindingExample', "Individual Controls"))
         controls_layout = QVBoxLayout()
 
         temp_layout = QHBoxLayout()
-        temp_layout.addWidget(QLabel("Temperature:"))
+        temp_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('MixedBindingExample', "Temperature:")))
         self.temp_spin = QSpinBox()
         self.temp_spin.setRange(0, 100)
         self.temp_spin.setSuffix(" °C")
@@ -544,11 +545,11 @@ class MixedBindingExample(QWidget):
         controls_layout.addLayout(temp_layout)
 
         speed_layout = QHBoxLayout()
-        speed_layout.addWidget(QLabel("Speed:"))
+        speed_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('MixedBindingExample', "Speed:")))
         self.speed_slider = QSlider(Qt.Orientation.Horizontal)
         self.speed_slider.setRange(0, 100)
         speed_layout.addWidget(self.speed_slider)
-        self.speed_label = QLabel("0")
+        self.speed_label = QLabel(QtCore.QCoreApplication.translate('MixedBindingExample', "0"))
         speed_layout.addWidget(self.speed_label)
         controls_layout.addLayout(speed_layout)
 
@@ -556,10 +557,10 @@ class MixedBindingExample(QWidget):
         layout.addWidget(controls_group)
 
         # JSON editor
-        json_group = QGroupBox("JSON Editor (Full State)")
+        json_group = QGroupBox(QtCore.QCoreApplication.translate('MixedBindingExample', "JSON Editor (Full State)"))
         json_layout = QVBoxLayout()
 
-        json_info = QLabel("Edit JSON directly - all controls update!")
+        json_info = QLabel(QtCore.QCoreApplication.translate('MixedBindingExample', "Edit JSON directly - all controls update!"))
         json_info.setStyleSheet("color: #666; font-style: italic;")
         json_layout.addWidget(json_info)
 
@@ -607,9 +608,9 @@ class MixedBindingExample(QWidget):
 
         # Code snippet
         code = QLabel(
-            "Implementation:\n"
+            QtCore.QCoreApplication.translate('MixedBindingExample', "Implementation:\n"
             "settings_sync.bind_dict({'temperature': {...}, 'speed': {...}})\n"
-            "settings_sync.bind(json_editor, getter=parse_json, setter=format_json)",
+            "settings_sync.bind(json_editor, getter=parse_json, setter=format_json)"),
         )
         code.setStyleSheet("font-family: monospace; padding: 10px;")
         layout.addWidget(code)
@@ -622,20 +623,20 @@ class DictSyncDemo(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Level 2: Dictionary Synchronization")
+        self.setWindowTitle(QtCore.QCoreApplication.translate('DictSyncDemo', "Level 2: Dictionary Synchronization"))
         self.setMinimumSize(750, 450)
 
         layout = QVBoxLayout(self)
-        header = QLabel("Dictionary Synchronization - Intermediate Patterns")
+        header = QLabel(QtCore.QCoreApplication.translate('DictSyncDemo', "Dictionary Synchronization - Intermediate Patterns"))
         header.setStyleSheet("font-size: 14pt; font-weight: bold; padding: 10px;")
         layout.addWidget(header)
 
         tabs = QTabWidget()
-        tabs.addTab(ComboBoxPropertiesExample(), "1. bind_properties()")
-        tabs.addTab(RGBSlidersExample(), "2. bind_dict()")
-        tabs.addTab(ConfigurationFormExample(), "3. Config Forms")
-        tabs.addTab(HelperMethodsExample(), "4. Helper Methods")
-        tabs.addTab(MixedBindingExample(), "5. Mixed Binding")
+        tabs.addTab(ComboBoxPropertiesExample(), QtCore.QCoreApplication.translate('DictSyncDemo', "1. bind_properties()"))
+        tabs.addTab(RGBSlidersExample(), QtCore.QCoreApplication.translate('DictSyncDemo', "2. bind_dict()"))
+        tabs.addTab(ConfigurationFormExample(), QtCore.QCoreApplication.translate('DictSyncDemo', "3. Config Forms"))
+        tabs.addTab(HelperMethodsExample(), QtCore.QCoreApplication.translate('DictSyncDemo', "4. Helper Methods"))
+        tabs.addTab(MixedBindingExample(), QtCore.QCoreApplication.translate('DictSyncDemo', "5. Mixed Binding"))
 
         layout.addWidget(tabs)
 

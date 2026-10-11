@@ -24,7 +24,7 @@ class MyWidget(ActionManager):
 
     def setup_actions(self):
 
-        self.add_action('show', 'Show Icon', 'show', checkable=True, icon_checked='unshow',
+        self.add_action('show', QtCore.QCoreApplication.translate('MyWidget', 'Show Icon'), 'show', checkable=True, icon_checked='unshow',
                         toolbar='default')
 
 

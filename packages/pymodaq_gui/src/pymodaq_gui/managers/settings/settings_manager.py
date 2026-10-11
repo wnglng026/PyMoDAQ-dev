@@ -210,26 +210,26 @@ class SettingsManager(ManagerBase):
         self.vlayout_right.insertWidget(0, self.toolbar)
 
     def setup_actions(self):
-        self.add_action('show_all_settings', 'Show All Settings', 'EditFind',
+        self.add_action('show_all_settings', QtCore.QCoreApplication.translate('SettingsManager', 'Show All Settings'), 'EditFind',
                         checkable=True,
-                        tip='If Checked: display all settings (in green, settings that can be configured)'
-                            ' otherwise only configurables ones',
+                        tip=QtCore.QCoreApplication.translate('SettingsManager', 'If Checked: display all settings (in green, settings that can be configured)'
+                            ' otherwise only configurables ones'),
                         toolbar='actions')
 
-        self.add_action(EntryActions.ADD, 'Add', 'arrow_circle_right', toolbar='move',
-                        tip='Add the current Parameter item', icon_color=self.get_theme().green,
+        self.add_action(EntryActions.ADD, QtCore.QCoreApplication.translate('SettingsManager', 'Add'), 'arrow_circle_right', toolbar='move',
+                        tip=QtCore.QCoreApplication.translate('SettingsManager', 'Add the current Parameter item'), icon_color=self.get_theme().green,
                         )
-        self.add_action(EntryActions.REMOVE, 'Remove', 'arrow_circle_left', toolbar='move',
-                        tip='Delete the current Configuration item ("Del")',
+        self.add_action(EntryActions.REMOVE, QtCore.QCoreApplication.translate('SettingsManager', 'Remove'), 'arrow_circle_left', toolbar='move',
+                        tip=QtCore.QCoreApplication.translate('SettingsManager', 'Delete the current Configuration item ("Del")'),
                         icon_color=self.get_theme().red,
                         shortcut=Qt.Key.Key_Delete)
-        self.add_action(EntryActions.UP, 'Move Up', 'arrow_circle_up', toolbar='move',
-                        tip='Move UP the current Configuration item ("Ctrl+Up")',
+        self.add_action(EntryActions.UP, QtCore.QCoreApplication.translate('SettingsManager', 'Move Up'), 'arrow_circle_up', toolbar='move',
+                        tip=QtCore.QCoreApplication.translate('SettingsManager', 'Move UP the current Configuration item ("Ctrl+Up")'),
                         icon_color=self.get_theme().blue,
                         shortcut=QKeySequence(Qt.Modifier.CTRL | Qt.Key.Key_Up))
-        self.add_action(EntryActions.DOWN, 'Move Down', 'arrow_circle_down', toolbar='move',
+        self.add_action(EntryActions.DOWN, QtCore.QCoreApplication.translate('SettingsManager', 'Move Down'), 'arrow_circle_down', toolbar='move',
                         icon_color=self.get_theme().orange,
-                        tip='Move Down the current Configuration item ("Ctrl+Down")',
+                        tip=QtCore.QCoreApplication.translate('SettingsManager', 'Move Down the current Configuration item ("Ctrl+Down")'),
                         shortcut=QKeySequence(Qt.Modifier.CTRL | Qt.Key.Key_Down))
         self.toolbar.addSeparator()
 

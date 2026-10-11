@@ -763,7 +763,7 @@ class ActionManager:
 
     def setup_toolbar_style_menu(self, parent_menu: QtWidgets.QMenu | str):
         """Add a 'Toolbar style' submenu choosing how the toolbar buttons of all windows are drawn"""
-        style_menu = self.add_menu('toolbar_style', 'Toolbar style', parent_menu=parent_menu)
+        style_menu = self.add_menu('toolbar_style', QtCore.QCoreApplication.translate('ActionManager', 'Toolbar style'), parent_menu=parent_menu)
         group = QtGui.QActionGroup(style_menu)
         group.setExclusive(True)
 
@@ -960,7 +960,7 @@ class ActionManager:
             if len(self.menus_names) != 0:
                 self._menu = self.menus[0]
             else:
-                self._menu = self.add_menu('default', 'Default')
+                self._menu = self.add_menu('default', QtCore.QCoreApplication.translate('ActionManager', 'Default'))
         return self._menu
 
     def affect_to(self, action_name: Union[str, QAction, WidgetActionProxy], obj: Union[QtWidgets.QToolBar, QtWidgets.QMenu]):

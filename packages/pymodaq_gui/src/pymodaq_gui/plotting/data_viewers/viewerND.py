@@ -30,6 +30,7 @@ from pymodaq_gui.managers.action_manager import ActionManager
 from pymodaq_gui.managers.parameter_manager import ParameterManager
 from pymodaq_data.post_treatment.process_to_scalar import DataProcessorFactory
 from pymodaq_gui.plotting.items.roi import SimpleRectROI, LinearROI
+from qtpy import QtCore
 
 
 
@@ -724,9 +725,9 @@ class ViewerND(ParameterManager, ActionManager, ViewerBase):
 
     def setup_actions(self):
         self.add_action('setaxes', icon_name='cartesian', checkable=True, tip='Change navigation/signal axes')
-        self.add_widget('filters', QtWidgets.QComboBox, tip='Filter type to apply to signal data')
+        self.add_widget('filters', QtWidgets.QComboBox, tip=QtCore.QCoreApplication.translate('ViewerND', 'Filter type to apply to signal data'))
         self.add_action('integrate_nav',icon_name='integrator', checkable=True,
-                        tip='Integrate the navigation data')
+                        tip=QtCore.QCoreApplication.translate('ViewerND', 'Integrate the navigation data'))
 
     def reshape_data(self):
         _nav_indexes = [int(index) for index in

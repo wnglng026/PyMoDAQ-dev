@@ -14,6 +14,7 @@ Features:
 from pyqtgraph.parametertree import Parameter
 from pyqtgraph.parametertree.parameterTypes import TextParameterItem, SimpleParameter
 from pymodaq_gui.utils.widgets.pattern_completer import PatternPlainTextEdit
+from qtpy import QtCore
 
 
 class PatternParameterItem(TextParameterItem):
@@ -405,18 +406,18 @@ if __name__ == "__main__":
     main_layout.addWidget(tree)
 
     # Group 1: Convenience Methods
-    group1 = QGroupBox("Method 1: Convenience Methods")
+    group1 = QGroupBox(QtCore.QCoreApplication.translate('text_pattern', "Method 1: Convenience Methods"))
     group1_layout = QVBoxLayout()
 
-    btn1_1 = QPushButton("Update @ completions (add david, eve)")
+    btn1_1 = QPushButton(QtCore.QCoreApplication.translate('text_pattern', "Update @ completions (add david, eve)"))
     btn1_1.clicked.connect(example_convenience_update)
     group1_layout.addWidget(btn1_1)
 
-    btn1_2 = QPushButton("Add $ pattern (currencies)")
+    btn1_2 = QPushButton(QtCore.QCoreApplication.translate('text_pattern', "Add $ pattern (currencies)"))
     btn1_2.clicked.connect(example_convenience_add)
     group1_layout.addWidget(btn1_2)
 
-    btn1_3 = QPushButton("Remove # pattern")
+    btn1_3 = QPushButton(QtCore.QCoreApplication.translate('text_pattern', "Remove # pattern"))
     btn1_3.clicked.connect(example_convenience_remove)
     group1_layout.addWidget(btn1_3)
 
@@ -424,22 +425,22 @@ if __name__ == "__main__":
     main_layout.addWidget(group1)
 
     # Group 2: Direct setOpts
-    group2 = QGroupBox("Method 2: Direct setOpts (Standard PyQtGraph)")
+    group2 = QGroupBox(QtCore.QCoreApplication.translate('text_pattern', "Method 2: Direct setOpts (Standard PyQtGraph)"))
     group2_layout = QVBoxLayout()
 
-    btn2_1 = QPushButton("Update @ with setOpts (add frank, grace)")
+    btn2_1 = QPushButton(QtCore.QCoreApplication.translate('text_pattern', "Update @ with setOpts (add frank, grace)"))
     btn2_1.clicked.connect(example_setopts_update)
     group2_layout.addWidget(btn2_1)
 
-    btn2_2 = QPushButton("Add : pattern with setOpts (emojis)")
+    btn2_2 = QPushButton(QtCore.QCoreApplication.translate('text_pattern', "Add : pattern with setOpts (emojis)"))
     btn2_2.clicked.connect(example_setopts_add)
     group2_layout.addWidget(btn2_2)
 
-    btn2_3 = QPushButton("Remove $ with setOpts")
+    btn2_3 = QPushButton(QtCore.QCoreApplication.translate('text_pattern', "Remove $ with setOpts"))
     btn2_3.clicked.connect(example_setopts_remove)
     group2_layout.addWidget(btn2_3)
 
-    btn2_4 = QPushButton("Update config with setOpts (wider popup)")
+    btn2_4 = QPushButton(QtCore.QCoreApplication.translate('text_pattern', "Update config with setOpts (wider popup)"))
     btn2_4.clicked.connect(example_setopts_config)
     group2_layout.addWidget(btn2_4)
 
@@ -447,10 +448,10 @@ if __name__ == "__main__":
     main_layout.addWidget(group2)
 
     # Group 3: Advanced
-    group3 = QGroupBox("Advanced Examples")
+    group3 = QGroupBox(QtCore.QCoreApplication.translate('text_pattern', "Advanced Examples"))
     group3_layout = QVBoxLayout()
 
-    btn3_1 = QPushButton("Simulate loading users from database")
+    btn3_1 = QPushButton(QtCore.QCoreApplication.translate('text_pattern', "Simulate loading users from database"))
     btn3_1.clicked.connect(example_auto_update)
     group3_layout.addWidget(btn3_1)
 
@@ -458,7 +459,7 @@ if __name__ == "__main__":
     main_layout.addWidget(group3)
 
     window.setLayout(main_layout)
-    window.setWindowTitle("Pattern Completer Parameter - Demo")
+    window.setWindowTitle(QtCore.QCoreApplication.translate('text_pattern', "Pattern Completer Parameter - Demo"))
     window.resize(800, 700)
     window.show()
 

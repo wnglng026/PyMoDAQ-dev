@@ -13,6 +13,7 @@ from pymodaq_gui.utils.dock import Dock
 from pymodaq_gui.utils.utils import mkQApp
 from pymodaq_gui.utils.widgets.window import make_window
 from pymodaq_gui.utils.menu_utils import StickyMenu
+from qtpy import QtCore
 
 
 class StickyMenuDemo(CustomApp):
@@ -32,32 +33,32 @@ class StickyMenuDemo(CustomApp):
 
     def setup_menus_and_toolbars(self, menubar=None):
         # 1. Default StickyMenu — stays open only for checkable actions
-        self.add_menu('checkable', 'Checkable-only (default)',
+        self.add_menu('checkable', QtCore.QCoreApplication.translate('StickyMenuDemo', 'Checkable-only (default)'),
                       self.menubar, menu=StickyMenu())
 
         # 2. sticky_all=True — stays open for every click
-        self.add_menu('all', 'All-sticky',
+        self.add_menu('all', QtCore.QCoreApplication.translate('StickyMenuDemo', 'All-sticky'),
                       self.menubar, menu=StickyMenu(sticky_all=True))
 
         # 3. Custom predicate — stays open when action text starts with '[pin]'
-        self.add_menu('custom', 'Custom predicate',
+        self.add_menu('custom', QtCore.QCoreApplication.translate('StickyMenuDemo', 'Custom predicate'),
                       self.menubar,
                       menu=StickyMenu(sticky_predicate=lambda a: a.text().startswith('[pin]')))
 
     def setup_actions(self):
         # --- Checkable-only menu ---
-        self.add_action('ch_toggle1', 'Toggle A', checkable=True, menu='checkable')
-        self.add_action('ch_toggle2', 'Toggle B', checkable=True, menu='checkable')
-        self.add_action('ch_normal', 'Normal action (closes menu)', menu='checkable')
+        self.add_action('ch_toggle1', QtCore.QCoreApplication.translate('StickyMenuDemo', 'Toggle A'), checkable=True, menu='checkable')
+        self.add_action('ch_toggle2', QtCore.QCoreApplication.translate('StickyMenuDemo', 'Toggle B'), checkable=True, menu='checkable')
+        self.add_action('ch_normal', QtCore.QCoreApplication.translate('StickyMenuDemo', 'Normal action (closes menu)'), menu='checkable')
 
         # --- All-sticky menu ---
-        self.add_action('all_toggle', 'Toggle', checkable=True, menu='all')
-        self.add_action('all_normal', 'Normal action (stays open)', menu='all')
+        self.add_action('all_toggle', QtCore.QCoreApplication.translate('StickyMenuDemo', 'Toggle'), checkable=True, menu='all')
+        self.add_action('all_normal', QtCore.QCoreApplication.translate('StickyMenuDemo', 'Normal action (stays open)'), menu='all')
 
         # --- Custom predicate menu ---
-        self.add_action('pin_a', '[pin] Pinned action A', menu='custom')
-        self.add_action('pin_b', '[pin] Pinned action B', checkable=True, menu='custom')
-        self.add_action('unpin_c', 'Unpinned action C (closes menu)', menu='custom')
+        self.add_action('pin_a', QtCore.QCoreApplication.translate('StickyMenuDemo', '[pin] Pinned action A'), menu='custom')
+        self.add_action('pin_b', QtCore.QCoreApplication.translate('StickyMenuDemo', '[pin] Pinned action B'), checkable=True, menu='custom')
+        self.add_action('unpin_c', QtCore.QCoreApplication.translate('StickyMenuDemo', 'Unpinned action C (closes menu)'), menu='custom')
 
     def connect_things(self):
         for name in ('ch_toggle1', 'ch_toggle2', 'ch_normal',

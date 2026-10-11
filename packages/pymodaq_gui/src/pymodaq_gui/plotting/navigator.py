@@ -103,15 +103,15 @@ class Navigator(ParameterManager, ActionManager, QObject):
 
     def setup_actions(self):
 
-        self.add_action('load_scan', 'Load Scan file', 'NewLayer', 'Load scan file (.h5)')
-        self.add_action('load_image', 'Load Image File', 'Open_File_32', 'Load image file (.h5)')
-        self.add_action('ratio', 'Viewbox Aspect Ratio', 'Zoom_1_1', 'Set viewbox aspect ratio to 1', checkable=True)
-        self.add_action('move_at', 'Move at DoubleClicked', 'move_contour',
-                        'When selected, double clicking on viewbox will move DAQ_Move modules',
+        self.add_action('load_scan', QtCore.QCoreApplication.translate('Navigator', 'Load Scan file'), 'NewLayer', QtCore.QCoreApplication.translate('Navigator', 'Load scan file (.h5)'))
+        self.add_action('load_image', QtCore.QCoreApplication.translate('Navigator', 'Load Image File'), 'Open_File_32', QtCore.QCoreApplication.translate('Navigator', 'Load image file (.h5)'))
+        self.add_action('ratio', QtCore.QCoreApplication.translate('Navigator', 'Viewbox Aspect Ratio'), 'Zoom_1_1', QtCore.QCoreApplication.translate('Navigator', 'Set viewbox aspect ratio to 1'), checkable=True)
+        self.add_action('move_at', QtCore.QCoreApplication.translate('Navigator', 'Move at DoubleClicked'), 'move_contour',
+                        QtCore.QCoreApplication.translate('Navigator', 'When selected, double clicking on viewbox will move DAQ_Move modules'),
                         checkable=True)
-        self.add_action('select_all', 'Select All', 'select_all2', 'Select (show) all 2D scans on the viewer')
-        self.add_action('select_none', 'Select None', 'select_none', 'Unselect (hide) all 2D scans on the viewer')
-        self.add_action('histogram', 'Show Histograms', 'Histogram', 'Show (hide) histograms', checkable=True)
+        self.add_action('select_all', QtCore.QCoreApplication.translate('Navigator', 'Select All'), 'select_all2', QtCore.QCoreApplication.translate('Navigator', 'Select (show) all 2D scans on the viewer'))
+        self.add_action('select_none', QtCore.QCoreApplication.translate('Navigator', 'Select None'), 'select_none', QtCore.QCoreApplication.translate('Navigator', 'Unselect (hide) all 2D scans on the viewer'))
+        self.add_action('histogram', QtCore.QCoreApplication.translate('Navigator', 'Show Histograms'), 'Histogram', QtCore.QCoreApplication.translate('Navigator', 'Show (hide) histograms'), checkable=True)
 
     def connect_things(self):
         self.connect_action('load_scan', self.load_data)
@@ -310,7 +310,7 @@ class Navigator(ParameterManager, ActionManager, QObject):
         self.statusbar = QtWidgets.QStatusBar()
         self.statusbar.setMaximumHeight(25)
         layout.addWidget(self.statusbar)
-        self.log_message = QtWidgets.QLabel('Initializing')
+        self.log_message = QtWidgets.QLabel(QtCore.QCoreApplication.translate('Navigator', 'Initializing'))
         self.statusbar.addPermanentWidget(self.log_message)
 
         self.sett_layout.addWidget(self.settings_tree)

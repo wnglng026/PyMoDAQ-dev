@@ -389,20 +389,20 @@ class CustomApp(QObject, ActionManager, ParameterManager):
 
     def setup_workflow_actions(self):
         if 'actions' not in self.menus:
-            self.add_menu('actions', 'Actions', parent_menu=self.menubar)
+            self.add_menu('actions', QtCore.QCoreApplication.translate('CustomApp', 'Actions'), parent_menu=self.menubar)
 
-        self.add_action(WorkFlowActions.START, 'Start Workflow', 'motion_play',
-                        "Start the workflow",
+        self.add_action(WorkFlowActions.START, QtCore.QCoreApplication.translate('CustomApp', 'Start Workflow'), 'motion_play',
+                        QtCore.QCoreApplication.translate('CustomApp', "Start the workflow"),
                         menu='actions', icon_color=self.get_theme().green)
-        self.add_action(WorkFlowActions.STOP, 'Stop Workflow', 'stop_circle', "Stop the workflow",
+        self.add_action(WorkFlowActions.STOP, QtCore.QCoreApplication.translate('CustomApp', 'Stop Workflow'), 'stop_circle', QtCore.QCoreApplication.translate('CustomApp', "Stop the workflow"),
                         menu='actions', icon_color=self.get_theme().red)
-        self.add_action(WorkFlowActions.PAUSE, 'Pause Workflow', 'pause_circle', "Pause/resume the workflow",
+        self.add_action(WorkFlowActions.PAUSE, QtCore.QCoreApplication.translate('CustomApp', 'Pause Workflow'), 'pause_circle', "Pause/resume the workflow",
                         checkable=True, menu='actions',
                         icon_checked_color=self.get_theme().orange)
 
         self.toolbar.addSeparator()
-        self.add_action(WorkFlowActions.LOG, 'Do Logging', 'home_storage',
-                        tip='Log all data generated within the workflow',
+        self.add_action(WorkFlowActions.LOG, QtCore.QCoreApplication.translate('CustomApp', 'Do Logging'), 'home_storage',
+                        tip=QtCore.QCoreApplication.translate('CustomApp', 'Log all data generated within the workflow'),
                         menu='actions',
                         icon_checked_color=self.get_theme().green,
                         icon_color=self.get_theme().red,

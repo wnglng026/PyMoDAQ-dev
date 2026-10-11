@@ -9,6 +9,7 @@ from pymodaq_gui.managers.parameter_manager import ParameterManager
 from pymodaq_gui.parameter import ioxml, Parameter
 from pymodaq_gui.utils import select_file
 from pymodaq_gui.messenger import dialog as dialogbox
+from qtpy import QtCore
 
 
 logger = set_logger(get_module_name(__file__))
@@ -163,7 +164,7 @@ class ConfigManager(ParameterManager):
         buttonBox.rejected.connect(dialog.reject)
 
         vlayout.addWidget(buttonBox)
-        dialog.setWindowTitle("Fill in information about this managers")
+        dialog.setWindowTitle(QtCore.QCoreApplication.translate('ConfigManager', "Fill in information about this managers"))
 
         if widget is not None and isinstance(widget, QtWidgets.QWidget):
             vlayout.addWidget(widget)

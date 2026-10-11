@@ -28,6 +28,7 @@ from pymodaq_gui.utils.dock import Dock
 import numpy as np
 from collections import OrderedDict
 import datetime
+from qtpy import QtCore
 
 logger = set_logger(get_module_name(__file__))
 PLOT_COLORS = [dict(color=color) for color in PlotColors()]
@@ -293,25 +294,25 @@ class View0D(ActionManager, QObject):
         self._title = value
 
     def setup_actions(self):
-        self.add_action('clear', 'Clear plot', 'ink_eraser', 'Clear the current plots')
-        self.add_widget('Nhistory', SpinBox, tip='Set the history length of the plot',
+        self.add_action('clear', QtCore.QCoreApplication.translate('View0D', 'Clear plot'), 'ink_eraser', QtCore.QCoreApplication.translate('View0D', 'Clear the current plots'))
+        self.add_widget('Nhistory', SpinBox, tip=QtCore.QCoreApplication.translate('View0D', 'Set the history length of the plot'),
                         setters=dict(setMaximumWidth=100))
-        self.add_action('show_data_as_list', 'Show numbers', 'pin', 'If triggered, will display last data as numbers'
-                                                                       'in a side panel', checkable=True)
+        self.add_action('show_data_as_list', QtCore.QCoreApplication.translate('View0D', 'Show numbers'), 'pin', QtCore.QCoreApplication.translate('View0D', 'If triggered, will display last data as numbers'
+                                                                       'in a side panel'), checkable=True)
         self.add_action('show_min_max', 'Show Min/Max lines', 'contrast_square',
                         'If triggered, will display horizontal dashed lines for min/max of data', checkable=True)
-        self.add_action('use_timestamps', 'Use Timestamps', 'timer_off',
-                        'Use timestamps as axis', checkable=True,
+        self.add_action('use_timestamps', QtCore.QCoreApplication.translate('View0D', 'Use Timestamps'), 'timer_off',
+                        QtCore.QCoreApplication.translate('View0D', 'Use timestamps as axis'), checkable=True,
                         icon_checked='timer')
-        self.add_action('scatter', 'Scatter', 'scatter_plot', 'Switch between line or scatter plots',
+        self.add_action('scatter', QtCore.QCoreApplication.translate('View0D', 'Scatter'), 'scatter_plot', QtCore.QCoreApplication.translate('View0D', 'Switch between line or scatter plots'),
                         checkable=True)
-        self.add_action('xyplot', 'XYPlotting', 'function',
-                        'Switch between normal or XY representation (valid for 2 channels)',
+        self.add_action('xyplot', QtCore.QCoreApplication.translate('View0D', 'XYPlotting'), 'function',
+                        QtCore.QCoreApplication.translate('View0D', 'Switch between normal or XY representation (valid for 2 channels)'),
                         checkable=True,
                         visible=False)
-        self.add_action('sync_x_axis', 'Sync X axis', 'sync_disabled',
-                        'If checked, adding a new channel resets all histories so curves '
-                        'share the same x-axis origin', checkable=True, checked=True,
+        self.add_action('sync_x_axis', QtCore.QCoreApplication.translate('View0D', 'Sync X axis'), 'sync_disabled',
+                        QtCore.QCoreApplication.translate('View0D', 'If checked, adding a new channel resets all histories so curves '
+                        'share the same x-axis origin'), checkable=True, checked=True,
                         icon_checked='sync_lock',
                         icon_color='#F9A825', icon_checked_color='#607D8B')
 

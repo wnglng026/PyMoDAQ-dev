@@ -114,7 +114,7 @@ class TreeFromToml(ParameterManager, QObject):
     def show_dialog(self) -> bool:
 
         self.dialog = QtWidgets.QDialog()
-        self.dialog.setWindowTitle('Please enter new configuration values!')
+        self.dialog.setWindowTitle(QtCore.QCoreApplication.translate('TreeFromToml', 'Please enter new configuration values!'))
         self.dialog.setLayout(QtWidgets.QVBoxLayout())
         button_box = QtWidgets.QDialogButtonBox(parent=self.dialog)
 
@@ -128,7 +128,7 @@ class TreeFromToml(ParameterManager, QObject):
 
         self.dialog.layout().addWidget(self.settings_tree)
         self.dialog.layout().addWidget(button_box)
-        self.dialog.setWindowTitle('Preferences entries')
+        self.dialog.setWindowTitle(QtCore.QCoreApplication.translate('TreeFromToml', 'Preferences entries'))
         res = self.dialog.exec()
 
         if res == QtWidgets.QDialog.DialogCode.Accepted:

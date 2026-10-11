@@ -193,23 +193,23 @@ class H5Browser(CustomApp):
 
     def setup_menus_and_toolbars(self, menubar: QtWidgets.QMenuBar):
 
-        self.add_menu(MenuToolbarNames.FILE, 'File', parent_menu=self.menubar)
+        self.add_menu(MenuToolbarNames.FILE, QtCore.QCoreApplication.translate('H5Browser', 'File'), parent_menu=self.menubar)
 
     def setup_actions(self):
-        self.add_action('export', 'Export as', 'file_export', tip='Export node content (and children) as ',
+        self.add_action('export', QtCore.QCoreApplication.translate('H5Browser', 'Export as'), 'file_export', tip=QtCore.QCoreApplication.translate('H5Browser', 'Export node content (and children) as '),
                         auto_toolbar=False)
-        self.add_action('comment', 'Add Comment', 'add_notes', tip='Add comments to the node',
+        self.add_action('comment', QtCore.QCoreApplication.translate('H5Browser', 'Add Comment'), 'add_notes', tip=QtCore.QCoreApplication.translate('H5Browser', 'Add comments to the node'),
                         auto_toolbar=False)
-        self.add_action('plot_node', 'Plot Node', 'color', tip='Plot the current node',
+        self.add_action('plot_node', QtCore.QCoreApplication.translate('H5Browser', 'Plot Node'), 'color', tip=QtCore.QCoreApplication.translate('H5Browser', 'Plot the current node'),
                         auto_toolbar=False)
-        self.add_action('plot_nodes', 'Plot Nodes', 'color', tip='Plot all nodes hanging from the same parent',
+        self.add_action('plot_nodes', QtCore.QCoreApplication.translate('H5Browser', 'Plot Nodes'), 'color', tip=QtCore.QCoreApplication.translate('H5Browser', 'Plot all nodes hanging from the same parent'),
                         auto_toolbar=False)
-        self.add_action('plot_node_with_bkg', 'Plot Node With Bkg', 'color', tip='Plot the current node with background'
-                                                                                 ' substraction if possible',
+        self.add_action('plot_node_with_bkg', QtCore.QCoreApplication.translate('H5Browser', 'Plot Node With Bkg'), 'color', tip=QtCore.QCoreApplication.translate('H5Browser', 'Plot the current node with background'
+                                                                                 ' substraction if possible'),
                         auto_toolbar=False)
-        self.add_action('plot_nodes_with_bkg', 'Plot Nodes With Bkg', 'color', tip='Plot all nodes hanging from'
+        self.add_action('plot_nodes_with_bkg', QtCore.QCoreApplication.translate('H5Browser', 'Plot Nodes With Bkg'), 'color', tip=QtCore.QCoreApplication.translate('H5Browser', 'Plot all nodes hanging from'
                                                                                    ' the same parent with background'
-                                                                                   ' substraction if possible',
+                                                                                   ' substraction if possible'),
                         auto_toolbar=False)
 
         self.view.add_actions([self.get_action('export'), self.get_action('comment'),
@@ -217,10 +217,10 @@ class H5Browser(CustomApp):
                                self.get_action('plot_node_with_bkg'),
                                self.get_action('plot_nodes_with_bkg')])
 
-        self.add_action('load', 'Load File', 'file_open', tip='Open a new file', menu=MenuToolbarNames.FILE)
-        self.add_action('save', 'Save File as', 'file_save', tip='Save as another file', menu=MenuToolbarNames.FILE)
-        self.add_action('refresh', 'Refresh', 'refresh',
-                        tip='Refresh the file view (useful for SWMR live files)',
+        self.add_action('load', QtCore.QCoreApplication.translate('H5Browser', 'Load File'), 'file_open', tip=QtCore.QCoreApplication.translate('H5Browser', 'Open a new file'), menu=MenuToolbarNames.FILE)
+        self.add_action('save', QtCore.QCoreApplication.translate('H5Browser', 'Save File as'), 'file_save', tip=QtCore.QCoreApplication.translate('H5Browser', 'Save as another file'), menu=MenuToolbarNames.FILE)
+        self.add_action('refresh', QtCore.QCoreApplication.translate('H5Browser', 'Refresh'), 'refresh',
+                        tip=QtCore.QCoreApplication.translate('H5Browser', 'Refresh the file view (useful for SWMR live files)'),
                         shortcut=QtCore.Qt.Key_F5, menu=MenuToolbarNames.FILE)
 
     def connect_things(self):
@@ -552,9 +552,9 @@ def browse_data(fname=None, ret_all=False, message=None) -> Tuple[data_saving.Da
         buttonBox.rejected.connect(dialog.reject)
         vlayout.addWidget(buttonBox)
 
-        dialog.setWindowTitle('Select a data node in the tree')
+        dialog.setWindowTitle(QtCore.QCoreApplication.translate('browsing', 'Select a data node in the tree'))
         if message is None or not isinstance(message, str):
-            dialog.setWindowTitle('Select a data node in the tree')
+            dialog.setWindowTitle(QtCore.QCoreApplication.translate('browsing', 'Select a data node in the tree'))
         else:
             dialog.setWindowTitle(message)
         res = dialog.exec()

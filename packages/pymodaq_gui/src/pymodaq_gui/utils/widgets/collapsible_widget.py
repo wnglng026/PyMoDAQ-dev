@@ -10,6 +10,7 @@ from qtpy.QtWidgets import (
 )
 from qtpy.QtCore import Qt, QPropertyAnimation, QEasingCurve, Signal
 import sys
+from qtpy import QtCore
 
 symbol_pairs = [
     ("▲", "▼"),
@@ -179,7 +180,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
 
     window = QWidget()
-    window.setWindowTitle("Collapsible Widget - All Directions Demo")
+    window.setWindowTitle(QtCore.QCoreApplication.translate('collapsible_widget', "Collapsible Widget - All Directions Demo"))
     window.setGeometry(100, 100, 800, 600)
 
     main_layout = QVBoxLayout(window)
@@ -193,7 +194,7 @@ if __name__ == "__main__":
     left_layout = QVBoxLayout(left_section)
     left_layout.addWidget(QLabel("<b>LEFT Direction</b>"))
 
-    toggle_left = QPushButton("◀")
+    toggle_left = QPushButton(QtCore.QCoreApplication.translate('collapsible_widget', "◀"))
     toggle_left.setFixedWidth(30)
     toggle_left.setStyleSheet("""
         QPushButton {
@@ -210,9 +211,9 @@ if __name__ == "__main__":
     content_left = QFrame()
     content_left.setStyleSheet("background-color: #d1ecf1; border: 2px solid #17a2b8;")
     content_left_layout = QVBoxLayout(content_left)
-    content_left_layout.addWidget(QLabel("Left Panel"))
-    content_left_layout.addWidget(QPushButton("Option 1"))
-    content_left_layout.addWidget(QPushButton("Option 2"))
+    content_left_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('collapsible_widget', "Left Panel")))
+    content_left_layout.addWidget(QPushButton(QtCore.QCoreApplication.translate('collapsible_widget', "Option 1")))
+    content_left_layout.addWidget(QPushButton(QtCore.QCoreApplication.translate('collapsible_widget', "Option 2")))
 
     collapsible_left = CollapsibleWidget(
         toggle_left, content_left, direction="left", content_before_toggle=True,
@@ -227,7 +228,7 @@ if __name__ == "__main__":
     right_layout = QVBoxLayout(right_section)
     right_layout.addWidget(QLabel("<b>RIGHT Direction</b>"))
 
-    toggle_right = QPushButton("▶")
+    toggle_right = QPushButton(QtCore.QCoreApplication.translate('collapsible_widget', "▶"))
     toggle_right.setFixedWidth(30)
     toggle_right.setStyleSheet("""
         QPushButton {
@@ -244,7 +245,7 @@ if __name__ == "__main__":
     content_right = QFrame()
     content_right.setStyleSheet("background-color: #d4edda; border: 2px solid #28a745;")
     content_right_layout = QVBoxLayout(content_right)
-    content_right_layout.addWidget(QLabel("Right Panel"))
+    content_right_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('collapsible_widget', "Right Panel")))
     content_right_layout.addWidget(QLineEdit("Setting 1"))
     content_right_layout.addWidget(QLineEdit("Setting 2"))
 
@@ -261,7 +262,7 @@ if __name__ == "__main__":
     # TOP direction example
     main_layout.addWidget(QLabel("<b>TOP Direction</b>"))
 
-    toggle_top = QPushButton("▲")
+    toggle_top = QPushButton(QtCore.QCoreApplication.translate('collapsible_widget', "▲"))
     toggle_top.setStyleSheet("""
         QPushButton {
             background-color: #007bff;
@@ -277,8 +278,8 @@ if __name__ == "__main__":
     content_top = QFrame()
     content_top.setStyleSheet("background-color: #cce5ff; border: 2px solid #007bff;")
     content_top_layout = QVBoxLayout(content_top)
-    content_top_layout.addWidget(QLabel("Top Content Area"))
-    content_top_layout.addWidget(QPushButton("Action Button"))
+    content_top_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('collapsible_widget', "Top Content Area")))
+    content_top_layout.addWidget(QPushButton(QtCore.QCoreApplication.translate('collapsible_widget', "Action Button")))
 
     collapsible_top = CollapsibleWidget(
         toggle_top, content_top, direction="top", content_before_toggle=True,
@@ -288,7 +289,7 @@ if __name__ == "__main__":
     # BOTTOM direction example
     main_layout.addWidget(QLabel("<b>BOTTOM Direction</b>"))
 
-    toggle_bottom = QPushButton("▼")
+    toggle_bottom = QPushButton(QtCore.QCoreApplication.translate('collapsible_widget', "▼"))
     toggle_bottom.setStyleSheet("""
         QPushButton {
             background-color: #ffc107;
@@ -306,8 +307,8 @@ if __name__ == "__main__":
         "background-color: #fff3cd; border: 2px solid #ffc107;",
     )
     content_bottom_layout = QVBoxLayout(content_bottom)
-    content_bottom_layout.addWidget(QLabel("Bottom Content Area"))
-    content_bottom_layout.addWidget(QLabel("Additional Information"))
+    content_bottom_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('collapsible_widget', "Bottom Content Area")))
+    content_bottom_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('collapsible_widget', "Additional Information")))
 
     collapsible_bottom = CollapsibleWidget(
         toggle_bottom, content_bottom, direction="bottom", content_before_toggle=False,

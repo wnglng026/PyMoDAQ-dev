@@ -103,7 +103,7 @@ def main(data_distribution='uniform'):
 
     widget_button = QtWidgets.QWidget()
     widget_button.setLayout(QtWidgets.QHBoxLayout())
-    button = QtWidgets.QPushButton('New Data')
+    button = QtWidgets.QPushButton(QtCore.QCoreApplication.translate('curves', 'New Data'))
     ndata = QtWidgets.QSpinBox()
     widget_button.layout().addWidget(button)
     widget_button.layout().addWidget(ndata)

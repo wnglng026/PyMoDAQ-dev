@@ -17,6 +17,7 @@ from qtpy.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout,
 from qtpy.QtCore import Qt
 
 from pymodaq_gui.utils.widget_sync import WidgetSync, SyncMode
+from qtpy import QtCore
 
 
 class BasicCheckboxSync(QWidget):
@@ -27,26 +28,26 @@ class BasicCheckboxSync(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: Module state sync between compact and full views\n"
+            QtCore.QCoreApplication.translate('BasicCheckboxSync', "Use Case: Module state sync between compact and full views\n"
             "✓ All checkboxes stay in sync\n"
-            "✓ Change any one, all update",
+            "✓ Change any one, all update"),
         ))
 
         # Create checkboxes
-        compact_group = QGroupBox("Compact View")
+        compact_group = QGroupBox(QtCore.QCoreApplication.translate('BasicCheckboxSync', "Compact View"))
         compact_layout = QHBoxLayout()
-        self.compact_init = QCheckBox("Init")
-        self.compact_grab = QCheckBox("Grab")
+        self.compact_init = QCheckBox(QtCore.QCoreApplication.translate('BasicCheckboxSync', "Init"))
+        self.compact_grab = QCheckBox(QtCore.QCoreApplication.translate('BasicCheckboxSync', "Grab"))
         compact_layout.addWidget(self.compact_init)
         compact_layout.addWidget(self.compact_grab)
         compact_layout.addStretch()
         compact_group.setLayout(compact_layout)
         layout.addWidget(compact_group)
 
-        full_group = QGroupBox("Full View")
+        full_group = QGroupBox(QtCore.QCoreApplication.translate('BasicCheckboxSync', "Full View"))
         full_layout = QHBoxLayout()
-        self.full_init = QCheckBox("Module Initialized")
-        self.full_grab = QCheckBox("Continuous Grabbing")
+        self.full_init = QCheckBox(QtCore.QCoreApplication.translate('BasicCheckboxSync', "Module Initialized"))
+        self.full_grab = QCheckBox(QtCore.QCoreApplication.translate('BasicCheckboxSync', "Continuous Grabbing"))
         full_layout.addWidget(self.full_init)
         full_layout.addWidget(self.full_grab)
         full_layout.addStretch()
@@ -84,14 +85,14 @@ class DifferentWidgetTypes(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: Control same value with different widgets\n"
+            QtCore.QCoreApplication.translate('DifferentWidgetTypes', "Use Case: Control same value with different widgets\n"
             "✓ Slider, SpinBox, Progress all sync\n"
-            "✓ match='property' allows different types",
+            "✓ match='property' allows different types"),
         ))
 
         # Slider
         slider_layout = QHBoxLayout()
-        slider_layout.addWidget(QLabel("Slider:"))
+        slider_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('DifferentWidgetTypes', "Slider:")))
         self.slider = QSlider(Qt.Orientation.Horizontal)
         self.slider.setRange(0, 100)
         slider_layout.addWidget(self.slider)
@@ -99,7 +100,7 @@ class DifferentWidgetTypes(QWidget):
 
         # SpinBox
         spin_layout = QHBoxLayout()
-        spin_layout.addWidget(QLabel("SpinBox:"))
+        spin_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('DifferentWidgetTypes', "SpinBox:")))
         self.spinbox = QSpinBox()
         self.spinbox.setRange(0, 100)
         self.spinbox.setSuffix(" %")
@@ -109,7 +110,7 @@ class DifferentWidgetTypes(QWidget):
 
         # Progress (read-only)
         progress_layout = QHBoxLayout()
-        progress_layout.addWidget(QLabel("Progress:"))
+        progress_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('DifferentWidgetTypes', "Progress:")))
         self.progress = QProgressBar()
         self.progress.setRange(0, 100)
         progress_layout.addWidget(self.progress)
@@ -144,9 +145,9 @@ class OppositeCheckboxes(QWidget):
         ))
 
         # Enable/Disable pair
-        self.enable_checkbox = QCheckBox("Enable Acquisition")
+        self.enable_checkbox = QCheckBox(QtCore.QCoreApplication.translate('OppositeCheckboxes', "Enable Acquisition"))
         self.enable_checkbox.setChecked(True)
-        self.disable_checkbox = QCheckBox("Disable Acquisition")
+        self.disable_checkbox = QCheckBox(QtCore.QCoreApplication.translate('OppositeCheckboxes', "Disable Acquisition"))
 
         layout.addWidget(self.enable_checkbox)
         layout.addWidget(self.disable_checkbox)
@@ -162,10 +163,10 @@ class OppositeCheckboxes(QWidget):
 
         # Code snippet
         code = QLabel(
-            "Implementation:\n"
+            QtCore.QCoreApplication.translate('OppositeCheckboxes', "Implementation:\n"
             "sync.add(opposite_checkbox, match='property',\n"
             "         to_sync_transform=lambda v: not v,\n"
-            "         from_sync_transform=lambda v: not v)",
+            "         from_sync_transform=lambda v: not v)"),
         )
         code.setStyleSheet("font-family: monospace; padding: 10px; border-radius: 5px;")
         layout.addWidget(code)
@@ -181,24 +182,24 @@ class EnableDisablePattern(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: Enable advanced controls conditionally\n"
-            "✓ Use value_changed signal to control widget states",
+            QtCore.QCoreApplication.translate('EnableDisablePattern', "Use Case: Enable advanced controls conditionally\n"
+            "✓ Use value_changed signal to control widget states"),
         ))
 
         # Master enable
-        self.master_enable = QCheckBox("Enable Advanced Controls")
+        self.master_enable = QCheckBox(QtCore.QCoreApplication.translate('EnableDisablePattern', "Enable Advanced Controls"))
         layout.addWidget(self.master_enable)
 
         # Controlled widgets
-        controls_group = QGroupBox("Advanced Controls")
+        controls_group = QGroupBox(QtCore.QCoreApplication.translate('EnableDisablePattern', "Advanced Controls"))
         controls_layout = QHBoxLayout()
         self.spin1 = QSpinBox()
         self.spin1.setRange(0, 100)
         self.spin2 = QSpinBox()
         self.spin2.setRange(0, 100)
-        controls_layout.addWidget(QLabel("Setting 1:"))
+        controls_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('EnableDisablePattern', "Setting 1:")))
         controls_layout.addWidget(self.spin1)
-        controls_layout.addWidget(QLabel("Setting 2:"))
+        controls_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('EnableDisablePattern', "Setting 2:")))
         controls_layout.addWidget(self.spin2)
         controls_layout.addStretch()
         controls_group.setLayout(controls_layout)
@@ -224,14 +225,14 @@ class ValueTransforms(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: Temperature conversion\n"
+            QtCore.QCoreApplication.translate('ValueTransforms', "Use Case: Temperature conversion\n"
             "✓ Celsius spinbox controls the sync\n"
-            "✓ Fahrenheit spinbox uses transforms for conversion",
+            "✓ Fahrenheit spinbox uses transforms for conversion"),
         ))
 
         # Celsius (master)
         c_layout = QHBoxLayout()
-        c_layout.addWidget(QLabel("Celsius:"))
+        c_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('ValueTransforms', "Celsius:")))
         self.celsius_spin = QSpinBox()
         self.celsius_spin.setRange(-100, 100)
         self.celsius_spin.setSuffix(" °C")
@@ -241,7 +242,7 @@ class ValueTransforms(QWidget):
 
         # Fahrenheit (with transform)
         f_layout = QHBoxLayout()
-        f_layout.addWidget(QLabel("Fahrenheit:"))
+        f_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('ValueTransforms', "Fahrenheit:")))
         self.fahrenheit_spin = QSpinBox()
         self.fahrenheit_spin.setRange(-148, 212)
         self.fahrenheit_spin.setSuffix(" °F")
@@ -277,8 +278,8 @@ class ManyWidgets(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use case: Different representations of the same value\n"
-            "Shows WidgetSync works with ANY Qt widget type",
+            QtCore.QCoreApplication.translate('ManyWidgets', "Use case: Different representations of the same value\n"
+            "Shows WidgetSync works with ANY Qt widget type"),
         ))
 
         # Create many different widgets for 0-100 value
@@ -298,28 +299,28 @@ class ManyWidgets(QWidget):
         self.multi_lineedit = QLineEdit()
         self.multi_lineedit.setPlaceholderText("Type 0-100")
 
-        self.multi_label = QLabel("Value: 50")
+        self.multi_label = QLabel(QtCore.QCoreApplication.translate('ManyWidgets', "Value: 50"))
 
         # Layout
         row1 = QHBoxLayout()
-        row1.addWidget(QLabel("Slider:"))
+        row1.addWidget(QLabel(QtCore.QCoreApplication.translate('ManyWidgets', "Slider:")))
         row1.addWidget(self.multi_slider)
         layout.addLayout(row1)
 
         row2 = QHBoxLayout()
-        row2.addWidget(QLabel("SpinBox:"))
+        row2.addWidget(QLabel(QtCore.QCoreApplication.translate('ManyWidgets', "SpinBox:")))
         row2.addWidget(self.multi_spin)
-        row2.addWidget(QLabel("Dial:"))
+        row2.addWidget(QLabel(QtCore.QCoreApplication.translate('ManyWidgets', "Dial:")))
         row2.addWidget(self.multi_dial)
         layout.addLayout(row2)
 
         row3 = QHBoxLayout()
-        row3.addWidget(QLabel("Progress:"))
+        row3.addWidget(QLabel(QtCore.QCoreApplication.translate('ManyWidgets', "Progress:")))
         row3.addWidget(self.multi_progress)
         layout.addLayout(row3)
 
         row4 = QHBoxLayout()
-        row4.addWidget(QLabel("Text:"))
+        row4.addWidget(QLabel(QtCore.QCoreApplication.translate('ManyWidgets', "Text:")))
         row4.addWidget(self.multi_lineedit)
         row4.addWidget(self.multi_label)
 
@@ -383,15 +384,15 @@ class EnableVsBind(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Understanding enable() vs bind()\n"
+            QtCore.QCoreApplication.translate('EnableVsBind', "Understanding enable() vs bind()\n"
             "✓ enable() - Resumes sync but widget keeps its old value\n"
-            "✓ bind() - Creates connection and updates widget immediately",
+            "✓ bind() - Creates connection and updates widget immediately"),
         ))
 
         # Master slider
-        master_group = QGroupBox("Master Control")
+        master_group = QGroupBox(QtCore.QCoreApplication.translate('EnableVsBind', "Master Control"))
         master_layout = QVBoxLayout()
-        self.master_label = QLabel("Master: 50")
+        self.master_label = QLabel(QtCore.QCoreApplication.translate('EnableVsBind', "Master: 50"))
         master_layout.addWidget(self.master_label)
         self.master_slider = QSlider(Qt.Orientation.Horizontal)
         self.master_slider.setRange(0, 100)
@@ -404,21 +405,21 @@ class EnableVsBind(QWidget):
         # Slave A (enable/disable)
         slaveA_group = QGroupBox("Slave A (enable/disable test)")
         slaveA_layout = QVBoxLayout()
-        self.slaveA_label = QLabel("Slave A: 50")
+        self.slaveA_label = QLabel(QtCore.QCoreApplication.translate('EnableVsBind', "Slave A: 50"))
         slaveA_layout.addWidget(self.slaveA_label)
         self.slaveA_slider = QSlider(Qt.Orientation.Horizontal)
         self.slaveA_slider.setRange(0, 100)
         self.slaveA_slider.setValue(50)
         self.slaveA_slider.valueChanged.connect(lambda v: self.slaveA_label.setText(f"Slave A: {v}"))
         slaveA_layout.addWidget(self.slaveA_slider)
-        self.btnA_disable = QPushButton("Disable Slave A")
+        self.btnA_disable = QPushButton(QtCore.QCoreApplication.translate('EnableVsBind', "Disable Slave A"))
         self.btnA_disable.clicked.connect(self.disable_slaveA)
-        self.btnA_enable = QPushButton("Enable Slave A")
+        self.btnA_enable = QPushButton(QtCore.QCoreApplication.translate('EnableVsBind', "Enable Slave A"))
         self.btnA_enable.clicked.connect(self.enable_slaveA)
         self.btnA_enable.setEnabled(False)
         slaveA_layout.addWidget(self.btnA_disable)
         slaveA_layout.addWidget(self.btnA_enable)
-        self.statusA = QLabel("Status: Connected")
+        self.statusA = QLabel(QtCore.QCoreApplication.translate('EnableVsBind', "Status: Connected"))
         self.statusA.setStyleSheet("color: green;")
         slaveA_layout.addWidget(self.statusA)
         slaveA_group.setLayout(slaveA_layout)
@@ -427,21 +428,21 @@ class EnableVsBind(QWidget):
         # Slave B (unbind/bind)
         slaveB_group = QGroupBox("Slave B (unbind/bind test)")
         slaveB_layout = QVBoxLayout()
-        self.slaveB_label = QLabel("Slave B: 50")
+        self.slaveB_label = QLabel(QtCore.QCoreApplication.translate('EnableVsBind', "Slave B: 50"))
         slaveB_layout.addWidget(self.slaveB_label)
         self.slaveB_slider = QSlider(Qt.Orientation.Horizontal)
         self.slaveB_slider.setRange(0, 100)
         self.slaveB_slider.setValue(50)
         self.slaveB_slider.valueChanged.connect(lambda v: self.slaveB_label.setText(f"Slave B: {v}"))
         slaveB_layout.addWidget(self.slaveB_slider)
-        self.btnB_unbind = QPushButton("Unbind Slave B")
+        self.btnB_unbind = QPushButton(QtCore.QCoreApplication.translate('EnableVsBind', "Unbind Slave B"))
         self.btnB_unbind.clicked.connect(self.unbind_slaveB)
-        self.btnB_bind = QPushButton("Bind Slave B")
+        self.btnB_bind = QPushButton(QtCore.QCoreApplication.translate('EnableVsBind', "Bind Slave B"))
         self.btnB_bind.clicked.connect(self.bind_slaveB)
         self.btnB_bind.setEnabled(False)
         slaveB_layout.addWidget(self.btnB_unbind)
         slaveB_layout.addWidget(self.btnB_bind)
-        self.statusB = QLabel("Status: Connected")
+        self.statusB = QLabel(QtCore.QCoreApplication.translate('EnableVsBind', "Status: Connected"))
         self.statusB.setStyleSheet("color: green;")
         slaveB_layout.addWidget(self.statusB)
         slaveB_group.setLayout(slaveB_layout)
@@ -449,13 +450,13 @@ class EnableVsBind(QWidget):
 
         # Instructions
         instructions = QLabel(
-            "📋 Test Procedure:\n"
+            QtCore.QCoreApplication.translate('EnableVsBind', "📋 Test Procedure:\n"
             "1. Move Master to 70\n"
             "2. Click 'Disable Slave A' and 'Unbind Slave B'\n"
             "3. Move Master to 30\n"
             "4. Click 'Enable Slave A' → Slave A stays at 70 (no immediate update)\n"
             "5. Click 'Bind Slave B' → Slave B jumps to 30 (immediate update!)\n"
-            "6. Move Master to 50 → All sliders update (both are now syncing)",
+            "6. Move Master to 50 → All sliders update (both are now syncing)"),
         )
         instructions.setStyleSheet(
             "padding: 15px; border-radius: 5px; "
@@ -465,14 +466,14 @@ class EnableVsBind(QWidget):
 
         # Key difference
         comparison = QLabel(
-            "🔑 Key Difference:\n"
+            QtCore.QCoreApplication.translate('EnableVsBind', "🔑 Key Difference:\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             "disable() → enable():\n"
             "  • Connection preserved, widget keeps old value\n"
             "  • Use for temporary pause\n\n"
             "unbind() → bind():\n"
             "  • Connection removed, widget auto-updates on re-bind\n"
-            "  • Use for permanent disconnection",
+            "  • Use for permanent disconnection"),
         )
         comparison.setStyleSheet(
             "padding: 15px; border-radius: 5px; "
@@ -489,7 +490,7 @@ class EnableVsBind(QWidget):
 
     def disable_slaveA(self):
         self.sync.disable(self.slaveA_slider)
-        self.statusA.setText("Status: Disabled (connection preserved)")
+        self.statusA.setText(QtCore.QCoreApplication.translate('EnableVsBind', "Status: Disabled (connection preserved)"))
         self.statusA.setStyleSheet("color: orange;")
         self.btnA_disable.setEnabled(False)
         self.btnA_enable.setEnabled(True)
@@ -503,7 +504,7 @@ class EnableVsBind(QWidget):
 
     def unbind_slaveB(self):
         self.sync.unbind(self.slaveB_slider)
-        self.statusB.setText("Status: Unbound (connection removed)")
+        self.statusB.setText(QtCore.QCoreApplication.translate('EnableVsBind', "Status: Unbound (connection removed)"))
         self.statusB.setStyleSheet("color: red;")
         self.btnB_unbind.setEnabled(False)
         self.btnB_bind.setEnabled(True)
@@ -521,22 +522,22 @@ class BasicSyncDemo(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Level 1: Basic Widget Synchronization")
+        self.setWindowTitle(QtCore.QCoreApplication.translate('BasicSyncDemo', "Level 1: Basic Widget Synchronization"))
         self.setMinimumSize(800, 400)
 
         layout = QVBoxLayout(self)
-        header = QLabel("Basic Widget Synchronization - Start Here!")
+        header = QLabel(QtCore.QCoreApplication.translate('BasicSyncDemo', "Basic Widget Synchronization - Start Here!"))
         header.setStyleSheet("font-size: 14pt; font-weight: bold; padding: 10px;")
         layout.addWidget(header)
 
         tabs = QTabWidget()
-        tabs.addTab(BasicCheckboxSync(), "1. Checkboxes")
-        tabs.addTab(DifferentWidgetTypes(), "2. Different Types")
-        tabs.addTab(OppositeCheckboxes(), "3. Transforms")
+        tabs.addTab(BasicCheckboxSync(), QtCore.QCoreApplication.translate('BasicSyncDemo', "1. Checkboxes"))
+        tabs.addTab(DifferentWidgetTypes(), QtCore.QCoreApplication.translate('BasicSyncDemo', "2. Different Types"))
+        tabs.addTab(OppositeCheckboxes(), QtCore.QCoreApplication.translate('BasicSyncDemo', "3. Transforms"))
         tabs.addTab(EnableDisablePattern(), "4. Enable/Disable")
-        tabs.addTab(ValueTransforms(), "5. Unit Conversion")
-        tabs.addTab(ManyWidgets(), "6. Many Widgets")
-        tabs.addTab(EnableVsBind(), "7. Enable vs Bind")
+        tabs.addTab(ValueTransforms(), QtCore.QCoreApplication.translate('BasicSyncDemo', "5. Unit Conversion"))
+        tabs.addTab(ManyWidgets(), QtCore.QCoreApplication.translate('BasicSyncDemo', "6. Many Widgets"))
+        tabs.addTab(EnableVsBind(), QtCore.QCoreApplication.translate('BasicSyncDemo', "7. Enable vs Bind"))
 
         layout.addWidget(tabs)
 

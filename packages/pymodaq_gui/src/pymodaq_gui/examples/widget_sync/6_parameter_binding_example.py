@@ -29,6 +29,7 @@ from qtpy.QtCore import Qt
 
 from pymodaq_gui.parameter import Parameter, ParameterTree
 from pymodaq_gui.utils.widget_sync import WidgetSync, SyncMode
+from qtpy import QtCore
 
 
 class ParameterBindingExample(QMainWindow):
@@ -45,7 +46,7 @@ class ParameterBindingExample(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Example 6: Parameter Binding with Tabs")
+        self.setWindowTitle(QtCore.QCoreApplication.translate('ParameterBindingExample', "Example 6: Parameter Binding with Tabs"))
         self.resize(1200, 700)
 
         # Data lists
@@ -60,13 +61,13 @@ class ParameterBindingExample(QMainWindow):
 
         # Description
         desc = QLabel(
-            "bind_parameter() Method for Parameters\n"
+            QtCore.QCoreApplication.translate('ParameterBindingExample', "bind_parameter() Method for Parameters\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             "• Use bind_parameter() for pyqtgraph Parameters\n"
             "• Use bind_properties() for regular Qt widgets\n"
             "• Change values in any tab → parameter tree updates\n"
             "• Change values in tree → all tabs update\n"
-            "• No manual signal connections needed!",
+            "• No manual signal connections needed!"),
         )
         desc.setStyleSheet("font-family: monospace; padding: 10px;")
         layout.addWidget(desc)
@@ -118,14 +119,14 @@ class ParameterBindingExample(QMainWindow):
         self.create_position_tab()
 
         # Create parameter tree in dock
-        self.settings_dock = QDockWidget("Full Parameter Tree", self)
+        self.settings_dock = QDockWidget(QtCore.QCoreApplication.translate('ParameterBindingExample', "Full Parameter Tree"), self)
         self.tree = ParameterTree()
         self.tree.setParameters(self.settings, showTop=False)
         self.settings_dock.setWidget(self.tree)
         self.addDockWidget(Qt.RightDockWidgetArea, self.settings_dock)
 
         # Status display
-        status_group = QGroupBox("Synchronization Status")
+        status_group = QGroupBox(QtCore.QCoreApplication.translate('ParameterBindingExample', "Synchronization Status"))
         status_layout = QVBoxLayout(status_group)
         self.status_label = QLabel()
         self.status_label.setStyleSheet("padding: 10px; font-family: monospace;")
@@ -200,11 +201,11 @@ class ParameterBindingExample(QMainWindow):
         layout.addRow("Auto Process:", self.auto_check)
 
         # Test button
-        test_btn = QPushButton("Set Test Values")
+        test_btn = QPushButton(QtCore.QCoreApplication.translate('ParameterBindingExample', "Set Test Values"))
         test_btn.clicked.connect(self.set_test_values)
         layout.addRow("", test_btn)
 
-        self.tabs.addTab(tab, "Processing")
+        self.tabs.addTab(tab, QtCore.QCoreApplication.translate('ParameterBindingExample', "Processing"))
 
     def create_acquisition_tab(self):
         """Create Acquisition tab with widgets"""
@@ -234,7 +235,7 @@ class ParameterBindingExample(QMainWindow):
         self.trigger_check.setChecked(False)
         layout.addRow("Enable Trigger:", self.trigger_check)
 
-        self.tabs.addTab(tab, "Acquisition")
+        self.tabs.addTab(tab, QtCore.QCoreApplication.translate('ParameterBindingExample', "Acquisition"))
 
     def create_position_tab(self):
         """Create Position tab with widgets"""
@@ -265,10 +266,10 @@ class ParameterBindingExample(QMainWindow):
 
         # Label edit
         self.label_edit = QLineEdit()
-        self.label_edit.setText('Position 1')
+        self.label_edit.setText(QtCore.QCoreApplication.translate('ParameterBindingExample', 'Position 1'))
         layout.addRow("Label:", self.label_edit)
 
-        self.tabs.addTab(tab, "Position")
+        self.tabs.addTab(tab, QtCore.QCoreApplication.translate('ParameterBindingExample', "Position"))
 
     def bind_processing(self):
         """Bind Processing tab widgets and parameters"""

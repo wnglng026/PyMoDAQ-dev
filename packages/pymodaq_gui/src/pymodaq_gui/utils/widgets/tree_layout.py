@@ -60,19 +60,19 @@ class TreeLayout(QObject):
         iconopen = QtGui.QIcon()
         iconopen.addPixmap(QtGui.QPixmap("icons:tree.png"), QtGui.QIcon.Normal,
                            QtGui.QIcon.Off)
-        self.open_tree_pb = QtWidgets.QPushButton('Open Tree')
+        self.open_tree_pb = QtWidgets.QPushButton(QtCore.QCoreApplication.translate('TreeLayout', 'Open Tree'))
         self.open_tree_pb.setIcon(iconopen)
 
         iconopensel = QtGui.QIcon()
         iconopensel.addPixmap(QtGui.QPixmap("icons:tree.png"), QtGui.QIcon.Normal,
                               QtGui.QIcon.Off)
-        self.open_tree_selected_pb = QtWidgets.QPushButton('Open Selected')
+        self.open_tree_selected_pb = QtWidgets.QPushButton(QtCore.QCoreApplication.translate('TreeLayout', 'Open Selected'))
         self.open_tree_selected_pb.setIcon(iconopensel)
 
         iconclose = QtGui.QIcon()
         iconclose.addPixmap(QtGui.QPixmap("icons:CollapseAll.png"), QtGui.QIcon.Normal,
                             QtGui.QIcon.Off)
-        self.close_tree_pb = QtWidgets.QPushButton('Close Tree')
+        self.close_tree_pb = QtWidgets.QPushButton(QtCore.QCoreApplication.translate('TreeLayout', 'Close Tree'))
         self.close_tree_pb.setIcon(iconclose)
 
         hlayout.addWidget(self.open_tree_pb)
@@ -166,7 +166,7 @@ if __name__ == '__main__':
     prog = TreeLayout(Form, col_counts=2, labels=["Material", "File"])
 
     # example of actions to add to the tree widget in order to show a context menu
-    detector_action = QtWidgets.QAction("Grab from camera", None)
+    detector_action = QtWidgets.QAction(QtCore.QCoreApplication.translate('tree_layout', "Grab from camera"), None)
     prog.tree.addAction(detector_action)
     ########################
 

@@ -65,7 +65,7 @@ class ParameterTreeWidget(ActionManager):
         # self.tree.setMinimumWidth(150)
         # self.tree.setMinimumHeight(300)
 
-        toggle_btn = QtWidgets.QPushButton("▼")
+        toggle_btn = QtWidgets.QPushButton(QtCore.QCoreApplication.translate('ParameterTreeWidget', "▼"))
         toggle_btn.setFixedHeight(16)
         self.collapsible_widget = CollapsibleWidget(
             toggle_widget=toggle_btn,
@@ -155,33 +155,33 @@ class ParameterTreeWidget(ActionManager):
         # Saving action
         self.add_action(
             "save_settings",
-            "Save Settings",
+            QtCore.QCoreApplication.translate('ParameterTreeWidget', "Save Settings"),
             "save",
-            "Save current settings in an xml file",
+            QtCore.QCoreApplication.translate('ParameterTreeWidget', "Save current settings in an xml file"),
             visible="save" in action_list,
         )
         # Update action
         self.add_action(
             "update_settings",
-            "Update Settings",
+            QtCore.QCoreApplication.translate('ParameterTreeWidget', "Update Settings"),
             "refresh",
-            "Update the settings from an xml file, the settings structure loaded must be identical to the current one",
+            QtCore.QCoreApplication.translate('ParameterTreeWidget', "Update the settings from an xml file, the settings structure loaded must be identical to the current one"),
             visible="update" in action_list,
         )
         # Load action
         self.add_action(
             "load_settings",
-            "Load Settings",
+            QtCore.QCoreApplication.translate('ParameterTreeWidget', "Load Settings"),
             "file_open",
-            "Load current settings from an xml file, the current settings structure is erased and is replaced by the new one",
+            QtCore.QCoreApplication.translate('ParameterTreeWidget', "Load current settings from an xml file, the current settings structure is erased and is replaced by the new one"),
             visible="load" in action_list,
         )
         # Clear action
         self.add_action(
             "clear_settings",
-            "Clear Settings",
+            QtCore.QCoreApplication.translate('ParameterTreeWidget', "Clear Settings"),
             "ink_eraser",
-            "Clear the settings tree",
+            QtCore.QCoreApplication.translate('ParameterTreeWidget', "Clear the settings tree"),
             visible="clear" in action_list,
         )
 

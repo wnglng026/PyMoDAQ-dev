@@ -1,6 +1,7 @@
 from qtpy import QtWidgets
 
 from pymodaq_gui.utils.custom_app import CustomApp
+from qtpy import QtCore
 
 
 class MyApp(CustomApp):
@@ -25,23 +26,23 @@ class MyApp(CustomApp):
         if menubar is None:
             menubar = self.menubar
         self.create_object_toolbar(add_break=True)
-        self.add_menu('file', 'File', parent_menu=menubar)
-        self.add_menu('tools', 'Tools', parent_menu=menubar)
-        self.add_menu('subtools', 'SubTools', parent_menu='tools')
+        self.add_menu('file', QtCore.QCoreApplication.translate('MyApp', 'File'), parent_menu=menubar)
+        self.add_menu('tools', QtCore.QCoreApplication.translate('MyApp', 'Tools'), parent_menu=menubar)
+        self.add_menu('subtools', QtCore.QCoreApplication.translate('MyApp', 'SubTools'), parent_menu='tools')
         self.add_toolbar('file', 'file', parent_menu=self.mainwindow, add_break=False)
 
 
     def setup_actions(self):
-        self.add_action('new', 'New File', 'draft', 'Create a new file',
+        self.add_action('new', QtCore.QCoreApplication.translate('MyApp', 'New File'), 'draft', QtCore.QCoreApplication.translate('MyApp', 'Create a new file'),
                         toolbar='file', menu='file')
-        self.add_action('save', 'Save File', 'file_save', 'Save file as',
+        self.add_action('save', QtCore.QCoreApplication.translate('MyApp', 'Save File'), 'file_save', QtCore.QCoreApplication.translate('MyApp', 'Save file as'),
                         toolbar='file', menu='file')
-        self.add_action('load', 'Load File', 'file_open', 'Load file ',
+        self.add_action('load', QtCore.QCoreApplication.translate('MyApp', 'Load File'), 'file_open', QtCore.QCoreApplication.translate('MyApp', 'Load file '),
                         toolbar='file', menu='file')
 
-        self.add_action('tool1', 'Erase', 'ink_eraser', 'ink_eraser',
+        self.add_action('tool1', QtCore.QCoreApplication.translate('MyApp', 'Erase'), 'ink_eraser', 'ink_eraser',
                         menu='tools')
-        self.add_action('tool2', 'Erase off', 'ink_eraser_off', 'ink_eraser_off',
+        self.add_action('tool2', QtCore.QCoreApplication.translate('MyApp', 'Erase off'), 'ink_eraser_off', 'ink_eraser_off',
                         menu='subtools')
         self.add_action('tool3', 'input', 'input', 'input',
                         menu='subtools')

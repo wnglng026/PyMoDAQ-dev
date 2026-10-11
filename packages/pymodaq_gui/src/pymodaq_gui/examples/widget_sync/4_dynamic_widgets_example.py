@@ -18,6 +18,7 @@ from qtpy.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout,
 from qtpy.QtCore import Qt
 
 from pymodaq_gui.utils.widget_sync import WidgetSync, DictSync, SyncMode
+from qtpy import QtCore
 
 
 class DynamicSlidersExample(QWidget):
@@ -28,16 +29,16 @@ class DynamicSlidersExample(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: Audio mixer with dynamic channel strips\n"
+            QtCore.QCoreApplication.translate('DynamicSlidersExample', "Use Case: Audio mixer with dynamic channel strips\n"
             "✓ Start with 2 volume sliders\n"
             "✓ Click '+' to add more sliders - they automatically sync!\n"
             "✓ Click '×' to remove a slider - automatic cleanup\n"
-            "✓ All sliders stay synchronized",
+            "✓ All sliders stay synchronized"),
         ))
 
         # Controls
         controls = QHBoxLayout()
-        self.add_btn = QPushButton("+ Add Slider")
+        self.add_btn = QPushButton(QtCore.QCoreApplication.translate('DynamicSlidersExample', "+ Add Slider"))
         self.add_btn.clicked.connect(self.add_slider)
         controls.addWidget(self.add_btn)
 
@@ -47,7 +48,7 @@ class DynamicSlidersExample(QWidget):
         layout.addLayout(controls)
 
         # Sliders container
-        sliders_group = QGroupBox("Volume Controls (All Synchronized)")
+        sliders_group = QGroupBox(QtCore.QCoreApplication.translate('DynamicSlidersExample', "Volume Controls (All Synchronized)"))
         self.sliders_layout = QHBoxLayout()
         sliders_group.setLayout(self.sliders_layout)
         layout.addWidget(sliders_group)
@@ -92,13 +93,13 @@ class DynamicSlidersExample(QWidget):
         v_layout.addWidget(slider)
 
         # Value label
-        value_label = QLabel("50")
+        value_label = QLabel(QtCore.QCoreApplication.translate('DynamicSlidersExample', "50"))
         value_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         slider.valueChanged.connect(lambda v, lbl=value_label: lbl.setText(str(v)))
         v_layout.addWidget(value_label)
 
         # Remove button
-        remove_btn = QPushButton("×")
+        remove_btn = QPushButton(QtCore.QCoreApplication.translate('DynamicSlidersExample', "×"))
         remove_btn.setMaximumWidth(30)
         remove_btn.clicked.connect(lambda: self.remove_slider(container, slider))
         v_layout.addWidget(remove_btn)
@@ -166,12 +167,12 @@ class DynamicFormExample(QWidget):
 
         # Global controls
         global_controls = QHBoxLayout()
-        self.sync_enabled = QCheckBox("Sync All Devices")
+        self.sync_enabled = QCheckBox(QtCore.QCoreApplication.translate('DynamicFormExample', "Sync All Devices"))
         self.sync_enabled.setChecked(True)
         self.sync_enabled.toggled.connect(self.toggle_sync)
         global_controls.addWidget(self.sync_enabled)
 
-        self.add_device_btn = QPushButton("+ Add Device")
+        self.add_device_btn = QPushButton(QtCore.QCoreApplication.translate('DynamicFormExample', "+ Add Device"))
         self.add_device_btn.clicked.connect(self.add_device)
         global_controls.addWidget(self.add_device_btn)
 
@@ -211,14 +212,14 @@ class DynamicFormExample(QWidget):
 
         # Name field
         name_row = QHBoxLayout()
-        name_row.addWidget(QLabel("Name:"))
+        name_row.addWidget(QLabel(QtCore.QCoreApplication.translate('DynamicFormExample', "Name:")))
         name_edit = QLineEdit()
         name_row.addWidget(name_edit)
         form_layout.addLayout(name_row)
 
         # Port field
         port_row = QHBoxLayout()
-        port_row.addWidget(QLabel("Port:"))
+        port_row.addWidget(QLabel(QtCore.QCoreApplication.translate('DynamicFormExample', "Port:")))
         port_spin = QSpinBox()
         port_spin.setRange(1000, 65535)
         port_row.addWidget(port_spin)
@@ -226,7 +227,7 @@ class DynamicFormExample(QWidget):
         form_layout.addLayout(port_row)
 
         # Enabled checkbox
-        enabled_check = QCheckBox("Enabled")
+        enabled_check = QCheckBox(QtCore.QCoreApplication.translate('DynamicFormExample', "Enabled"))
         form_layout.addWidget(enabled_check)
 
         # Remove button
@@ -320,23 +321,23 @@ class CloneWidgetExample(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: Display settings across multiple monitors\n"
+            QtCore.QCoreApplication.translate('CloneWidgetExample', "Use Case: Display settings across multiple monitors\n"
             "✓ Each monitor has Brightness, Contrast, Color Temp\n"
             "✓ Clone button copies current monitor settings\n"
             "✓ All clones automatically sync with original\n"
-            "✓ Perfect for 'Apply to All' scenarios",
+            "✓ Perfect for 'Apply to All' scenarios"),
         ))
 
         # Controls
         controls = QHBoxLayout()
-        self.clone_btn = QPushButton("Clone Monitor")
+        self.clone_btn = QPushButton(QtCore.QCoreApplication.translate('CloneWidgetExample', "Clone Monitor"))
         self.clone_btn.clicked.connect(self.clone_monitor)
         controls.addWidget(self.clone_btn)
         controls.addStretch()
         layout.addLayout(controls)
 
         # Monitors container
-        monitors_group = QGroupBox("Monitor Settings (All Synchronized)")
+        monitors_group = QGroupBox(QtCore.QCoreApplication.translate('CloneWidgetExample', "Monitor Settings (All Synchronized)"))
         self.monitors_layout = QHBoxLayout()
         monitors_group.setLayout(self.monitors_layout)
         layout.addWidget(monitors_group)
@@ -379,25 +380,25 @@ class CloneWidgetExample(QWidget):
         v_layout.addWidget(title)
 
         # Brightness
-        v_layout.addWidget(QLabel("Brightness:"))
+        v_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('CloneWidgetExample', "Brightness:")))
         brightness_slider = QSlider(Qt.Orientation.Horizontal)
         brightness_slider.setRange(0, 100)
-        brightness_label = QLabel("50")
+        brightness_label = QLabel(QtCore.QCoreApplication.translate('CloneWidgetExample', "50"))
         brightness_slider.valueChanged.connect(lambda v, lbl=brightness_label: lbl.setText(str(v)))
         v_layout.addWidget(brightness_slider)
         v_layout.addWidget(brightness_label)
 
         # Contrast
-        v_layout.addWidget(QLabel("Contrast:"))
+        v_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('CloneWidgetExample', "Contrast:")))
         contrast_slider = QSlider(Qt.Orientation.Horizontal)
         contrast_slider.setRange(0, 100)
-        contrast_label = QLabel("50")
+        contrast_label = QLabel(QtCore.QCoreApplication.translate('CloneWidgetExample', "50"))
         contrast_slider.valueChanged.connect(lambda v, lbl=contrast_label: lbl.setText(str(v)))
         v_layout.addWidget(contrast_slider)
         v_layout.addWidget(contrast_label)
 
         # Color Temp
-        v_layout.addWidget(QLabel("Color Temp:"))
+        v_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('CloneWidgetExample', "Color Temp:")))
         temp_spin = QSpinBox()
         temp_spin.setRange(2000, 10000)
         temp_spin.setSuffix(" K")
@@ -405,7 +406,7 @@ class CloneWidgetExample(QWidget):
 
         # Remove button
         if self.monitor_count > 1:  # Don't show remove for first monitor
-            remove_btn = QPushButton("Remove Monitor")
+            remove_btn = QPushButton(QtCore.QCoreApplication.translate('CloneWidgetExample', "Remove Monitor"))
             remove_btn.clicked.connect(
                 lambda: self.remove_monitor(container, brightness_slider, contrast_slider, temp_spin),
             )
@@ -465,20 +466,20 @@ class AutoCleanupExample(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Use Case: Automatic cleanup demonstration\n"
+            QtCore.QCoreApplication.translate('AutoCleanupExample', "Use Case: Automatic cleanup demonstration\n"
             "✓ Create temporary widgets\n"
             "✓ Widgets automatically unbind when destroyed\n"
             "✓ No memory leaks - weak references used internally\n"
-            "✓ Safe to delete widgets without manual cleanup",
+            "✓ Safe to delete widgets without manual cleanup"),
         ))
 
         # Controls
         controls = QHBoxLayout()
-        self.create_btn = QPushButton("Create Temporary Widget")
+        self.create_btn = QPushButton(QtCore.QCoreApplication.translate('AutoCleanupExample', "Create Temporary Widget"))
         self.create_btn.clicked.connect(self.create_temporary_widget)
         controls.addWidget(self.create_btn)
 
-        self.destroy_btn = QPushButton("Destroy Oldest Widget")
+        self.destroy_btn = QPushButton(QtCore.QCoreApplication.translate('AutoCleanupExample', "Destroy Oldest Widget"))
         self.destroy_btn.clicked.connect(self.destroy_oldest)
         controls.addWidget(self.destroy_btn)
 
@@ -486,20 +487,20 @@ class AutoCleanupExample(QWidget):
         layout.addLayout(controls)
 
         # Master control
-        master_group = QGroupBox("Master Control (Always Visible)")
+        master_group = QGroupBox(QtCore.QCoreApplication.translate('AutoCleanupExample', "Master Control (Always Visible)"))
         master_layout = QVBoxLayout()
         self.master_slider = QSlider(Qt.Orientation.Horizontal)
         self.master_slider.setRange(0, 100)
-        self.master_label = QLabel("50")
+        self.master_label = QLabel(QtCore.QCoreApplication.translate('AutoCleanupExample', "50"))
         self.master_slider.valueChanged.connect(lambda v: self.master_label.setText(str(v)))
-        master_layout.addWidget(QLabel("Master Value:"))
+        master_layout.addWidget(QLabel(QtCore.QCoreApplication.translate('AutoCleanupExample', "Master Value:")))
         master_layout.addWidget(self.master_slider)
         master_layout.addWidget(self.master_label)
         master_group.setLayout(master_layout)
         layout.addWidget(master_group)
 
         # Temporary widgets container
-        temp_group = QGroupBox("Temporary Widgets (Auto-cleanup on destroy)")
+        temp_group = QGroupBox(QtCore.QCoreApplication.translate('AutoCleanupExample', "Temporary Widgets (Auto-cleanup on destroy)"))
         self.temp_layout = QHBoxLayout()
         temp_group.setLayout(self.temp_layout)
         layout.addWidget(temp_group)
@@ -544,7 +545,7 @@ class AutoCleanupExample(QWidget):
         slider.setMinimumHeight(100)
         v_layout.addWidget(slider)
 
-        value_label = QLabel("50")
+        value_label = QLabel(QtCore.QCoreApplication.translate('AutoCleanupExample', "50"))
         slider.valueChanged.connect(lambda v, lbl=value_label: lbl.setText(str(v)))
         v_layout.addWidget(value_label)
 
@@ -594,7 +595,7 @@ class DynamicWidgetsDemo(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Level 4: Dynamic Widget Management")
+        self.setWindowTitle(QtCore.QCoreApplication.translate('DynamicWidgetsDemo', "Level 4: Dynamic Widget Management"))
         self.setMinimumSize(900, 600)
 
         layout = QVBoxLayout(self)
@@ -603,10 +604,10 @@ class DynamicWidgetsDemo(QWidget):
         layout.addWidget(header)
 
         tabs = QTabWidget()
-        tabs.addTab(DynamicSlidersExample(), "1. Dynamic Sliders")
-        tabs.addTab(DynamicFormExample(), "2. Dynamic Forms")
-        tabs.addTab(CloneWidgetExample(), "3. Clone Widgets")
-        tabs.addTab(AutoCleanupExample(), "4. Auto Cleanup")
+        tabs.addTab(DynamicSlidersExample(), QtCore.QCoreApplication.translate('DynamicWidgetsDemo', "1. Dynamic Sliders"))
+        tabs.addTab(DynamicFormExample(), QtCore.QCoreApplication.translate('DynamicWidgetsDemo', "2. Dynamic Forms"))
+        tabs.addTab(CloneWidgetExample(), QtCore.QCoreApplication.translate('DynamicWidgetsDemo', "3. Clone Widgets"))
+        tabs.addTab(AutoCleanupExample(), QtCore.QCoreApplication.translate('DynamicWidgetsDemo', "4. Auto Cleanup"))
 
         layout.addWidget(tabs)
 

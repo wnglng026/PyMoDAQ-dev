@@ -28,6 +28,7 @@ from qtpy.QtCore import Qt, Signal
 
 from pymodaq_gui.utils.widget_sync import (WidgetSync, WidgetSyncFactories,
                                            BaseWidgetSync, SyncMode, DictSync)
+from qtpy import QtCore
 
 
 # =============================================================================
@@ -152,25 +153,25 @@ class FactoryMethodsExample(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Option 1: Custom Factory Methods (Easiest)\n"
+            QtCore.QCoreApplication.translate('FactoryMethodsExample', "Option 1: Custom Factory Methods (Easiest)\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             "✓ Extend WidgetSyncFactories with @classmethod\n"
             "✓ No need to subclass BaseWidgetSync\n"
             "✓ Perfect for common patterns in your application\n"
-            "✓ Combines existing sync functionality with convenience API",
+            "✓ Combines existing sync functionality with convenience API"),
         ))
 
         # Example 1: Range spinboxes
-        range_group = QGroupBox("Range SpinBoxes (Custom Factory)")
+        range_group = QGroupBox(QtCore.QCoreApplication.translate('FactoryMethodsExample', "Range SpinBoxes (Custom Factory)"))
         range_layout = QVBoxLayout()
 
         spin_row = QHBoxLayout()
-        spin_row.addWidget(QLabel("Min:"))
+        spin_row.addWidget(QLabel(QtCore.QCoreApplication.translate('FactoryMethodsExample', "Min:")))
         self.min_spin = QSpinBox()
         self.min_spin.setRange(0, 1000)
         spin_row.addWidget(self.min_spin)
 
-        spin_row.addWidget(QLabel("Max:"))
+        spin_row.addWidget(QLabel(QtCore.QCoreApplication.translate('FactoryMethodsExample', "Max:")))
         self.max_spin = QSpinBox()
         self.max_spin.setRange(0, 1000)
         spin_row.addWidget(self.max_spin)
@@ -196,7 +197,7 @@ class FactoryMethodsExample(QWidget):
         layout.addWidget(range_group)
 
         # Example 2: Slider with label
-        slider_group = QGroupBox("Slider with Label (Custom Factory)")
+        slider_group = QGroupBox(QtCore.QCoreApplication.translate('FactoryMethodsExample', "Slider with Label (Custom Factory)"))
         slider_layout = QVBoxLayout()
 
         self.slider = QSlider(Qt.Orientation.Horizontal)
@@ -222,7 +223,7 @@ class FactoryMethodsExample(QWidget):
 
         # Code example
         code = QLabel(
-            "Implementation:\n"
+            QtCore.QCoreApplication.translate('FactoryMethodsExample', "Implementation:\n"
             "class CustomFactories(WidgetSyncFactories):\n"
             "    @classmethod\n"
             "    def for_range_spinbox(cls, min_spin, max_spin, ...):\n"
@@ -234,7 +235,7 @@ class FactoryMethodsExample(QWidget):
             "    pass\n"
             "\n"
             "# Usage:\n"
-            "sync = MySync.for_range_spinbox(min_spin, max_spin)",
+            "sync = MySync.for_range_spinbox(min_spin, max_spin)"),
         )
         code.setStyleSheet("font-family: monospace; padding: 10px; font-size: 9pt;")
         layout.addWidget(code)
@@ -263,7 +264,7 @@ class ValidatorsExample(QWidget):
         ))
 
         # Example 1: Clamping validator
-        clamp_group = QGroupBox("Clamping Validator (Auto-correct)")
+        clamp_group = QGroupBox(QtCore.QCoreApplication.translate('ValidatorsExample', "Clamping Validator (Auto-correct)"))
         clamp_layout = QVBoxLayout()
 
         clamp_layout.addWidget(QLabel(
@@ -272,7 +273,7 @@ class ValidatorsExample(QWidget):
         ))
 
         input_row = QHBoxLayout()
-        input_row.addWidget(QLabel("Power:"))
+        input_row.addWidget(QLabel(QtCore.QCoreApplication.translate('ValidatorsExample', "Power:")))
         self.clamp_lineedit = QLineEdit()
         self.clamp_lineedit.setPlaceholderText("Type any value, press Enter")
         input_row.addWidget(self.clamp_lineedit)
@@ -282,7 +283,7 @@ class ValidatorsExample(QWidget):
 
         # Display widgets showing clamped value
         display_row = QHBoxLayout()
-        display_row.addWidget(QLabel("Display 1:"))
+        display_row.addWidget(QLabel(QtCore.QCoreApplication.translate('ValidatorsExample', "Display 1:")))
         self.clamp_spin1 = QSpinBox()
         self.clamp_spin1.setRange(0, 100)
         self.clamp_spin1.setReadOnly(True)
@@ -290,7 +291,7 @@ class ValidatorsExample(QWidget):
         self.clamp_spin1.setSuffix(" W")
         display_row.addWidget(self.clamp_spin1)
 
-        display_row.addWidget(QLabel("Display 2:"))
+        display_row.addWidget(QLabel(QtCore.QCoreApplication.translate('ValidatorsExample', "Display 2:")))
         self.clamp_spin2 = QSpinBox()
         self.clamp_spin2.setRange(0, 100)
         self.clamp_spin2.setReadOnly(True)
@@ -345,7 +346,7 @@ class ValidatorsExample(QWidget):
         layout.addWidget(clamp_group)
 
         # Example 2: Range validator with auto-swap
-        range_group = QGroupBox("Range Validator (Auto-swap if invalid)")
+        range_group = QGroupBox(QtCore.QCoreApplication.translate('ValidatorsExample', "Range Validator (Auto-swap if invalid)"))
         range_layout = QVBoxLayout()
 
         range_layout.addWidget(QLabel(
@@ -354,13 +355,13 @@ class ValidatorsExample(QWidget):
         ))
 
         spin_row = QHBoxLayout()
-        spin_row.addWidget(QLabel("Scan Start:"))
+        spin_row.addWidget(QLabel(QtCore.QCoreApplication.translate('ValidatorsExample', "Scan Start:")))
         self.range_start = QSpinBox()
         self.range_start.setRange(0, 1000)
         self.range_start.setSuffix(" nm")
         spin_row.addWidget(self.range_start)
 
-        spin_row.addWidget(QLabel("Scan Stop:"))
+        spin_row.addWidget(QLabel(QtCore.QCoreApplication.translate('ValidatorsExample', "Scan Stop:")))
         self.range_stop = QSpinBox()
         self.range_stop.setRange(0, 1000)
         self.range_stop.setSuffix(" nm")
@@ -406,7 +407,7 @@ class ValidatorsExample(QWidget):
 
         # Code example
         code = QLabel(
-            "Implementation:\n"
+            QtCore.QCoreApplication.translate('ValidatorsExample', "Implementation:\n"
             "def clamp_validator(value):\n"
             "    return max(0, min(100, value))\n"
             "\n"
@@ -422,7 +423,7 @@ class ValidatorsExample(QWidget):
             "sync = WidgetSync(\n"
             "    initial_value={'min': 0, 'max': 100},\n"
             "    validator=range_validator\n"
-            ")",
+            ")"),
         )
         code.setStyleSheet("font-family: monospace; padding: 10px; font-size: 9pt;")
         layout.addWidget(code)
@@ -553,25 +554,25 @@ class CustomSyncExample(QWidget):
         layout = QVBoxLayout(self)
 
         layout.addWidget(QLabel(
-            "Option 3: Custom Sync Classes (Advanced)\n"
+            QtCore.QCoreApplication.translate('CustomSyncExample', "Option 3: Custom Sync Classes (Advanced)\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             "✓ Only when storage format differs from display format\n"
             "✓ Subclass BaseWidgetSync\n"
             "✓ Implement: __init__, value property, set_value(), helpers\n"
-            "✓ Example: Image coordinates with different origin conventions",
+            "✓ Example: Image coordinates with different origin conventions"),
         ))
 
-        coord_group = QGroupBox("Coordinate Sync (Multiple Origins)")
+        coord_group = QGroupBox(QtCore.QCoreApplication.translate('CustomSyncExample', "Coordinate Sync (Multiple Origins)"))
         coord_layout = QVBoxLayout()
 
         coord_layout.addWidget(QLabel(
-            "Use Case: 1024×768 image with different coordinate systems\n"
-            "Stored internally as top-left origin, displayed in three conventions",
+            QtCore.QCoreApplication.translate('CustomSyncExample', "Use Case: 1024×768 image with different coordinate systems\n"
+            "Stored internally as top-left origin, displayed in three conventions"),
         ))
 
         # Top-left origin (standard computer graphics)
         tl_row = QHBoxLayout()
-        tl_row.addWidget(QLabel("Top-Left (0,0):"))
+        tl_row.addWidget(QLabel(QtCore.QCoreApplication.translate('CustomSyncExample', "Top-Left (0,0):")))
         self.tl_x = QSpinBox()
         self.tl_x.setRange(0, 1023)
         self.tl_x.setPrefix("X=")
@@ -580,13 +581,13 @@ class CustomSyncExample(QWidget):
         self.tl_y.setRange(0, 767)
         self.tl_y.setPrefix("Y=")
         tl_row.addWidget(self.tl_y)
-        tl_row.addWidget(QLabel("(standard graphics)"))
+        tl_row.addWidget(QLabel(QtCore.QCoreApplication.translate('CustomSyncExample', "(standard graphics)")))
         tl_row.addStretch()
         coord_layout.addLayout(tl_row)
 
         # Bottom-left origin (scientific plotting)
         bl_row = QHBoxLayout()
-        bl_row.addWidget(QLabel("Bottom-Left (0,0):"))
+        bl_row.addWidget(QLabel(QtCore.QCoreApplication.translate('CustomSyncExample', "Bottom-Left (0,0):")))
         self.bl_x = QSpinBox()
         self.bl_x.setRange(0, 1023)
         self.bl_x.setPrefix("X=")
@@ -595,13 +596,13 @@ class CustomSyncExample(QWidget):
         self.bl_y.setRange(0, 767)
         self.bl_y.setPrefix("Y=")
         bl_row.addWidget(self.bl_y)
-        bl_row.addWidget(QLabel("(scientific plot)"))
+        bl_row.addWidget(QLabel(QtCore.QCoreApplication.translate('CustomSyncExample', "(scientific plot)")))
         bl_row.addStretch()
         coord_layout.addLayout(bl_row)
 
         # Center origin (optical systems)
         center_row = QHBoxLayout()
-        center_row.addWidget(QLabel("Center (0,0):"))
+        center_row.addWidget(QLabel(QtCore.QCoreApplication.translate('CustomSyncExample', "Center (0,0):")))
         self.center_x = QSpinBox()
         self.center_x.setRange(-512, 511)
         self.center_x.setPrefix("X=")
@@ -610,7 +611,7 @@ class CustomSyncExample(QWidget):
         self.center_y.setRange(-384, 383)
         self.center_y.setPrefix("Y=")
         center_row.addWidget(self.center_y)
-        center_row.addWidget(QLabel("(optical system)"))
+        center_row.addWidget(QLabel(QtCore.QCoreApplication.translate('CustomSyncExample', "(optical system)")))
         center_row.addStretch()
         coord_layout.addLayout(center_row)
 
@@ -643,7 +644,7 @@ class CustomSyncExample(QWidget):
 
         # Code example
         code = QLabel(
-            "Implementation:\n"
+            QtCore.QCoreApplication.translate('CustomSyncExample', "Implementation:\n"
             "class CoordinateSync(DictSync):\n"
             "    def __init__(self, image_width, image_height, initial_x, initial_y):\n"
             "        super().__init__()\n"
@@ -662,7 +663,7 @@ class CustomSyncExample(QWidget):
             "coord = CoordinateSync(1024, 768, 512, 384)\n"
             "coord.bind_top_left(tl_x, tl_y)      # Direct mapping\n"
             "coord.bind_bottom_left(bl_x, bl_y)   # Y-axis flipped\n"
-            "coord.bind_center(c_x, c_y)          # Origin at center",
+            "coord.bind_center(c_x, c_y)          # Origin at center"),
         )
         code.setStyleSheet("font-family: monospace; padding: 10px; font-size: 9pt;")
         layout.addWidget(code)
@@ -675,27 +676,27 @@ class ExtendingSyncDemo(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Level 6: Extending Widget Sync")
+        self.setWindowTitle(QtCore.QCoreApplication.translate('ExtendingSyncDemo', "Level 6: Extending Widget Sync"))
         self.setMinimumSize(900, 700)
 
         layout = QVBoxLayout(self)
 
-        header = QLabel("Extending Widget Sync - Three Approaches")
+        header = QLabel(QtCore.QCoreApplication.translate('ExtendingSyncDemo', "Extending Widget Sync - Three Approaches"))
         header.setStyleSheet("font-size: 14pt; font-weight: bold; padding: 10px;")
         layout.addWidget(header)
 
         description = QLabel(
-            "Learn when and how to extend widget_sync for your needs.\n"
-            "Most users only need Options 1 or 2. Option 3 is for advanced cases.",
+            QtCore.QCoreApplication.translate('ExtendingSyncDemo', "Learn when and how to extend widget_sync for your needs.\n"
+            "Most users only need Options 1 or 2. Option 3 is for advanced cases."),
         )
         description.setWordWrap(True)
         description.setStyleSheet("padding: 5px 10px; color: #666;")
         layout.addWidget(description)
 
         tabs = QTabWidget()
-        tabs.addTab(FactoryMethodsExample(), "1. Factory Methods")
-        tabs.addTab(ValidatorsExample(), "2. Validators")
-        tabs.addTab(CustomSyncExample(), "3. Custom Sync Class")
+        tabs.addTab(FactoryMethodsExample(), QtCore.QCoreApplication.translate('ExtendingSyncDemo', "1. Factory Methods"))
+        tabs.addTab(ValidatorsExample(), QtCore.QCoreApplication.translate('ExtendingSyncDemo', "2. Validators"))
+        tabs.addTab(CustomSyncExample(), QtCore.QCoreApplication.translate('ExtendingSyncDemo', "3. Custom Sync Class"))
 
         layout.addWidget(tabs)
 

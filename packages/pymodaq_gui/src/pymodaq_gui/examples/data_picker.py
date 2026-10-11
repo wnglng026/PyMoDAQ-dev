@@ -16,6 +16,7 @@ from pymodaq_gui.utils.custom_app import CustomApp, Dock, DockArea
 
 from pymodaq_gui.parameter.pymodaq_ptypes.tableview import TableViewCustom
 from pymodaq.utils.scanner.scanners.tabular import TableModelTabular
+from qtpy import QtCore
 
 
 class DataPicker(CustomApp):
@@ -47,13 +48,13 @@ class DataPicker(CustomApp):
         self.setup_table()
 
     def setup_actions(self):
-        self.add_action('save_points', 'Save Points', 'move_contour',
-                        tip='If checked, double clicking will put points in the table',
+        self.add_action('save_points', QtCore.QCoreApplication.translate('DataPicker', 'Save Points'), 'move_contour',
+                        tip=QtCore.QCoreApplication.translate('DataPicker', 'If checked, double clicking will put points in the table'),
                         checkable=True,
                         menu='actions')
 
     def setup_menus_and_toolbars(self, menubar: QtWidgets.QMenuBar = None):
-        self.add_menu('actions', 'Actions', self.menubar)
+        self.add_menu('actions', QtCore.QCoreApplication.translate('DataPicker', 'Actions'), self.menubar)
 
     def connect_things(self):
         self.connect_action('save_points',

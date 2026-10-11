@@ -25,6 +25,7 @@ from pymodaq_gui.utils.widgets.pattern_completer import (
     PatternCompleterDelegate,
 )
 import sys
+from qtpy import QtCore
 
 
 # ============================================================================
@@ -36,7 +37,7 @@ def create_basic_example():
     layout = QVBoxLayout(widget)
 
     layout.addWidget(QLabel("<b>Example 1: Basic Usage</b>"))
-    layout.addWidget(QLabel("Type @ to mention someone"))
+    layout.addWidget(QLabel(QtCore.QCoreApplication.translate('pattern_completer_demo', "Type @ to mention someone")))
 
     # Create a line edit with pattern completion
     line_edit = PatternLineEdit()
@@ -61,7 +62,7 @@ def create_multiple_patterns_example():
     layout = QVBoxLayout(widget)
 
     layout.addWidget(QLabel("<b>Example 2: Multiple Patterns</b>"))
-    layout.addWidget(QLabel("Try typing @ for mentions, # for hashtags, :: for emojis"))
+    layout.addWidget(QLabel(QtCore.QCoreApplication.translate('pattern_completer_demo', "Try typing @ for mentions, # for hashtags, :: for emojis")))
 
     text_edit = PatternTextEdit()
 
@@ -104,7 +105,7 @@ def create_global_config_example():
 
     layout.addWidget(QLabel("<b>Example 3: Global Configuration</b>"))
     layout.addWidget(
-        QLabel("Notice the green border when typing @ (visual indicator enabled)"),
+        QLabel(QtCore.QCoreApplication.translate('pattern_completer_demo', "Notice the green border when typing @ (visual indicator enabled)")),
     )
 
     # Initialize with global settings
@@ -136,7 +137,7 @@ def create_per_pattern_config_example():
     layout = QVBoxLayout(widget)
 
     layout.addWidget(QLabel("<b>Example 4: Per-Pattern Configuration</b>"))
-    layout.addWidget(QLabel("@ is case-insensitive, :: is case-sensitive"))
+    layout.addWidget(QLabel(QtCore.QCoreApplication.translate('pattern_completer_demo', "@ is case-insensitive, :: is case-sensitive")))
 
     text_edit = PatternTextEdit()
 
@@ -257,7 +258,7 @@ def create_dynamic_updates_example():
     layout = QVBoxLayout(widget)
 
     layout.addWidget(QLabel("<b>Example 6: Dynamic Updates</b>"))
-    counter_label = QLabel("Completions update every 2 seconds!")
+    counter_label = QLabel(QtCore.QCoreApplication.translate('pattern_completer_demo', "Completions update every 2 seconds!"))
     layout.addWidget(counter_label)
 
     text_edit = PatternTextEdit()
@@ -290,7 +291,7 @@ def create_table_delegate_example():
     layout = QVBoxLayout(widget)
 
     layout.addWidget(QLabel("<b>Example 7: Table Delegate</b>"))
-    layout.addWidget(QLabel("Double-click cells and type @ for users or # for tags"))
+    layout.addWidget(QLabel(QtCore.QCoreApplication.translate('pattern_completer_demo', "Double-click cells and type @ for users or # for tags")))
 
     table = QTableWidget(5, 2)
     table.setHorizontalHeaderLabels(["Assigned To", "Tags"])
@@ -327,7 +328,7 @@ def create_code_editor_example():
     layout = QVBoxLayout(widget)
 
     layout.addWidget(QLabel("<b>Example 8: Code Editor Style</b>"))
-    layout.addWidget(QLabel("Python-style completion: :keyword or ::builtin"))
+    layout.addWidget(QLabel(QtCore.QCoreApplication.translate('pattern_completer_demo', "Python-style completion: :keyword or ::builtin")))
 
     editor = PatternPlainTextEdit(
         min_width=250, max_width=500, case_sensitive=True, auto_resize=True,
@@ -391,21 +392,21 @@ class PatternCompleterDemo(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("PatternCompleter Examples - Interactive Demo")
+        self.setWindowTitle(QtCore.QCoreApplication.translate('PatternCompleterDemo', "PatternCompleter Examples - Interactive Demo"))
         self.setGeometry(100, 100, 900, 600)
 
         # Create tab widget
         tabs = QTabWidget()
 
         # Add all example tabs
-        tabs.addTab(create_basic_example(), "1. Basic")
-        tabs.addTab(create_multiple_patterns_example(), "2. Multiple Patterns")
-        tabs.addTab(create_global_config_example(), "3. Global Config")
-        tabs.addTab(create_per_pattern_config_example(), "4. Per-Pattern Config")
-        tabs.addTab(create_word_wrap_example(), "5. Word Wrap")
-        tabs.addTab(create_dynamic_updates_example(), "6. Dynamic Updates")
-        tabs.addTab(create_table_delegate_example(), "7. Table Delegate")
-        tabs.addTab(create_code_editor_example(), "8. Code Editor")  #Not working currently
+        tabs.addTab(create_basic_example(), QtCore.QCoreApplication.translate('PatternCompleterDemo', "1. Basic"))
+        tabs.addTab(create_multiple_patterns_example(), QtCore.QCoreApplication.translate('PatternCompleterDemo', "2. Multiple Patterns"))
+        tabs.addTab(create_global_config_example(), QtCore.QCoreApplication.translate('PatternCompleterDemo', "3. Global Config"))
+        tabs.addTab(create_per_pattern_config_example(), QtCore.QCoreApplication.translate('PatternCompleterDemo', "4. Per-Pattern Config"))
+        tabs.addTab(create_word_wrap_example(), QtCore.QCoreApplication.translate('PatternCompleterDemo', "5. Word Wrap"))
+        tabs.addTab(create_dynamic_updates_example(), QtCore.QCoreApplication.translate('PatternCompleterDemo', "6. Dynamic Updates"))
+        tabs.addTab(create_table_delegate_example(), QtCore.QCoreApplication.translate('PatternCompleterDemo', "7. Table Delegate"))
+        tabs.addTab(create_code_editor_example(), QtCore.QCoreApplication.translate('PatternCompleterDemo', "8. Code Editor"))  #Not working currently
 
         self.setCentralWidget(tabs)
 

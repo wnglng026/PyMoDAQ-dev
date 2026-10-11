@@ -196,37 +196,37 @@ class SharedUI(CustomApp):
     def setup_actions(self):
 
         # File menu
-        self.add_action(short_name="restart", name="Restart", icon_name="restart_alt",
-                        tip="Restart PyMoDAQ", auto_toolbar=False, menu=MenuToolbarNames.FILE)
+        self.add_action(short_name="restart", name=QtCore.QCoreApplication.translate('SharedUI', "Restart"), icon_name="restart_alt",
+                        tip=QtCore.QCoreApplication.translate('SharedUI', "Restart PyMoDAQ"), auto_toolbar=False, menu=MenuToolbarNames.FILE)
 
-        self.add_action(short_name="quit", name="Quit", icon_name="cancel",
-                        tip="Quit PyMoDAQ", icon_color=self.get_theme().red, toolbar=MenuToolbarNames.RUNTIME,
+        self.add_action(short_name="quit", name=QtCore.QCoreApplication.translate('SharedUI', "Quit"), icon_name="cancel",
+                        tip=QtCore.QCoreApplication.translate('SharedUI', "Quit PyMoDAQ"), icon_color=self.get_theme().red, toolbar=MenuToolbarNames.RUNTIME,
                         menu=MenuToolbarNames.FILE)
 
         # Tools menu
-        self.add_action(short_name="logs", name="Logs", icon_name="description",
-                        tip="Open logs file", auto_toolbar=False, menu=MenuToolbarNames.TOOLS)
+        self.add_action(short_name="logs", name=QtCore.QCoreApplication.translate('SharedUI', "Logs"), icon_name="description",
+                        tip=QtCore.QCoreApplication.translate('SharedUI', "Open logs file"), auto_toolbar=False, menu=MenuToolbarNames.TOOLS)
 
-        self.add_action(short_name="preferences", name="Preferences", icon_name="handyman",
-                        tip="PyMoDAQ preferences", toolbar=MenuToolbarNames.HELP, menu=MenuToolbarNames.TOOLS)
+        self.add_action(short_name="preferences", name=QtCore.QCoreApplication.translate('SharedUI', "Preferences"), icon_name="handyman",
+                        tip=QtCore.QCoreApplication.translate('SharedUI', "PyMoDAQ preferences"), toolbar=MenuToolbarNames.HELP, menu=MenuToolbarNames.TOOLS)
 
         # Help menu
-        self.add_action(short_name="documentation", name="Documentation", icon_name="language",
-                        tip="Online documentation", toolbar=MenuToolbarNames.HELP, menu=MenuToolbarNames.HELP)
+        self.add_action(short_name="documentation", name=QtCore.QCoreApplication.translate('SharedUI', "Documentation"), icon_name="language",
+                        tip=QtCore.QCoreApplication.translate('SharedUI', "Online documentation"), toolbar=MenuToolbarNames.HELP, menu=MenuToolbarNames.HELP)
 
         self.get_action("documentation").setShortcut(QtGui.QKeySequence("F1"))
 
         self.get_menu(MenuToolbarNames.HELP).addSeparator()
 
-        self.add_action(short_name="app_help", name="Application help", icon_name="help",
-                        tip="Show how to use this application", toolbar=MenuToolbarNames.RUNTIME,
+        self.add_action(short_name="app_help", name=QtCore.QCoreApplication.translate('SharedUI', "Application help"), icon_name="help",
+                        tip=QtCore.QCoreApplication.translate('SharedUI', "Show how to use this application"), toolbar=MenuToolbarNames.RUNTIME,
                         menu=MenuToolbarNames.HELP, checkable=True,
                         icon_checked_color=self.get_theme().green)
 
-        self.add_action(short_name="check_updates", name="Check updates", icon_name="update",
+        self.add_action(short_name="check_updates", name=QtCore.QCoreApplication.translate('SharedUI', "Check updates"), icon_name="update",
                         auto_toolbar=False, menu=MenuToolbarNames.HELP)
 
-        self.add_action(short_name="about", name="About PyMoDAQ", icon_name="info",
+        self.add_action(short_name="about", name=QtCore.QCoreApplication.translate('SharedUI', "About PyMoDAQ"), icon_name="info",
                         icon_color=self.get_theme().blue, toolbar=MenuToolbarNames.HELP, menu=MenuToolbarNames.HELP)
 
         for toolbar in self.toolbars:
@@ -267,8 +267,8 @@ class SharedUI(CustomApp):
         if ask:
             mssg = QMessageBox()
             mssg.setText(
-                "You have to restart the application to take the"
-                " modifications into account!",
+                QtCore.QCoreApplication.translate('SharedUI', "You have to restart the application to take the"
+                " modifications into account!"),
             )
             mssg.setInformativeText("Do you want to restart?")
             mssg.setStandardButtons(QMessageBox.StandardButton.Ok | QMessageBox.StandardButton.Cancel)
@@ -318,12 +318,12 @@ class SharedUI(CustomApp):
             if len(packages_data) > 0:
                 # Create a QDialog window and different graphical components
                 dialog = QtWidgets.QDialog()
-                dialog.setWindowTitle("Update check")
+                dialog.setWindowTitle(QtCore.QCoreApplication.translate('SharedUI', "Update check"))
 
                 vlayout = QtWidgets.QVBoxLayout()
 
                 message_label = QLabel(
-                    "New versions of PyMoDAQ packages available!\nUse your package manager to update.",
+                    QtCore.QCoreApplication.translate('SharedUI', "New versions of PyMoDAQ packages available!\nUse your package manager to update."),
                 )
                 message_label.setAlignment(Qt.Alignment.AlignCenter)
 
@@ -348,8 +348,8 @@ class SharedUI(CustomApp):
             else:
                 if show:
                     msgBox = QMessageBox()
-                    msgBox.setWindowTitle("Update check")
-                    msgBox.setText("Everything is up to date!")
+                    msgBox.setWindowTitle(QtCore.QCoreApplication.translate('SharedUI', "Update check"))
+                    msgBox.setText(QtCore.QCoreApplication.translate('SharedUI', "Everything is up to date!"))
                     ret = msgBox.exec()
         except Exception as e:
             logger.exception("Error while checking the available PyMoDAQ version")
@@ -376,7 +376,7 @@ class SharedUI(CustomApp):
     def _create_help_dialog(self) -> QtWidgets.QDialog:
         browser = QtWidgets.QTextBrowser()
         browser.setOpenExternalLinks(True)
-        close_button = QtWidgets.QPushButton('Close')
+        close_button = QtWidgets.QPushButton(QtCore.QCoreApplication.translate('SharedUI', 'Close'))
 
         dialog = QtWidgets.QDialog(self.mainwindow)
         dialog.setWindowTitle(f'{self.title} help')

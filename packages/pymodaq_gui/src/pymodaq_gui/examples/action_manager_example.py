@@ -14,6 +14,7 @@ import sys
 from qtpy import QtWidgets
 
 from pymodaq_gui.managers.action_manager import ActionManager
+from qtpy import QtCore
 
 
 class ActionManagerExample(QtWidgets.QMainWindow, ActionManager):
@@ -22,7 +23,7 @@ class ActionManagerExample(QtWidgets.QMainWindow, ActionManager):
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
         ActionManager.__init__(self, menu=self.menuBar())
-        self.setWindowTitle("ActionManager Menu and Toolbar Example")
+        self.setWindowTitle(QtCore.QCoreApplication.translate('ActionManagerExample', "ActionManager Menu and Toolbar Example"))
         self.resize(1000, 700)
 
         # Create central widget
@@ -78,18 +79,18 @@ class ActionManagerExample(QtWidgets.QMainWindow, ActionManager):
         self.addToolBar(tools_toolbar)
 
         # ========== File Menu ==========
-        file_menu = self.add_menu('file', 'File', icon_name='Folder')
+        file_menu = self.add_menu('file', QtCore.QCoreApplication.translate('ActionManagerExample', 'File'), icon_name='Folder')
 
         # Add simple actions to File menu AND File toolbar
-        self.add_action('new', 'New', icon_name='NewFile',
-                       menu='file', toolbar=file_toolbar, shortcut='Ctrl+N', tip='Create new file')
-        self.add_action('open', 'Open...', icon_name='Open',
-                       menu='file', toolbar=file_toolbar, shortcut='Ctrl+O', tip='Open existing file')
-        self.add_action('save', 'Save', icon_name='SaveAs',
-                       menu='file', toolbar=file_toolbar, shortcut='Ctrl+S', tip='Save current file')
+        self.add_action('new', QtCore.QCoreApplication.translate('ActionManagerExample', 'New'), icon_name='NewFile',
+                       menu='file', toolbar=file_toolbar, shortcut='Ctrl+N', tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Create new file'))
+        self.add_action('open', QtCore.QCoreApplication.translate('ActionManagerExample', 'Open...'), icon_name='Open',
+                       menu='file', toolbar=file_toolbar, shortcut='Ctrl+O', tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Open existing file'))
+        self.add_action('save', QtCore.QCoreApplication.translate('ActionManagerExample', 'Save'), icon_name='SaveAs',
+                       menu='file', toolbar=file_toolbar, shortcut='Ctrl+S', tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Save current file'))
 
         # Create "Recent Files" menu within File menu
-        recent_menu = self.add_menu('recent', 'Recent Files',
+        recent_menu = self.add_menu('recent', QtCore.QCoreApplication.translate('ActionManagerExample', 'Recent Files'),
                                    menu=file_menu, icon_name='Folder')
 
         # Add recent file actions
@@ -101,117 +102,117 @@ class ActionManagerExample(QtWidgets.QMainWindow, ActionManager):
         file_toolbar.addSeparator()
 
         # Create "Export" menu within File menu
-        export_menu = self.add_menu('export', 'Export',
+        export_menu = self.add_menu('export', QtCore.QCoreApplication.translate('ActionManagerExample', 'Export'),
                                    menu=file_menu, icon_name='SaveAs')
 
         # Add export format actions (menu only, not in toolbar)
-        self.add_action('export_pdf', 'Export as PDF', menu=export_menu, auto_toolbar=False)
-        self.add_action('export_png', 'Export as PNG', menu=export_menu, auto_toolbar=False)
-        self.add_action('export_svg', 'Export as SVG', menu=export_menu, auto_toolbar=False)
+        self.add_action('export_pdf', QtCore.QCoreApplication.translate('ActionManagerExample', 'Export as PDF'), menu=export_menu, auto_toolbar=False)
+        self.add_action('export_png', QtCore.QCoreApplication.translate('ActionManagerExample', 'Export as PNG'), menu=export_menu, auto_toolbar=False)
+        self.add_action('export_svg', QtCore.QCoreApplication.translate('ActionManagerExample', 'Export as SVG'), menu=export_menu, auto_toolbar=False)
 
         # ========== Edit Menu ==========
-        edit_menu = self.add_menu('edit', 'Edit')
+        edit_menu = self.add_menu('edit', QtCore.QCoreApplication.translate('ActionManagerExample', 'Edit'))
 
         # Add edit actions to both menu and edit toolbar
-        self.add_action('undo', 'Undo', icon_name='go-previous', menu='edit',
-                       toolbar=edit_toolbar, shortcut='Ctrl+Z', tip='Undo last action')
-        self.add_action('redo', 'Redo', icon_name='go-next', menu='edit',
-                       toolbar=edit_toolbar, shortcut='Ctrl+Y', tip='Redo last action')
+        self.add_action('undo', QtCore.QCoreApplication.translate('ActionManagerExample', 'Undo'), icon_name='go-previous', menu='edit',
+                       toolbar=edit_toolbar, shortcut='Ctrl+Z', tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Undo last action'))
+        self.add_action('redo', QtCore.QCoreApplication.translate('ActionManagerExample', 'Redo'), icon_name='go-next', menu='edit',
+                       toolbar=edit_toolbar, shortcut='Ctrl+Y', tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Redo last action'))
 
         edit_toolbar.addSeparator()
 
-        self.add_action('cut', 'Cut', menu='edit', toolbar=edit_toolbar,
-                       shortcut='Ctrl+X', tip='Cut selection')
-        self.add_action('copy', 'Copy', menu='edit', toolbar=edit_toolbar,
-                       shortcut='Ctrl+C', tip='Copy selection')
-        self.add_action('paste', 'Paste', menu='edit', toolbar=edit_toolbar,
-                       shortcut='Ctrl+V', tip='Paste from clipboard')
+        self.add_action('cut', QtCore.QCoreApplication.translate('ActionManagerExample', 'Cut'), menu='edit', toolbar=edit_toolbar,
+                       shortcut='Ctrl+X', tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Cut selection'))
+        self.add_action('copy', QtCore.QCoreApplication.translate('ActionManagerExample', 'Copy'), menu='edit', toolbar=edit_toolbar,
+                       shortcut='Ctrl+C', tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Copy selection'))
+        self.add_action('paste', QtCore.QCoreApplication.translate('ActionManagerExample', 'Paste'), menu='edit', toolbar=edit_toolbar,
+                       shortcut='Ctrl+V', tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Paste from clipboard'))
 
         # ========== View Menu with Deep Nesting ==========
-        view_menu = self.add_menu('view', 'View')
+        view_menu = self.add_menu('view', QtCore.QCoreApplication.translate('ActionManagerExample', 'View'))
 
         # Level 1: Panels menu
-        panels_menu = self.add_menu('panels', 'Panels', parent_menu=view_menu)
+        panels_menu = self.add_menu('panels', QtCore.QCoreApplication.translate('ActionManagerExample', 'Panels'), parent_menu=view_menu)
 
         # Level 2: Left Panel menu
-        left_panel_menu = self.add_menu('left_panel', 'Left Panel',
+        left_panel_menu = self.add_menu('left_panel', QtCore.QCoreApplication.translate('ActionManagerExample', 'Left Panel'),
                                        parent_menu=panels_menu)
-        self.add_action('left_files', 'File Explorer', icon_name='Folder',
+        self.add_action('left_files', QtCore.QCoreApplication.translate('ActionManagerExample', 'File Explorer'), icon_name='Folder',
                        menu=left_panel_menu, toolbar=view_toolbar,
-                       checkable=True, checked=True, tip='Toggle file explorer panel')
-        self.add_action('left_search', 'Search',
-                       menu=left_panel_menu, checkable=True, tip='Toggle search panel')
-        self.add_action('left_git', 'Git',
-                       menu=left_panel_menu, checkable=True, tip='Toggle git panel')
+                       checkable=True, checked=True, tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Toggle file explorer panel'))
+        self.add_action('left_search', QtCore.QCoreApplication.translate('ActionManagerExample', 'Search'),
+                       menu=left_panel_menu, checkable=True, tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Toggle search panel'))
+        self.add_action('left_git', QtCore.QCoreApplication.translate('ActionManagerExample', 'Git'),
+                       menu=left_panel_menu, checkable=True, tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Toggle git panel'))
 
         # Level 2: Right Panel menu
-        right_panel_menu = self.add_menu('right_panel', 'Right Panel',
+        right_panel_menu = self.add_menu('right_panel', QtCore.QCoreApplication.translate('ActionManagerExample', 'Right Panel'),
                                         parent_menu=panels_menu)
-        self.add_action('right_outline', 'Outline',
+        self.add_action('right_outline', QtCore.QCoreApplication.translate('ActionManagerExample', 'Outline'),
                        menu=right_panel_menu, checkable=True)
-        self.add_action('right_terminal', 'Terminal',
+        self.add_action('right_terminal', QtCore.QCoreApplication.translate('ActionManagerExample', 'Terminal'),
                        menu=right_panel_menu, checkable=True, checked=True)
 
         # Level 2: Bottom Panel menu
-        bottom_panel_menu = self.add_menu('bottom_panel', 'Bottom Panel',
+        bottom_panel_menu = self.add_menu('bottom_panel', QtCore.QCoreApplication.translate('ActionManagerExample', 'Bottom Panel'),
                                          parent_menu=panels_menu)
-        self.add_action('bottom_console', 'Console',
+        self.add_action('bottom_console', QtCore.QCoreApplication.translate('ActionManagerExample', 'Console'),
                        menu=bottom_panel_menu, checkable=True, checked=True)
-        self.add_action('bottom_problems', 'Problems',
+        self.add_action('bottom_problems', QtCore.QCoreApplication.translate('ActionManagerExample', 'Problems'),
                        menu=bottom_panel_menu, checkable=True)
-        self.add_action('bottom_output', 'Output',
+        self.add_action('bottom_output', QtCore.QCoreApplication.translate('ActionManagerExample', 'Output'),
                        menu=bottom_panel_menu, checkable=True)
 
         # Add separator to view toolbar
         view_toolbar.addSeparator()
 
         # Add appearance menu to View
-        appearance_menu = self.add_menu('appearance', 'Appearance',
+        appearance_menu = self.add_menu('appearance', QtCore.QCoreApplication.translate('ActionManagerExample', 'Appearance'),
                                        parent_menu=view_menu)
 
         # Theme menu (3 levels deep!)
-        theme_menu = self.add_menu('theme', 'Theme', parent_menu=appearance_menu)
-        self.add_action('theme_light', 'Light', menu=theme_menu, tip='Switch to light theme')
-        self.add_action('theme_dark', 'Dark', menu=theme_menu, tip='Switch to dark theme')
-        self.add_action('theme_auto', 'Auto', menu=theme_menu, toolbar=view_toolbar,
-                       tip='Auto-detect theme based on system')
+        theme_menu = self.add_menu('theme', QtCore.QCoreApplication.translate('ActionManagerExample', 'Theme'), parent_menu=appearance_menu)
+        self.add_action('theme_light', QtCore.QCoreApplication.translate('ActionManagerExample', 'Light'), menu=theme_menu, tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Switch to light theme'))
+        self.add_action('theme_dark', QtCore.QCoreApplication.translate('ActionManagerExample', 'Dark'), menu=theme_menu, tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Switch to dark theme'))
+        self.add_action('theme_auto', QtCore.QCoreApplication.translate('ActionManagerExample', 'Auto'), menu=theme_menu, toolbar=view_toolbar,
+                       tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Auto-detect theme based on system'))
 
         # Font size menu (3 levels deep!)
-        font_menu = self.add_menu('font', 'Font Size', parent_menu=appearance_menu)
-        self.add_action('font_small', 'Small', menu=font_menu)
-        self.add_action('font_medium', 'Medium', menu=font_menu)
-        self.add_action('font_large', 'Large', menu=font_menu)
+        font_menu = self.add_menu('font', QtCore.QCoreApplication.translate('ActionManagerExample', 'Font Size'), parent_menu=appearance_menu)
+        self.add_action('font_small', QtCore.QCoreApplication.translate('ActionManagerExample', 'Small'), menu=font_menu)
+        self.add_action('font_medium', QtCore.QCoreApplication.translate('ActionManagerExample', 'Medium'), menu=font_menu)
+        self.add_action('font_large', QtCore.QCoreApplication.translate('ActionManagerExample', 'Large'), menu=font_menu)
 
         # ========== Tools Menu ==========
-        tools_menu = self.add_menu('tools', 'Tools')
+        tools_menu = self.add_menu('tools', QtCore.QCoreApplication.translate('ActionManagerExample', 'Tools'))
 
         # Add tools with nested settings
-        self.add_action('tool_format', 'Format Document', icon_name='Params',
-                       menu='tools', toolbar=tools_toolbar, tip='Format current document')
+        self.add_action('tool_format', QtCore.QCoreApplication.translate('ActionManagerExample', 'Format Document'), icon_name='Params',
+                       menu='tools', toolbar=tools_toolbar, tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Format current document'))
 
-        settings_menu = self.add_menu('settings', 'Settings',
+        settings_menu = self.add_menu('settings', QtCore.QCoreApplication.translate('ActionManagerExample', 'Settings'),
                                      parent_menu=tools_menu, icon_name='Params')
 
         # General settings
         general_settings = self.add_menu('general_settings',
-                                        'General', parent_menu=settings_menu)
-        self.add_action('auto_save', 'Auto Save',
+                                        QtCore.QCoreApplication.translate('ActionManagerExample', 'General'), parent_menu=settings_menu)
+        self.add_action('auto_save', QtCore.QCoreApplication.translate('ActionManagerExample', 'Auto Save'),
                        menu=general_settings, checkable=True, checked=True)
-        self.add_action('show_tooltips', 'Show Tooltips',
+        self.add_action('show_tooltips', QtCore.QCoreApplication.translate('ActionManagerExample', 'Show Tooltips'),
                        menu=general_settings, checkable=True, checked=True)
 
         # Advanced settings
         advanced_settings = self.add_menu('advanced_settings',
-                                         'Advanced', parent_menu=settings_menu)
-        self.add_action('debug_mode', 'Debug Mode',
+                                         QtCore.QCoreApplication.translate('ActionManagerExample', 'Advanced'), parent_menu=settings_menu)
+        self.add_action('debug_mode', QtCore.QCoreApplication.translate('ActionManagerExample', 'Debug Mode'),
                        menu=advanced_settings, checkable=True)
-        self.add_action('verbose_logging', 'Verbose Logging',
+        self.add_action('verbose_logging', QtCore.QCoreApplication.translate('ActionManagerExample', 'Verbose Logging'),
                        menu=advanced_settings, checkable=True)
 
         # ========== Help Menu ==========
-        help_menu = self.add_menu('help', 'Help')
-        self.add_action('docs', 'Documentation', menu='help')
-        self.add_action('about', 'About', menu='help')
+        help_menu = self.add_menu('help', QtCore.QCoreApplication.translate('ActionManagerExample', 'Help'))
+        self.add_action('docs', QtCore.QCoreApplication.translate('ActionManagerExample', 'Documentation'), menu='help')
+        self.add_action('about', QtCore.QCoreApplication.translate('ActionManagerExample', 'About'), menu='help')
 
         # ========== Demonstration of Shared Menus ==========
         # You can add the same menu to multiple parent menus!
@@ -238,7 +239,7 @@ class ActionManagerExample(QtWidgets.QMainWindow, ActionManager):
         # Now "New" appears in the File toolbar AND the Tools toolbar
 
         # Add a widget to the tools toolbar to demonstrate widget support
-        self.add_widget('search_box', 'QLineEdit', tip='Search in document',
+        self.add_widget('search_box', 'QLineEdit', tip=QtCore.QCoreApplication.translate('ActionManagerExample', 'Search in document'),
                        toolbar=tools_toolbar, visible=True)
         self.get_action('search_box').setPlaceholderText('Search...')
         self.get_action('search_box').setMaximumWidth(200)

@@ -71,7 +71,7 @@ class Window(QtWidgets.QWidget):
         self.edit = QtWidgets.QLineEdit(self)
         self.edit.setReadOnly(True)
         self.button = QtWidgets.QToolButton(self)
-        self.button.setText('...')
+        self.button.setText(QtCore.QCoreApplication.translate('Window', '...'))
         self.button.clicked.connect(self.handleOpen)
         layout = QtWidgets.QGridLayout(self)
         layout.addWidget(self.viewer, 0, 0, 1, 2)

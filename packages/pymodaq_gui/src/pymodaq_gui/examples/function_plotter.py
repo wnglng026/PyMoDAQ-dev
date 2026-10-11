@@ -19,6 +19,7 @@ from pymodaq_gui.utils.custom_app import CustomApp
 from pymodaq_gui.utils.dock import Dock
 from pymodaq_gui.utils.utils import mkQApp
 from pymodaq_gui.plotting.data_viewers.viewer1D import Viewer1D
+from qtpy import QtCore
 
 
 config = Config()
@@ -100,11 +101,11 @@ class FunctionPlotter(CustomApp):
         """
         logger.debug('setting actions')
 
-        self.add_action('show', 'Show/hide', 'visibility', "Show Hide Viewer",
+        self.add_action('show', 'Show/hide', 'visibility', QtCore.QCoreApplication.translate('FunctionPlotter', "Show Hide Viewer"),
                         checkable=True, checked=True)
-        self.add_action('plot', 'Plot', 'looks_one', "Plot", checkable=False)
-        self.add_action('plot_seq', 'Plot Sequence', 'repeat_one_on', "Plot functions", checkable=True)
-        self.add_action('save', 'Save', 'save', "Save current function", checkable=False)
+        self.add_action('plot', QtCore.QCoreApplication.translate('FunctionPlotter', 'Plot'), 'looks_one', QtCore.QCoreApplication.translate('FunctionPlotter', "Plot"), checkable=False)
+        self.add_action('plot_seq', QtCore.QCoreApplication.translate('FunctionPlotter', 'Plot Sequence'), 'repeat_one_on', QtCore.QCoreApplication.translate('FunctionPlotter', "Plot functions"), checkable=True)
+        self.add_action('save', QtCore.QCoreApplication.translate('FunctionPlotter', 'Save'), 'save', QtCore.QCoreApplication.translate('FunctionPlotter', "Save current function"), checkable=False)
         logger.debug('actions set')
 
     def connect_things(self):

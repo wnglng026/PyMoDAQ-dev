@@ -2,6 +2,7 @@ from qtpy.QtWidgets import QApplication, QLineEdit, QWidget, QVBoxLayout
 from qtpy.QtCore import Qt, QSize, QTimer, Signal
 from qtpy.QtGui import QIcon, QPixmap, QPainter, QColor
 import sys
+from qtpy import QtCore
 
 
 class SearchLineEdit(QLineEdit):
@@ -104,7 +105,7 @@ class SearchLineEdit(QLineEdit):
 class DemoWindow(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Search Widget Demo")
+        self.setWindowTitle(QtCore.QCoreApplication.translate('DemoWindow', "Search Widget Demo"))
         self.setGeometry(100, 100, 300, 150)
 
         layout = QVBoxLayout()

@@ -91,38 +91,38 @@ class H5Manager(QtCore.QObject, ActionManager):
     def create_file_toolbar_and_menu(self) -> tuple[QtWidgets.QToolBar, QtWidgets.QMenu]:
 
         self.add_toolbar(MenuToolbarNames.FILE, 'FileActions')
-        self.add_menu(MenuToolbarNames.FILE, 'FileActions')
+        self.add_menu(MenuToolbarNames.FILE, QtCore.QCoreApplication.translate('H5Manager', 'FileActions'))
         self.set_toolbar(MenuToolbarNames.FILE)
         self.set_menu(MenuToolbarNames.FILE)
 
-        self.add_action(FileAction.SHOW_FILE, 'Show file content', 'folder_data',
-                        tip='Browse the content of the current HDF5 file',
+        self.add_action(FileAction.SHOW_FILE, QtCore.QCoreApplication.translate('H5Manager', 'Show file content'), 'folder_data',
+                        tip=QtCore.QCoreApplication.translate('H5Manager', 'Browse the content of the current HDF5 file'),
                         toolbar=self.toolbar,
                         auto_toolbar=FileAction.SHOW_FILE not in self._show_not_action,
                         menu=self.menu,
                         auto_menu=FileAction.SHOW_FILE not in self._show_not_action)
 
-        self.add_action(FileAction.NEW_FILE, 'New file', 'add_circle',
+        self.add_action(FileAction.NEW_FILE, QtCore.QCoreApplication.translate('H5Manager', 'New file'), 'add_circle',
                         toolbar=self.toolbar,
                         auto_toolbar=FileAction.NEW_FILE not in self._show_not_action,
                         menu=self.menu,
                         auto_menu=FileAction.NEW_FILE not in self._show_not_action,)
 
-        self.add_action(FileAction.LOAD, 'Open file to append...', 'file_open',
+        self.add_action(FileAction.LOAD, QtCore.QCoreApplication.translate('H5Manager', 'Open file to append...'), 'file_open',
                         toolbar=self.toolbar,
                         auto_toolbar=FileAction.LOAD not in self._show_not_action,
                         menu=self.menu,
                         auto_menu=FileAction.LOAD not in self._show_not_action,)
         self.get_menu(MenuToolbarNames.FILE).addSeparator()
         self.toolbar.addSeparator()
-        self.add_action(FileAction.SAVE, 'Save copy as...', 'save',
+        self.add_action(FileAction.SAVE, QtCore.QCoreApplication.translate('H5Manager', 'Save copy as...'), 'save',
                         toolbar=self.toolbar,
                         auto_toolbar=FileAction.SAVE not in self._show_not_action,
                         menu=self.menu,
                         auto_menu=FileAction.SAVE not in self._show_not_action,)
         self.toolbar.addSeparator()
         self.get_menu(MenuToolbarNames.FILE).addSeparator()
-        self.add_action(FileAction.SHOW_SETTINGS, 'Show h5 settings', 'settings',
+        self.add_action(FileAction.SHOW_SETTINGS, QtCore.QCoreApplication.translate('H5Manager', 'Show h5 settings'), 'settings',
                         toolbar=self.toolbar if FileAction.SHOW_SETTINGS not in self._show_not_action else None,
                         auto_toolbar=FileAction.SHOW_SETTINGS not in self._show_not_action,
                         menu=self.menu,
@@ -131,13 +131,13 @@ class H5Manager(QtCore.QObject, ActionManager):
 
         # Debug-only actions: registered but not in any menu so they stay hidden from regular users.
         # A developer can access them programmatically or add them back to a menu as needed.
-        self.add_action(FileAction.OPEN_FILE, 'Open Current File', '',
+        self.add_action(FileAction.OPEN_FILE, QtCore.QCoreApplication.translate('H5Manager', 'Open Current File'), '',
                         toolbar=self.toolbar if FileAction.OPEN_FILE not in self._show_not_action else None,
                         auto_toolbar=FileAction.OPEN_FILE not in self._show_not_action,
                         menu= self.menu,
                         auto_menu=FileAction.OPEN_FILE not in self._show_not_action
                         )
-        self.add_action(FileAction.CLOSE_FILE, 'Close Current File', '',
+        self.add_action(FileAction.CLOSE_FILE, QtCore.QCoreApplication.translate('H5Manager', 'Close Current File'), '',
                         toolbar=self.toolbar if FileAction.CLOSE_FILE not in self._show_not_action else None,
                         auto_toolbar=FileAction.CLOSE_FILE not in self._show_not_action,
                         menu=self.menu,
@@ -183,10 +183,10 @@ class H5Manager(QtCore.QObject, ActionManager):
             states=StatusPalette.subset(Status.OFF, Status.IDLE, Status.RUNNING),
             readonly=True)
         self._file_open_LED.set_state(Status.OFF)
-        self._file_open_LED.setToolTip('H5 file closed')
+        self._file_open_LED.setToolTip(QtCore.QCoreApplication.translate('H5Manager', 'H5 file closed'))
 
         self.statusbar.addPermanentWidget(StatuBarSeparator())
-        self.statusbar.addPermanentWidget(QtWidgets.QLabel('File:'))
+        self.statusbar.addPermanentWidget(QtWidgets.QLabel(QtCore.QCoreApplication.translate('H5Manager', 'File:')))
         self.statusbar.addPermanentWidget(self._file_open_LED)
 
         self.statusbar.addPermanentWidget(StatuBarSeparator())
@@ -282,7 +282,7 @@ class H5Manager(QtCore.QObject, ActionManager):
                     # File is locked - ask user what to do
                     msg = QtWidgets.QMessageBox()
                     msg.setIcon(QtWidgets.QMessageBox.Icon.Warning)
-                    msg.setWindowTitle("File Locked")
+                    msg.setWindowTitle(QtCore.QCoreApplication.translate('H5Manager', "File Locked"))
                     msg.setText(f"Cannot open file:\n{current_file}\n\n"
                                 f"The file may be open in another application.")
                     msg.setInformativeText("Close the file elsewhere and click Retry, "
@@ -355,10 +355,10 @@ class H5Manager(QtCore.QObject, ActionManager):
         if self._show_h5file_statusbar_widgets and self._file_open_LED is not None:
             if not is_open:
                 self._file_open_LED.set_state(Status.OFF)
-                self._file_open_LED.setToolTip('H5 file closed')
+                self._file_open_LED.setToolTip(QtCore.QCoreApplication.translate('H5Manager', 'H5 file closed'))
             elif self._file_open_LED.get_state() == Status.OFF:
                 self._file_open_LED.set_state(Status.IDLE)
-                self._file_open_LED.setToolTip('H5 file open and accessible')
+                self._file_open_LED.setToolTip(QtCore.QCoreApplication.translate('H5Manager', 'H5 file open and accessible'))
 
     def show_file_content(self):
          if self._h5saver is not None:
@@ -380,7 +380,7 @@ class H5Manager(QtCore.QObject, ActionManager):
             return  # file is closed, nothing to reflect
         if active:
             self._file_open_LED.set_state(Status.RUNNING)
-            self._file_open_LED.setToolTip('H5 file open — SWMR mode active')
+            self._file_open_LED.setToolTip(QtCore.QCoreApplication.translate('H5Manager', 'H5 file open — SWMR mode active'))
         else:
             self._file_open_LED.set_state(Status.IDLE)
             tooltip = ('H5 file open — SWMR-compatible' if compatible

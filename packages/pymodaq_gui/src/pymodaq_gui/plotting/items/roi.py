@@ -590,7 +590,7 @@ class ROIPositionMapper(QtWidgets.QWidget):
         buttonBox.rejected.connect(dialog.reject)
 
         vlayout.addWidget(buttonBox)
-        self.setWindowTitle('Set Precise positions for the ROI')
+        self.setWindowTitle(QtCore.QCoreApplication.translate('ROIPositionMapper', 'Set Precise positions for the ROI'))
         res = dialog.exec()
 
         if res == dialog.Accepted:
