@@ -1,0 +1,16 @@
+# 由 python -m pymodaq_utils.i18n pack 生成，请勿手工编辑；
+# 源文件：pymodaq_zh_CN.ts（用 Qt Linguist 或文本编辑器维护 .ts）
+
+[meta]
+language = "zh_CN"
+name = "简体中文"
+generated_from = "pymodaq_zh_CN.ts"
+
+[general]
+
+[contexts."Launcher"]
+"Launch H5Browser" = "启动 H5 浏览器"
+"Launch empty dashboard" = "启动空仪表板"
+
+[contexts."launcher"]
+"Launcher" = "启动器"

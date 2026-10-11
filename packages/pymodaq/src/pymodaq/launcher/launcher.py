@@ -212,12 +212,12 @@ class Launcher(CustomApp):
         '''
         subclass method from ActionManager
         '''
-        self.add_action('launch_dashboard', 'Launch empty dashboard', '',
+        self.add_action('launch_dashboard', self.tr('Launch empty dashboard'), '',
                         EnumToolTip.DASHBOARD, auto_toolbar=False
                         )
         self.add_action('launch_viewer', 'Launch empy viewer', '', EnumToolTip.DAQ_VIEWER, auto_toolbar=False)
         self.add_action('launch_move', 'Launch empty DAQ move', '', EnumToolTip.DAQ_MOVE, auto_toolbar=False)
-        self.add_action('launch_h5browser', 'Launch H5Browser', '', EnumToolTip.H5BROWSER, auto_toolbar=False)
+        self.add_action('launch_h5browser', self.tr('Launch H5Browser'), '', EnumToolTip.H5BROWSER, auto_toolbar=False)
 
         self.add_action('back_config', 'Back', 'keyboard_arrow_left', EnumToolTip.BACK_HISTORY, auto_toolbar=True,
                         toolbar='header')
@@ -541,7 +541,7 @@ def main():
     app = mkQApp('Launcher')
 
     win = QtWidgets.QMainWindow()
-    win.setWindowTitle('Launcher')
+    win.setWindowTitle(QtCore.QCoreApplication.translate('launcher', 'Launcher'))
 
     shared_ui = SharedUI(win, show=True)
     prog = Launcher(win)
