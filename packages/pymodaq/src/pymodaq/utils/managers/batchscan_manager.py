@@ -58,7 +58,7 @@ class BatchManager(ParameterManager):
 
         if msgbox:
             msgBox = QMessageBox()
-            msgBox.setText("Scan Batch Manager?")
+            msgBox.setText(QtCore.QCoreApplication.translate('BatchManager', "Scan Batch Manager?"))
             msgBox.setInformativeText("What do you want to do?")
             cancel_button = msgBox.addButton(QMessageBox.StandardButton.Cancel)
             new_button = msgBox.addButton("New", QMessageBox.ButtonRole.AcceptRole)
@@ -165,7 +165,7 @@ class BatchManager(ParameterManager):
         buttonBox.rejected.connect(dialog.reject)
 
         dialog.layout().addWidget(buttonBox)
-        dialog.setWindowTitle('Fill in information about this Scan batch')
+        dialog.setWindowTitle(QtCore.QCoreApplication.translate('BatchManager', 'Fill in information about this Scan batch'))
 
         widget_all_settings.setLayout(QtWidgets.QHBoxLayout())
         widget_all_settings.layout().addWidget(self.settings_tree)
@@ -175,7 +175,7 @@ class BatchManager(ParameterManager):
         widget_all_settings.layout().addWidget(widget_vertical)
 
         self.scanner_widget = self.scanner.parent_widget
-        add_scan = QtWidgets.QPushButton('Add Scan')
+        add_scan = QtWidgets.QPushButton(QtCore.QCoreApplication.translate('BatchManager', 'Add Scan'))
         add_scan.clicked.connect(self.add_scan)
 
         widget_vertical.layout().addWidget(self.modules_manager.settings_tree)

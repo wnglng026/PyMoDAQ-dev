@@ -19,6 +19,7 @@ from pymodaq.control_modules.move_utility_classes import UiType
 from pymodaq_gui.utils.menu_utils import MenuButton
 from pymodaq.control_modules.instruments import DET_TYPES, ACTUATOR_TYPES, ACTUATOR_NAMES, find_actuator_class_from_name
 from pymodaq_utils.logger import get_module_name, set_logger
+from qtpy import QtCore
 
 
 if TYPE_CHECKING:
@@ -180,7 +181,7 @@ class ModuleCreator:
         actuator.do_init_hardware_signal.connect(
             lambda do_init: self.dashboard.modules_manager.on_hardware_initialization(do_init, actuator))
 
-        actuator.ui.add_action('remove', 'RemoveActuator', 'remove', icon_color=get_theme().blue,
+        actuator.ui.add_action('remove', QtCore.QCoreApplication.translate('ModuleCreator', 'RemoveActuator'), 'remove', icon_color=get_theme().blue,
                                toolbar=actuator.ui.toolbar,)
         actuator.ui.connect_action('remove', lambda: self.remove_actuators([actuator]))
 
@@ -342,7 +343,7 @@ class ModuleCreator:
             pass
         detector.do_init_hardware_signal.connect(
             lambda do_init: self.dashboard.modules_manager.on_hardware_initialization(do_init, detector))
-        detector.ui.add_action('remove', 'RemoveDetector', 'remove',
+        detector.ui.add_action('remove', QtCore.QCoreApplication.translate('ModuleCreator', 'RemoveDetector'), 'remove',
                                icon_color=get_theme().blue,
                                toolbar=detector.ui.toolbar, )
         detector.ui.connect_action('remove', lambda: self.remove_detectors([detector]))

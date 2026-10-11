@@ -329,8 +329,8 @@ class SeqEltBase(QtCore.QObject, ActionManager):
                                     parent=base_widget)
         base_widget.add_widget_top(id_widget)
         base_widget.add_widget_top(name_widget)
-        base_widget.add_action('execute', 'Execute', 'start',
-                               tip='Execute the Sequencer Element',
+        base_widget.add_action('execute', QtCore.QCoreApplication.translate('SeqEltBase', 'Execute'), 'start',
+                               tip=QtCore.QCoreApplication.translate('SeqEltBase', 'Execute the Sequencer Element'),
                                icon_color=get_theme().magenta,
                                toolbar=base_widget.toolbar)
         base_widget.connect_action('execute', self.execute)

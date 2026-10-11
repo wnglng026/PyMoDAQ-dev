@@ -134,7 +134,7 @@ class MoveElt(SeqEltBase):
         base_widget.settings_tree.setParameters(base_widget.settings, showTop=False)
         base_widget.insert_widget(base_widget.settings_tree)
 
-        base_widget.add_action('wait_move_done', 'WaitForMoveDone',
+        base_widget.add_action('wait_move_done', QtCore.QCoreApplication.translate('MoveElt', 'WaitForMoveDone'),
                                icon_name='hourglass',
                                icon_color=get_theme().green,
                                icon_checked='hourglass_disabled',

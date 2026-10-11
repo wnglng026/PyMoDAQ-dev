@@ -64,8 +64,8 @@ if __name__ == '__main__':
     app = mkQApp('WidgetToolbar')
     widget = WidgetWithToolbar(123, 'State')
 
-    widget.add_action('quit', 'Quit', icon_name="cancel",
-                        tip="Quit PyMoDAQ", icon_color=get_theme().red)
+    widget.add_action('quit', QtCore.QCoreApplication.translate('widget_with_toolbar', 'Quit'), icon_name="cancel",
+                        tip=QtCore.QCoreApplication.translate('widget_with_toolbar', "Quit PyMoDAQ"), icon_color=get_theme().red)
     widget.connect_action('quit', widget.close)
     widget.show()
 

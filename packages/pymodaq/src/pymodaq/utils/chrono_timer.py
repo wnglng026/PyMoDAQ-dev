@@ -7,6 +7,7 @@ from qtpy.QtCore import Qt, QObject, QTimer
 
 
 from pymodaq_gui.utils.dock import DockArea, Dock
+from qtpy import QtCore
 
 
 class PushButtonShortcut(QtWidgets.QPushButton):
@@ -96,7 +97,7 @@ class ChronoTimer(QObject):
         self.start_pb = PushButtonShortcut(icon, 'Start',
                                            shortcut='Home', shortcut_widget=self.area)
         self.start_pb.clicked.connect(self.start)
-        self.start_pb.setToolTip('home ("début") key shorcut')
+        self.start_pb.setToolTip(QtCore.QCoreApplication.translate('ChronoTimer', 'home ("début") key shorcut'))
 
         hor_layout.addWidget(self.start_pb)
 
@@ -106,7 +107,7 @@ class ChronoTimer(QObject):
         self.pause_pb = PushButtonShortcut(icon, 'Pause',
                                            shortcut='Ctrl+p', shortcut_widget=self.area)
         self.pause_pb.setCheckable(True)
-        self.pause_pb.setToolTip("Ctrl+p key shortcut")
+        self.pause_pb.setToolTip(QtCore.QCoreApplication.translate('ChronoTimer', "Ctrl+p key shortcut"))
         self.pause_pb.clicked.connect(self.pause)
         hor_layout.addWidget(self.pause_pb)
 
@@ -115,7 +116,7 @@ class ChronoTimer(QObject):
                        QtGui.QIcon.Off)
         self.reset_pb = PushButtonShortcut(icon, 'Reset',
                                            shortcut='F5', shortcut_widget=self.area)
-        self.reset_pb.setToolTip('F5 key shortcut')
+        self.reset_pb.setToolTip(QtCore.QCoreApplication.translate('ChronoTimer', 'F5 key shortcut'))
         self.reset_pb.clicked.connect(self.reset)
         hor_layout.addWidget(self.reset_pb)
 
@@ -195,7 +196,7 @@ if __name__ == '__main__':
     win.setVisible(False)
     area = DockArea()
     win.setCentralWidget(area)
-    win.setWindowTitle('Chrono Timer')
+    win.setWindowTitle(QtCore.QCoreApplication.translate('chrono_timer', 'Chrono Timer'))
 
     # prog = ChronoTimer(area, dict(hours=1, minutes=0, seconds=0))
     prog = ChronoTimer(area)

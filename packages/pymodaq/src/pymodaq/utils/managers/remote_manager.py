@@ -13,6 +13,7 @@ from pymodaq_gui.parameter import ioxml
 from pymodaq_gui.utils import select_file
 from pymodaq_gui.parameter import ParameterTree, Parameter
 from pymodaq_gui.parameter.pymodaq_ptypes import registerParameterType, GroupParameter
+from qtpy import QtCore
 
 logger = set_logger(get_module_name(__file__))
 remote_path = get_set_remote_path()
@@ -148,7 +149,7 @@ class ShortcutSelection(QtWidgets.QDialog):
         layout.addWidget(horwidget)
         hor_layout = QtWidgets.QHBoxLayout()
         horwidget.setLayout(hor_layout)
-        label = QtWidgets.QLabel('Pressed key on the keyboard:')
+        label = QtWidgets.QLabel(QtCore.QCoreApplication.translate('ShortcutSelection', 'Pressed key on the keyboard:'))
         self.label = QtWidgets.QLabel('')
 
         hor_layout.addWidget(label)
@@ -226,7 +227,7 @@ class JoystickButtonsSelection(QtWidgets.QDialog):
     def setupUI(self):
         layout = QtWidgets.QVBoxLayout()
         self.setLayout(layout)
-        label = QtWidgets.QLabel('Press a button or move an axis on the Joystick:')
+        label = QtWidgets.QLabel(QtCore.QCoreApplication.translate('JoystickButtonsSelection', 'Press a button or move an axis on the Joystick:'))
         layout.addWidget(label)
 
         params = [{'title': 'Joystick ID', 'name': 'joystickID', 'type': 'int', 'value': -1},
@@ -263,7 +264,7 @@ class RemoteManager(QObject):
         self.detectors = detectors
         if msgbox:
             msgBox = QMessageBox()
-            msgBox.setText("Experiment Manager?")
+            msgBox.setText(QtCore.QCoreApplication.translate('RemoteManager', "Experiment Manager?"))
             msgBox.setInformativeText("What do you want to do?")
             cancel_button = msgBox.addButton(QMessageBox.StandardButton.Cancel)
             new_button = msgBox.addButton(
@@ -465,7 +466,7 @@ class RemoteManager(QObject):
         buttonBox.rejected.connect(dialog.reject)
 
         vlayout.addWidget(buttonBox)
-        dialog.setWindowTitle('Fill in information about the actions and their shortcuts')
+        dialog.setWindowTitle(QtCore.QCoreApplication.translate('RemoteManager', 'Fill in information about the actions and their shortcuts'))
         res = dialog.exec()
 
         if res == QDialog.DialogCode.Accepted:

@@ -113,8 +113,8 @@ class ROIManager(ManagerBase):
 
 
     def setup_actions(self):
-        self.add_action('update_viewers', 'Update viewers', 'refresh',
-                        tip='Refresh the viewers list',
+        self.add_action('update_viewers', QtCore.QCoreApplication.translate('ROIManager', 'Update viewers'), 'refresh',
+                        tip=QtCore.QCoreApplication.translate('ROIManager', 'Refresh the viewers list'),
                         toolbar='management',
                         auto_menu=True)
 

@@ -165,7 +165,7 @@ class CustomExt(CustomApp):
         if add_dashboard:
             # self.add_widget(DashBoardToolbarActions.LABEL, QtWidgets.QLabel('Dashboard:'),
             #                 toolbar='dashboard')
-            self.add_action(DashBoardToolbarActions.SHOW, 'Show Dashboard', 'visibility',
+            self.add_action(DashBoardToolbarActions.SHOW, QtCore.QCoreApplication.translate('CustomExt', 'Show Dashboard'), 'visibility',
                             'Show/Hide the Dashboard window', checkable=True,
                             icon_color=self.get_theme().green,
                             icon_checked='visibility_off',
@@ -186,6 +186,6 @@ class CustomExt(CustomApp):
             if show is None:
                 show = self.is_action_checked(DashBoardToolbarActions.SHOW)
             self.dashboard.mainwindow.setVisible(show)
-            self.dashboard.mainwindow.setWindowTitle('Dashboard')
+            self.dashboard.mainwindow.setWindowTitle(QtCore.QCoreApplication.translate('CustomExt', 'Dashboard'))
             self.dashboard.mainwindow.closeEvent = lambda event: self.set_action_checked(DashBoardToolbarActions.SHOW,
                                                                                          False)

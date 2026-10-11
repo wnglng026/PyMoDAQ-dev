@@ -117,13 +117,13 @@ class Sequence(CustomExt):
         ActionManager.add_action
         """
         self.add_widget('name', QtWidgets.QLineEdit(self.title), toolbar=self.toolbar,
-                        tip='Set the name of this Sequence')
+                        tip=QtCore.QCoreApplication.translate('Sequence', 'Set the name of this Sequence'))
         self._toolbar.addSeparator()
-        self.add_action('start', 'Start', 'motion_play', "Start the Sequence",
+        self.add_action('start', QtCore.QCoreApplication.translate('Sequence', 'Start'), 'motion_play', QtCore.QCoreApplication.translate('Sequence', "Start the Sequence"),
                         icon_color=self.get_theme().green, toolbar=self.toolbar)
-        self.add_action('stop', 'Stop', 'stop_circle', "Stop the Sequence",
+        self.add_action('stop', QtCore.QCoreApplication.translate('Sequence', 'Stop'), 'stop_circle', QtCore.QCoreApplication.translate('Sequence', "Stop the Sequence"),
                         icon_color=self.get_theme().red, toolbar=self.toolbar)
-        self.add_action('pause', 'Pause', 'pause_circle',
+        self.add_action('pause', QtCore.QCoreApplication.translate('Sequence', 'Pause'), 'pause_circle',
                         tip="Pause/resume the sequence",
                         checkable=True, toolbar=self.toolbar,
                         icon_checked_color=self.get_theme().orange)
@@ -232,11 +232,11 @@ class Sequence(CustomExt):
     def start_sequence(self,):
         self.set_action_enabled('start', False)
         self.recursive_disconnect_elts()
-        self.label.setText('Machine starting')
+        self.label.setText(QtCore.QCoreApplication.translate('Sequence', 'Machine starting'))
         self.recursive_connect_elts()
         self.setup_machine()
         if not self.is_valid():
-            self.label.setText('Some elements are not valid, check the log')
+            self.label.setText(QtCore.QCoreApplication.translate('Sequence', 'Some elements are not valid, check the log'))
             return
 
         self.machine.start()
@@ -244,7 +244,7 @@ class Sequence(CustomExt):
     def sequence_stopped(self):
 
         self.set_action_enabled('start', True)
-        self.label.setText('Machine finished')
+        self.label.setText(QtCore.QCoreApplication.translate('Sequence', 'Machine finished'))
         self.sequence_finished.emit()
 
     def pause_sequence(self):

@@ -35,6 +35,7 @@ from pymodaq.extensions.pid.actuator_controller import PIDController
 from pymodaq.extensions.pid.utils import PIDModelGeneric
 
 from pymodaq.utils.custom_ext import CustomExt
+from qtpy import QtCore
 
 if TYPE_CHECKING:
     pass
@@ -469,7 +470,7 @@ class DAQ_PID(CustomExt):
     def setup_actions(self):
         logger.debug("setting actions")
         self.add_widget("model_label", QtWidgets.QLabel, "Init Model:")
-        self.add_action("ini_model", "Init Model", "ini",
+        self.add_action("ini_model", QtCore.QCoreApplication.translate('DAQ_PID', "Init Model"), "ini",
             tip="Initialize the selected model: algo/data conversion")
         self.add_widget("model_led", MultistateLED(
             states=[
@@ -479,12 +480,12 @@ class DAQ_PID(CustomExt):
             ],
             readonly=True,
         ), toolbar=self.toolbar)
-        self.add_action("create_setp_actuators", "Create SetPoint Actuators", "Add_Step",
-            tip="Create a DAQ_Move Control Module for each SetPoint allowing to"
-            "control them from the DashBoard, therefore within other extensions")
+        self.add_action("create_setp_actuators", QtCore.QCoreApplication.translate('DAQ_PID', "Create SetPoint Actuators"), "Add_Step",
+            tip=QtCore.QCoreApplication.translate('DAQ_PID', "Create a DAQ_Move Control Module for each SetPoint allowing to"
+            "control them from the DashBoard, therefore within other extensions"))
         self.add_widget("model_label", QtWidgets.QLabel, "Init PID Runner:")
-        self.add_action("ini_pid", "Init the PID loop", "ini",
-            tip="Init the PID thread", checkable=True)
+        self.add_action("ini_pid", QtCore.QCoreApplication.translate('DAQ_PID', "Init the PID loop"), "ini",
+            tip=QtCore.QCoreApplication.translate('DAQ_PID', "Init the PID thread"), checkable=True)
         self.add_widget("pid_led", MultistateLED(
             states=[
                 (PidLedState.IDLE,    StatusPalette.color(Status.OFF)),
@@ -493,10 +494,10 @@ class DAQ_PID(CustomExt):
             ],
             readonly=True,
         ), toolbar=self.toolbar)
-        self.add_action( "run", "Run The PID loop", "run2",
-            tip="run or stop the pid loop", checkable=True)
-        self.add_action("pause", "Pause the PID loop", "pause",
-            tip="Pause the PID loop", checkable=True)
+        self.add_action( "run", QtCore.QCoreApplication.translate('DAQ_PID', "Run The PID loop"), "run2",
+            tip=QtCore.QCoreApplication.translate('DAQ_PID', "run or stop the pid loop"), checkable=True)
+        self.add_action("pause", QtCore.QCoreApplication.translate('DAQ_PID', "Pause the PID loop"), "pause",
+            tip=QtCore.QCoreApplication.translate('DAQ_PID', "Pause the PID loop"), checkable=True)
         self.set_action_checked("pause", True)
         self.set_action_enabled("create_setp_actuators", False)
         logger.debug("actions set")
@@ -515,13 +516,13 @@ class DAQ_PID(CustomExt):
 
         logger.debug("settings the extension docks done")
 
-        labmaj = QtWidgets.QLabel("Setpoints:")
+        labmaj = QtWidgets.QLabel(QtCore.QCoreApplication.translate('DAQ_PID', "Setpoints:"))
         self.toolbar_layout.addWidget(labmaj, 3, 0, 1, 2)
-        labmaj = QtWidgets.QLabel("Value:")
+        labmaj = QtWidgets.QLabel(QtCore.QCoreApplication.translate('DAQ_PID', "Value:"))
         self.toolbar_layout.addWidget(labmaj, 4, 0, 1, 2)
-        labmaj = QtWidgets.QLabel("Stability:")
+        labmaj = QtWidgets.QLabel(QtCore.QCoreApplication.translate('DAQ_PID', "Stability:"))
         self.toolbar_layout.addWidget(labmaj, 5, 0, 1, 2)
-        labmaj = QtWidgets.QLabel("Sync Value:")
+        labmaj = QtWidgets.QLabel(QtCore.QCoreApplication.translate('DAQ_PID', "Sync Value:"))
         self.toolbar_layout.addWidget(labmaj, 6, 0, 1, 2)
 
         verlayout.addWidget(widget_toolbar)

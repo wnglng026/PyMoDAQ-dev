@@ -10,6 +10,7 @@ from pymodaq.utils.gui_utils.loader_utils import create_extension
 from pymodaq_gui.managers.manager_base import ManagerBase, ManagerActions
 from pymodaq_utils import set_logger
 from pymodaq_utils.logger import get_module_name
+from qtpy import QtCore
 
 if TYPE_CHECKING:
     from pymodaq.dashboard import DashBoard
@@ -109,7 +110,7 @@ class ExtensionManager(ManagerBase):
             raise
 
     def setup_menus_and_toolbars(self, menubar: QtWidgets.QMenuBar = None):
-        self.extensions_menu = self.add_menu('extensions', "Extensions",
+        self.extensions_menu = self.add_menu('extensions', QtCore.QCoreApplication.translate('ExtensionManager', "Extensions"),
                                              parent_menu=self.menubar)
 
     def setup_actions(self):

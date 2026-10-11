@@ -541,7 +541,7 @@ class SequenceTreeView(QtWidgets.QTreeView, ActionManager):
         index.model().edit_data(index)
 
     def setup_menu(self):
-        self.add_menu('add_elements', 'Add Element',
+        self.add_menu('add_elements', QtCore.QCoreApplication.translate('SequenceTreeView', 'Add Element'),
                       parent_menu=self.menu,
                       menu=IterableMenu('Add Element',
                                         [elt.capitalize() for elt in seq_factory.elements if
@@ -549,20 +549,20 @@ class SequenceTreeView(QtWidgets.QTreeView, ActionManager):
                                               elt == RootElt.elt_name)],
                                         self.add_element))
         self.menu.addSeparator()
-        self.add_action('remove', 'Remove Element', menu=self.menu,
+        self.add_action('remove', QtCore.QCoreApplication.translate('SequenceTreeView', 'Remove Element'), menu=self.menu,
                         shortcut=Qt.Key.Key_Delete)
         self.addAction(self.get_action('remove'))
         self.connect_action('remove', self.remove)
 
-        self.add_action('clear_children', 'Clear Children', menu=self.menu)
+        self.add_action('clear_children', QtCore.QCoreApplication.translate('SequenceTreeView', 'Clear Children'), menu=self.menu)
         self.connect_action('clear_children', self.clear_children)
 
         self.menu.addSeparator()
 
-        self.add_action('load_file', 'Load Sequence File', menu=self.menu,
+        self.add_action('load_file', QtCore.QCoreApplication.translate('SequenceTreeView', 'Load Sequence File'), menu=self.menu,
                         shortcut=QKeySequence(Qt.Modifier.CTRL | Qt.Key.Key_O))
         self.addAction(self.get_action('load_file'))
-        self.add_action('save_file', 'Save Sequence File', menu=self.menu,
+        self.add_action('save_file', QtCore.QCoreApplication.translate('SequenceTreeView', 'Save Sequence File'), menu=self.menu,
                         shortcut=QKeySequence(Qt.Modifier.CTRL | Qt.Key.Key_S))
         self.addAction(self.get_action('save_file'))
 

@@ -166,18 +166,18 @@ class Launcher(CustomApp):
         self.hbox = QHBoxLayout()
 
         # Launcher
-        self.dashboard_button = QPushButton("Dashboard")
-        self.viewer_button = QPushButton("DAQ Viewer")
-        self.move_button = QPushButton("DAQ Move")
-        self.h5browser_button = QPushButton("H5Browser")
-        self.shortcut_label = QLabel("Shortcuts :")
+        self.dashboard_button = QPushButton(QtCore.QCoreApplication.translate('Launcher', "Dashboard"))
+        self.viewer_button = QPushButton(QtCore.QCoreApplication.translate('Launcher', "DAQ Viewer"))
+        self.move_button = QPushButton(QtCore.QCoreApplication.translate('Launcher', "DAQ Move"))
+        self.h5browser_button = QPushButton(QtCore.QCoreApplication.translate('Launcher', "H5Browser"))
+        self.shortcut_label = QLabel(QtCore.QCoreApplication.translate('Launcher', "Shortcuts :"))
         self.launcher_vbox.setAlignment(QtCore.Qt.AlignmentFlag.AlignTop)
 
         # Header
         self.date_combo_box = QComboBox()
         self.date_combo_box.setMinimumSize(QtCore.QSize(146, 25))
         # set minimum size to ensure consistent UI layout when history file is empty vs non-empty
-        self.date_label = QLabel("Date :")
+        self.date_label = QLabel(QtCore.QCoreApplication.translate('Launcher', "Date :"))
 
         # Set tooltip buttons
         self.set_tooltip_button()
@@ -215,17 +215,17 @@ class Launcher(CustomApp):
         self.add_action('launch_dashboard', self.tr('Launch empty dashboard'), '',
                         EnumToolTip.DASHBOARD, auto_toolbar=False
                         )
-        self.add_action('launch_viewer', 'Launch empy viewer', '', EnumToolTip.DAQ_VIEWER, auto_toolbar=False)
-        self.add_action('launch_move', 'Launch empty DAQ move', '', EnumToolTip.DAQ_MOVE, auto_toolbar=False)
+        self.add_action('launch_viewer', QtCore.QCoreApplication.translate('Launcher', 'Launch empy viewer'), '', EnumToolTip.DAQ_VIEWER, auto_toolbar=False)
+        self.add_action('launch_move', QtCore.QCoreApplication.translate('Launcher', 'Launch empty DAQ move'), '', EnumToolTip.DAQ_MOVE, auto_toolbar=False)
         self.add_action('launch_h5browser', self.tr('Launch H5Browser'), '', EnumToolTip.H5BROWSER, auto_toolbar=False)
 
-        self.add_action('back_config', 'Back', 'keyboard_arrow_left', EnumToolTip.BACK_HISTORY, auto_toolbar=True,
+        self.add_action('back_config', QtCore.QCoreApplication.translate('Launcher', 'Back'), 'keyboard_arrow_left', EnumToolTip.BACK_HISTORY, auto_toolbar=True,
                         toolbar='header')
         self.header_toolbar.addWidget(self.date_label)
         self.header_toolbar.addWidget(self.date_combo_box)
-        self.add_action('restore_dashboard', 'Launch',
+        self.add_action('restore_dashboard', QtCore.QCoreApplication.translate('Launcher', 'Launch'),
                         'open_in_new', EnumToolTip.RESTORE, auto_toolbar=True, toolbar='header')
-        self.add_action('next_config', 'Next', 'keyboard_arrow_right', EnumToolTip.NEXT_HISTORY, auto_toolbar=True,
+        self.add_action('next_config', QtCore.QCoreApplication.translate('Launcher', 'Next'), 'keyboard_arrow_right', EnumToolTip.NEXT_HISTORY, auto_toolbar=True,
                         toolbar='header')
 
         # setup_actions is called after setup_docks, style the action button here once it exists.

@@ -365,26 +365,26 @@ class DashBoard(CustomApp, LECOComponentMixin):
         """
         Create the menubar object looking like :
         """
-        self.add_menu(MenuToolbarNames.FILE, 'File', menubar)
+        self.add_menu(MenuToolbarNames.FILE, QtCore.QCoreApplication.translate('DashBoard', 'File'), menubar)
 
-        self.add_menu(MenuToolbarNames.VIEW, 'View', menubar)
+        self.add_menu(MenuToolbarNames.VIEW, QtCore.QCoreApplication.translate('DashBoard', 'View'), menubar)
 
-        self.add_menu('docked', 'Docked', MenuToolbarNames.VIEW)
+        self.add_menu('docked', QtCore.QCoreApplication.translate('DashBoard', 'Docked'), MenuToolbarNames.VIEW)
 
-        self.add_menu(MenuToolbarNames.TOOLS, 'Tools', menubar)
-        self.add_menu('experiment', 'Experiment', MenuToolbarNames.TOOLS, icon_name=ExperimentManager.icon_name)
-        self.add_menu('state', 'State', MenuToolbarNames.TOOLS, icon_name=StateManager.icon_name)
+        self.add_menu(MenuToolbarNames.TOOLS, QtCore.QCoreApplication.translate('DashBoard', 'Tools'), menubar)
+        self.add_menu('experiment', QtCore.QCoreApplication.translate('DashBoard', 'Experiment'), MenuToolbarNames.TOOLS, icon_name=ExperimentManager.icon_name)
+        self.add_menu('state', QtCore.QCoreApplication.translate('DashBoard', 'State'), MenuToolbarNames.TOOLS, icon_name=StateManager.icon_name)
         self.get_menu('state').setEnabled(False)
-        self.add_menu('rois', 'Rois', MenuToolbarNames.TOOLS, icon_name=ROIManager.icon_name)
+        self.add_menu('rois', QtCore.QCoreApplication.translate('DashBoard', 'Rois'), MenuToolbarNames.TOOLS, icon_name=ROIManager.icon_name)
         self.get_menu('rois').setEnabled(False)
-        self.add_menu('overshooter', 'Overshooter', MenuToolbarNames.TOOLS, icon_name=Overshooter.icon_name)
+        self.add_menu('overshooter', QtCore.QCoreApplication.translate('DashBoard', 'Overshooter'), MenuToolbarNames.TOOLS, icon_name=Overshooter.icon_name)
         self.get_menu('overshooter').setEnabled(False)
 
         # self.remote_menu = self.add_menu('remote', "Remote/Shortcuts Control")
         # self.update_remote_menu()
 
         # extensions menu
-        self.extensions_menu = self.add_menu('extensions', "Extensions", MenuToolbarNames.TOOLS)
+        self.extensions_menu = self.add_menu('extensions', QtCore.QCoreApplication.translate('DashBoard', "Extensions"), MenuToolbarNames.TOOLS)
         self.get_menu('extensions').setEnabled(False)
 
         self.add_toolbar('experiment', 'Experiment', parent=self.mainwindow,
@@ -399,11 +399,11 @@ class DashBoard(CustomApp, LECOComponentMixin):
         self.toolbar.addSeparator()
 
     def setup_actions(self):
-        self.add_action("load_layout", "Load Layout", "",
-                        "Load the Saved Docks layout corresponding to the current experiment",
+        self.add_action("load_layout", QtCore.QCoreApplication.translate('DashBoard', "Load Layout"), "",
+                        QtCore.QCoreApplication.translate('DashBoard', "Load the Saved Docks layout corresponding to the current experiment"),
                         auto_toolbar=False, menu='docked')
-        self.add_action("save_layout", "Save Layout", "",
-                        "Save the Saved Docks layout corresponding to the current experiment",
+        self.add_action("save_layout", QtCore.QCoreApplication.translate('DashBoard', "Save Layout"), "",
+                        QtCore.QCoreApplication.translate('DashBoard', "Save the Saved Docks layout corresponding to the current experiment"),
                         auto_toolbar=False, menu='docked')
         self.add_action("show_log_widget", "Show/hide log window", "", checkable=True, auto_toolbar=False,
                         menu=MenuToolbarNames.VIEW)
@@ -413,9 +413,9 @@ class DashBoard(CustomApp, LECOComponentMixin):
                             auto_toolbar=False, menu='extensions',
                             icon_name=extensions[ExtensionEnum[ext_name]].klass.icon_name)
 
-        self.add_action("state", "State", auto_toolbar=False)
+        self.add_action("state", QtCore.QCoreApplication.translate('DashBoard', "State"), auto_toolbar=False)
 
-        self.add_widget('add_module', self.module_creator.menu_button, tip='Select a Module to add to this Dashboard',
+        self.add_widget('add_module', self.module_creator.menu_button, tip=QtCore.QCoreApplication.translate('DashBoard', 'Select a Module to add to this Dashboard'),
                         toolbar='experiment')
 
     def connect_things(self):
@@ -562,8 +562,8 @@ class DashBoard(CustomApp, LECOComponentMixin):
         mssg = QMessageBox()
         if ask:
             mssg.setText(
-                "You have to restart the application to take the"
-                " modifications into account!",
+                QtCore.QCoreApplication.translate('DashBoard', "You have to restart the application to take the"
+                " modifications into account!"),
             )
             mssg.setInformativeText("Do you want to restart?")
             mssg.setStandardButtons(QMessageBox.StandardButton.Ok | QMessageBox.StandardButton.Cancel)

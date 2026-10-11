@@ -24,6 +24,7 @@ from pymodaq.extensions.daq_logger.h5logging import H5Logger
 from pymodaq.utils.managers.modules.modules_manager import ModulesManager
 from pymodaq.utils.data import DataActuator, DataToExport
 from pymodaq.utils.custom_ext import CustomExt
+from qtpy import QtCore
 
 if TYPE_CHECKING:
     from pymodaq.dashboard import DashBoard
@@ -81,10 +82,10 @@ class DAQ_Logger(CustomExt):
         subclass method from ActionManager
         '''
         logger.debug('setting actions')
-        self.add_action('start', 'Start Logging', 'timer', "Start the logging",
+        self.add_action('start', QtCore.QCoreApplication.translate('DAQ_Logger', 'Start Logging'), 'timer', QtCore.QCoreApplication.translate('DAQ_Logger', "Start the logging"),
                         checkable=True, toolbar=self.toolbar,
                         icon_color=self.get_theme().green)
-        self.add_action('stop', 'Stop', 'timer_off', 'Stop/pause logging',
+        self.add_action('stop', QtCore.QCoreApplication.translate('DAQ_Logger', 'Stop'), 'timer_off', 'Stop/pause logging',
                         checkable=False, toolbar=self.toolbar,
                         icon_color=self.get_theme().red)
 
@@ -93,9 +94,9 @@ class DAQ_Logger(CustomExt):
         log_type_combo.currentTextChanged.connect(self.set_log_type)
         self._actions['log_type'] = self.toolbar.addWidget(log_type_combo)
         self.toolbar.addSeparator()
-        self.add_action('grab_all', 'Grab All', 'run_all', "Grab all selected detectors's data and actuators's value",
+        self.add_action('grab_all', QtCore.QCoreApplication.translate('DAQ_Logger', 'Grab All'), 'run_all', QtCore.QCoreApplication.translate('DAQ_Logger', "Grab all selected detectors's data and actuators's value"),
                         checkable=False, toolbar=self.toolbar)
-        self.add_action('stop_all', 'Stop All', 'stop_all', "Stop all selected detectors and actuators",
+        self.add_action('stop_all', QtCore.QCoreApplication.translate('DAQ_Logger', 'Stop All'), 'stop_all', QtCore.QCoreApplication.translate('DAQ_Logger', "Stop all selected detectors and actuators"),
                         checkable=False, toolbar=self.toolbar)
         self.set_action_enabled('start', False)
         self.set_action_enabled('stop', False)
@@ -115,16 +116,16 @@ class DAQ_Logger(CustomExt):
         self.dockarea.addDock(self.docks['logger_settings'], 'right', self.docks['detectors'])
 
         self.statusbar.setMaximumHeight(25)
-        self.status_widget = QtWidgets.QLabel('Initializing')
+        self.status_widget = QtWidgets.QLabel(QtCore.QCoreApplication.translate('DAQ_Logger', 'Initializing'))
         self.statusbar.addPermanentWidget(self.status_widget)
 
         self.start_log_time = QtWidgets.QDateTimeEdit()
         self.start_log_time.setReadOnly(True)
-        self.start_log_time.setToolTip('Logging started at:')
+        self.start_log_time.setToolTip(QtCore.QCoreApplication.translate('DAQ_Logger', 'Logging started at:'))
         self.statusbar.addPermanentWidget(self.start_log_time)
 
         self.logging_state = QLED()
-        self.logging_state.setToolTip('logging status: green (running), red (idle)')
+        self.logging_state.setToolTip(QtCore.QCoreApplication.translate('DAQ_Logger', 'logging status: green (running), red (idle)'))
         self.logging_state.clickable = False
         self.statusbar.addPermanentWidget(self.logging_state)
 
@@ -279,7 +280,7 @@ class DAQ_Logger(CustomExt):
         """
             Start a logging.
         """
-        self.status_widget.setText('Starting logging')
+        self.status_widget.setText(QtCore.QCoreApplication.translate('DAQ_Logger', 'Starting logging'))
 
         self.overshoot = False
         res = self.set_logging()
@@ -307,7 +308,7 @@ class DAQ_Logger(CustomExt):
         self.logging_state.set_as_false()
 
         self.command_DAQ_signal.emit(["start_logging"])
-        self.status_widget.setText('Running acquisition')
+        self.status_widget.setText(QtCore.QCoreApplication.translate('DAQ_Logger', 'Running acquisition'))
 
     def stop_logging(self):
         """
@@ -347,7 +348,7 @@ class DAQ_Logger(CustomExt):
             self.update_status(status[1], wait_time=self.wait_time)
 
         elif status[0] == "Timeout":
-            self.status_widget.setText('Timeout occurred')
+            self.status_widget.setText(QtCore.QCoreApplication.translate('DAQ_Logger', 'Timeout occurred'))
 
     def update_status(self, txt, wait_time=0):
         """

@@ -253,7 +253,7 @@ class Overshooter(ManagerBase):
 
     def setup_actions(self):
         self.toolbar.addSeparator()
-        self.add_action('update_data', 'Update Data', 'refresh')
+        self.add_action('update_data', QtCore.QCoreApplication.translate('Overshooter', 'Update Data'), 'refresh')
 
         self.create_dashboard_toolbar(add_dashboard=__name__ == '__main__',
                                       add_experiment=True, add_state=True, add_break=False)

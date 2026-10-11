@@ -197,18 +197,18 @@ class Sequencer(CustomExt):
 
 
         self.toolbar.addSeparator()
-        self.add_action('add_sequence', 'Add Sequence', 'add_circle',
-                        tip='Add a sequence',
+        self.add_action('add_sequence', QtCore.QCoreApplication.translate('Sequencer', 'Add Sequence'), 'add_circle',
+                        tip=QtCore.QCoreApplication.translate('Sequencer', 'Add a sequence'),
                         )
-        self.add_action('remove_sequence', 'Remove Sequence', 'remove',
-                        tip='Remove last sequence', enabled=False,
+        self.add_action('remove_sequence', QtCore.QCoreApplication.translate('Sequencer', 'Remove Sequence'), 'remove',
+                        tip=QtCore.QCoreApplication.translate('Sequencer', 'Remove last sequence'), enabled=False,
                         )
         self.toolbar.addSeparator()
-        self.add_action('load_sequence', 'Load Sequence', 'file_open',
-                        tip='Load a sequence file',
+        self.add_action('load_sequence', QtCore.QCoreApplication.translate('Sequencer', 'Load Sequence'), 'file_open',
+                        tip=QtCore.QCoreApplication.translate('Sequencer', 'Load a sequence file'),
                         )
-        self.add_action('save_sequence', 'Save Sequence', 'file_save',
-                        tip='Save as a sequence file',
+        self.add_action('save_sequence', QtCore.QCoreApplication.translate('Sequencer', 'Save Sequence'), 'file_save',
+                        tip=QtCore.QCoreApplication.translate('Sequencer', 'Save as a sequence file'),
                         )
 
     def connect_things(self):

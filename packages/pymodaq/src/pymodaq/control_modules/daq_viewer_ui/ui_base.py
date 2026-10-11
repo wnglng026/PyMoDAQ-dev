@@ -168,22 +168,22 @@ class DAQ_Viewer_UI(ControlModuleUI, ViewerDispatcher):
         self.toolbar.addSeparator()
 
         # Detector-specific actions
-        self.add_action('snap', 'Snap', ActionIconNames.SNAP, "Take a snapshot from the detector")
-        self.add_action('grab', 'Grab', ActionIconNames.GRAB, "Grab data from the detector", checkable=True,
+        self.add_action('snap', QtCore.QCoreApplication.translate('DAQ_Viewer_UI', 'Snap'), ActionIconNames.SNAP, QtCore.QCoreApplication.translate('DAQ_Viewer_UI', "Take a snapshot from the detector"))
+        self.add_action('grab', QtCore.QCoreApplication.translate('DAQ_Viewer_UI', 'Grab'), ActionIconNames.GRAB, QtCore.QCoreApplication.translate('DAQ_Viewer_UI', "Grab data from the detector"), checkable=True,
                         icon_checked=ActionIconNames.GRAB_STOP,
                         icon_checked_color=self.get_theme().green)
-        self.add_action('reset_live', 'ResetLive', ActionIconNames.RESET,
-                        "Reset The current live averaging",
+        self.add_action('reset_live', QtCore.QCoreApplication.translate('DAQ_Viewer_UI', 'ResetLive'), ActionIconNames.RESET,
+                        QtCore.QCoreApplication.translate('DAQ_Viewer_UI', "Reset The current live averaging"),
                         visible=False)
-        self.add_action('show_graphs', 'ShowGraphs', 'bid_landscape', 'Show/Hide the Graphs Area',
+        self.add_action('show_graphs', QtCore.QCoreApplication.translate('DAQ_Viewer_UI', 'ShowGraphs'), 'bid_landscape', 'Show/Hide the Graphs Area',
                         checkable=True, icon_checked='bid_landscape_disabled',
                         icon_color=self.get_theme().green, icon_checked_color=self.get_theme().red)
-        self.add_action('save_current', 'Save Current Data', 'save_as', "Save Current Data")
+        self.add_action('save_current', QtCore.QCoreApplication.translate('DAQ_Viewer_UI', 'Save Current Data'), 'save_as', QtCore.QCoreApplication.translate('DAQ_Viewer_UI', "Save Current Data"))
         self.toolbar.addSeparator()
-        self.add_action('background_snap', 'Snap Background', 'background_replace',
-                        tip='Take a snapshot a set it as background')
-        self.add_action('background_subtract', 'Subtract Background', 'texture_minus', checkable=True,
-                        tip='If checked, apply background substraction',
+        self.add_action('background_snap', QtCore.QCoreApplication.translate('DAQ_Viewer_UI', 'Snap Background'), 'background_replace',
+                        tip=QtCore.QCoreApplication.translate('DAQ_Viewer_UI', 'Take a snapshot a set it as background'))
+        self.add_action('background_subtract', QtCore.QCoreApplication.translate('DAQ_Viewer_UI', 'Subtract Background'), 'texture_minus', checkable=True,
+                        tip=QtCore.QCoreApplication.translate('DAQ_Viewer_UI', 'If checked, apply background substraction'),
                         icon_checked_color=self.get_theme().green)
 
     def connect_things(self):

@@ -88,7 +88,7 @@ class LoggerStatusBarManager:
     def create_permanent_widgets(self):
         self._start_log_time = QtWidgets.QDateTimeEdit()
         self._start_log_time.setReadOnly(True)
-        self._start_log_time.setToolTip('Logging started at:')
+        self._start_log_time.setToolTip(QtCore.QCoreApplication.translate('LoggerStatusBarManager', 'Logging started at:'))
         self.statusbar.addPermanentWidget(self._start_log_time)
 
         self._logging_state = MultistateLED(
@@ -103,7 +103,7 @@ class LoggerStatusBarManager:
         self.statusbar.addPermanentWidget(self._logging_state)
 
         self._n_saved_sb = QSpinBox_ro()
-        self._n_saved_sb.setToolTip('Total number of saved data')
+        self._n_saved_sb.setToolTip(QtCore.QCoreApplication.translate('LoggerStatusBarManager', 'Total number of saved data'))
         self.statusbar.addPermanentWidget(self._n_saved_sb)
 
 
@@ -180,7 +180,7 @@ class DAQLogger(CustomExt):
         logger.debug('setting actions')
 
         self.toolbar.addSeparator()
-        self.add_action('grab_all', 'Grab All', ActionIconNames.GRAB,
+        self.add_action('grab_all', QtCore.QCoreApplication.translate('DAQLogger', 'Grab All'), ActionIconNames.GRAB,
                         "Grab/Stop all selected detectors's data and actuators's value",
                         checkable=True,
                         icon_checked=ActionIconNames.GRAB_STOP,

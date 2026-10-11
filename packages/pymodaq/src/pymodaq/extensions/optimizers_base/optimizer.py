@@ -458,9 +458,9 @@ class GenericOptimization(CustomExt):
 
 
     def populate_status_bar(self):
-        self._status_message_label = QtWidgets.QLabel('Initializing')
+        self._status_message_label = QtWidgets.QLabel(QtCore.QCoreApplication.translate('GenericOptimization', 'Initializing'))
         self._optimizing_step = QSpinBox_ro()
-        self._optimizing_step.setToolTip('Current Optimizing step')
+        self._optimizing_step.setToolTip(QtCore.QCoreApplication.translate('GenericOptimization', 'Current Optimizing step'))
 
         self._optimizing_done_LED = MultistateLED(
             states=[
@@ -566,8 +566,8 @@ class GenericOptimization(CustomExt):
         logger.debug('setting actions')
         combo_model = QtWidgets.QComboBox()
         combo_model.addItems([model['name'] for model in MODELS])
-        self.add_widget(OptimizerAction.MODELS, combo_model, tip='List of available models')
-        self.add_action(OptimizerAction.INI_MODEL, 'Init Model', 'ini')
+        self.add_widget(OptimizerAction.MODELS, combo_model, tip=QtCore.QCoreApplication.translate('GenericOptimization', 'List of available models'))
+        self.add_action(OptimizerAction.INI_MODEL, QtCore.QCoreApplication.translate('GenericOptimization', 'Init Model'), 'ini')
         self.add_widget('model_led', MultistateLED(
             states=[
                 (ModelLedState.UNINITIALIZED, StatusPalette.color(Status.OFF)),
@@ -576,9 +576,9 @@ class GenericOptimization(CustomExt):
             ],
             readonly=True,
         ), toolbar=self.toolbar)
-        self.add_action(OptimizerAction.SAVE, 'Save?', 'SaveAs', tip='If checked, data will be saved',
+        self.add_action(OptimizerAction.SAVE, QtCore.QCoreApplication.translate('GenericOptimization', 'Save?'), 'SaveAs', tip=QtCore.QCoreApplication.translate('GenericOptimization', 'If checked, data will be saved'),
                         checkable=True)
-        self.add_action(OptimizerAction.INI_RUNNER, 'Init the Optimisation Algorithm', 'ini', checkable=True,
+        self.add_action(OptimizerAction.INI_RUNNER, QtCore.QCoreApplication.translate('GenericOptimization', 'Init the Optimisation Algorithm'), 'ini', checkable=True,
                         enabled=False)
         self.add_widget('runner_led', MultistateLED(
             states=[
@@ -588,15 +588,15 @@ class GenericOptimization(CustomExt):
             ],
             readonly=True,
         ), toolbar=self.toolbar)
-        self.add_action(OptimizerAction.RUN, 'Run Optimisation', 'run2', checkable=True, enabled=False)
-        self.add_action(OptimizerAction.RESTART, 'Restart algo', 'Refresh2', checkable=False, enabled=False)
-        self.add_action(OptimizerAction.STOP, 'Stop algo', 'stop', checkable=False, enabled=False,
-                        tip='Stop algo and go to best individual')
+        self.add_action(OptimizerAction.RUN, QtCore.QCoreApplication.translate('GenericOptimization', 'Run Optimisation'), 'run2', checkable=True, enabled=False)
+        self.add_action(OptimizerAction.RESTART, QtCore.QCoreApplication.translate('GenericOptimization', 'Restart algo'), 'Refresh2', checkable=False, enabled=False)
+        self.add_action(OptimizerAction.STOP, QtCore.QCoreApplication.translate('GenericOptimization', 'Stop algo'), 'stop', checkable=False, enabled=False,
+                        tip=QtCore.QCoreApplication.translate('GenericOptimization', 'Stop algo and go to best individual'))
 
-        self.add_action(OptimizerAction.GO_TO_BEST, 'Go to best', 'Rendezvous', enabled=False,
-                        tip='Go to the position optimizing the signal')
-        self.add_action(OptimizerAction.GO_TO, 'Go to ', 'move_contour', enabled=False, checkable=True,
-                        tip='Go to the double clicked position in the plot')
+        self.add_action(OptimizerAction.GO_TO_BEST, QtCore.QCoreApplication.translate('GenericOptimization', 'Go to best'), 'Rendezvous', enabled=False,
+                        tip=QtCore.QCoreApplication.translate('GenericOptimization', 'Go to the position optimizing the signal'))
+        self.add_action(OptimizerAction.GO_TO, QtCore.QCoreApplication.translate('GenericOptimization', 'Go to '), 'move_contour', enabled=False, checkable=True,
+                        tip=QtCore.QCoreApplication.translate('GenericOptimization', 'Go to the double clicked position in the plot'))
         logger.debug('actions set')
 
     def connect_things(self):
@@ -876,7 +876,7 @@ class GenericOptimization(CustomExt):
         self.h5saver.settings.child('current_scan_name').setValue(node.name)
 
     def ini_optimization_runner(self):
-        self._status_message_label.setText('Initializing Algorithm and thread')
+        self._status_message_label.setText(QtCore.QCoreApplication.translate('GenericOptimization', 'Initializing Algorithm and thread'))
         if self.is_action_checked(OptimizerAction.INI_RUNNER):
             self._optimizing_done_LED.set_state(OptimizerLedState.IDLE)
             if not self.model_class.has_fitness_observable():
@@ -924,7 +924,7 @@ class GenericOptimization(CustomExt):
                 self.get_action(OptimizerAction.RUN).trigger()
                 QtWidgets.QApplication.processEvents()
 
-            self._status_message_label.setText('Quitting Runner Thread')
+            self._status_message_label.setText(QtCore.QCoreApplication.translate('GenericOptimization', 'Quitting Runner Thread'))
             try:
                 self.command_runner.disconnect()
             except TypeError:
@@ -956,7 +956,7 @@ class GenericOptimization(CustomExt):
         self.get_action(OptimizerAction.RUN).trigger()
         self.optimization_done_signal.emit(dte)
         self._optimizing_done_LED.set_state(OptimizerLedState.COMPLETE)
-        self._status_message_label.setText('Optimization Done')
+        self._status_message_label.setText(QtCore.QCoreApplication.translate('GenericOptimization', 'Optimization Done'))
 
     def do_live_plot(self, dte_algo: DataToExport):
         self.enl_index += 1
@@ -1016,7 +1016,7 @@ class GenericOptimization(CustomExt):
     def run_optimization(self):
         if self.is_action_checked(OptimizerAction.RUN):
             self._optimizing_done_LED.set_state(OptimizerLedState.RUNNING)
-            self._status_message_label.setText('Running Optimization')
+            self._status_message_label.setText(QtCore.QCoreApplication.translate('GenericOptimization', 'Running Optimization'))
             self.set_action_enabled(OptimizerAction.SAVE, False)
             self.get_action(OptimizerAction.RUN).set_icon('pause')
             self.set_action_enabled(OptimizerAction.GO_TO_BEST, False)
@@ -1028,7 +1028,7 @@ class GenericOptimization(CustomExt):
             QtWidgets.QApplication.processEvents()
             self.command_runner.emit(utils.ThreadCommand(OptimizerToRunner.RUN))
         else:
-            self._status_message_label.setText('Pausing Optimization')
+            self._status_message_label.setText(QtCore.QCoreApplication.translate('GenericOptimization', 'Pausing Optimization'))
             self.get_action(OptimizerAction.RUN).set_icon('run2')
             self.set_action_enabled(OptimizerAction.SAVE, True)
             self.command_runner.emit(utils.ThreadCommand(OptimizerToRunner.PAUSE))

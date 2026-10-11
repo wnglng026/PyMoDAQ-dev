@@ -26,6 +26,7 @@ from pymodaq_gui.messenger import messagebox
 
 from pymodaq.utils.data import DataActuator, DataToActuators
 from pymodaq.control_modules.thread_commands import ControlToHardwareMove, ControlToHardwareViewer
+from qtpy import QtCore
 
 if TYPE_CHECKING:
     from pymodaq.control_modules.daq_viewer import DAQ_Viewer
@@ -616,7 +617,7 @@ class ModulesManager(QObject, ParameterManager):
             return
 
         dialog = QtWidgets.QDialog()
-        dialog.setWindowTitle('Move actuators to target position')
+        dialog.setWindowTitle(QtCore.QCoreApplication.translate('ModulesManager', 'Move actuators to target position'))
         layout = QtWidgets.QVBoxLayout()
         form = QtWidgets.QFormLayout()
 

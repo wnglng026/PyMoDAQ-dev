@@ -123,7 +123,7 @@ class ControlModuleUI(CustomApp):
         toolbar: QToolBar
             The toolbar to add the action to. If None, uses default toolbar.
         """
-        self.add_action('show_settings', 'Show Settings', 'settings', "Show Settings",
+        self.add_action('show_settings', QtCore.QCoreApplication.translate('ControlModuleUI', 'Show Settings'), 'settings', QtCore.QCoreApplication.translate('ControlModuleUI', "Show Settings"),
                         checkable=True, icon_checked_color=self.get_theme().green,
                         toolbar=toolbar)
 

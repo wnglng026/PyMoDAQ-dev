@@ -118,13 +118,13 @@ class DataMixer(CustomExt):
         """
         combo_model = QtWidgets.QComboBox()
         combo_model.addItems([model['name'] for model in self.models])
-        self.add_widget('models', combo_model, tip='List of available models')
-        self.add_action('ini_model', 'Init Model', 'ini')
+        self.add_widget('models', combo_model, tip=QtCore.QCoreApplication.translate('DataMixer', 'List of available models'))
+        self.add_action('ini_model', QtCore.QCoreApplication.translate('DataMixer', 'Init Model'), 'ini')
         self.add_widget('model_led', QLED, toolbar=self.toolbar)
-        self.add_action('snap', 'Snap Detectors', 'snap',
-                        'Snap all selected detectors')
-        self.add_action('create_computed_detectors', 'Create Computed Detectors', 'Add_Step',
-                        tip='Create a DAQ_Viewer Control Module')
+        self.add_action('snap', QtCore.QCoreApplication.translate('DataMixer', 'Snap Detectors'), 'snap',
+                        QtCore.QCoreApplication.translate('DataMixer', 'Snap all selected detectors'))
+        self.add_action('create_computed_detectors', QtCore.QCoreApplication.translate('DataMixer', 'Create Computed Detectors'), 'Add_Step',
+                        tip=QtCore.QCoreApplication.translate('DataMixer', 'Create a DAQ_Viewer Control Module'))
 
     def stop(self):
         """ Programmatic method to stop any action in the extension

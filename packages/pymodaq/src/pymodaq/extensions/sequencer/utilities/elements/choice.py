@@ -135,7 +135,7 @@ class ChoiceElt(SeqEltBase):
                     color: #{hex(mkColor(get_theme().base).rgb())[2:]};
                 """)
             combo_true.currentIndexChanged.connect(self.set_go_to_true)
-            combo_true.setToolTip('Go to this elt if True')
+            combo_true.setToolTip(QtCore.QCoreApplication.translate('ChoiceElt', 'Go to this elt if True'))
         base_widget.add_widget_top(combo_true)
 
         combo_false = ComboBox()
@@ -148,7 +148,7 @@ class ChoiceElt(SeqEltBase):
                     color: #{hex(mkColor(get_theme().base).rgb())[2:]};
                 """)
             combo_false.currentIndexChanged.connect(self.set_go_to_false)
-            combo_false.setToolTip('Go to this elt if False')
+            combo_false.setToolTip(QtCore.QCoreApplication.translate('ChoiceElt', 'Go to this elt if False'))
         base_widget.add_widget_top(combo_false)
 
         combo = ComboBox()
@@ -157,7 +157,7 @@ class ChoiceElt(SeqEltBase):
             combo.setCurrentText(self.choice_model.model_name)
             combo.currentTextChanged.connect(self.set_choice_model)
 
-            combo.setToolTip('Choice Model')
+            combo.setToolTip(QtCore.QCoreApplication.translate('ChoiceElt', 'Choice Model'))
         base_widget.insert_widget(combo, 1)
 
 

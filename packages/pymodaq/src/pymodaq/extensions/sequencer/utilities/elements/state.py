@@ -102,8 +102,8 @@ class StateElt(SeqEltBase):
 
     def _create_widget(self, base_widget:WidgetWithToolbar) -> WidgetWithToolbar:
 
-        base_widget.add_action('show_state', 'Show Manager', self.state_manager.icon_name,
-                        "Show State Manager",
+        base_widget.add_action('show_state', QtCore.QCoreApplication.translate('StateElt', 'Show Manager'), self.state_manager.icon_name,
+                        QtCore.QCoreApplication.translate('StateElt', "Show State Manager"),
                         checkable=True, icon_checked_color=get_theme().green,
                         toolbar=base_widget.toolbar)
         base_widget.connect_action('show_state', self.state_manager.force_show)

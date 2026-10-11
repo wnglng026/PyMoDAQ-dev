@@ -413,7 +413,7 @@ def main_fake_scan():
 
     win.setCentralWidget(area)
     win.resize(1000, 500)
-    win.setWindowTitle('pymodaq main')
+    win.setWindowTitle(QtCore.QCoreApplication.translate('scan_selector', 'pymodaq main'))
     fake = FakeDaqScan(area)
 
     prog = DAQ_Viewer(area, title="Testing", daq_type='DAQ2D')  #, parent_scan=fake)
@@ -456,7 +456,7 @@ def main_navigator():
     widget = QtWidgets.QWidget()
     win.setCentralWidget(widget)
     win.resize(1000, 500)
-    win.setWindowTitle('PyMoDAQ Viewer')
+    win.setWindowTitle(QtCore.QCoreApplication.translate('scan_selector', 'PyMoDAQ Viewer'))
     win.show()
 
     viewer = DAQ_Viewer(widget, title="Testing", daq_type='DAQ2D')

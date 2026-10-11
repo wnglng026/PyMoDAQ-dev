@@ -253,7 +253,7 @@ class WaitSubEntryHandler(StateSubEntryHandler):
     handler_name = StateSubEntryHandlerTypes.WAIT
 
     def setup_widgets(self):
-        label = QtWidgets.QLabel('Waiting Time:')
+        label = QtWidgets.QLabel(QtCore.QCoreApplication.translate('WaitSubEntryHandler', 'Waiting Time:'))
         self.wait_time_sb = SpinBox(suffix='s', siPrefix=True)
         self.wait_time_sb.setValue(0.1)
 
@@ -288,7 +288,7 @@ class StopSubEntryHandler(StateSubEntryHandler):
     handler_name = StateSubEntryHandlerTypes.STOP
 
     def setup_widgets(self):
-        label = QtWidgets.QLabel('Stop Module:')
+        label = QtWidgets.QLabel(QtCore.QCoreApplication.translate('StopSubEntryHandler', 'Stop Module:'))
         self.module_cb = QtWidgets.QComboBox()
         self.module_cb.addItems(self.actuators + self.detectors)
         self.stop_bool = QtWidgets.QCheckBox()
@@ -331,7 +331,7 @@ class StopAllSubEntryHandler(StateSubEntryHandler):
     handler_name = StateSubEntryHandlerTypes.STOP_ALL
 
     def setup_widgets(self):
-        label = QtWidgets.QLabel('Stop All Modules:')
+        label = QtWidgets.QLabel(QtCore.QCoreApplication.translate('StopAllSubEntryHandler', 'Stop All Modules:'))
         self.stop_bool = QtWidgets.QCheckBox()
         self.stop_bool.setChecked(True)
         self.widget.layout().addWidget(label)
@@ -368,7 +368,7 @@ class StopExtensionSubEntryHandler(StateSubEntryHandler):
     handler_name = StateSubEntryHandlerTypes.STOP_EXTENSION
 
     def setup_widgets(self):
-        label = QtWidgets.QLabel('Stop Extension:')
+        label = QtWidgets.QLabel(QtCore.QCoreApplication.translate('StopExtensionSubEntryHandler', 'Stop Extension:'))
         self.extension_cb = QtWidgets.QComboBox()
         self.extension_cb.addItems(self.extensions)
         self.stop_bool = QtWidgets.QCheckBox()

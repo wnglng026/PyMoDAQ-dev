@@ -211,7 +211,7 @@ class ScanManager(SettingsManager):
         super().setup_docks_and_widgets()
         widget = QtWidgets.QWidget()
         configure_scan_widget = WidgetWithLabelTitle('(1) Configure a Scan:', widget)
-        self.get_data_pb = QtWidgets.QPushButton('ProbeData')
+        self.get_data_pb = QtWidgets.QPushButton(QtCore.QCoreApplication.translate('ScanManager', 'ProbeData'))
         get_data_widget = WidgetWithLabelTitle('(2) Get Data To Plot:', self.get_data_pb)
         widget.setLayout(QtWidgets.QVBoxLayout())
         widget.layout().addWidget(self.modules_manager.settings_tree)
@@ -226,8 +226,8 @@ class ScanManager(SettingsManager):
 
         self.settings_to_pick.set_title('(3) Select Settings to Apply:')
         self.add_toolbar('after_settings','After Settings Applied')
-        self.add_action('start_scan', 'Start Scan', 'motion_play',
-                        tip="Start the scan after all settings have been applied.",
+        self.add_action('start_scan', QtCore.QCoreApplication.translate('ScanManager', 'Start Scan'), 'motion_play',
+                        tip=QtCore.QCoreApplication.translate('ScanManager', "Start the scan after all settings have been applied."),
                         auto_menu=False, toolbar='after_settings', checkable=True,
                         icon_color=self.get_theme().red,
                         icon_checked_color=self.get_theme().green)

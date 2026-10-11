@@ -301,7 +301,7 @@ class StateManager(SettingsManager):
         super().setup_actions()
         self.add_action('parallel_execution', 'Sequential/parallel Execution',
                         'format_list_numbered',
-                        tip='if green (unchecked) perform a sequential execution else parallel',
+                        tip=QtCore.QCoreApplication.translate('StateManager', 'if green (unchecked) perform a sequential execution else parallel'),
                         checkable=True, icon_color=self.get_theme().green,
                         icon_checked_color=self.get_theme().red,
                         before=self.get_action(ManagerActions.EXECUTE),)

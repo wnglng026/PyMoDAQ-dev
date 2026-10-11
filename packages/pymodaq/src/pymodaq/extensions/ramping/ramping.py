@@ -62,13 +62,13 @@ class StatusBarManager:
 
     def create_permanent_widgets(self):
         self._n_steps_sb = QSpinBox_ro()
-        self._n_steps_sb.setToolTip('Total number of steps')
+        self._n_steps_sb.setToolTip(QtCore.QCoreApplication.translate('StatusBarManager', 'Total number of steps'))
 
         self._step_sb = QSpinBox_ro()
-        self._step_sb.setToolTip('Current actuator value')
+        self._step_sb.setToolTip(QtCore.QCoreApplication.translate('StatusBarManager', 'Current actuator value'))
 
         self._running_led = QLED()
-        self._running_led.setToolTip('Ramping status: green (running), red (idle)')
+        self._running_led.setToolTip(QtCore.QCoreApplication.translate('StatusBarManager', 'Ramping status: green (running), red (idle)'))
         self._running_led.clickable = False
         self.statusbar.addPermanentWidget(self._step_sb)
         self.statusbar.addPermanentWidget(self._n_steps_sb)
@@ -252,12 +252,12 @@ class RampExtension(CustomExt):
         --------
         ActionManager.add_action
         """
-        self.add_action('ini_positions', 'Init Positions', 'arrows_input',
+        self.add_action('ini_positions', QtCore.QCoreApplication.translate('RampExtension', 'Init Positions'), 'arrows_input',
                         menu='actions',
-                        toolbar=self.toolbar, tip='Go to Initial Ramp position')
+                        toolbar=self.toolbar, tip=QtCore.QCoreApplication.translate('RampExtension', 'Go to Initial Ramp position'))
         self.toolbar.addSeparator()
-        self.add_action('update_histogram', 'UpdateHistogram', 'bar_chart',
-                        tip='Update the histogram given its settings',
+        self.add_action('update_histogram', QtCore.QCoreApplication.translate('RampExtension', 'UpdateHistogram'), 'bar_chart',
+                        tip=QtCore.QCoreApplication.translate('RampExtension', 'Update the histogram given its settings'),
                         enabled=False,)
 
     def connect_things(self):

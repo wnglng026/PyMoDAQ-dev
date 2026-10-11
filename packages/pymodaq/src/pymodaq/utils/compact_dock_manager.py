@@ -191,7 +191,7 @@ class CompactDockManager(QtCore.QObject, ActionManager):
 
     def _create_actions(self):
         """Create the lock action and the position picker.  Subclasses call ``super()`` first."""
-        self.add_action('lock', 'Lock', icon_name='lock_open_right', checkable=True,
+        self.add_action('lock', QtCore.QCoreApplication.translate('CompactDockManager', 'Lock'), icon_name='lock_open_right', checkable=True,
                         toolbar=self.control_toolbar,
                         tip='Lock/Unlock all module actions',
                         icon_checked='lock', icon_color='green', icon_checked_color='orange')
@@ -211,7 +211,7 @@ class CompactDockManager(QtCore.QObject, ActionManager):
 
         self._position_btn = QtWidgets.QToolButton()
         self._position_btn.setMenu(self._position_menu)
-        self._position_btn.setToolTip('Control panel position')
+        self._position_btn.setToolTip(QtCore.QCoreApplication.translate('CompactDockManager', 'Control panel position'))
         self._position_btn.setPopupMode(QtWidgets.QToolButton.ToolButtonPopupMode.InstantPopup)
         self.control_toolbar.addWidget(self._position_btn)
 
@@ -529,16 +529,16 @@ class ActuatorCompactDock(ModuleCompactDock):
     def _create_actions(self):
         super()._create_actions()
         self.control_toolbar.addSeparator()
-        self.add_action('show_graph', 'Graph', icon_name='bid_landscape',
+        self.add_action('show_graph', QtCore.QCoreApplication.translate('ActuatorCompactDock', 'Graph'), icon_name='bid_landscape',
                         checkable=True, toolbar=self.control_toolbar,
                         tip='Show/Hide graphs on all actuators',
                         icon_checked='bid_landscape_disabled',
                         icon_color='green', icon_checked_color='red', checked=True)
         self.connect_action('show_graph', lambda checked: self._apply_to_modules('show_graph', checked))
 
-        self.add_action('refresh_value', 'Refresh', icon_name='repeat',
+        self.add_action('refresh_value', QtCore.QCoreApplication.translate('ActuatorCompactDock', 'Refresh'), icon_name='repeat',
                         checkable=True, toolbar=self.control_toolbar,
-                        tip='Toggle continuous refresh on all actuators',
+                        tip=QtCore.QCoreApplication.translate('ActuatorCompactDock', 'Toggle continuous refresh on all actuators'),
                         icon_checked='repeat_on', icon_checked_color='green')
         self.connect_action('refresh_value', lambda checked: self._apply_to_modules('refresh_value', checked))
 
@@ -558,18 +558,18 @@ class DetectorCompactDock(ModuleCompactDock):
     def _create_actions(self):
         super()._create_actions()
         self.control_toolbar.addSeparator()
-        self.add_action('snap', 'Snap', icon_name='looks_one',
+        self.add_action('snap', QtCore.QCoreApplication.translate('DetectorCompactDock', 'Snap'), icon_name='looks_one',
                         toolbar=self.control_toolbar,
-                        tip='Snap all detectors')
+                        tip=QtCore.QCoreApplication.translate('DetectorCompactDock', 'Snap all detectors'))
         self.connect_action('snap', lambda: self._apply_to_modules('snap'))
 
-        self.add_action('grab', 'Grab', icon_name='repeat',
+        self.add_action('grab', QtCore.QCoreApplication.translate('DetectorCompactDock', 'Grab'), icon_name='repeat',
                         checkable=True, toolbar=self.control_toolbar,
-                        tip='Toggle grab on all detectors',
+                        tip=QtCore.QCoreApplication.translate('DetectorCompactDock', 'Toggle grab on all detectors'),
                         icon_checked='repeat_on', icon_checked_color='green')
         self.connect_action('grab', lambda checked: self._apply_to_modules('grab', checked))
 
-        self.add_action('show_graphs', 'Show', icon_name='bid_landscape',
+        self.add_action('show_graphs', QtCore.QCoreApplication.translate('DetectorCompactDock', 'Show'), icon_name='bid_landscape',
                         checkable=True, toolbar=self.control_toolbar,
                         tip='Show/Hide graphs on all detectors',
                         icon_checked='bid_landscape_disabled',

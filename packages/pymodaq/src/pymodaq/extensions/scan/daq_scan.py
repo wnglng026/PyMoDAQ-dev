@@ -107,11 +107,11 @@ class ScanStatusBarManager:
 
         #custom app already creates a permanent label one can access with set_permanent_status
         self._n_scan_steps_sb = QSpinBox_ro()
-        self._n_scan_steps_sb.setToolTip('Total number of steps')
+        self._n_scan_steps_sb.setToolTip(QtCore.QCoreApplication.translate('ScanStatusBarManager', 'Total number of steps'))
         self._indice_scan_sb = QSpinBox_ro()
-        self._indice_scan_sb.setToolTip('Current step value')
+        self._indice_scan_sb.setToolTip(QtCore.QCoreApplication.translate('ScanStatusBarManager', 'Current step value'))
         self._indice_average_sb = QSpinBox_ro()
-        self._indice_average_sb.setToolTip('Current average value')
+        self._indice_average_sb.setToolTip(QtCore.QCoreApplication.translate('ScanStatusBarManager', 'Current average value'))
 
         self._scan_done_LED = MultistateLED(
             states=[
@@ -350,7 +350,7 @@ class DAQScan(CustomExt):
 
         self.add_toolbar('scan_manager', 'Scan Manager', parent=self.mainwindow,
                          add_break=False)
-        self.add_menu('scan_manager', 'Scan Manager', MenuToolbarNames.TOOLS, icon_name=ScanManager.icon_name)
+        self.add_menu('scan_manager', QtCore.QCoreApplication.translate('DAQScan', 'Scan Manager'), MenuToolbarNames.TOOLS, icon_name=ScanManager.icon_name)
 
     def setup_docks_and_widgets(self):
         """ Mandatory even if empty"""
@@ -449,24 +449,24 @@ class DAQScan(CustomExt):
 
 
     def setup_actions(self):
-        self.add_action('ini_positions', 'Init Positions', 'arrows_input', menu='actions')
+        self.add_action('ini_positions', QtCore.QCoreApplication.translate('DAQScan', 'Init Positions'), 'arrows_input', menu='actions')
         self.set_action_enabled('ini_positions', False)
-        self.add_action('start_batch', 'Start ScanBatches', 'run_all', "Start the batch of scans", menu='actions')
-        self.add_action('move_at', 'Move at doubleClicked', 'moving',
-                        "Move to positions where you double clicked", checkable=True, menu='actions')
+        self.add_action('start_batch', QtCore.QCoreApplication.translate('DAQScan', 'Start ScanBatches'), 'run_all', QtCore.QCoreApplication.translate('DAQScan', "Start the batch of scans"), menu='actions')
+        self.add_action('move_at', QtCore.QCoreApplication.translate('DAQScan', 'Move at doubleClicked'), 'moving',
+                        QtCore.QCoreApplication.translate('DAQScan', "Move to positions where you double clicked"), checkable=True, menu='actions')
 
         self._toolbar.addSeparator()
-        self.add_action('navigator', 'Show Navigator', '', menu=MenuToolbarNames.TOOLS, auto_toolbar=False)
-        self.add_action('batch', 'Show Batch Scanner', '', menu=MenuToolbarNames.TOOLS, auto_toolbar=False)
+        self.add_action('navigator', QtCore.QCoreApplication.translate('DAQScan', 'Show Navigator'), '', menu=MenuToolbarNames.TOOLS, auto_toolbar=False)
+        self.add_action('batch', QtCore.QCoreApplication.translate('DAQScan', 'Show Batch Scanner'), '', menu=MenuToolbarNames.TOOLS, auto_toolbar=False)
         self.set_action_visible('start_batch', False)
 
-        self.add_action('show_general_settings', 'Show General Settings', 'settings',
+        self.add_action('show_general_settings', QtCore.QCoreApplication.translate('DAQScan', 'Show General Settings'), 'settings',
                         "Show/hide the General settings panel (Time Flow, Scan options, Save..."
                         " - double-click its title bar to detach it into its own window)",
                         checkable=True, checked=config('pymodaq', 'scan', 'show_general_settings'),
                         icon_checked_color=self.get_theme().green,
                         menu='actions', before=WorkFlowActions.LOG)
-        self.add_action('show_live_plots', 'Show Live Plots', 'bid_landscape_disabled',
+        self.add_action('show_live_plots', QtCore.QCoreApplication.translate('DAQScan', 'Show Live Plots'), 'bid_landscape_disabled',
                         "Show/hide the Live Plots panel (double-click its title bar to detach "
                         "it into its own window)",
                         checkable=True, checked=True, icon_checked='bid_landscape',

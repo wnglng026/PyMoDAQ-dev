@@ -345,7 +345,7 @@ def main(init_qt=True):
     area = DockArea()
     win.setCentralWidget(area)
     win.resize(1000, 500)
-    win.setWindowTitle('PyMoDAQ Viewer')
+    win.setWindowTitle(QtCore.QCoreApplication.translate('load_and_plot', 'PyMoDAQ Viewer'))
     win.show()
 
     loader = LoaderPlotter(area)

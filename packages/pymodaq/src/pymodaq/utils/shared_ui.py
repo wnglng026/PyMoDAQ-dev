@@ -14,6 +14,7 @@ from pymodaq.utils.leco.utils import start_coordinator
 
 from pymodaq_gui.utils.shared_ui import SharedUI
 from pymodaq_gui.utils.enums import MenuToolbarNames
+from qtpy import QtCore
 
 logger = set_logger(get_module_name(__file__))
 
@@ -42,13 +43,13 @@ class SharedUI(SharedUI):
 
         super().setup_actions()
 
-        self.add_action("scripting", "Enable scripting", "code_blocks",
-                        "Enable usage of scripting to control this component. Also runs a Coordinator",
+        self.add_action("scripting", QtCore.QCoreApplication.translate('SharedUI', "Enable scripting"), "code_blocks",
+                        QtCore.QCoreApplication.translate('SharedUI', "Enable usage of scripting to control this component. Also runs a Coordinator"),
                         auto_toolbar=False, menu=MenuToolbarNames.TOOLS, icon_color='green', icon_checked="code_blocks",
                         icon_checked_color='red')
-        self.add_action("leco", "Run Leco Coordinator", "router", "Run a Coordinator on this localhost",
+        self.add_action("leco", QtCore.QCoreApplication.translate('SharedUI', "Run Leco Coordinator"), "router", QtCore.QCoreApplication.translate('SharedUI', "Run a Coordinator on this localhost"),
                         auto_toolbar=False, menu=MenuToolbarNames.TOOLS)
-        self.add_action("plugin_manager", "Plugin Manager", 'extension', tip='Opens the Plugin Manager',
+        self.add_action("plugin_manager", QtCore.QCoreApplication.translate('SharedUI', "Plugin Manager"), 'extension', tip=QtCore.QCoreApplication.translate('SharedUI', 'Opens the Plugin Manager'),
                         auto_toolbar=False, menu=MenuToolbarNames.TOOLS)
 
     def connect_things(self):
@@ -67,7 +68,7 @@ class SharedUI(SharedUI):
 
     def start_plugin_manager(self):
         self.win_plug_manager = QtWidgets.QMainWindow()
-        self.win_plug_manager.setWindowTitle("PyMoDAQ Plugin Manager")
+        self.win_plug_manager.setWindowTitle(QtCore.QCoreApplication.translate('SharedUI', "PyMoDAQ Plugin Manager"))
         widget = QtWidgets.QWidget()
         self.win_plug_manager.setCentralWidget(widget)
         self.plugin_manager = PluginManager(widget)
@@ -85,7 +86,7 @@ def main():
 
     win = QtWidgets.QMainWindow()
     win.resize(1000, 500)
-    win.setWindowTitle("PyMoDAQ Dashboard")
+    win.setWindowTitle(QtCore.QCoreApplication.translate('shared_ui', "PyMoDAQ Dashboard"))
     window = SharedUI(win)
 
     # Run application

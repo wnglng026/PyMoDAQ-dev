@@ -273,20 +273,20 @@ class DAQMoveUI(ControlModuleUI):
         self.add_widget('current', self.current_value_sb, toolbar=toolbar)
         self.add_widget('move_done', self.status_led, toolbar=toolbar)
 
-        self.add_action('stop', 'Stop', 'stop_circle', "Stop Motion",
+        self.add_action('stop', QtCore.QCoreApplication.translate('DAQMoveUI', 'Stop'), 'stop_circle', QtCore.QCoreApplication.translate('DAQMoveUI', "Stop Motion"),
                         toolbar=toolbar, icon_color=self.get_theme().red)
         toolbar.addSeparator()
-        self.add_action('show_controls', 'Show Controls',
-                        'discover_tune', "Show more controls",
+        self.add_action('show_controls', QtCore.QCoreApplication.translate('DAQMoveUI', 'Show Controls'),
+                        'discover_tune', QtCore.QCoreApplication.translate('DAQMoveUI', "Show more controls"),
                         icon_checked_color=self.get_theme().green,
                         checkable=True,
                         toolbar=toolbar)
-        self.add_action('show_graph', 'Show Graph', 'bid_landscape', 'Show/Hide the Graph Widget',
+        self.add_action('show_graph', QtCore.QCoreApplication.translate('DAQMoveUI', 'Show Graph'), 'bid_landscape', 'Show/Hide the Graph Widget',
                         checkable=True, checked=True, icon_checked='bid_landscape_disabled',
                         icon_color=self.get_theme().green, icon_checked_color=self.get_theme().red,
                         toolbar=toolbar)
-        self.add_action('refresh_value', 'Refresh', 'repeat',
-                        "Refresh Value Continuously", checkable=True,
+        self.add_action('refresh_value', QtCore.QCoreApplication.translate('DAQMoveUI', 'Refresh'), 'repeat',
+                        QtCore.QCoreApplication.translate('DAQMoveUI', "Refresh Value Continuously"), checkable=True,
                         toolbar=toolbar, icon_checked='repeat_on',
                         icon_checked_color=self.get_theme().green)
         self.add_widget('status', self.statusbar, toolbar=toolbar)
@@ -307,13 +307,13 @@ class DAQMoveUI(ControlModuleUI):
         if toolbar is None:
             toolbar = self.toolbar
 
-        self.add_action('move_abs_green', 'Move Abs', 'step',
-                        "Move to the set absolute value",
+        self.add_action('move_abs_green', QtCore.QCoreApplication.translate('DAQMoveUI', 'Move Abs'), 'step',
+                        QtCore.QCoreApplication.translate('DAQMoveUI', "Move to the set absolute value"),
                         icon_color=self.get_theme().green,
                         toolbar=toolbar,
                         before='stop')
-        self.add_action('move_abs_red', 'Move Abs', 'step',
-                        "Move to the other set absolute value",
+        self.add_action('move_abs_red', QtCore.QCoreApplication.translate('DAQMoveUI', 'Move Abs'), 'step',
+                        QtCore.QCoreApplication.translate('DAQMoveUI', "Move to the other set absolute value"),
                         icon_color=self.get_theme().red,
                         toolbar=toolbar,
                         before='stop')
@@ -328,15 +328,15 @@ class DAQMoveUI(ControlModuleUI):
 
         self.add_widget('rel_move', self.rel_value_sb, toolbar=toolbar,
                         before='stop')
-        self.add_action('move_rel_plus', 'Set Rel. (+)', 'step_out',
+        self.add_action('move_rel_plus', QtCore.QCoreApplication.translate('DAQMoveUI', 'Set Rel. (+)'), 'step_out',
                         toolbar=toolbar,
                         icon_color=self.get_theme().yellow,
                         before='stop')
-        self.add_action('move_rel_minus', 'Set Rel. (-)', 'step_into',
+        self.add_action('move_rel_minus', QtCore.QCoreApplication.translate('DAQMoveUI', 'Set Rel. (-)'), 'step_into',
                         toolbar=toolbar,
                         icon_color=self.get_theme().blue,
                         before='stop')
-        self.add_action('reset_value', 'Reset Internal Value (no encoder)', 'restart_alt',
+        self.add_action('reset_value', QtCore.QCoreApplication.translate('DAQMoveUI', 'Reset Internal Value (no encoder)'), 'restart_alt',
                         toolbar=toolbar,
                         before='stop')
 
