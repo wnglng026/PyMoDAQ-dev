@@ -55,6 +55,7 @@ dev = [
 ]
 
 [project.scripts]
+pymodaq-i18n = "pymodaq_utils.i18n:main"
 
 [project.urls]
 Homepage = "http://pymodaq.cnrs.fr"
