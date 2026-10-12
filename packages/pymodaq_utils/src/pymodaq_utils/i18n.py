@@ -296,35 +296,102 @@ def _pylupdate() -> Optional[str]:
     return shutil.which("pylupdate6")
 
 
-def cmd_extract(args) -> int:
-    """用 pylupdate6 从源码提取 ``tr()`` 字符串到 ``.ts``。"""
+def _mirror_source(package: str, destination: Path) -> Optional[Path]:
+    """把包源码镜像到 ``destination``（跳过 ``__pycache__``），返回镜像出的包目录。"""
+    source_dir = repo_package_dir(package)
+    if source_dir is None:
+        return None
+    mirror = destination / package
+    shutil.copytree(source_dir, mirror,
+                    ignore=shutil.ignore_patterns("__pycache__", "*.pyc"), dirs_exist_ok=True)
+    return mirror
+
+
+def _fix_locations(ts_text: str, mirror: Path, package: str) -> str:
+    """把 .ts 里的临时镜像路径还原成仓库内相对路径（纯美观，便于评审）。"""
+    original = repo_package_dir(package)
+    if original is None:
+        return ts_text
+    mirror_str = str(mirror)
+    original_str = str(original)
+    for separator in ("\\", "/"):
+        ts_text = ts_text.replace(mirror_str.replace("/", separator), original_str.replace("/", separator))
+    return ts_text
+
+
+def extract_fresh(package: str, language: str = "zh_CN", keep_obsolete: bool = False) -> Optional[Path]:
+    """**全新**提取一个包的 ``.ts``（不含既有译文），返回临时文件路径（调用方负责删除）。
+
+    注意：在**临时目录的源码镜像**里执行 pylupdate6 —— 实测 pylupdate6 6.11.0
+    在本仓库路径下处理"已改写"的文件时会抛出内部错误（同一字节放到临时目录就正常，
+    ASCII 与中文路径均已验证），因此统一走镜像，避免踩这个工具 bug。
+    """
     tool = _pylupdate()
     if tool is None:
-        print("找不到 pylupdate6（PyQt6 自带：pip install pyqt6 即可）", file=sys.stderr)
-        return 2
+        raise RuntimeError("找不到 pylupdate6（PyQt6 自带：pip install pyqt6 即可）")
+    temporary = Path(tempfile.mkdtemp(prefix="pymodaq_i18n_"))
+    mirror = _mirror_source(package, temporary)
+    if mirror is None:
+        return None
+    target = temporary / f"{package}_{language}.ts"
+    command = [tool, str(mirror), "--exclude", "*__pycache__*", "--ts", str(target)]
+    if not keep_obsolete:
+        command.insert(1, "--no-obsolete")
+    result = subprocess.run(command, capture_output=True, encoding="utf-8", errors="replace")
+    if result.returncode or not target.is_file():
+        raise RuntimeError(f"pylupdate6 提取 {package} 失败（退出码 {result.returncode}）："
+                           f"{(result.stdout or '')[-300:]}{(result.stderr or '')[-300:]}")
+    target.write_text(_fix_locations(target.read_text(encoding="utf-8"), mirror, package), encoding="utf-8")
+    return target
 
+
+def extract_package(package: str, language: str = "zh_CN", keep_obsolete: bool = False) -> Optional[Path]:
+    """提取并**合并**到仓库里的 ``<package>_<language>.ts``（保留既有译文），返回该文件路径。"""
+    target_dir = translations_dir(package)
+    if target_dir is None:
+        return None
+    target = target_dir / f"{package}_{language}.ts"
+    fresh = extract_fresh(package, language, keep_obsolete=keep_obsolete)
+    if fresh is None:
+        return None
+    if target.is_file():
+        # 用既有 .ts 作为输入，让 pylupdate6 合并（保留已翻译条目）
+        tool = _pylupdate()
+        temporary = fresh.parent
+        mirror = temporary / package
+        merged = temporary / f"{package}_{language}_merged.ts"
+        shutil.copy(target, merged)
+        subprocess.run([tool, str(mirror), "--exclude", "*__pycache__*", "--ts", str(merged)],
+                       capture_output=True, encoding="utf-8", errors="replace")
+        fresh = merged if merged.is_file() else fresh
+        fresh.write_text(_fix_locations(fresh.read_text(encoding="utf-8"), mirror, package),
+                         encoding="utf-8")
+    shutil.copy(fresh, target)
+    shutil.rmtree(fresh.parent, ignore_errors=True)
+    return target
+
+
+def cmd_extract(args) -> int:
+    """用 pylupdate6 从源码提取 ``tr()`` 字符串到 ``.ts``。"""
     languages = args.languages or ["zh_CN"]
     packages = args.packages or list(CORE_PACKAGES)
     failures = 0
     for package in packages:
-        source_dir = repo_package_dir(package)
-        if source_dir is None:
-            print(f"跳过 {package}：找不到源码目录（非仓库布局？）")
-            continue
-        target_dir = translations_dir(package)
         for language in languages:
-            ts_file = target_dir / f"{package}_{language}.ts"
-            command = [tool, str(source_dir), "--exclude", "*__pycache__*", "--ts", str(ts_file)]
-            if not args.keep_obsolete:
-                command.insert(1, "--no-obsolete")
-            if args.verbose:
-                command.insert(1, "--verbose")
-            result = subprocess.run(command, capture_output=True, text=True,
-                                    encoding="utf-8", errors="replace")
-            print(f"[extract] {package} -> {ts_file.name}  退出码={result.returncode}")
-            for line in (result.stdout or result.stderr or "").strip().splitlines()[-3:]:
-                print(f"          {line}")
-            failures += 1 if result.returncode else 0
+            try:
+                ts_file = extract_package(package, language, keep_obsolete=args.keep_obsolete)
+            except Exception as exc:
+                print(f"[extract] {package} 失败：{exc}", file=sys.stderr)
+                failures += 1
+                continue
+            if ts_file is None:
+                print(f"跳过 {package}：找不到源码目录（非仓库布局？）")
+                continue
+            messages = ET.parse(ts_file).getroot().findall(".//message")
+            untranslated = sum(1 for m in messages
+                               if (m.find("translation") is None
+                                   or not (m.findtext("translation") or "").strip()))
+            print(f"[extract] {package} -> {ts_file.name}  条目 {len(messages)}（未译 {untranslated}）")
     return 1 if failures else 0
 
 

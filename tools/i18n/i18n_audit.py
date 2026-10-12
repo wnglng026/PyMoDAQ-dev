@@ -31,21 +31,18 @@ def translations_dir(package: str) -> Path:
     return repo_root() / "packages" / package / "src" / package / "resources" / "translations"
 
 
-def pylupdate() -> str | None:
-    for name in ("pylupdate6.exe", "pylupdate6"):
-        candidate = Path(sys.executable).parent / name
-        if candidate.is_file():
-            return str(candidate)
-    return None
+def extract_fresh(package: str, language: str) -> Path:
+    """全新提取（复用 pymodaq_utils.i18n 的实现：镜像到临时目录再跑 pylupdate6）。
 
+    之所以不直接在这里调 pylupdate6：实测它在本仓库路径下处理"已改写"的文件会抛内部错误，
+    而 pymodaq_utils.i18n.extract_fresh 已经带了镜像绕过。
+    """
+    from pymodaq_utils import i18n as core
 
-def extract_to(target: Path, package: str) -> None:
-    tool = pylupdate()
-    if tool is None:
-        raise RuntimeError("找不到 pylupdate6（PyQt6 自带）")
-    source_dir = repo_root() / "packages" / package / "src" / package
-    subprocess.run([tool, str(source_dir), "--exclude", "*__pycache__*", "--ts", str(target)],
-                   capture_output=True, text=True, encoding="utf-8", errors="replace", check=False)
+    path = core.extract_fresh(package, language)
+    if path is None:
+        raise RuntimeError(f"提取失败：{package}")
+    return path
 
 
 def read_ts(path: Path) -> List[Tuple[str, str, str]]:
@@ -90,32 +87,29 @@ def main(argv=None) -> int:
     print(f"i18n 审计（语言 {args.language}）")
     print("=" * 86)
     print(f"{'包':<18}{'条目':>6}{'已译':>7}{'未译':>7}{'覆盖率':>9}   备注")
-    with tempfile.TemporaryDirectory() as tmp:
-        for package in packages:
-            dir_ts = translations_dir(package)
-            if not dir_ts.is_dir():
-                print(f"{package:<18}{'-':>6}{'-':>7}{'-':>7}{'-':>9}   无 translations 目录")
-                continue
-            committed = dir_ts / f"{package}_{args.language}.ts"
-            fresh = Path(tmp) / f"{package}_{args.language}.ts"
-            extract_to(fresh, package)
-            fresh_rows = read_ts(fresh)
-            committed_rows = read_ts(committed)
-            translated_map = {(c, s): t for c, s, t in committed_rows if t}
+    for package in packages:
+        dir_ts = translations_dir(package)
+        if not dir_ts.is_dir():
+            print(f"{package:<18}{'-':>6}{'-':>7}{'-':>7}{'-':>9}   无 translations 目录")
+            continue
+        committed = dir_ts / f"{package}_{args.language}.ts"
+        fresh_rows = read_ts(extract_fresh(package, args.language))
+        committed_rows = read_ts(committed)
+        translated_map = {(c, s): t for c, s, t in committed_rows if t}
 
-            total = len(fresh_rows)
-            translated = sum(1 for c, s, _ in fresh_rows if translated_map.get((c, s)))
-            missing = total - translated
-            missing_total += missing
-            rows_total += total
-            ratio = translated / total if total else 1.0
-            note = "✅ 全译" if missing == 0 else f"缺 {missing} 条"
-            note += "（有 .ts）" if committed.is_file() else "（尚无 .ts，先跑 i18n extract）"
-            print(f"{package:<18}{total:>6}{translated:>7}{missing:>7}{ratio:>8.1%}   {note}")
+        total = len(fresh_rows)
+        translated = sum(1 for c, s, _ in fresh_rows if translated_map.get((c, s)))
+        missing = total - translated
+        missing_total += missing
+        rows_total += total
+        ratio = translated / total if total else 1.0
+        note = "✅ 全译" if missing == 0 else f"缺 {missing} 条"
+        note += "（有 .ts）" if committed.is_file() else "（尚无 .ts，先跑 i18n extract）"
+        print(f"{package:<18}{total:>6}{translated:>7}{missing:>7}{ratio:>8.1%}   {note}")
 
-            for _, source, translation in committed_rows:
-                if translation and placeholders(source) != placeholders(translation):
-                    inconsistent.append((package, source, translation))
+        for _, source, translation in committed_rows:
+            if translation and placeholders(source) != placeholders(translation):
+                inconsistent.append((package, source, translation))
 
     print("-" * 86)
     ratio_all = (rows_total - missing_total) / rows_total if rows_total else 1.0
