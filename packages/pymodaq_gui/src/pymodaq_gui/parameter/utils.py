@@ -9,6 +9,7 @@ from serializall import SerializableFactory, SerializableBase
 from pymodaq_gui.parameter import ioxml
 
 from pymodaq_gui.parameter import Parameter
+from pymodaq_gui.i18n import translate_param
 
 ser_factory = SerializableFactory()
 
@@ -76,6 +77,7 @@ class ParameterWithPath(SerializableBase):
         path, remaining_bytes = ser_factory.get_apply_deserializer(bytes_str, False)
         param_as_xml, remaining_bytes = ser_factory.get_apply_deserializer(remaining_bytes, False)
         param_dict = ioxml.xml_string_to_parameter_dict(param_as_xml)
+        param_dict = translate_param(param_dict)
         param_obj = Parameter.create(**param_dict)
         return ParameterWithPath(param_obj, path), remaining_bytes
 

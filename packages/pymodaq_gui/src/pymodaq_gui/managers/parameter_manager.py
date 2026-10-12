@@ -4,6 +4,7 @@ from typing import List, Union, Dict, Optional, Tuple, Any
 
 from qtpy import QtWidgets, QtCore, QtGui
 from pymodaq_gui.parameter.utils import filter_parameter_tree
+from pymodaq_gui.i18n import translate_params, translate_title
 from pymodaq_gui.utils.widgets.collapsible_widget import CollapsibleWidget
 from pymodaq_gui.utils.widgets.search_lineedit import SearchLineEdit
 from pymodaq_gui.managers.action_manager import ActionManager
@@ -275,7 +276,7 @@ class ParameterManager:
         )
 
         self.settings = Parameter.create(
-            name=settings_name, type="group", children=self.params, showTop=False,
+            name=settings_name, type="group", children=translate_params(self.params), showTop=False,
         )  # create a Parameter
         # object containing the settings defined in the preamble
         self._settings_tree.tree.header().setSectionResizeMode(
@@ -373,24 +374,24 @@ class ParameterManager:
         """
         if isinstance(settings, List):
             _settings = Parameter.create(
-                title="Settings",
+                title=translate_title("Settings"),
                 name="settings",
                 type="group",
-                children=settings,
+                children=translate_params(settings),
                 showTop=False,
             )
         elif isinstance(settings, (Path, str)):
             settings = Path(settings)
             _settings = Parameter.create(
-                title="Settings",
+                title=translate_title("Settings"),
                 name="settings",
                 type="group",
                 showTop=False,
-                children=ioxml.XML_file_to_parameter(str(settings)),
+                children=translate_params(ioxml.XML_file_to_parameter(str(settings))),
             )
         elif isinstance(settings, Parameter):
             _settings = Parameter.create(
-                title="Settings", name=settings.name(), type="group", showTop=False,
+                title=translate_title("Settings"), name=settings.name(), type="group", showTop=False,
             )
             _settings.restoreState(settings.saveState())
         else:

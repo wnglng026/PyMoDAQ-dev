@@ -108,3 +108,41 @@ def current_language() -> str:
 def switch_language(language: str, app: QtWidgets.QApplication = None) -> str:
     """运行中切换语言（已构建界面的文本不会自动刷新，建议重启界面）。"""
     return install_translators(app=app, language=language)
+
+
+# ---------------------------------------------------------------------------
+# 参数树标题的集中翻译
+# ---------------------------------------------------------------------------
+def translate_title(text: str) -> str:
+    """翻译单个标题/提示（查不到则原样返回）。"""
+    if not isinstance(text, str):
+        return text
+    return core.lookup(text) or text
+
+
+def translate_param(param: dict, translate_tip: bool = True) -> dict:
+    """返回参数定义（dict）的翻译副本：只翻 ``title`` / ``tip``，递归处理 ``children``。
+
+    **不翻译** ``name``（设置持久化的键）、``limits``（列表项的取值会被存进配置文件，
+    翻译会破坏已有配置与插件兼容性）以及其它字段。
+    """
+    if not isinstance(param, dict):
+        return param
+    translated = dict(param)
+    for key in ("title", "tip") if translate_tip else ("title",):
+        value = translated.get(key)
+        if isinstance(value, str):
+            hit = core.lookup(value)
+            if hit:
+                translated[key] = hit
+    children = translated.get("children")
+    if isinstance(children, list):
+        translated["children"] = translate_params(children, translate_tip)
+    return translated
+
+
+def translate_params(params, translate_tip: bool = True):
+    """翻译参数定义列表（返回新列表，不修改原列表 —— 它们通常是类属性、被多处共享）。"""
+    if not isinstance(params, list):
+        return params
+    return [translate_param(param, translate_tip) for param in params]

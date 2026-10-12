@@ -10,6 +10,7 @@ from qtpy.QtGui import QKeySequence
 from qtpy.QtCore import QModelIndex
 
 from pymodaq_gui.utils.widgets.widget_with_label_title import WidgetWithLabelTitle
+from pymodaq_gui.i18n import translate_params, translate_title
 from pymodaq_utils.logger import set_logger, get_module_name
 from pymodaq_utils.config import GlobalConfig as Config, get_set_local_dir, get_set_config_dir
 from pymodaq_utils.utils import capitalize, read_binary_and_deserialize
@@ -141,7 +142,8 @@ class SettingsManager(ManagerBase):
         """ for quick testing purpose, not meant to be used at the end"""
         children = ioxml.XML_file_to_parameter(file_path)
         settings = Parameter.create(
-            title="Control Modules:", name="control_modules", type="group", children=children,
+            title=translate_title("Control Modules:"), name="control_modules", type="group",
+            children=translate_params(children),
         )
         self.populate_from_settings(settings)
 

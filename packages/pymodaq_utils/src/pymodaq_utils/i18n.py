@@ -31,6 +31,7 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import importlib.util
 import os
 import shutil
@@ -42,6 +43,10 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Sequence
+
+from pymodaq_utils.logger import get_module_name, set_logger
+
+logger = set_logger(get_module_name(__file__))
 
 ENV_LANG = "PYMODAQ_LANG"
 DEFAULT_LANGUAGE = "en"
@@ -368,7 +373,102 @@ def extract_package(package: str, language: str = "zh_CN", keep_obsolete: bool =
                          encoding="utf-8")
     shutil.copy(fresh, target)
     shutil.rmtree(fresh.parent, ignore_errors=True)
+    added = merge_static_messages(target, collect_static_messages(package))
+    if added:
+        logger.debug(f"{package}: 追加静态文案（参数标题等）{added} 条")
     return target
+
+
+_SKIP_STATIC = {
+    "True", "False", "None", "nan", "inf", "h5py", "h5pyd", "zlib", "pymodaq",
+    "scan", "hdf5", "txt", "csv", "Mock", "Remote", "LECODirector", "DataMixer",
+    "ROI", "H5", "DAQ0D", "DAQ1D", "DAQ2D", "DAQND",
+}
+
+
+def collect_static_messages(package: str) -> Dict[str, List[str]]:
+    """收集**无法用 tr() 包装、但必须翻译**的静态文案（当前：参数树的 ``title``/``tip``）。
+
+    参数定义是类属性里的字典字面量（导入期就求值，那时翻译器还没装），所以不能改写成
+    ``tr()``；做法是运行时在构建参数树时集中翻译（见 ``pymodaq_gui.i18n.translate_params``），
+    而这里负责把它们**收进 .ts**，让译者能看到并翻译。
+    """
+    source_dir = repo_package_dir(package)
+    messages: Dict[str, List[str]] = {GENERAL: []}
+    if source_dir is None:
+        return messages
+    seen = set()
+
+    def add(text: str) -> None:
+        stripped = text.strip()
+        if not stripped or stripped in _SKIP_STATIC or stripped in seen:
+            return
+        if any(token in stripped for token in ("/", "\\", "://")):
+            return
+        seen.add(stripped)
+        messages[GENERAL].append(text)
+
+    for path in sorted(source_dir.rglob("*.py")):
+        if "__pycache__" in path.parts:
+            continue
+        try:
+            tree = ast.parse(path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Dict):
+                for key, value in zip(node.keys, node.values):
+                    if (isinstance(key, ast.Constant) and key.value in ("title", "tip")
+                            and isinstance(value, ast.Constant) and isinstance(value.value, str)):
+                        add(value.value)
+            elif isinstance(node, ast.Call):
+                try:
+                    function_name = ast.unparse(node.func).split(".")[-1]
+                except Exception:
+                    function_name = ""
+                if "Parameter" not in function_name:
+                    continue
+                for keyword in node.keywords:
+                    if (keyword.arg in ("title", "tip")
+                            and isinstance(keyword.value, ast.Constant)
+                            and isinstance(keyword.value.value, str)):
+                        add(keyword.value.value)
+    return messages
+
+
+def merge_static_messages(ts_path: Path, extra: Dict[str, List[str]]) -> int:
+    """把静态文案并进 ``.ts``（缺失的条目以 unfinished 形式追加），返回新增条数。"""
+    if not ts_path.is_file():
+        return 0
+    tree = ET.parse(ts_path)
+    root = tree.getroot()
+    existing = {message.findtext("source") or ""
+                for context in root.findall("context")
+                for message in context.findall("message")}
+    added = 0
+    for context_name, sources in extra.items():
+        target = None
+        for context in root.findall("context"):
+            if (context.findtext("name") or "") == context_name:
+                target = context
+                break
+        if target is None:
+            target = ET.SubElement(root, "context")
+            ET.SubElement(target, "name").text = context_name
+        for source in sources:
+            if source in existing:
+                continue
+            message = ET.SubElement(target, "message")
+            ET.SubElement(message, "source").text = source
+            ET.SubElement(message, "translation").set("type", "unfinished")
+            existing.add(source)
+            added += 1
+    if added:
+        ET.indent(tree, space="    ")
+        body = ET.tostring(root, encoding="unicode")
+        ts_path.write_text('<?xml version="1.0" encoding="utf-8"?>\n<!DOCTYPE TS>\n' + body,
+                           encoding="utf-8")
+    return added
 
 
 def cmd_extract(args) -> int:

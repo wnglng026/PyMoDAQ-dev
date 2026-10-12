@@ -42,6 +42,8 @@ def extract_fresh(package: str, language: str) -> Path:
     path = core.extract_fresh(package, language)
     if path is None:
         raise RuntimeError(f"提取失败：{package}")
+    # 参数标题等静态文案不走 tr()，需要单独并入（与 extract_package 保持一致）
+    core.merge_static_messages(path, core.collect_static_messages(package))
     return path
 
 
