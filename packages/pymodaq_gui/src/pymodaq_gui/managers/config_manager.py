@@ -44,7 +44,7 @@ class ConfigManager(ParameterManager):
         self.config_path = config_path
         if msgbox:
             msgBox = QMessageBox()
-            msgBox.setText(f"{self.title} Manager")
+            msgBox.setText(QtCore.QCoreApplication.translate('ConfigManager', '{} Manager').format(self.title))
             msgBox.setInformativeText("What do you want to do?")
             cancel_button = msgBox.addButton(QMessageBox.StandardButton.Cancel)
             new_button = msgBox.addButton("New", QMessageBox.ButtonRole.ActionRole)

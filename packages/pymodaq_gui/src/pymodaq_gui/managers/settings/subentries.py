@@ -137,7 +137,7 @@ class SubEntryHandler(QtCore.QObject):
         buttonBox.rejected.connect(self.dialog.reject)
 
         vlayout.addWidget(buttonBox)
-        self.dialog.setWindowTitle(f"Fill in information about this {self.handler_name}")
+        self.dialog.setWindowTitle(QtCore.QCoreApplication.translate('SubEntryHandler', 'Fill in information about this {}').format(self.handler_name))
 
         self.dialog.open()
 

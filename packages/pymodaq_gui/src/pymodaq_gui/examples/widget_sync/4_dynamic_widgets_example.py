@@ -82,7 +82,7 @@ class DynamicSlidersExample(QWidget):
         v_layout = QVBoxLayout(container)
 
         # Label
-        label = QLabel(f"Ch {slider_id}")
+        label = QLabel(QtCore.QCoreApplication.translate('DynamicSlidersExample', 'Ch {}').format(slider_id))
         label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         v_layout.addWidget(label)
 
@@ -141,12 +141,11 @@ class DynamicSlidersExample(QWidget):
 
     def update_sync_info(self):
         count = len(self.slider_widgets)
-        self.sync_label.setText(f"Connected: {count} sliders")
+        self.sync_label.setText(QtCore.QCoreApplication.translate('DynamicSlidersExample', 'Connected: {} sliders').format(count))
 
     def update_status(self, value):
         self.status.setText(
-            f"Current Volume: {value}%\n"
-            f"Synchronized across {len(self.slider_widgets)} channels",
+            QtCore.QCoreApplication.translate('DynamicSlidersExample', 'Current Volume: {}%\nSynchronized across {} channels').format(value, len(self.slider_widgets)),
         )
 
 
@@ -207,7 +206,7 @@ class DynamicFormExample(QWidget):
         device_id = self.device_count
 
         # Device container
-        container = QGroupBox(f"Device #{device_id}")
+        container = QGroupBox(QtCore.QCoreApplication.translate('DynamicFormExample', 'Device #{}').format(device_id))
         form_layout = QVBoxLayout()
 
         # Name field
@@ -231,7 +230,7 @@ class DynamicFormExample(QWidget):
         form_layout.addWidget(enabled_check)
 
         # Remove button
-        remove_btn = QPushButton(f"Remove Device #{device_id}")
+        remove_btn = QPushButton(QtCore.QCoreApplication.translate('DynamicFormExample', 'Remove Device #{}').format(device_id))
         remove_btn.clicked.connect(
             lambda: self.remove_device(container, name_edit, port_spin, enabled_check),
         )
@@ -374,7 +373,7 @@ class CloneWidgetExample(QWidget):
         v_layout = QVBoxLayout(container)
 
         # Title
-        title = QLabel(f"Monitor {monitor_id}")
+        title = QLabel(QtCore.QCoreApplication.translate('CloneWidgetExample', 'Monitor {}').format(monitor_id))
         title.setStyleSheet("font-weight: bold;")
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         v_layout.addWidget(title)
@@ -451,10 +450,7 @@ class CloneWidgetExample(QWidget):
 
     def update_status(self, settings):
         self.status.setText(
-            f"Settings applied to {len(self.monitor_widgets)} monitor(s):\n"
-            f"Brightness: {settings['brightness']}% | "
-            f"Contrast: {settings['contrast']}% | "
-            f"Color Temp: {settings['color_temp']}K",
+            QtCore.QCoreApplication.translate('CloneWidgetExample', 'Settings applied to {} monitor(s):\nBrightness: {}% | Contrast: {}% | Color Temp: {}K').format(len(self.monitor_widgets), settings['brightness'], settings['contrast'], settings['color_temp']),
         )
 
 
@@ -537,7 +533,7 @@ class AutoCleanupExample(QWidget):
         container.setFrameStyle(QFrame.Shape.StyledPanel)
         v_layout = QVBoxLayout(container)
 
-        label = QLabel(f"Temp #{widget_id}")
+        label = QLabel(QtCore.QCoreApplication.translate('AutoCleanupExample', 'Temp #{}').format(widget_id))
         v_layout.addWidget(label)
 
         slider = QSlider(Qt.Orientation.Vertical)
@@ -583,9 +579,7 @@ class AutoCleanupExample(QWidget):
     def update_status(self, value):
         total_widgets = len(self.temp_widgets) + 1  # +1 for master
         self.status.setText(
-            f"Current Value: {value}\n"
-            f"Connected Widgets: {total_widgets} ({len(self.temp_widgets)} temporary + 1 master)\n"
-            f"💡 Temporary widgets auto-cleanup when destroyed - no memory leaks!",
+            QtCore.QCoreApplication.translate('AutoCleanupExample', 'Current Value: {}\nConnected Widgets: {} ({} temporary + 1 master)\n💡 Temporary widgets auto-cleanup when destroyed - no memory leaks!').format(value, total_widgets, len(self.temp_widgets)),
         )
 
 

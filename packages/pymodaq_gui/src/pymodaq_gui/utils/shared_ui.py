@@ -379,7 +379,7 @@ class SharedUI(CustomApp):
         close_button = QtWidgets.QPushButton(QtCore.QCoreApplication.translate('SharedUI', 'Close'))
 
         dialog = QtWidgets.QDialog(self.mainwindow)
-        dialog.setWindowTitle(f'{self.title} help')
+        dialog.setWindowTitle(QtCore.QCoreApplication.translate('SharedUI', '{} help').format(self.title))
         dialog.resize(640, 520)
         layout = QtWidgets.QVBoxLayout(dialog)
         layout.addWidget(browser)

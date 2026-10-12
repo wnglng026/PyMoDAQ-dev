@@ -527,7 +527,7 @@ class View1D(ActionManager, QObject):
             for data_array in dwa:
                 string += f"{float(data_array[0]):.3e} / "
             self.get_action('y_label').setText(string)
-            self.get_action('x_label').setText(f"x={float(dwa.axes[0].get_data()[0]):.3e} ")
+            self.get_action('x_label').setText(QtCore.QCoreApplication.translate('View1D', 'x={:.3e} ').format(float(dwa.axes[0].get_data()[0])))
 
     @Slot(bool)
     def show_hide_crosshair(self, show=True):

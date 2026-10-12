@@ -283,8 +283,7 @@ class H5Manager(QtCore.QObject, ActionManager):
                     msg = QtWidgets.QMessageBox()
                     msg.setIcon(QtWidgets.QMessageBox.Icon.Warning)
                     msg.setWindowTitle(QtCore.QCoreApplication.translate('H5Manager', "File Locked"))
-                    msg.setText(f"Cannot open file:\n{current_file}\n\n"
-                                f"The file may be open in another application.")
+                    msg.setText(QtCore.QCoreApplication.translate('H5Manager', 'Cannot open file:\n{}\n\nThe file may be open in another application.').format(current_file))
                     msg.setInformativeText("Close the file elsewhere and click Retry, "
                                            "or select a different file.")
                     retry_btn = msg.addButton("Retry", QtWidgets.QMessageBox.ButtonRole.ActionRole)

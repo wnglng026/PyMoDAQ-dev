@@ -1157,9 +1157,7 @@ def load_dashboard_with_experiment(experiment_name: str,
 
     else:
         msgBox = QMessageBox()
-        msgBox.setText(f"The default file specified in the configuration file does not exists!\n"
-                       f"{experiment_name}\n"
-                       f"Impossible to load the {extension_name} extension")
+        msgBox.setText(QtCore.QCoreApplication.translate('dashboard', 'The default file specified in the configuration file does not exists!\n{}\nImpossible to load the {} extension').format(experiment_name, extension_name))
         msgBox.setStandardButtons(QMessageBox.StandardButton.Ok)
         ret = msgBox.exec()
     return dashboard, extension, shared_ui

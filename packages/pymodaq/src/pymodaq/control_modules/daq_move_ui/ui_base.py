@@ -556,7 +556,7 @@ class DAQMoveUI(ControlModuleUI):
         self._controls_panel.show(show)
 
     def show_graph(self, show: bool = True):
-        self.graph_widget.setWindowTitle(f'{self.title} graph')
+        self.graph_widget.setWindowTitle(QtCore.QCoreApplication.translate('DAQMoveUI', '{} graph').format(self.title))
         self.graph_widget.setVisible(show)
         self.graph_widget.closeEvent = lambda event: self.set_action_checked('show_graph', False)
 

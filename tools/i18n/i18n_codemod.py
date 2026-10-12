@@ -109,6 +109,8 @@ class Collector(ast.NodeVisitor):
         self.report = FileReport(path=path)
         # (节点, 上下文)：上下文必须在**收集时**确定（遍历结束后类栈已清空）
         self.targets: List[Tuple[ast.Constant, str]] = []
+        # f-string 需要额外信息（表达式源码），单独收集
+        self.fstrings: List[Tuple[ast.JoinedStr, str]] = []
         self.marked: Set[int] = set()
         self._classes: List[str] = []
 
@@ -140,7 +142,7 @@ class Collector(ast.NodeVisitor):
 
     def _consider(self, node: ast.AST, where: str) -> None:
         if isinstance(node, ast.JoinedStr):
-            self.report.manual.append((getattr(node, "lineno", 0), "<f-string>", where))
+            self.fstrings.append((node, self.context))
             return
         if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Mod):
             self.report.manual.append((getattr(node, "lineno", 0), "<% 格式化>", where))
@@ -191,6 +193,36 @@ def node_span_bytes(node: ast.Constant, offsets: Sequence[int]) -> Tuple[int, in
             offsets[node.end_lineno - 1] + node.end_col_offset)
 
 
+def fstring_to_format(node: ast.JoinedStr, data: bytes, offsets: Sequence[int]):
+    """把 f-string 转成（模板字符串, 表达式源码列表），用于 ``translate(模板).format(...)``。
+
+    返回 ``None`` 表示无法安全转换（含 ``!r`` 转换、嵌套格式说明符或调试语法 ``{x=}``），
+    这类交给人工处理。
+    """
+    template: List[str] = []
+    arguments: List[bytes] = []
+    for part in node.values:
+        if isinstance(part, ast.Constant) and isinstance(part.value, str):
+            template.append(part.value.replace("{", "{{").replace("}", "}}"))
+            continue
+        if not isinstance(part, ast.FormattedValue):
+            return None
+        if part.conversion not in (-1, None):
+            return None
+        placeholder = "{}"
+        if part.format_spec is not None:
+            spec = part.format_spec
+            if len(spec.values) != 1 or not isinstance(spec.values[0], ast.Constant):
+                return None                       # 嵌套格式说明符（如 {x:{w}}）
+            placeholder = "{" + f":{spec.values[0].value}" + "}"
+        start, end = node_span_bytes(part.value, offsets)
+        arguments.append(data[start:end])
+        template.append(placeholder)
+    if not arguments:
+        return None
+    return "".join(template), arguments
+
+
 def dominant_eol(text: str) -> bytes:
     """判断文件的主换行风格（用于注入 import 时保持一致）。"""
     crlf = text.count("\r\n")
@@ -237,6 +269,19 @@ def transform_bytes(path: Path, data: bytes, max_targets: Optional[int] = None) 
         literal = data[start:end].decode("utf-8")      # 原字面量（含引号）
         replacement = f"QtCore.QCoreApplication.translate({context!r}, {literal})"
         edits.append((start, end, replacement.encode("utf-8")))
+        report.wrapped += 1
+
+    # f-string：转成 translate(模板).format(表达式...)，转不了的交人工
+    for node, context in collector.fstrings:
+        converted = fstring_to_format(node, data, offsets)
+        if converted is None:
+            report.manual.append((node.lineno, "<f-string>", "含 !r / 嵌套格式 / 调试语法，需人工"))
+            continue
+        template, arguments = converted
+        start, end = node_span_bytes(node, offsets)
+        call = f"QtCore.QCoreApplication.translate({context!r}, {template!r})"
+        call += ".format(" + ", ".join(argument.decode("utf-8") for argument in arguments) + ")"
+        edits.append((start, end, call.encode("utf-8")))
         report.wrapped += 1
 
     if not edits:

@@ -72,8 +72,7 @@ class BasicCheckboxSync(QWidget):
 
     def update_status(self):
         self.status.setText(
-            f"Init: {self.init_sync.value} | Grab: {self.grab_sync.value}\n"
-            f"Connections: {self.init_sync.connection_count + self.grab_sync.connection_count}",
+            QtCore.QCoreApplication.translate('BasicCheckboxSync', 'Init: {} | Grab: {}\nConnections: {}').format(self.init_sync.value, self.grab_sync.value, self.init_sync.connection_count + self.grab_sync.connection_count),
         )
 
 
@@ -372,7 +371,7 @@ class ManyWidgets(QWidget):
         # Label (read-only)
         self.multi_sync.bind(
             self.multi_label,
-            setter=lambda v: self.multi_label.setText(f"Value: {v}"),
+            setter=lambda v: self.multi_label.setText(QtCore.QCoreApplication.translate('ManyWidgets', 'Value: {}').format(v)),
             mode=SyncMode.FROM_SYNC,
         )
 
@@ -397,7 +396,7 @@ class EnableVsBind(QWidget):
         self.master_slider = QSlider(Qt.Orientation.Horizontal)
         self.master_slider.setRange(0, 100)
         self.master_slider.setValue(50)
-        self.master_slider.valueChanged.connect(lambda v: self.master_label.setText(f"Master: {v}"))
+        self.master_slider.valueChanged.connect(lambda v: self.master_label.setText(QtCore.QCoreApplication.translate('EnableVsBind', 'Master: {}').format(v)))
         master_layout.addWidget(self.master_slider)
         master_group.setLayout(master_layout)
         layout.addWidget(master_group)
@@ -410,7 +409,7 @@ class EnableVsBind(QWidget):
         self.slaveA_slider = QSlider(Qt.Orientation.Horizontal)
         self.slaveA_slider.setRange(0, 100)
         self.slaveA_slider.setValue(50)
-        self.slaveA_slider.valueChanged.connect(lambda v: self.slaveA_label.setText(f"Slave A: {v}"))
+        self.slaveA_slider.valueChanged.connect(lambda v: self.slaveA_label.setText(QtCore.QCoreApplication.translate('EnableVsBind', 'Slave A: {}').format(v)))
         slaveA_layout.addWidget(self.slaveA_slider)
         self.btnA_disable = QPushButton(QtCore.QCoreApplication.translate('EnableVsBind', "Disable Slave A"))
         self.btnA_disable.clicked.connect(self.disable_slaveA)
@@ -433,7 +432,7 @@ class EnableVsBind(QWidget):
         self.slaveB_slider = QSlider(Qt.Orientation.Horizontal)
         self.slaveB_slider.setRange(0, 100)
         self.slaveB_slider.setValue(50)
-        self.slaveB_slider.valueChanged.connect(lambda v: self.slaveB_label.setText(f"Slave B: {v}"))
+        self.slaveB_slider.valueChanged.connect(lambda v: self.slaveB_label.setText(QtCore.QCoreApplication.translate('EnableVsBind', 'Slave B: {}').format(v)))
         slaveB_layout.addWidget(self.slaveB_slider)
         self.btnB_unbind = QPushButton(QtCore.QCoreApplication.translate('EnableVsBind', "Unbind Slave B"))
         self.btnB_unbind.clicked.connect(self.unbind_slaveB)
@@ -497,7 +496,7 @@ class EnableVsBind(QWidget):
 
     def enable_slaveA(self):
         self.sync.enable(self.slaveA_slider)
-        self.statusA.setText(f"Status: Enabled (value stayed {self.slaveA_slider.value()})")
+        self.statusA.setText(QtCore.QCoreApplication.translate('EnableVsBind', 'Status: Enabled (value stayed {})').format(self.slaveA_slider.value()))
         self.statusA.setStyleSheet("color: green;")
         self.btnA_disable.setEnabled(True)
         self.btnA_enable.setEnabled(False)
@@ -511,7 +510,7 @@ class EnableVsBind(QWidget):
 
     def bind_slaveB(self):
         self.sync.add(self.slaveB_slider, match='property')
-        self.statusB.setText(f"Status: Bound (value updated to {self.slaveB_slider.value()})")
+        self.statusB.setText(QtCore.QCoreApplication.translate('EnableVsBind', 'Status: Bound (value updated to {})').format(self.slaveB_slider.value()))
         self.statusB.setStyleSheet("color: green;")
         self.btnB_unbind.setEnabled(True)
         self.btnB_bind.setEnabled(False)

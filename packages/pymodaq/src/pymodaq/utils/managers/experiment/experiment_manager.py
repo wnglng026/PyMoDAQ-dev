@@ -27,6 +27,7 @@ from pymodaq.utils.daq_utils import copy_experiment
 from pymodaq.utils.managers.experiment import utils  # noqa , to register groupemove and groupdet Parameters
 from pymodaq.control_modules.daq_move import DAQ_Move
 from pymodaq.control_modules.daq_viewer import DAQ_Viewer
+from qtpy import QtCore
 if TYPE_CHECKING:
     from pymodaq.dashboard import DashBoard
 
@@ -134,7 +135,7 @@ class ExperimentManager(ManagerBase):
     def finalize_execute(self, modules: list[DAQ_Viewer | DAQ_Move] = None):
         self.close_subentries_display()
         self.dashboard.title = self.entry
-        self.dashboard.mainwindow.setWindowTitle(f"PyMoDAQ Dashboard: {self.dashboard.title}")
+        self.dashboard.mainwindow.setWindowTitle(QtCore.QCoreApplication.translate('ExperimentManager', 'PyMoDAQ Dashboard: {}').format(self.dashboard.title))
 
 
 

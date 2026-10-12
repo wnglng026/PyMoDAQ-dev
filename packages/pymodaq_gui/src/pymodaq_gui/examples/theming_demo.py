@@ -244,7 +244,7 @@ class ThemingDemo(QtWidgets.QWidget):
         header_row = QtWidgets.QHBoxLayout()
         header_row.setSpacing(16)
         for header, width in zip(['', 'State', 'log level', 'Theme attribute'], col_widths):
-            lbl = QtWidgets.QLabel(f'<b>{header}</b>')
+            lbl = QtWidgets.QLabel(QtCore.QCoreApplication.translate('ThemingDemo', '<b>{}</b>').format(header))
             lbl.setFixedWidth(width)
             header_row.addWidget(lbl)
         header_row.addWidget(QtWidgets.QLabel('<b>Description</b>'), 1)
@@ -262,7 +262,7 @@ class ThemingDemo(QtWidgets.QWidget):
             row.addWidget(led)
 
             # State name coloured to match the LED
-            name_lbl = QtWidgets.QLabel(f'<b>{name}</b>')
+            name_lbl = QtWidgets.QLabel(QtCore.QCoreApplication.translate('ThemingDemo', '<b>{}</b>').format(name))
             name_lbl.setStyleSheet(
                 f'color: {color.name()}; font-family: monospace; font-size: 13px;'
             )
@@ -276,7 +276,7 @@ class ThemingDemo(QtWidgets.QWidget):
             row.addWidget(log_lbl)
 
             # Theme attribute
-            attr_lbl = QtWidgets.QLabel(f'theme.<i>{attr}</i>')
+            attr_lbl = QtWidgets.QLabel(QtCore.QCoreApplication.translate('ThemingDemo', 'theme.<i>{}</i>').format(attr))
             attr_lbl.setStyleSheet('color: gray; font-size: 11px;')
             attr_lbl.setFixedWidth(col_widths[3])
             row.addWidget(attr_lbl)
@@ -306,7 +306,7 @@ class ThemingDemo(QtWidgets.QWidget):
         init_name = demo_led.get_state()
         init_color = StatusPalette.color(init_name)
 
-        demo_state_lbl = QtWidgets.QLabel(f'<b>{init_name}</b>')
+        demo_state_lbl = QtWidgets.QLabel(QtCore.QCoreApplication.translate('ThemingDemo', '<b>{}</b>').format(init_name))
         demo_state_lbl.setStyleSheet(f'color: {init_color.name()};')
         demo_state_lbl.setMinimumWidth(80)
 
@@ -315,7 +315,7 @@ class ThemingDemo(QtWidgets.QWidget):
 
         def _on_state_change(state_name: str):
             color = StatusPalette.color(state_name)
-            demo_state_lbl.setText(f'<b>{state_name}</b>')
+            demo_state_lbl.setText(QtCore.QCoreApplication.translate('ThemingDemo', '<b>{}</b>').format(state_name))
             demo_state_lbl.setStyleSheet(f'color: {color.name()};')
             demo_desc_lbl.setText(_DESCRIPTIONS[state_name])
 
@@ -396,7 +396,7 @@ class ThemingDemo(QtWidgets.QWidget):
         self._scroll_area.setWidget(self._content_widget)
 
         self.setWindowTitle(
-            f'PyMoDAQ — Theming Demo (status colors + icons) — {self._theme_combo.currentText()}'
+            QtCore.QCoreApplication.translate('ThemingDemo', 'PyMoDAQ — Theming Demo (status colors + icons) — {}').format(self._theme_combo.currentText())
         )
 
     # ── Slots ─────────────────────────────────────────────────────────────

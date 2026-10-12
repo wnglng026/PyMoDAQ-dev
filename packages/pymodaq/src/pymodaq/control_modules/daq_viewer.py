@@ -59,6 +59,7 @@ from pymodaq.control_modules.viewer_utility_classes import DAQ_Viewer_base
 from pymodaq.utils.leco.pymodaq_listener import ViewerActorListener, LECOClientCommands, LECOViewerCommands
 
 from pymodaq.control_modules.daq_viewer_ui.viewer_selector import SelectedModule
+from qtpy import QtCore
 
 logger = set_logger(get_module_name(__file__))
 config = Config()
@@ -811,7 +812,7 @@ class DAQ_Viewer(ParameterControlModule):
                 self.viewers[ind].title = f'{self._title} {dwa.name}'
                 name = (f'{dwa.name}_Averaged: {dwa.n_averaged}'
                         if dwa.averaged else dwa.name)
-                self.viewer_docks[ind].setTitle(f'{self._title} {name}')
+                self.viewer_docks[ind].setTitle(QtCore.QCoreApplication.translate('DAQ_Viewer', '{} {}').format(self._title, name))
 
                 if temp:
                     self.viewers[ind].show_data_temp(dwa)

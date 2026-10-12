@@ -184,6 +184,11 @@
             <source>Reset Internal Value (no encoder)</source>
             <translation type="unfinished" />
         </message>
+        <message>
+            <location filename="pymodaq\control_modules\daq_move_ui\ui_base.py" line="559" />
+            <source>{} graph</source>
+            <translation type="unfinished" />
+        </message>
     </context>
     <context>
         <name>DAQScan</name>
@@ -367,6 +372,14 @@
         <message>
             <location filename="pymodaq\extensions\pid\pid_controller.py" line="525" />
             <source>Sync Value:</source>
+            <translation type="unfinished" />
+        </message>
+    </context>
+    <context>
+        <name>DAQ_Viewer</name>
+        <message>
+            <location filename="pymodaq\control_modules\daq_viewer.py" line="815" />
+            <source>{} {}</source>
             <translation type="unfinished" />
         </message>
     </context>
@@ -571,6 +584,14 @@
         <message>
             <location filename="pymodaq\utils\compact_dock_manager.py" line="572" />
             <source>Show</source>
+            <translation type="unfinished" />
+        </message>
+    </context>
+    <context>
+        <name>ExperimentManager</name>
+        <message>
+            <location filename="pymodaq\utils\managers\experiment\experiment_manager.py" line="138" />
+            <source>PyMoDAQ Dashboard: {}</source>
             <translation type="unfinished" />
         </message>
     </context>
@@ -1180,57 +1201,29 @@
         </message>
     </context>
     <context>
-        <name>launcher</name>
+        <name>dashboard</name>
         <message>
-            <location filename="pymodaq\launcher\launcher.py" line="544" />
-            <source>Launcher</source>
-            <translation>启动器</translation>
-        </message>
-    </context>
-    <context>
-        <name>load_and_plot</name>
-        <message>
-            <location filename="pymodaq\post_treatment\load_and_plot.py" line="348" />
-            <source>PyMoDAQ Viewer</source>
-            <translation type="unfinished" />
-        </message>
-    </context>
-    <context>
-        <name>scan_selector</name>
-        <message>
-            <location filename="pymodaq\utils\scanner\scan_selector.py" line="416" />
-            <source>pymodaq main</source>
-            <translation type="unfinished" />
-        </message>
-        <message>
-            <location filename="pymodaq\utils\scanner\scan_selector.py" line="459" />
-            <source>PyMoDAQ Viewer</source>
-            <translation type="unfinished" />
-        </message>
-    </context>
-    <context>
-        <name>shared_ui</name>
-        <message>
-            <location filename="pymodaq\utils\shared_ui.py" line="89" />
-            <source>PyMoDAQ Dashboard</source>
-            <translation type="unfinished" />
-        </message>
-    </context>
-    <context>
-        <name>widget_with_toolbar</name>
-        <message>
-            <location filename="pymodaq\extensions\sequencer\utilities\widget_with_toolbar.py" line="67" />
-            <source>Quit</source>
-            <translation type="unfinished" />
-        </message>
-        <message>
-            <location filename="pymodaq\extensions\sequencer\utilities\widget_with_toolbar.py" line="68" />
-            <source>Quit PyMoDAQ</source>
+            <location filename="pymodaq\dashboard.py" line="1160" />
+            <source>The default file specified in the configuration file does not exists!
+{}
+Impossible to load the {} extension</source>
             <translation type="unfinished" />
         </message>
     </context>
     <context>
         <name>general</name>
+        <message>
+            <source>Main Settings:</source>
+            <translation type="vanished">主设置：</translation>
+        </message>
+        <message>
+            <source>Detector Settings</source>
+            <translation type="vanished">探测器设置</translation>
+        </message>
+        <message>
+            <source>Wait time (ms):</source>
+            <translation type="vanished">等待时间(ms)：</translation>
+        </message>
         <message>
             <source>Saver Settings:</source>
             <translation type="unfinished" />
@@ -1238,10 +1231,6 @@
         <message>
             <source>mytitle</source>
             <translation type="unfinished" />
-        </message>
-        <message>
-            <source>Main Settings:</source>
-            <translation>主设置：</translation>
         </message>
         <message>
             <source>Actuator Settings:</source>
@@ -1364,10 +1353,6 @@
             <translation type="unfinished" />
         </message>
         <message>
-            <source>Detector Settings</source>
-            <translation>探测器设置</translation>
-        </message>
-        <message>
             <source>DAQ type:</source>
             <translation type="unfinished" />
         </message>
@@ -1410,10 +1395,6 @@
         <message>
             <source>N Live aver.:</source>
             <translation type="unfinished" />
-        </message>
-        <message>
-            <source>Wait time (ms):</source>
-            <translation>等待时间(ms)：</translation>
         </message>
         <message>
             <source>Log level</source>
@@ -2293,6 +2274,56 @@
         </message>
         <message>
             <source>Points</source>
+            <translation type="unfinished" />
+        </message>
+    </context>
+    <context>
+        <name>launcher</name>
+        <message>
+            <location filename="pymodaq\launcher\launcher.py" line="544" />
+            <source>Launcher</source>
+            <translation>启动器</translation>
+        </message>
+    </context>
+    <context>
+        <name>load_and_plot</name>
+        <message>
+            <location filename="pymodaq\post_treatment\load_and_plot.py" line="348" />
+            <source>PyMoDAQ Viewer</source>
+            <translation type="unfinished" />
+        </message>
+    </context>
+    <context>
+        <name>scan_selector</name>
+        <message>
+            <location filename="pymodaq\utils\scanner\scan_selector.py" line="416" />
+            <source>pymodaq main</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq\utils\scanner\scan_selector.py" line="459" />
+            <source>PyMoDAQ Viewer</source>
+            <translation type="unfinished" />
+        </message>
+    </context>
+    <context>
+        <name>shared_ui</name>
+        <message>
+            <location filename="pymodaq\utils\shared_ui.py" line="89" />
+            <source>PyMoDAQ Dashboard</source>
+            <translation type="unfinished" />
+        </message>
+    </context>
+    <context>
+        <name>widget_with_toolbar</name>
+        <message>
+            <location filename="pymodaq\extensions\sequencer\utilities\widget_with_toolbar.py" line="67" />
+            <source>Quit</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq\extensions\sequencer\utilities\widget_with_toolbar.py" line="68" />
+            <source>Quit PyMoDAQ</source>
             <translation type="unfinished" />
         </message>
     </context>

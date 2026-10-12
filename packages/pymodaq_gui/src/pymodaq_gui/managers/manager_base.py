@@ -261,43 +261,43 @@ class ManagerBase(CustomExt):
         # self.add_widget('entry_label', QtWidgets.QLabel(
         #     f'{self.entry_type.capitalize()}:'))
         self.add_widget(ManagerActions.LIST, ComboBox(),
-                        tip=f'Name of the current {self.entry_type}',
+                        tip=QtCore.QCoreApplication.translate('ManagerBase', 'Name of the current {}').format(self.entry_type),
                         kwargs={'setReadOnly': True})
         self.get_action_list().addItems(self.entries)
 
-        self.add_action(ManagerActions.COPY, f'Copy {self.entry_type.capitalize()}',
+        self.add_action(ManagerActions.COPY, QtCore.QCoreApplication.translate('ManagerBase', 'Copy {}').format(self.entry_type.capitalize()),
                         'file_copy')
         self.add_action(ManagerActions.NEW,
-                        f'New {self.entry_type.capitalize()}', 'add_circle',
-                        tip=f'Create a new {self.entry_type} file ("Ctrl+N")',
+                        QtCore.QCoreApplication.translate('ManagerBase', 'New {}').format(self.entry_type.capitalize()), 'add_circle',
+                        tip=QtCore.QCoreApplication.translate('ManagerBase', 'Create a new {} file ("Ctrl+N")').format(self.entry_type),
                         shortcut=QKeySequence(Qt.Modifier.CTRL | Qt.Key.Key_N),
                         icon_color=self.get_theme().green)
         self.add_action(ManagerActions.DELETE,
-                        f'Delete {self.entry_type.capitalize()}', 'do_not_disturb_on',
+                        QtCore.QCoreApplication.translate('ManagerBase', 'Delete {}').format(self.entry_type.capitalize()), 'do_not_disturb_on',
                         icon_color=self.get_theme().red,
-                        tip=f'Delete the current {self.entry_type.capitalize()} ("Ctrl+Delete")',
+                        tip=QtCore.QCoreApplication.translate('ManagerBase', 'Delete the current {} ("Ctrl+Delete")').format(self.entry_type.capitalize()),
                         shortcut=QKeySequence(Qt.Modifier.CTRL | Qt.Key.Key_Delete))
         self.add_action(ManagerActions.SAVE,
-                        f'Save {self.entry_type.capitalize()}', 'save_as',
+                        QtCore.QCoreApplication.translate('ManagerBase', 'Save {}').format(self.entry_type.capitalize()), 'save_as',
                         icon_color=self.get_theme().blue,
-                        tip=f'Save/Update the current {self.entry_type.capitalize()} ("Ctrl+S")',
+                        tip=QtCore.QCoreApplication.translate('ManagerBase', 'Save/Update the current {} ("Ctrl+S")').format(self.entry_type.capitalize()),
                         shortcut=QKeySequence(Qt.Modifier.CTRL | Qt.Key.Key_S))
         self.add_action(ManagerActions.RELOAD,
-                        f'Reload {self.entry_type.capitalize()}', 'refresh',
-                        tip=f'Reload the current {self.entry_type} file ("Ctrl+Shift+R")',
+                        QtCore.QCoreApplication.translate('ManagerBase', 'Reload {}').format(self.entry_type.capitalize()), 'refresh',
+                        tip=QtCore.QCoreApplication.translate('ManagerBase', 'Reload the current {} file ("Ctrl+Shift+R")').format(self.entry_type),
                         icon_color=self.get_theme().orange,
                         shortcut=QKeySequence(Qt.Modifier.CTRL | Qt.Modifier.SHIFT | Qt.Key.Key_R))
         self.add_action(ManagerActions.EXECUTE,
-                        f'Execute {self.entry_type.capitalize()}', 'start',
+                        QtCore.QCoreApplication.translate('ManagerBase', 'Execute {}').format(self.entry_type.capitalize()), 'start',
                         icon_color=self.get_theme().magenta,
                         checkable=self.execute_action_checkable,
                         icon_checked_color=QtGui.QColor(255, 0, 201),
-                        tip=f'Execute the current {self.entry_type} file ("Ctrl+Shift+E")',
+                        tip=QtCore.QCoreApplication.translate('ManagerBase', 'Execute the current {} file ("Ctrl+Shift+E")').format(self.entry_type),
                         shortcut=QKeySequence(Qt.Modifier.CTRL | Qt.Modifier.SHIFT | Qt.Key.Key_E))
-        self.add_action(ManagerActions.OPEN, f"{self.entry_type.capitalize()} Manager",
+        self.add_action(ManagerActions.OPEN, QtCore.QCoreApplication.translate('ManagerBase', '{} Manager').format(self.entry_type.capitalize()),
                         self.icon_name,
                         icon_color=self.get_theme().blue,
-                        tip=f'Open the {self.entry_type.capitalize()} Manager',
+                        tip=QtCore.QCoreApplication.translate('ManagerBase', 'Open the {} Manager').format(self.entry_type.capitalize()),
                         checkable=True,
                         icon_checked_color=self.get_theme().cyan,
                         auto_toolbar=False, auto_menu=False)
@@ -309,7 +309,7 @@ class ManagerBase(CustomExt):
         if toolbar is None:
             toolbar = QtWidgets.QToolBar(f'{self.entry_type.capitalize()}')
         if menu is None:
-            menu = QtWidgets.QMenu(f'{self.entry_type.capitalize()}')
+            menu = QtWidgets.QMenu(QtCore.QCoreApplication.translate('ManagerBase', '{}').format(self.entry_type.capitalize()))
 
         # self.add_widget(ManagerActions.LABEL_EXTERNAL, QtWidgets.QLabel(f'{self.entry_type.capitalize()}:'),
         #                 toolbar=toolbar,)
@@ -317,7 +317,7 @@ class ManagerBase(CustomExt):
         self.affect_to(ManagerActions.OPEN, menu)
 
         self.add_widget(ManagerActions.LIST_EXTERNAL, ComboBox(), toolbar=toolbar,
-                        tip=f'List of possible {self.entry_type}s')
+                        tip=QtCore.QCoreApplication.translate('ManagerBase', 'List of possible {}s').format(self.entry_type))
         self.sync_entries_with(self.get_action(ManagerActions.LIST_EXTERNAL).widget)
         self.affect_to(ManagerActions.EXECUTE, toolbar)
         return toolbar, menu
@@ -568,7 +568,7 @@ class ManagerBase(CustomExt):
                             self.get_action_from_file(file),
                             file.stem,
                             "",
-                            f"Load the {file.stem} entry",
+                            QtCore.QCoreApplication.translate('ManagerBase', 'Load the {} entry').format(file.stem),
                             auto_toolbar=False,
                         )
                 self.update_actions_connection()
@@ -586,7 +586,7 @@ class ManagerBase(CustomExt):
 
     def update_execute_action_tooltip(self, entry: str):
         self.get_action(ManagerActions.EXECUTE).setToolTip(
-            f'Execute the selected {self.entry_type} entry: {entry} ("Ctrl+A")')
+            QtCore.QCoreApplication.translate('ManagerBase', 'Execute the selected {} entry: {} ("Ctrl+A")').format(self.entry_type, entry))
 
     def create_slot_from_file(self, filename: Path):
         return lambda: self.execute_entry(filename)

@@ -114,9 +114,7 @@ class MultipleSyncsExample(QWidget):
         idx = self.index_sync.value
         selected = items[idx] if 0 <= idx < len(items) else "None"
         self.status.setText(
-            f"Items: {items}\n"
-            f"Selected: {selected} (index {idx})\n"
-            f"List1 participates in: items_sync + index_sync",
+            QtCore.QCoreApplication.translate('MultipleSyncsExample', 'Items: {}\nSelected: {} (index {})\nList1 participates in: items_sync + index_sync').format(items, selected, idx),
         )
 
 
@@ -438,8 +436,8 @@ class ComplexScenarioExample(QWidget):
     def _create_slider(self, name):
         slider = QSlider(Qt.Orientation.Horizontal)
         slider.setRange(0, 255)
-        label = QLabel(f"{name}: 0")
-        slider.valueChanged.connect(lambda v, l=label, n=name: l.setText(f"{n}: {v}"))
+        label = QLabel(QtCore.QCoreApplication.translate('ComplexScenarioExample', '{}: 0').format(name))
+        slider.valueChanged.connect(lambda v, l=label, n=name: l.setText(QtCore.QCoreApplication.translate('ComplexScenarioExample', '{}: {}').format(n, v)))
 
         row = QHBoxLayout()
         row.addWidget(label)
@@ -683,8 +681,8 @@ class InitFromExample(QWidget):
         slider = QSlider(Qt.Orientation.Horizontal)
         slider.setRange(0, 255)
         slider.setValue(initial_value)
-        label = QLabel(f"{name}: {initial_value}")
-        slider.valueChanged.connect(lambda v, l=label, n=name: l.setText(f"{n}: {v}"))
+        label = QLabel(QtCore.QCoreApplication.translate('InitFromExample', '{}: {}').format(name, initial_value))
+        slider.valueChanged.connect(lambda v, l=label, n=name: l.setText(QtCore.QCoreApplication.translate('InitFromExample', '{}: {}').format(n, v)))
 
         row = QHBoxLayout()
         row.addWidget(label)
@@ -825,9 +823,7 @@ class InitFromExample(QWidget):
         self.update_color_preview(self.color_sync.value)
 
         self.color_status.setText(
-            f"✓ Bound with init_from='widget'\n"
-            f"RESULT: Sync captured slider values (R={current_r}, G={current_g}, B={current_b})\n"
-            f"Sliders stayed where they were. Now try the other mode!",
+            QtCore.QCoreApplication.translate('InitFromExample', "✓ Bound with init_from='widget'\nRESULT: Sync captured slider values (R={}, G={}, B={})\nSliders stayed where they were. Now try the other mode!").format(current_r, current_g, current_b),
         )
         self.unbind_color_btn.setEnabled(True)
 
@@ -856,11 +852,7 @@ class InitFromExample(QWidget):
         })
 
         self.config_status.setText(
-            f"✓ BOUND with mixed init_from!\n\n"
-            f"RESULT in sync: name='{self.config_sync.value['name']}' (from widget), "
-            f"enabled={self.config_sync.value['enabled']} (stayed in sync)\n\n"
-            f"RESULT in widgets: Name stayed 'MyWidget', Checkbox changed to {self.config_enabled_check.isChecked()}\n\n"
-            f"KEY POINT: Different properties can initialize from different sources!",
+            QtCore.QCoreApplication.translate('InitFromExample', "✓ BOUND with mixed init_from!\n\nRESULT in sync: name='{}' (from widget), enabled={} (stayed in sync)\n\nRESULT in widgets: Name stayed 'MyWidget', Checkbox changed to {}\n\nKEY POINT: Different properties can initialize from different sources!").format(self.config_sync.value['name'], self.config_sync.value['enabled'], self.config_enabled_check.isChecked()),
         )
         self.unbind_config_btn.setEnabled(True)
 

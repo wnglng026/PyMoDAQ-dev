@@ -62,6 +62,11 @@
             <translation type="unfinished" />
         </message>
         <message>
+            <location filename="pymodaq_gui\examples\action_manager_example.py" line="98" />
+            <source>Project_{}.py</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="105" />
             <source>Export</source>
             <translation type="unfinished" />
@@ -350,32 +355,32 @@
     <context>
         <name>AdvancedSyncDemo</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="891" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="883" />
             <source>Level 3: Advanced Synchronization</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="895" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="887" />
             <source>Advanced Synchronization - Expert Patterns</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="900" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="892" />
             <source>1. Multiple Syncs</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="901" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="893" />
             <source>2. Dynamic Properties</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="902" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="894" />
             <source>3. Complex Scenario</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="903" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="895" />
             <source>4. init_from Parameter</source>
             <translation type="unfinished" />
         </message>
@@ -383,7 +388,7 @@
     <context>
         <name>AutoCleanupExample</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="469" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="465" />
             <source>Use Case: Automatic cleanup demonstration
 ✓ Create temporary widgets
 ✓ Widgets automatically unbind when destroyed
@@ -392,34 +397,46 @@
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="478" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="474" />
             <source>Create Temporary Widget</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="482" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="478" />
             <source>Destroy Oldest Widget</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="490" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="486" />
             <source>Master Control (Always Visible)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="548" />
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="494" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="544" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="490" />
             <source>50</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="496" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="492" />
             <source>Master Value:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="503" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="499" />
             <source>Temporary Widgets (Auto-cleanup on destroy)</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="536" />
+            <source>Temp #{}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="582" />
+            <source>Current Value: {}
+Connected Widgets: {} ({} temporary + 1 master)
+💡 Temporary widgets auto-cleanup when destroyed - no memory leaks!</source>
             <translation type="unfinished" />
         </message>
     </context>
@@ -462,46 +479,52 @@
             <source>Continuous Grabbing</source>
             <translation type="unfinished" />
         </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="75" />
+            <source>Init: {} | Grab: {}
+Connections: {}</source>
+            <translation type="unfinished" />
+        </message>
     </context>
     <context>
         <name>BasicSyncDemo</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="525" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="524" />
             <source>Level 1: Basic Widget Synchronization</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="529" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="528" />
             <source>Basic Widget Synchronization - Start Here!</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="534" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="533" />
             <source>1. Checkboxes</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="535" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="534" />
             <source>2. Different Types</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="536" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="535" />
             <source>3. Transforms</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="538" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="537" />
             <source>5. Unit Conversion</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="539" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="538" />
             <source>6. Many Widgets</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="540" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="539" />
             <source>7. Enable vs Bind</source>
             <translation type="unfinished" />
         </message>
@@ -509,7 +532,7 @@
     <context>
         <name>CloneWidgetExample</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="324" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="323" />
             <source>Use Case: Display settings across multiple monitors
 ✓ Each monitor has Brightness, Contrast, Color Temp
 ✓ Clone button copies current monitor settings
@@ -518,39 +541,50 @@
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="333" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="332" />
             <source>Clone Monitor</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="340" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="339" />
             <source>Monitor Settings (All Synchronized)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="383" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="376" />
+            <source>Monitor {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="382" />
             <source>Brightness:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="395" />
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="386" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="394" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="385" />
             <source>50</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="392" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="391" />
             <source>Contrast:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="401" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="400" />
             <source>Color Temp:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="409" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="408" />
             <source>Remove Monitor</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="453" />
+            <source>Settings applied to {} monitor(s):
+Brightness: {}% | Contrast: {}% | Color Temp: {}K</source>
             <translation type="unfinished" />
         </message>
     </context>
@@ -591,11 +625,18 @@
             <source>Fruits</source>
             <translation type="unfinished" />
         </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="114" />
+            <source>Items: {}
+Current: {}
+Connections: {}</source>
+            <translation type="unfinished" />
+        </message>
     </context>
     <context>
         <name>ComplexScenarioExample</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="310" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="308" />
             <source>Use Case: Data visualization settings
 ✓ Channel selection (items + index) - dict sync
 ✓ Color (RGB) - dict sync with bind_dict()
@@ -604,58 +645,73 @@
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="318" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="316" />
             <source>Channels</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="328" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="326" />
             <source>Line Color</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="339" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="337" />
             <source>Color</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="349" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="347" />
             <source>Display Options</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="352" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="350" />
             <source>Grid</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="353" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="351" />
             <source>Legend</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="354" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="352" />
             <source>Autoscale</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="417" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="415" />
             <source>Presets:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="419" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="417" />
             <source>Default</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="427" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="425" />
             <source>Thermal</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="439" />
+            <source>{}: 0</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="440" />
+            <source>{}: {}</source>
             <translation type="unfinished" />
         </message>
     </context>
     <context>
         <name>ConfigManager</name>
+        <message>
+            <location filename="pymodaq_gui\managers\config_manager.py" line="47" />
+            <source>{} Manager</source>
+            <translation type="unfinished" />
+        </message>
         <message>
             <location filename="pymodaq_gui\managers\config_manager.py" line="167" />
             <source>Fill in information about this managers</source>
@@ -665,7 +721,7 @@
     <context>
         <name>ConfigurationFormExample</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="230" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="229" />
             <source>Use Case: Device configuration form
 ✓ Dict: {'exposure': 100, 'gain': 10, 'fps': '60'}
 ✓ bind_dict() for all controls at once
@@ -673,48 +729,56 @@
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="237" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="236" />
             <source>Camera Settings</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="242" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="241" />
             <source>Exposure (ms):</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="251" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="250" />
             <source>Gain (dB):</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="255" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="254" />
             <source>0</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="262" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="261" />
             <source>Target FPS:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="311" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="310" />
             <source>Presets:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="313" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="312" />
             <source>Low Light</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="319" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="318" />
             <source>High Speed</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="325" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="324" />
             <source>Balanced</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="336" />
+            <source>Camera Status
+Exposure:  {:4d} ms
+Gain:      {:4d} dB
+FPS:       {:&gt;4s} ({:.2f}ms/frame)</source>
             <translation type="unfinished" />
         </message>
     </context>
@@ -815,6 +879,12 @@ Stored internally as top-left origin, displayed in three conventions</source>
             <translation type="unfinished" />
         </message>
         <message>
+            <location filename="pymodaq_gui\examples\widget_sync\5_extending_sync_example.py" line="638" />
+            <location filename="pymodaq_gui\examples\widget_sync\5_extending_sync_example.py" line="635" />
+            <source>✓ Stored (top-left): X={}, Y={}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
             <location filename="pymodaq_gui\examples\widget_sync\5_extending_sync_example.py" line="647" />
             <source>Implementation:
 class CoordinateSync(DictSync):
@@ -868,37 +938,37 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
     <context>
         <name>DictSyncDemo</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="626" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="619" />
             <source>Level 2: Dictionary Synchronization</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="630" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="623" />
             <source>Dictionary Synchronization - Intermediate Patterns</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="635" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="628" />
             <source>1. bind_properties()</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="636" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="629" />
             <source>2. bind_dict()</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="637" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="630" />
             <source>3. Config Forms</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="638" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="631" />
             <source>4. Helper Methods</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="639" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="632" />
             <source>5. Mixed Binding</source>
             <translation type="unfinished" />
         </message>
@@ -906,24 +976,24 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
     <context>
         <name>DifferentWidgetTypes</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="88" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="87" />
             <source>Use Case: Control same value with different widgets
 ✓ Slider, SpinBox, Progress all sync
 ✓ match='property' allows different types</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="95" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="94" />
             <source>Slider:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="103" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="102" />
             <source>SpinBox:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="113" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="112" />
             <source>Progress:</source>
             <translation type="unfinished" />
         </message>
@@ -931,35 +1001,45 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
     <context>
         <name>DynamicFormExample</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="170" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="169" />
             <source>Sync All Devices</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="175" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="174" />
             <source>+ Add Device</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="215" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="209" />
+            <source>Device #{}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="214" />
             <source>Name:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="222" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="221" />
             <source>Port:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="230" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="229" />
             <source>Enabled</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="233" />
+            <source>Remove Device #{}</source>
             <translation type="unfinished" />
         </message>
     </context>
     <context>
         <name>DynamicPropertiesExample</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="131" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="129" />
             <source>Use Case: Configuration that grows over time
 ✓ Start with basic properties (name, version)
 ✓ Add optional properties dynamically (author, license, description)
@@ -967,57 +1047,57 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="138" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="136" />
             <source>Current Configuration (Live)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="151" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="149" />
             <source>Fixed Properties</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="155" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="153" />
             <source>Name:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="161" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="159" />
             <source>Version:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="172" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="170" />
             <source>Optional Properties (Add Below)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="181" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="179" />
             <source>+ Author</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="185" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="183" />
             <source>+ License</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="189" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="187" />
             <source>− Author</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="194" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="192" />
             <source>− License</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="240" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="238" />
             <source>Author:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="264" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="262" />
             <source>License:</source>
             <translation type="unfinished" />
         </message>
@@ -1044,6 +1124,11 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
             <translation type="unfinished" />
         </message>
         <message>
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="85" />
+            <source>Ch {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
             <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="96" />
             <source>50</source>
             <translation type="unfinished" />
@@ -1053,31 +1138,42 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
             <source>×</source>
             <translation type="unfinished" />
         </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="144" />
+            <source>Connected: {} sliders</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="148" />
+            <source>Current Volume: {}%
+Synchronized across {} channels</source>
+            <translation type="unfinished" />
+        </message>
     </context>
     <context>
         <name>DynamicWidgetsDemo</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="598" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="592" />
             <source>Level 4: Dynamic Widget Management</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="607" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="601" />
             <source>1. Dynamic Sliders</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="608" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="602" />
             <source>2. Dynamic Forms</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="609" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="603" />
             <source>3. Clone Widgets</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="610" />
+            <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="604" />
             <source>4. Auto Cleanup</source>
             <translation type="unfinished" />
         </message>
@@ -1085,28 +1181,28 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
     <context>
         <name>EnableDisablePattern</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="185" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="184" />
             <source>Use Case: Enable advanced controls conditionally
 ✓ Use value_changed signal to control widget states</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="190" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="189" />
             <source>Enable Advanced Controls</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="194" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="193" />
             <source>Advanced Controls</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="200" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="199" />
             <source>Setting 1:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="202" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="201" />
             <source>Setting 2:</source>
             <translation type="unfinished" />
         </message>
@@ -1114,60 +1210,75 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
     <context>
         <name>EnableVsBind</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="387" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="386" />
             <source>Understanding enable() vs bind()
 ✓ enable() - Resumes sync but widget keeps its old value
 ✓ bind() - Creates connection and updates widget immediately</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="393" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="392" />
             <source>Master Control</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="395" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="394" />
             <source>Master: 50</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="408" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="399" />
+            <source>Master: {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="407" />
             <source>Slave A: 50</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="415" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="412" />
+            <source>Slave A: {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="414" />
             <source>Disable Slave A</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="417" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="416" />
             <source>Enable Slave A</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="445" />
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="422" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="444" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="421" />
             <source>Status: Connected</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="431" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="430" />
             <source>Slave B: 50</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="438" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="435" />
+            <source>Slave B: {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="437" />
             <source>Unbind Slave B</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="440" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="439" />
             <source>Bind Slave B</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="453" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="452" />
             <source>📋 Test Procedure:
 1. Move Master to 70
 2. Click 'Disable Slave A' and 'Unbind Slave B'
@@ -1178,7 +1289,7 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="469" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="468" />
             <source>🔑 Key Difference:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 disable() → enable():
@@ -1191,13 +1302,23 @@ unbind() → bind():
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="493" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="492" />
             <source>Status: Disabled (connection preserved)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="507" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="499" />
+            <source>Status: Enabled (value stayed {})</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="506" />
             <source>Status: Unbound (connection removed)</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="513" />
+            <source>Status: Bound (value updated to {})</source>
             <translation type="unfinished" />
         </message>
     </context>
@@ -1260,6 +1381,12 @@ Most users only need Options 1 or 2. Option 3 is for advanced cases.</source>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\5_extending_sync_example.py" line="174" />
             <source>Max:</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\5_extending_sync_example.py" line="193" />
+            <location filename="pymodaq_gui\examples\widget_sync\5_extending_sync_example.py" line="191" />
+            <source>Range: [{}, {}]</source>
             <translation type="unfinished" />
         </message>
         <message>
@@ -1465,7 +1592,7 @@ sync = MySync.for_range_spinbox(min_spin, max_spin)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\managers\h5manager.py" line="358" />
+            <location filename="pymodaq_gui\managers\h5manager.py" line="357" />
             <location filename="pymodaq_gui\managers\h5manager.py" line="186" />
             <source>H5 file closed</source>
             <translation type="unfinished" />
@@ -1481,12 +1608,20 @@ sync = MySync.for_range_spinbox(min_spin, max_spin)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\managers\h5manager.py" line="361" />
+            <location filename="pymodaq_gui\managers\h5manager.py" line="286" />
+            <source>Cannot open file:
+{}
+
+The file may be open in another application.</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\h5manager.py" line="360" />
             <source>H5 file open and accessible</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\managers\h5manager.py" line="383" />
+            <location filename="pymodaq_gui\managers\h5manager.py" line="382" />
             <source>H5 file open — SWMR mode active</source>
             <translation type="unfinished" />
         </message>
@@ -1494,7 +1629,7 @@ sync = MySync.for_range_spinbox(min_spin, max_spin)</source>
     <context>
         <name>HelperMethodsExample</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="352" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="348" />
             <source>Use Case: Dynamic list management with helper methods
 ✓ append_to_list() - Add items safely
 ✓ remove_from_list() - Remove items safely
@@ -1504,71 +1639,81 @@ sync = MySync.for_range_spinbox(min_spin, max_spin)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="361" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="357" />
             <source>Current State</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="386" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="382" />
             <source>List Operations</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="391" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="387" />
             <source>Add item:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="396" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="392" />
             <source>Append</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="403" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="399" />
             <source>Remove item:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="408" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="404" />
             <source>Remove</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="415" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="411" />
             <source>Pop by index:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="421" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="417" />
             <source>Pop</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="425" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="421" />
             <source>Pop Last</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="432" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="428" />
             <source>Set current:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="436" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="432" />
             <source>Update</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="460" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="456" />
             <source>💡 All operations use helper methods that handle deep copying internally.
 This prevents the shallow copy bug and ensures proper change detection!</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="508" />
+            <source>Items: [{}]
+Current: '{}'
+Count: {}
+
+Internal dict:
+{}</source>
             <translation type="unfinished" />
         </message>
     </context>
     <context>
         <name>InitFromExample</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="470" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="468" />
             <source>Use Case: Control who initializes whom when binding
 ✓ init_from='sync' (default) - Widget gets sync's value
 ✓ init_from='widget' - Sync gets widget's value
@@ -1577,65 +1722,65 @@ This prevents the shallow copy bug and ensures proper change detection!</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="478" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="476" />
             <source>1. Basic init_from Modes (using bind())</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="482" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="480" />
             <source>WATCH: When you click Bind, observe what value each widget shows!
 The widget starts at 100, sync starts at 50 - who wins?</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="488" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="486" />
             <source>Sync Value:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="507" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="505" />
             <source>init_from='sync':</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="512" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="510" />
             <source>Bind (widget ← 50)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="549" />
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="532" />
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="515" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="547" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="530" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="513" />
             <source>Reset</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="524" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="522" />
             <source>init_from='widget':</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="529" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="527" />
             <source>Bind (sync ← 100)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="541" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="539" />
             <source>init_from=None:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="546" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="544" />
             <source>Bind (no change)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="560" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="558" />
             <source>2. bind_dict() - Initialize RGB from sliders OR from sync</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="564" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="562" />
             <source>SCENARIO: You have RGB sliders at specific positions.
 CHOICE 1: Overwrite sliders with sync's colors (init_from='sync')
 CHOICE 2: Capture slider positions into sync (init_from='widget')
@@ -1643,42 +1788,42 @@ Try both! Reset sliders between attempts to see the difference.</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="572" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="570" />
             <source>Reset Sliders (R=128, G=64, B=192)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="576" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="574" />
             <source>Unbind All</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="592" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="590" />
             <source>Color Preview</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="602" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="600" />
             <source>Bind: Sliders ← Sync (255, 100, 50)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="606" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="604" />
             <source>Bind: Sync ← Sliders (current)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="612" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="610" />
             <source>Not bound. Adjust sliders, then choose a bind option above.</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="619" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="617" />
             <source>3. bind_dict() - Per-Property init_from (Mixed Sources)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="623" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="621" />
             <source>SCENARIO: A config with 2 properties. Where does each get its initial value?
 We'll bind with MIXED init_from: 'name' from widget, 'enabled' from sync.
 BEFORE: Widget shows (name='MyWidget', enabled=True), Sync has (name='DefaultName', enabled=False)
@@ -1686,75 +1831,99 @@ AFTER: BOTH will have (name='MyWidget' from widget, enabled=False from sync)</so
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="630" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="628" />
             <source>BEFORE Binding</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="632" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="630" />
             <source>Widget state: name='MyWidget', enabled=True</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="633" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="631" />
             <source>Sync state: name='DefaultName', enabled=False</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="639" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="637" />
             <source>Widget Controls</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="643" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="641" />
             <source>Name:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="873" />
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="645" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="865" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="643" />
             <source>MyWidget</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="649" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="647" />
             <source>Enabled</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="658" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="656" />
             <source>Bind with Mixed init_from</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="662" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="660" />
             <source>Unbind &amp; Reset</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="668" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="666" />
             <source>Not bound yet. Click 'Bind with Mixed init_from' to see the result!</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="760" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="685" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="684" />
+            <source>{}: {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="758" />
             <source>Sliders reset to R=128, G=64, B=192. Choose a bind option.</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="770" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="768" />
             <source>Unbound. You can now try the other bind option!</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="800" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="798" />
             <source>✓ Bound with init_from='sync'
 RESULT: Sliders jumped to sync's values (R=255, G=100, B=50)
 Try 'Unbind All' then 'Reset Sliders' to test the other mode!</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="875" />
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="826" />
+            <source>✓ Bound with init_from='widget'
+RESULT: Sync captured slider values (R={}, G={}, B={})
+Sliders stayed where they were. Now try the other mode!</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="855" />
+            <source>✓ BOUND with mixed init_from!
+
+RESULT in sync: name='{}' (from widget), enabled={} (stayed in sync)
+
+RESULT in widgets: Name stayed 'MyWidget', Checkbox changed to {}
+
+KEY POINT: Different properties can initialize from different sources!</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="867" />
             <source>Reset! Try binding again to see the effect.</source>
             <translation type="unfinished" />
         </message>
@@ -1776,78 +1945,176 @@ Try 'Unbind All' then 'Reset Sliders' to test the other mode!</source>
         </message>
     </context>
     <context>
+        <name>ManagerBase</name>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="264" />
+            <source>Name of the current {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="268" />
+            <source>Copy {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="271" />
+            <source>New {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="272" />
+            <source>Create a new {} file ("Ctrl+N")</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="276" />
+            <source>Delete {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="278" />
+            <source>Delete the current {} ("Ctrl+Delete")</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="281" />
+            <source>Save {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="283" />
+            <source>Save/Update the current {} ("Ctrl+S")</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="286" />
+            <source>Reload {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="287" />
+            <source>Reload the current {} file ("Ctrl+Shift+R")</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="291" />
+            <source>Execute {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="295" />
+            <source>Execute the current {} file ("Ctrl+Shift+E")</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="297" />
+            <source>{} Manager</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="300" />
+            <source>Open the {} Manager</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="312" />
+            <source>{}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="320" />
+            <source>List of possible {}s</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="571" />
+            <source>Load the {} entry</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\managers\manager_base.py" line="589" />
+            <source>Execute the selected {} entry: {} ("Ctrl+A")</source>
+            <translation type="unfinished" />
+        </message>
+    </context>
+    <context>
         <name>ManyWidgets</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="281" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="280" />
             <source>Use case: Different representations of the same value
 Shows WidgetSync works with ANY Qt widget type</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="302" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="301" />
             <source>Value: 50</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="306" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="305" />
             <source>Slider:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="311" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="310" />
             <source>SpinBox:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="313" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="312" />
             <source>Dial:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="318" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="317" />
             <source>Progress:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="323" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="322" />
             <source>Text:</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="374" />
+            <source>Value: {}</source>
             <translation type="unfinished" />
         </message>
     </context>
     <context>
         <name>MixedBindingExample</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="535" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="528" />
             <source>Individual Controls</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="539" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="532" />
             <source>Temperature:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="548" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="541" />
             <source>Speed:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="552" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="545" />
             <source>0</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="560" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="553" />
             <source>JSON Editor (Full State)</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="563" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="556" />
             <source>Edit JSON directly - all controls update!</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="611" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="604" />
             <source>Implementation:
 settings_sync.bind_dict({'temperature': {...}, 'speed': {...}})
 settings_sync.bind(json_editor, getter=parse_json, setter=format_json)</source>
@@ -1970,6 +2237,13 @@ settings_sync.bind(json_editor, getter=parse_json, setter=format_json)</source>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="95" />
             <source>Fruits</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="117" />
+            <source>Items: {}
+Selected: {} (index {})
+List1 participates in: items_sync + index_sync</source>
             <translation type="unfinished" />
         </message>
     </context>
@@ -2120,17 +2394,17 @@ settings_sync.bind(json_editor, getter=parse_json, setter=format_json)</source>
     <context>
         <name>OppositeCheckboxes</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="148" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="147" />
             <source>Enable Acquisition</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="150" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="149" />
             <source>Disable Acquisition</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="166" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="165" />
             <source>Implementation:
 sync.add(opposite_checkbox, match='property',
          to_sync_transform=lambda v: not v,
@@ -2291,7 +2565,7 @@ sync.add(opposite_checkbox, match='property',
     <context>
         <name>RGBSlidersExample</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="127" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="126" />
             <source>Use Case: RGB color controlled by 3 different sliders
 ✓ Single dict: {'r': 128, 'g': 64, 'b': 192}
 ✓ bind_dict() maps each slider to a dict key
@@ -2299,33 +2573,43 @@ sync.add(opposite_checkbox, match='property',
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="134" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="133" />
             <source>Color Sliders</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="149" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="148" />
             <source>Color Preview</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="187" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="186" />
             <source>Presets:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="189" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="188" />
             <source>Red</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="193" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="192" />
             <source>Green</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="197" />
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="196" />
             <source>Blue</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="206" />
+            <source>{}: 0</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="207" />
+            <source>{}: {}</source>
             <translation type="unfinished" />
         </message>
     </context>
@@ -2498,6 +2782,11 @@ Use your package manager to update.</source>
             <source>Close</source>
             <translation type="unfinished" />
         </message>
+        <message>
+            <location filename="pymodaq_gui\utils\shared_ui.py" line="382" />
+            <source>{} help</source>
+            <translation type="unfinished" />
+        </message>
     </context>
     <context>
         <name>StickyMenuDemo</name>
@@ -2558,6 +2847,14 @@ Use your package manager to update.</source>
         </message>
     </context>
     <context>
+        <name>SubEntryHandler</name>
+        <message>
+            <location filename="pymodaq_gui\managers\settings\subentries.py" line="140" />
+            <source>Fill in information about this {}</source>
+            <translation type="unfinished" />
+        </message>
+    </context>
+    <context>
         <name>ThemingDemo</name>
         <message>
             <location filename="pymodaq_gui\examples\theming_demo.py" line="138" />
@@ -2589,6 +2886,19 @@ in place is not an option. Use the combobox below to switch themes live.</source
             <translation type="unfinished" />
         </message>
         <message>
+            <location filename="pymodaq_gui\examples\theming_demo.py" line="318" />
+            <location filename="pymodaq_gui\examples\theming_demo.py" line="309" />
+            <location filename="pymodaq_gui\examples\theming_demo.py" line="265" />
+            <location filename="pymodaq_gui\examples\theming_demo.py" line="247" />
+            <source>&lt;b&gt;{}&lt;/b&gt;</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\theming_demo.py" line="279" />
+            <source>theme.&lt;i&gt;{}&lt;/i&gt;</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
             <location filename="pymodaq_gui\examples\theming_demo.py" line="296" />
             <source>Live demo — click the LED to cycle through states</source>
             <translation type="unfinished" />
@@ -2596,6 +2906,11 @@ in place is not an option. Use the combobox below to switch themes live.</source
         <message>
             <location filename="pymodaq_gui\examples\theming_demo.py" line="333" />
             <source>Material icon toolbar — status-tinted + checkable actions</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\theming_demo.py" line="399" />
+            <source>PyMoDAQ — Theming Demo (status colors + icons) — {}</source>
             <translation type="unfinished" />
         </message>
         <message>
@@ -2658,6 +2973,16 @@ in place is not an option. Use the combobox below to switch themes live.</source
             <translation type="unfinished" />
         </message>
         <message>
+            <location filename="pymodaq_gui\examples\widget_sync\5_extending_sync_example.py" line="338" />
+            <source>✓ Validated value: {} W (safe range enforced)</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\examples\widget_sync\5_extending_sync_example.py" line="341" />
+            <source>✓ Validated value: {} W</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
             <location filename="pymodaq_gui\examples\widget_sync\5_extending_sync_example.py" line="349" />
             <source>Range Validator (Auto-swap if invalid)</source>
             <translation type="unfinished" />
@@ -2697,19 +3022,19 @@ sync = WidgetSync(
     <context>
         <name>ValueTransforms</name>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="228" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="227" />
             <source>Use Case: Temperature conversion
 ✓ Celsius spinbox controls the sync
 ✓ Fahrenheit spinbox uses transforms for conversion</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="235" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="234" />
             <source>Celsius:</source>
             <translation type="unfinished" />
         </message>
         <message>
-            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="245" />
+            <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="244" />
             <source>Fahrenheit:</source>
             <translation type="unfinished" />
         </message>
@@ -2879,6 +3204,11 @@ sync = WidgetSync(
             <source>y:</source>
             <translation type="unfinished" />
         </message>
+        <message>
+            <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="530" />
+            <source>x={:.3e} </source>
+            <translation type="unfinished" />
+        </message>
     </context>
     <context>
         <name>View2D</name>
@@ -2991,6 +3321,11 @@ sync = WidgetSync(
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="591" />
             <source>Show the legend</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
+            <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="804" />
+            <source>Show/Hide - {}</source>
             <translation type="unfinished" />
         </message>
     </context>
@@ -3128,6 +3463,11 @@ sync = WidgetSync(
             <translation type="unfinished" />
         </message>
         <message>
+            <location filename="pymodaq_gui\examples\pattern_completer_demo.py" line="276" />
+            <source>Update #{}: {}</source>
+            <translation type="unfinished" />
+        </message>
+        <message>
             <location filename="pymodaq_gui\examples\pattern_completer_demo.py" line="294" />
             <source>Double-click cells and type @ for users or # for tags</source>
             <translation type="unfinished" />
@@ -3212,7 +3552,7 @@ sync = WidgetSync(
     <context>
         <name>viewer2D</name>
         <message>
-            <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="1188" />
+            <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="1186" />
             <source>New Data</source>
             <translation type="unfinished" />
         </message>

@@ -188,9 +188,9 @@ class FactoryMethodsExample(QWidget):
 
         status = QLabel()
         self.range_sync.value_changed.connect(
-            lambda v: status.setText(f"Range: [{v['min']}, {v['max']}]"),
+            lambda v: status.setText(QtCore.QCoreApplication.translate('FactoryMethodsExample', 'Range: [{}, {}]').format(v['min'], v['max'])),
         )
-        status.setText(f"Range: [{self.range_sync.value['min']}, {self.range_sync.value['max']}]")
+        status.setText(QtCore.QCoreApplication.translate('FactoryMethodsExample', 'Range: [{}, {}]').format(self.range_sync.value['min'], self.range_sync.value['max']))
         range_layout.addWidget(status)
 
         range_group.setLayout(range_layout)
@@ -335,10 +335,10 @@ class ValidatorsExample(QWidget):
         clamp_status = QLabel()
         self.clamp_sync.value_changed.connect(
             lambda v: clamp_status.setText(
-                f"✓ Validated value: {v} W (safe range enforced)",
+                QtCore.QCoreApplication.translate('ValidatorsExample', '✓ Validated value: {} W (safe range enforced)').format(v),
             ),
         )
-        clamp_status.setText(f"✓ Validated value: {self.clamp_sync.value} W")
+        clamp_status.setText(QtCore.QCoreApplication.translate('ValidatorsExample', '✓ Validated value: {} W').format(self.clamp_sync.value))
         clamp_status.setStyleSheet("color: green; font-weight: bold;")
         clamp_layout.addWidget(clamp_status)
 
@@ -632,10 +632,10 @@ class CustomSyncExample(QWidget):
         status = QLabel()
         self.coord_sync.value_changed.connect(
             lambda coords: status.setText(
-                f"✓ Stored (top-left): X={coords['x']}, Y={coords['y']}",
+                QtCore.QCoreApplication.translate('CustomSyncExample', '✓ Stored (top-left): X={}, Y={}').format(coords['x'], coords['y']),
             ),
         )
-        status.setText(f"✓ Stored (top-left): X={self.coord_sync.value['x']}, Y={self.coord_sync.value['y']}")
+        status.setText(QtCore.QCoreApplication.translate('CustomSyncExample', '✓ Stored (top-left): X={}, Y={}').format(self.coord_sync.value['x'], self.coord_sync.value['y']))
         status.setStyleSheet("font-weight: bold; padding: 5px; color: green;")
         coord_layout.addWidget(status)
 

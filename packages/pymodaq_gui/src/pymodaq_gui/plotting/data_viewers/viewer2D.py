@@ -801,9 +801,7 @@ class View2D(ActionManager, QtCore.QObject):
         if self.data_displayer.labels != labels:
             action_names =['red', 'green', 'blue']
             for action_name, label in zip(action_names[:len(labels)], labels):
-                self.get_action(action_name).setToolTip('Show/Hide'
-                                                        f' - '
-                                                        f'{label}')
+                self.get_action(action_name).setToolTip(QtCore.QCoreApplication.translate('View2D', 'Show/Hide - {}').format(label))
 
     def set_axis_label(self, position, label='', units=''):
         """

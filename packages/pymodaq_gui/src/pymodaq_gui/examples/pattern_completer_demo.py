@@ -273,7 +273,7 @@ def create_dynamic_updates_example():
         counter[0] += 1
         new_users = [f"User{i}" for i in range(counter[0], counter[0] + 5)]
         text_edit.update_completions("@", new_users)
-        counter_label.setText(f"Update #{counter[0]}: {', '.join(new_users)}")
+        counter_label.setText(QtCore.QCoreApplication.translate('pattern_completer_demo', 'Update #{}: {}').format(counter[0], ', '.join(new_users)))
 
     timer = QTimer(widget)
     timer.timeout.connect(update_users)

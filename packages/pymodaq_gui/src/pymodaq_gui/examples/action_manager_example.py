@@ -95,7 +95,7 @@ class ActionManagerExample(QtWidgets.QMainWindow, ActionManager):
 
         # Add recent file actions
         for i in range(1, 4):
-            self.add_action(f'recent_{i}', f'Project_{i}.py',
+            self.add_action(f'recent_{i}', QtCore.QCoreApplication.translate('ActionManagerExample', 'Project_{}.py').format(i),
                           menu=recent_menu)
 
         # Add separator to file toolbar

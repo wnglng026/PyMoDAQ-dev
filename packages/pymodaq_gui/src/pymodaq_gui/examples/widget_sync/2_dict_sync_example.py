@@ -111,8 +111,7 @@ class ComboBoxPropertiesExample(QWidget):
     def update_status(self):
         v = self.combo_sync.value
         self.status.setText(
-            f"Items: {v['items']}\nCurrent: {v['current']}\n"
-            f"Connections: {self.combo_sync.connection_count}",
+            QtCore.QCoreApplication.translate('ComboBoxPropertiesExample', 'Items: {}\nCurrent: {}\nConnections: {}').format(v['items'], v['current'], self.combo_sync.connection_count),
         )
 
 
@@ -204,8 +203,8 @@ class RGBSlidersExample(QWidget):
     def _create_slider(self, name):
         slider = QSlider(Qt.Orientation.Horizontal)
         slider.setRange(0, 255)
-        label = QLabel(f"{name}: 0")
-        slider.valueChanged.connect(lambda v, l=label, n=name: l.setText(f"{n}: {v}"))
+        label = QLabel(QtCore.QCoreApplication.translate('RGBSlidersExample', '{}: 0').format(name))
+        slider.valueChanged.connect(lambda v, l=label, n=name: l.setText(QtCore.QCoreApplication.translate('RGBSlidersExample', '{}: {}').format(n, v)))
 
         row = QHBoxLayout()
         row.addWidget(label)
@@ -334,10 +333,7 @@ class ConfigurationFormExample(QWidget):
     def _update_status(self, state):
         frame_time = 1000 / int(state['fps'])
         self.status_display.setText(
-            f"Camera Status\n"
-            f"Exposure:  {state['exposure']:4d} ms\n"
-            f"Gain:      {state['gain']:4d} dB\n"
-            f"FPS:       {state['fps']:>4s} ({frame_time:.2f}ms/frame)",
+            QtCore.QCoreApplication.translate('ConfigurationFormExample', 'Camera Status\nExposure:  {:4d} ms\nGain:      {:4d} dB\nFPS:       {:>4s} ({:.2f}ms/frame)').format(state['exposure'], state['gain'], state['fps'], frame_time),
         )
 
 
@@ -509,10 +505,7 @@ class HelperMethodsExample(QWidget):
         v = self.list_sync.value
         items_str = ', '.join(f"'{item}'" for item in v.get('items', []))
         self.items_display.setText(
-            f"Items: [{items_str}]\n"
-            f"Current: '{v.get('current', 'N/A')}'\n"
-            f"Count: {v.get('count', 0)}\n\n"
-            f"Internal dict:\n{v}",
+            QtCore.QCoreApplication.translate('HelperMethodsExample', "Items: [{}]\nCurrent: '{}'\nCount: {}\n\nInternal dict:\n{}").format(items_str, v.get('current', 'N/A'), v.get('count', 0), v),
         )
 
 
