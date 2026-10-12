@@ -216,7 +216,7 @@ def has_qtcore_name(tree: ast.AST) -> bool:
     return False
 
 
-def transform_bytes(path: Path, data: bytes) -> Tuple[bytes, FileReport]:
+def transform_bytes(path: Path, data: bytes, max_targets: Optional[int] = None) -> Tuple[bytes, FileReport]:
     """返回（改写后的字节, 报告）；本函数不写文件。
 
     全程按字节切片，除了被包装的字符串字面量之外**不动任何一个字节**
@@ -231,7 +231,8 @@ def transform_bytes(path: Path, data: bytes) -> Tuple[bytes, FileReport]:
 
     offsets = line_start_bytes(text)
     edits: List[Tuple[int, int, bytes]] = []
-    for node, context in collector.targets:
+    targets = collector.targets[:max_targets] if max_targets else collector.targets
+    for node, context in targets:
         start, end = node_span_bytes(node, offsets)
         literal = data[start:end].decode("utf-8")      # 原字面量（含引号）
         replacement = f"QtCore.QCoreApplication.translate({context!r}, {literal})"
@@ -277,6 +278,8 @@ def main(argv=None) -> int:
     parser.add_argument("--report-only", action="store_true", help="只出统计报告，不写文件")
     parser.add_argument("--repo", default=None, help="仓库根目录（默认按脚本位置推断）")
     parser.add_argument("--diff-lines", type=int, default=60, help="每个文件最多打印多少行 diff")
+    parser.add_argument("--max-targets", type=int, default=None,
+                        help="每个文件最多包装多少条（用于二分定位问题构造）")
     args = parser.parse_args(sys.argv[1:] if argv is None else argv)
 
     repo_root = Path(args.repo).resolve() if args.repo else Path(__file__).resolve().parents[2]
@@ -289,7 +292,7 @@ def main(argv=None) -> int:
     for path in files:
         data = path.read_bytes()
         try:
-            new_data, report = transform_bytes(path, data)
+            new_data, report = transform_bytes(path, data, max_targets=args.max_targets)
         except SyntaxError as exc:
             print(f"!! 语法错误，跳过 {path}: {exc}")
             continue
