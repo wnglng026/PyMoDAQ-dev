@@ -299,8 +299,8 @@ class View0D(ActionManager, QObject):
                         setters=dict(setMaximumWidth=100))
         self.add_action('show_data_as_list', QtCore.QCoreApplication.translate('View0D', 'Show numbers'), 'pin', QtCore.QCoreApplication.translate('View0D', 'If triggered, will display last data as numbers'
                                                                        'in a side panel'), checkable=True)
-        self.add_action('show_min_max', 'Show Min/Max lines', 'contrast_square',
-                        'If triggered, will display horizontal dashed lines for min/max of data', checkable=True)
+        self.add_action('show_min_max', QtCore.QCoreApplication.translate('View0D', 'Show Min/Max lines'), 'contrast_square',
+                        QtCore.QCoreApplication.translate('View0D', 'If triggered, will display horizontal dashed lines for min/max of data'), checkable=True)
         self.add_action('use_timestamps', QtCore.QCoreApplication.translate('View0D', 'Use Timestamps'), 'timer_off',
                         QtCore.QCoreApplication.translate('View0D', 'Use timestamps as axis'), checkable=True,
                         icon_checked='timer')
