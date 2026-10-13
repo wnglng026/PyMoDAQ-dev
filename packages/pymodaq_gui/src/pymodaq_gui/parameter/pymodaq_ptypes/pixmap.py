@@ -60,7 +60,7 @@ class PixmapCheckWidget(QtWidgets.QWidget):
 
         ver_widget = QtWidgets.QWidget()
         ver_widget.setLayout(QtWidgets.QVBoxLayout())
-        self.checkbox = QtWidgets.QCheckBox('Show/Hide')
+        self.checkbox = QtWidgets.QCheckBox(QtCore.QCoreApplication.translate('PixmapCheck', 'Show/Hide'))
         self.info_label = QtWidgets.QLabel()
         # self.info.setReadOnly(True)
         self.checkbox.setChecked(False)
