@@ -372,8 +372,8 @@ class SettingsManagerTableView(QtWidgets.QTableView):
             self.menu.addAction(QtCore.QCoreApplication.translate('SettingsManagerTableView', 'Remove selected row'), self.remove)
             self.menu.addAction(QtCore.QCoreApplication.translate('SettingsManagerTableView', 'Clear all'), self.clear)
             self.menu.addSeparator()
-            self.menu.addAction(f'Load {self.entry_type}Manager file', lambda: self.load_data_signal.emit())
-            self.menu.addAction(f'Save {self.entry_type}Manager file', lambda: self.save_data_signal.emit())
+            self.menu.addAction(QtCore.QCoreApplication.translate('SettingsManagerTableView', 'Load {}Manager file').format(self.entry_type), lambda: self.load_data_signal.emit())
+            self.menu.addAction(QtCore.QCoreApplication.translate('SettingsManagerTableView', 'Save {}Manager file').format(self.entry_type), lambda: self.save_data_signal.emit())
         else:
             self.menu = None
 
