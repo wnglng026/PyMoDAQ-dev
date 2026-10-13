@@ -443,3 +443,6 @@
 "Load {}Manager file" = "加载 {} 管理器文件"
 "Save {}Manager file" = "保存 {} 管理器文件"
 "Change navigation/signal axes" = "切换导航轴/信号轴"
+
+# ---------- 图像参数控件补译（2026-10-13） ----------
+"Show/Hide" = "显示/隐藏"
