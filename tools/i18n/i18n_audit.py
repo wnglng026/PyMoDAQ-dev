@@ -72,15 +72,27 @@ def placeholders(text: str) -> Dict[str, int]:
     return counts
 
 
+def is_allowed(source: str, allowed: set) -> bool:
+    """白名单匹配：整串命中，或**首行**命中（多行文案在白名单里按首行记录）。"""
+    return source in allowed or source.split("\n")[0].strip() in allowed
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(prog="i18n_audit", description="PyMoDAQ i18n 台账与一致性审计")
     parser.add_argument("--package", help="只审计某个包")
     parser.add_argument("--language", default="zh_CN")
     parser.add_argument("--fail-under", type=float, default=None,
                         help="覆盖率低于该百分比时返回非零（CI 门禁）")
+    parser.add_argument("--allowlist", default="tools/i18n/allow_english.txt",
+                        help="有意保留英文的条目清单（每行一条，统计覆盖率时排除）")
     args = parser.parse_args(sys.argv[1:] if argv is None else argv)
 
     packages = (args.package,) if args.package else CORE_PACKAGES
+    allow_path = repo_root() / args.allowlist
+    allowed = set()
+    if allow_path.is_file():
+        allowed = {line.strip() for line in allow_path.read_text(encoding="utf-8").splitlines()
+                   if line.strip() and not line.startswith("#")}
     missing_total = 0
     rows_total = 0
     inconsistent: List[Tuple[str, str, str]] = []
@@ -101,13 +113,16 @@ def main(argv=None) -> int:
 
         total = len(fresh_rows)
         translated = sum(1 for c, s, _ in fresh_rows if translated_map.get((c, s)))
-        missing = total - translated
+        allowed_hits = sum(1 for c, s, _ in fresh_rows
+                           if not translated_map.get((c, s)) and is_allowed(s, allowed))
+        missing = total - translated - allowed_hits
         missing_total += missing
-        rows_total += total
-        ratio = translated / total if total else 1.0
+        rows_total += total - allowed_hits
+        ratio = translated / (total - allowed_hits) if total - allowed_hits else 1.0
         note = "✅ 全译" if missing == 0 else f"缺 {missing} 条"
         note += "（有 .ts）" if committed.is_file() else "（尚无 .ts，先跑 i18n extract）"
-        print(f"{package:<18}{total:>6}{translated:>7}{missing:>7}{ratio:>8.1%}   {note}")
+        print(f"{package:<18}{total:>6}{translated:>7}{missing:>7}{ratio:>8.1%}   {note}"
+              f"（另有 {allowed_hits} 条按设计保留英文）")
 
         for _, source, translation in committed_rows:
             if translation and placeholders(source) != placeholders(translation):

@@ -1,0 +1,425 @@
+# 有意保留英文的条目（每行一条，`#` 开头为注释）
+# 这些是标识符/枚举/数据值/内部名，翻译会造成困惑或破坏兼容性；覆盖率统计会排除它们。
+# 判定标准与 i18n_codemod.py 的 SKIP_VALUES 一致：插件与模块标识、库名、数据值、参数内部名。
+ShowGraphs
+RemoveActuator
+RemoveDetector
+WaitForMoveDone
+UpdateHistogram
+ProbeData
+mytitle
+LossDim
+Euclid
+Kappa:
+bounds
+min
+max
+epsilon
+detectors
+ui:
+{}
+{} {}
+
+# ---------- pymodaq_gui/examples 下的示例代码文案（开发者演示，暂不翻译）----------
+(optical system)
+(scientific plot)
+(standard graphics)
++ Add Device
++ Add Slider
++ Author
++ License
+0
+1. Basic
+1. Basic init_from Modes (using bind())
+1. Checkboxes
+1. Dynamic Sliders
+1. Factory Methods
+1. Multiple Syncs
+1. bind_properties()
+2 Synchronized ListWidgets
+2. Different Types
+2. Dynamic Forms
+2. Dynamic Properties
+2. Multiple Patterns
+2. Validators
+2. bind_dict()
+2. bind_dict() - Initialize RGB from sliders OR from sync
+3 Synchronized ComboBoxes
+3. Clone Widgets
+3. Complex Scenario
+3. Config Forms
+3. Custom Sync Class
+3. Global Config
+3. Transforms
+3. bind_dict() - Per-Property init_from (Mixed Sources)
+4. Auto Cleanup
+4. Helper Methods
+4. Per-Pattern Config
+4. init_from Parameter
+5. Mixed Binding
+5. Unit Conversion
+5. Word Wrap
+50
+6. Dynamic Updates
+6. Many Widgets
+7. Enable vs Bind
+7. Table Delegate
+8. Code Editor
+<b>{}</b>
+@ is case-insensitive, :: is case-sensitive
+A shared six-state status vocabulary for LEDs, icons, and status bars,
+About
+Acquisition
+ActionManager Menu and Toolbar Example
+Actions
+Add item:
+Advanced
+Advanced Controls
+Advanced Synchronization - Expert Patterns
+All-sticky
+Appearance
+Append
+Author:
+Auto
+Auto Save
+Auto-detect theme based on system
+Autoscale
+BEFORE Binding
+Balanced
+Basic Widget Synchronization - Start Here!
+Bind (no change)
+Bind (sync ← 100)
+Bind (widget ← 50)
+Bind Slave B
+Bind with Mixed init_from
+Bind: Sliders ← Sync (255, 100, 50)
+Bind: Sync ← Sliders (current)
+Blue
+Bottom Panel
+Bottom-Left (0,0):
+Brightness:
+Camera Settings
+Camera Status
+Celsius:
+Center (0,0):
+Ch {}
+Change items:
+Change to:
+Channels
+Checkable-only (default)
+Clamping Validator (Auto-correct)
+Clone Monitor
+Color
+Color Preview
+Color Sliders
+Color Temp:
+Colors
+Compact View
+Completions update every 2 seconds!
+Connected: {} sliders
+Console
+Continuous Grabbing
+Contrast:
+Coordinate Sync (Multiple Origins)
+Copy
+Copy selection
+Create Temporary Widget
+Create a new file
+Create new file
+Current Configuration (Live)
+Current State
+Current Value: {}
+Current Volume: {}%
+Custom predicate
+Cut
+Cut selection
+Cycle through all themes automatically
+Dark
+Debug Mode
+Default
+Destroy Oldest Widget
+Device #{}
+Dial:
+Dictionary Synchronization - Intermediate Patterns
+Disable Acquisition
+Disable Slave A
+Display 1:
+Display 2:
+Display Options
+Documentation
+Double-click cells and type @ for users or # for tags
+Edit
+Edit JSON directly - all controls update!
+Enable Acquisition
+Enable Advanced Controls
+Enable Slave A
+Enabled
+Erase
+Erase off
+Example 6: Parameter Binding with Tabs
+Export
+Export as PDF
+Export as PNG
+Export as SVG
+Exposure (ms):
+Extending Widget Sync - Three Approaches
+Fahrenheit:
+File
+File Explorer
+Fixed Properties
+Font Size
+Format Document
+Format current document
+Fruits
+Full Parameter Tree
+Full View
+Gain (dB):
+General
+Git
+Grab
+Green
+Grid
+Help
+High Speed
+If checked, double clicking will put points in the table
+Implementation:
+Individual Controls
+Init
+Init: {} | Grab: {}
+Items: [{}]
+Items: {}
+JSON Editor (Full State)
+Large
+Learn when and how to extend widget_sync for your needs.
+Left Panel
+Legend
+Level 1: Basic Widget Synchronization
+Level 2: Dictionary Synchronization
+Level 3: Advanced Synchronization
+Level 4: Dynamic Widget Management
+Level 6: Extending Widget Sync
+License:
+Light
+Line Color
+List 1:
+List 2:
+List Operations
+Live demo — click the LED to cycle through states
+Load File
+Load file
+Low Light
+Master Control
+Master Control (Always Visible)
+Master Value:
+Master: 50
+Master: {}
+Material icon toolbar — status-tinted + checkable actions
+Max:
+Medium
+Min:
+Module Initialized
+Monitor Settings (All Synchronized)
+Monitor {}
+MyWidget
+Name:
+New
+New Data
+New File
+Normal action (closes menu)
+Normal action (stays open)
+Not bound yet. Click 'Bind with Mixed init_from' to see the result!
+Not bound. Adjust sliders, then choose a bind option above.
+Notice the green border when typing @ (visual indicator enabled)
+Open existing file
+Open...
+Option 1: Custom Factory Methods (Easiest)
+Option 3: Custom Sync Classes (Advanced)
+Optional Properties (Add Below)
+Outline
+Output
+Panels
+Paste
+Paste from clipboard
+PatternCompleter Examples - Interactive Demo
+Plot
+Plot Sequence
+Plot functions
+Pop
+Pop Last
+Pop by index:
+Port:
+Position
+Position 1
+Power:
+Presets:
+Problems
+Processing
+Progress:
+Project_{}.py
+PyMoDAQ — Theming Demo
+PyMoDAQ — Theming Demo (status colors + icons)
+PyMoDAQ — Theming Demo (status colors + icons) — {}
+Python-style completion: :keyword or ::builtin
+Range SpinBoxes (Custom Factory)
+Range Validator (Auto-swap if invalid)
+Range: [{}, {}]
+Recent Files
+Red
+Redo
+Redo last action
+Remove
+Remove Device #{}
+Remove Monitor
+Remove item:
+Reset
+Reset Sliders (R=128, G=64, B=192)
+Reset! Try binding again to see the effect.
+Right Panel
+SCENARIO: A config with 2 properties. Where does each get its initial value?
+SCENARIO: You have RGB sliders at specific positions.
+Save
+Save File
+Save Points
+Save current file
+Save current function
+Save file as
+Scan Start:
+Scan Stop:
+Search
+Search in document
+Selected Index:
+Set Test Values
+Set current:
+Setting 1:
+Setting 2:
+Settings
+Settings applied to {} monitor(s):
+Show Hide Viewer
+Show Icon
+Show Tooltips
+Slave A: 50
+Slave A: {}
+Slave B: 50
+Slave B: {}
+Slider with Label (Custom Factory)
+Slider:
+Sliders reset to R=128, G=64, B=192. Choose a bind option.
+Small
+Speed:
+SpinBox:
+Status: Bound (value updated to {})
+Status: Connected
+Status: Disabled (connection preserved)
+Status: Enabled (value stayed {})
+Status: Unbound (connection removed)
+SubTools
+Switch to dark theme
+Switch to light theme
+Sync All Devices
+Sync Value:
+Sync state: name='DefaultName', enabled=False
+Synchronization Status
+Target FPS:
+Temp #{}
+Temperature:
+Temporary Widgets (Auto-cleanup on destroy)
+Terminal
+Text:
+Theme
+Thermal
+Toggle
+Toggle A
+Toggle B
+Toggle file explorer panel
+Toggle git panel
+Toggle search panel
+Tools
+Top-Left (0,0):
+Try typing @ for mentions, # for hashtags, :: for emojis
+Type @ to mention someone
+Unbind & Reset
+Unbind All
+Unbind Slave B
+Unbound. You can now try the other bind option!
+Understanding enable() vs bind()
+Undo
+Undo last action
+Unpinned action C (closes menu)
+Update
+Update #{}: {}
+Use Case: 1024×768 image with different coordinate systems
+Use Case: Audio mixer with dynamic channel strips
+Use Case: Automatic cleanup demonstration
+Use Case: Configuration that grows over time
+Use Case: Control same value with different widgets
+Use Case: Control who initializes whom when binding
+Use Case: Data visualization settings
+Use Case: Device configuration form
+Use Case: Display settings across multiple monitors
+Use Case: Dynamic list management with helper methods
+Use Case: Enable advanced controls conditionally
+Use Case: ListWidget with separate item and selection syncs
+Use Case: Module state sync between compact and full views
+Use Case: RGB color controlled by 3 different sliders
+Use Case: Temperature conversion
+Use case: Different representations of the same value
+Value: 50
+Value: {}
+Verbose Logging
+Version:
+View
+View 1:
+View 2:
+View 3:
+Volume Controls (All Synchronized)
+WATCH: When you click Bind, observe what value each widget shows!
+Widget Controls
+Widget state: name='MyWidget', enabled=True
+[pin] Pinned action A
+[pin] Pinned action B
+bind_parameter() Method for Parameters
+init_from='sync':
+init_from='widget':
+init_from=None:
+theme.<i>{}</i>
+{}: 0
+{}: {}
+×
+− Author
+− License
+■ Stop
+▶ Play
+✓ BOUND with mixed init_from!
+✓ Bound with init_from='sync'
+✓ Bound with init_from='widget'
+✓ Stored (top-left): X={}, Y={}
+✓ Validated value: {} W
+✓ Validated value: {} W (safe range enforced)
+💡 All operations use helper methods that handle deep copying internally.
+📋 Test Procedure:
+🔑 Key Difference:
+
+# ---------- widget_sync / widgets 的开发者演示与说明文案（含多行示例与代码片段），非用户界面文案 ----------
+▼
+ROI
+x:
+y:
+x={:.3e}
+(,)
+...
+Collapsible Widget - All Directions Demo
+◀
+▶
+▲
+Method 1: Convenience Methods
+Update @ completions (add david, eve)
+Add $ pattern (currencies)
+Remove # pattern
+Method 2: Direct setOpts (Standard PyQtGraph)
+Update @ with setOpts (add frank, grace)
+Add : pattern with setOpts (emojis)
+Remove $ with setOpts
+Update config with setOpts (wider popup)
+Advanced Examples
+Simulate loading users from database
+Pattern Completer Parameter - Demo
