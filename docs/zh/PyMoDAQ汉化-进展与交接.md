@@ -391,3 +391,13 @@ showMessage / setDetailedText / addMenu / addAction`；对 17 个文件自动改
 | `dev/*.ps1` | 环境搭建、运行、调试、体检、抓官方引用 |
 | `调试启动核心.py` + 各项目 `*运行调试脚本.py` | 每项目一个运行调试入口（解释器守卫 + 依赖探测 + 异常钩子） |
 | `pymodaq_zh/` | L3 运行时词典（650 条 + hooks + selfcheck + debug） |
+
+
+## 9.5 2026-10-13：新增 i18n 审计 CI 门禁（待 CI 实跑）
+
+新增工作流 `.github/workflows/i18n-audit.yml`，在涉及汉化源码、语言工具或本工作流的 PR 上运行；也支持手动触发。
+
+- 使用 Python 3.12，安装 PyQt6（提供 `pylupdate6`）和可编辑安装的 `pymodaq_utils`。
+- 分别审计 `pymodaq` 与 `pymodaq_gui`，要求覆盖率不低于 95%。
+- 同时钉住提取条目底线：`pymodaq >= 450`、`pymodaq_gui >= 400`，避免提取结果异常变少却误通过。
+- 工作流已提交到独立分支；**尚未由 GitHub Actions 实际运行验证**。若 CI 因 PyQt6 / `pylupdate6` 路径、包安装或静态文案提取依赖失败，应先修工作流环境，不要降低审计门槛来绕过失败。
