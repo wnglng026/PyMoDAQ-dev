@@ -438,3 +438,8 @@
 "Show/Hide graphs on all detectors" = "显示/隐藏所有探测器的图形"
 "Show Min/Max lines" = "显示最小值/最大值线"
 "If triggered, will display horizontal dashed lines for min/max of data" = "启用后显示数据最小值/最大值的水平虚线"
+
+# ---------- 管理器与多维绘图提示补译（2026-10-13） ----------
+"Load {}Manager file" = "加载 {} 管理器文件"
+"Save {}Manager file" = "保存 {} 管理器文件"
+"Change navigation/signal axes" = "切换导航轴/信号轴"
