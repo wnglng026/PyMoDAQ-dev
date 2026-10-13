@@ -516,7 +516,18 @@ def _read_ts(path: Path) -> Dict[str, Dict[str, str]]:
 
 
 def _toml_quote(text: str) -> str:
-    return '"' + text.replace("\\", "\\\\").replace('"', '\\"') + '"'
+    """转义为 TOML 基本字符串。
+
+    注意：**必须**转义换行/回车/制表符——TOML 的双引号字符串里不允许出现裸换行，
+    否则整个语言包会解析失败（实测：一个多行译文就让 `tomllib` 报错，导致语言包 0 条、
+    界面上的未译条目变成空白）。
+    """
+    escaped = (text.replace("\\", "\\\\")
+                   .replace('"', '\\"')
+                   .replace("\r", "\\r")
+                   .replace("\n", "\\n")
+                   .replace("\t", "\\t"))
+    return '"' + escaped + '"'
 
 
 def cmd_pack(args) -> int:

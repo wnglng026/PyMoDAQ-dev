@@ -38,7 +38,9 @@ class PackTranslator(QtCore.QTranslator):
             hit = core.lookup(source_text, context)
         except Exception:
             hit = None
-        return hit or ""
+        # 查不到时**必须回退到原文**：PyQt 无法从 Python 返回"空/无效 QString"，
+        # 返回空串会被 Qt 当成"有效但为空"的译文 —— 界面会显示成空白（实测：启动器按钮全空）。
+        return hit if hit else source_text
 
     def isEmpty(self) -> bool:  # noqa: N802 - Qt 命名约定
         return core.load_pack().entries == 0

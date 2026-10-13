@@ -146,9 +146,7 @@ generated_from = "pymodaq_gui_zh_CN.ts"
 "Tables:" = "表格："
 "Target:" = "目标："
 "Text Editing with pattern completion (@ for users, # for languages):" = "带模式补全的文本编辑（@ 用户，# 语言）："
-"The advantage of the Table model lies in its modularity.
- For concrete examples see theTableModelTabular and the TableModelSequential custom models in the pymodaq.utils.scanner module" = "表格模型的优势在于模块化。
-具体示例见 pymodaq.utils.scanner 模块中的 TableModelTabular 与 TableModelSequential 自定义模型"
+"The advantage of the Table model lies in its modularity.\n For concrete examples see theTableModelTabular and the TableModelSequential custom models in the pymodaq.utils.scanner module" = "表格模型的优势在于模块化。\n具体示例见 pymodaq.utils.scanner 模块中的 TableModelTabular 与 TableModelSequential 自定义模型"
 "Threshold:" = "阈值："
 "Time Flow:" = "时间流："
 "Time:" = "时间："
@@ -273,13 +271,7 @@ generated_from = "pymodaq_gui_zh_CN.ts"
 
 [contexts."H5Manager"]
 "Browse the content of the current HDF5 file" = "浏览当前 HDF5 文件内容"
-"Cannot open file:
-{}
-
-The file may be open in another application." = "无法打开文件：
-{}
-
-该文件可能已被其它程序打开。"
+"Cannot open file:\n{}\n\nThe file may be open in another application." = "无法打开文件：\n{}\n\n该文件可能已被其它程序打开。"
 "Close Current File" = "关闭当前文件"
 "File Locked" = "文件已锁定"
 "File:" = "文件："
@@ -407,9 +399,7 @@ The file may be open in another application." = "无法打开文件：
 "Documentation" = "文档"
 "Everything is up to date!" = "一切都已是最新版本！"
 "Logs" = "日志"
-"New versions of PyMoDAQ packages available!
-Use your package manager to update." = "有可用的 PyMoDAQ 新版本！
-请用包管理器更新。"
+"New versions of PyMoDAQ packages available!\nUse your package manager to update." = "有可用的 PyMoDAQ 新版本！\n请用包管理器更新。"
 "Online documentation" = "在线文档"
 "Open logs file" = "打开日志文件"
 "Preferences" = "首选项"

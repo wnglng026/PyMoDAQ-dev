@@ -558,11 +558,7 @@ generated_from = "pymodaq_zh_CN.ts"
 "Chrono Timer" = "计时器"
 
 [contexts."dashboard"]
-"The default file specified in the configuration file does not exists!
-{}
-Impossible to load the {} extension" = "配置文件中指定的默认文件不存在！
-{}
-无法加载 {} 扩展"
+"The default file specified in the configuration file does not exists!\n{}\nImpossible to load the {} extension" = "配置文件中指定的默认文件不存在！\n{}\n无法加载 {} 扩展"
 
 [contexts."launcher"]
 "Launcher" = "启动器"
