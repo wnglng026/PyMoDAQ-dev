@@ -28,12 +28,12 @@ class TableViewCustom(QtWidgets.QTableView):
     def setmenu(self, status):
         if status:
             self.menu = QtWidgets.QMenu()
-            self.menu.addAction('Add new', self.add)
-            self.menu.addAction('Remove selected row', self.remove)
-            self.menu.addAction('Clear all', self.clear)
+            self.menu.addAction(QtCore.QCoreApplication.translate('TableViewCustom', 'Add new'), self.add)
+            self.menu.addAction(QtCore.QCoreApplication.translate('TableViewCustom', 'Remove selected row'), self.remove)
+            self.menu.addAction(QtCore.QCoreApplication.translate('TableViewCustom', 'Clear all'), self.clear)
             self.menu.addSeparator()
-            self.menu.addAction('Load as txt', lambda: self.load_data_signal.emit())
-            self.menu.addAction('Save as txt', lambda: self.save_data_signal.emit())
+            self.menu.addAction(QtCore.QCoreApplication.translate('TableViewCustom', 'Load as txt'), lambda: self.load_data_signal.emit())
+            self.menu.addAction(QtCore.QCoreApplication.translate('TableViewCustom', 'Save as txt'), lambda: self.save_data_signal.emit())
         else:
             self.menu = None
 
