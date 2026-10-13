@@ -360,7 +360,7 @@ class SettingsManagerTableView(QtWidgets.QTableView):
     def setmenu(self, status):
         if status:
             self.menu = QtWidgets.QMenu()
-            special_menu = self.menu.addMenu('Add Special Configuration')
+            special_menu = self.menu.addMenu(QtCore.QCoreApplication.translate('SettingsManagerTableView', 'Add Special Configuration'))
 
             for entry in special_entry_factory.entries:
                 special_entry = special_entry_factory.get_subentry_handler(entry)
@@ -369,8 +369,8 @@ class SettingsManagerTableView(QtWidgets.QTableView):
                                            self.create_menu_slot_special_entry(entry))
 
             self.menu.addSeparator()
-            self.menu.addAction('Remove selected row', self.remove)
-            self.menu.addAction('Clear all', self.clear)
+            self.menu.addAction(QtCore.QCoreApplication.translate('SettingsManagerTableView', 'Remove selected row'), self.remove)
+            self.menu.addAction(QtCore.QCoreApplication.translate('SettingsManagerTableView', 'Clear all'), self.clear)
             self.menu.addSeparator()
             self.menu.addAction(f'Load {self.entry_type}Manager file', lambda: self.load_data_signal.emit())
             self.menu.addAction(f'Save {self.entry_type}Manager file', lambda: self.save_data_signal.emit())
