@@ -22,7 +22,7 @@ class SearchLineEdit(QLineEdit):
         self.textChanged.connect(self._on_text_changed)
 
         # Set placeholder text
-        self.setPlaceholderText("Search...")
+        self.setPlaceholderText(QtCore.QCoreApplication.translate('SearchLineEdit', "Search..."))
 
         # Create a simple search icon
         self.search_icon = self.create_search_icon()

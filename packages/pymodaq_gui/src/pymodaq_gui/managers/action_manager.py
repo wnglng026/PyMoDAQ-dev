@@ -36,6 +36,21 @@ TOOLBAR_BUTTON_STYLE_LABELS = {
 }
 
 
+def toolbar_button_style_label(name: str) -> str:
+    """返回工具栏按钮样式的显示名（当前语言）。
+
+    字面量集中在此函数内，便于 i18n 提取工具直接识别；运行时才做翻译。
+    """
+    labels = {
+        'icon_only': QtCore.QCoreApplication.translate('ActionManager', 'Icons only'),
+        'text_only': QtCore.QCoreApplication.translate('ActionManager', 'Text only'),
+        'text_beside_icon': QtCore.QCoreApplication.translate('ActionManager', 'Text beside icons'),
+        'text_under_icon': QtCore.QCoreApplication.translate('ActionManager', 'Text under icons'),
+        'follow_style': QtCore.QCoreApplication.translate('ActionManager', 'Follow system style'),
+    }
+    return labels.get(name, TOOLBAR_BUTTON_STYLE_LABELS.get(name, name))
+
+
 def get_toolbar_button_style() -> QtCore.Qt.ToolButtonStyle | None:
     name = config.get(('gui', 'style', 'toolbar_button_style'), [None])[0]
     return TOOLBAR_BUTTON_STYLES.get(name)
@@ -770,7 +785,7 @@ class ActionManager:
         current_name = config.get(('gui', 'style', 'toolbar_button_style'), ['icon_only'])[0]
         actions = {}
         for name, label in TOOLBAR_BUTTON_STYLE_LABELS.items():
-            action = style_menu.addAction(label)
+            action = style_menu.addAction(toolbar_button_style_label(name))
             action.setCheckable(True)
             action.setChecked(name == current_name)
             action.setActionGroup(group)

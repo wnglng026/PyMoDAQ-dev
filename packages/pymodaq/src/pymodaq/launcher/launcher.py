@@ -46,6 +46,31 @@ class EnumToolTip(StrEnum):
     RESTORE = 'Restore this experiment with the selected state_manager'
 
 
+def get_tooltip(tooltip: EnumToolTip) -> str:
+    """把 :class:`EnumToolTip` 转成当前语言的提示文本。
+
+    字面量集中在这里是为了让 i18n 提取工具（pylupdate6）能直接看到它们；
+    字典在调用时才构造，因此切换语言后取到的是新语言的文本。
+    """
+    translations = {
+        EnumToolTip.DASHBOARD: QtCore.QCoreApplication.translate(
+            'Launcher', 'Launch an empty Dashboard without configuration'),
+        EnumToolTip.DAQ_VIEWER: QtCore.QCoreApplication.translate(
+            'Launcher', 'Launch an empty Viewer'),
+        EnumToolTip.DAQ_MOVE: QtCore.QCoreApplication.translate(
+            'Launcher', 'Launch an empty DAQ_Move'),
+        EnumToolTip.H5BROWSER: QtCore.QCoreApplication.translate(
+            'Launcher', 'Launch H5Browser'),
+        EnumToolTip.BACK_HISTORY: QtCore.QCoreApplication.translate(
+            'Launcher', 'Navigate to the back item of experiments history'),
+        EnumToolTip.NEXT_HISTORY: QtCore.QCoreApplication.translate(
+            'Launcher', 'Navigate to the next item of experiments history'),
+        EnumToolTip.RESTORE: QtCore.QCoreApplication.translate(
+            'Launcher', 'Restore this experiment with the selected state_manager'),
+    }
+    return translations[tooltip]
+
+
 class ExperimentTreeBuilder:
     """Build experiment summary tree from full experiment settings."""
 
@@ -212,20 +237,20 @@ class Launcher(CustomApp):
         '''
         subclass method from ActionManager
         '''
-        self.add_action('launch_dashboard', self.tr('Launch empty dashboard'), '',
-                        EnumToolTip.DASHBOARD, auto_toolbar=False
+        self.add_action('launch_dashboard', QtCore.QCoreApplication.translate('Launcher', 'Launch empty dashboard'), '',
+                        get_tooltip(EnumToolTip.DASHBOARD), auto_toolbar=False
                         )
-        self.add_action('launch_viewer', QtCore.QCoreApplication.translate('Launcher', 'Launch empy viewer'), '', EnumToolTip.DAQ_VIEWER, auto_toolbar=False)
-        self.add_action('launch_move', QtCore.QCoreApplication.translate('Launcher', 'Launch empty DAQ move'), '', EnumToolTip.DAQ_MOVE, auto_toolbar=False)
-        self.add_action('launch_h5browser', self.tr('Launch H5Browser'), '', EnumToolTip.H5BROWSER, auto_toolbar=False)
+        self.add_action('launch_viewer', QtCore.QCoreApplication.translate('Launcher', 'Launch empy viewer'), '', get_tooltip(EnumToolTip.DAQ_VIEWER), auto_toolbar=False)
+        self.add_action('launch_move', QtCore.QCoreApplication.translate('Launcher', 'Launch empty DAQ move'), '', get_tooltip(EnumToolTip.DAQ_MOVE), auto_toolbar=False)
+        self.add_action('launch_h5browser', QtCore.QCoreApplication.translate('Launcher', 'Launch H5Browser'), '', get_tooltip(EnumToolTip.H5BROWSER), auto_toolbar=False)
 
-        self.add_action('back_config', QtCore.QCoreApplication.translate('Launcher', 'Back'), 'keyboard_arrow_left', EnumToolTip.BACK_HISTORY, auto_toolbar=True,
+        self.add_action('back_config', QtCore.QCoreApplication.translate('Launcher', 'Back'), 'keyboard_arrow_left', get_tooltip(EnumToolTip.BACK_HISTORY), auto_toolbar=True,
                         toolbar='header')
         self.header_toolbar.addWidget(self.date_label)
         self.header_toolbar.addWidget(self.date_combo_box)
         self.add_action('restore_dashboard', QtCore.QCoreApplication.translate('Launcher', 'Launch'),
-                        'open_in_new', EnumToolTip.RESTORE, auto_toolbar=True, toolbar='header')
-        self.add_action('next_config', QtCore.QCoreApplication.translate('Launcher', 'Next'), 'keyboard_arrow_right', EnumToolTip.NEXT_HISTORY, auto_toolbar=True,
+                        'open_in_new', get_tooltip(EnumToolTip.RESTORE), auto_toolbar=True, toolbar='header')
+        self.add_action('next_config', QtCore.QCoreApplication.translate('Launcher', 'Next'), 'keyboard_arrow_right', get_tooltip(EnumToolTip.NEXT_HISTORY), auto_toolbar=True,
                         toolbar='header')
 
         # setup_actions is called after setup_docks, style the action button here once it exists.
@@ -317,21 +342,25 @@ class Launcher(CustomApp):
         self.get_toolbar('launcher').setOrientation(QtCore.Qt.Orientation.Horizontal)
 
     def set_tooltip_button(self):
-        self.dashboard_button.setToolTip(EnumToolTip.DASHBOARD)
-        self.viewer_button.setToolTip(EnumToolTip.DAQ_VIEWER)
-        self.move_button.setToolTip(EnumToolTip.DAQ_MOVE)
-        self.h5browser_button.setToolTip(EnumToolTip.H5BROWSER)
+        self.dashboard_button.setToolTip(get_tooltip(EnumToolTip.DASHBOARD))
+        self.viewer_button.setToolTip(get_tooltip(EnumToolTip.DAQ_VIEWER))
+        self.move_button.setToolTip(get_tooltip(EnumToolTip.DAQ_MOVE))
+        self.h5browser_button.setToolTip(get_tooltip(EnumToolTip.H5BROWSER))
 
     def set_header(self):
-        self.hbox.addWidget(self.add_toolbar('header', 'Header', add_break=False))
+        self.hbox.addWidget(self.add_toolbar(
+            'header', QtCore.QCoreApplication.translate('Launcher', 'Header'), add_break=False))
         self.header_toolbar = self.get_toolbar('header')
 
         self.header_toolbar.layout().setSpacing(20)
 
     def set_controls(self):
-        self.get_toolbar('controls').addWidget(self.add_toolbar('experiment', 'experiment', add_break=False))
-        self.get_toolbar('controls').addWidget(self.add_toolbar('state_manager', 'State'))
-        self.get_toolbar('controls').addWidget(self.add_toolbar('extensions', 'Extensions'))
+        self.get_toolbar('controls').addWidget(self.add_toolbar(
+            'experiment', QtCore.QCoreApplication.translate('Launcher', 'experiment'), add_break=False))
+        self.get_toolbar('controls').addWidget(self.add_toolbar(
+            'state_manager', QtCore.QCoreApplication.translate('Launcher', 'State')))
+        self.get_toolbar('controls').addWidget(self.add_toolbar(
+            'extensions', QtCore.QCoreApplication.translate('Launcher', 'Extensions')))
 
     def popen_with_splash(self, args: list[str], msg: str, wait_time_ms: int = 1000):
         self.splash_sc.setVisible(True)
@@ -343,22 +372,22 @@ class Launcher(CustomApp):
 
     def launch_empty_dashboard(self):
         self.popen_with_splash([sys.executable, '-m',  'pymodaq.dashboard'],
-                               'Loading a DashBoard... Please wait...',
+                               QtCore.QCoreApplication.translate('Launcher', 'Loading a DashBoard... Please wait...'),
                                5000)
 
     def launch_empty_viewer(self):
         self.popen_with_splash([sys.executable, '-m',  'pymodaq.control_modules.daq_viewer'],
-                               'Loading a DAQ_Viewer... Please wait...',
+                               QtCore.QCoreApplication.translate('Launcher', 'Loading a DAQ_Viewer... Please wait...'),
                                3000)
 
     def launch_empty_move(self):
         self.popen_with_splash([sys.executable, '-m',  'pymodaq.control_modules.daq_move'],
-                               'Loading a DAQ_Move... Please wait...',
+                               QtCore.QCoreApplication.translate('Launcher', 'Loading a DAQ_Move... Please wait...'),
                                3000)
 
     def launch_h5browser(self):
         self.popen_with_splash([sys.executable, '-m',  'pymodaq.extensions.h5browser'],
-                               'Loading a H5Browser... Please wait...',
+                               QtCore.QCoreApplication.translate('Launcher', 'Loading a H5Browser... Please wait...'),
                                3000)
 
     def show_experiment_titles_only(self, experiment_source=None):
@@ -395,8 +424,10 @@ class Launcher(CustomApp):
         if self.extension_manager_restore.entry not in (None, '', 'empty'):
             args_lst += ['-e', self.extension_manager_restore.entry]
         self.popen_with_splash(args_lst,
-                               f'Loading a DashBoard with {self.experiment_manager.entry} experiment and '
-                               f'{self.state_manager.entry} state...\nPlease wait...',
+                               QtCore.QCoreApplication.translate(
+                                   'Launcher',
+                                   'Loading a DashBoard with {} experiment and {} state...\nPlease wait...').format(
+                                   self.experiment_manager.entry, self.state_manager.entry),
                                5000)
 
     def do_navigate(self, index: int):
@@ -445,8 +476,10 @@ class Launcher(CustomApp):
             self.date_combo_box.blockSignals(True)
             self.date_combo_box.clear()
             self.date_combo_box.addItems(
-                [datetime.strptime(i, "%Y-%d-%m:%H:%M:%S").strftime("%Y/%m/%d at %Hh%M") for i in self.history_keys])
-            self.date_combo_box.setCurrentText(date.strftime("%Y/%m/%d at %Hh%M"))
+                [datetime.strptime(i, "%Y-%d-%m:%H:%M:%S").strftime(
+                    QtCore.QCoreApplication.translate('Launcher', "%Y/%m/%d at %Hh%M")) for i in self.history_keys])
+            self.date_combo_box.setCurrentText(date.strftime(
+                QtCore.QCoreApplication.translate('Launcher', "%Y/%m/%d at %Hh%M")))
             self.date_combo_box.blockSignals(False)
 
             # tree
@@ -518,7 +551,9 @@ class Launcher(CustomApp):
             process = subprocess.Popen([sys.executable, '-m', ext_class.__module__])
 
             self.popen_with_splash([sys.executable, '-m', ext_class.__module__],
-                                   f'Loading the {extension_name} extension... Please wait...',
+                                   QtCore.QCoreApplication.translate(
+                                       'Launcher',
+                                       'Loading the {} extension... Please wait...').format(extension_name),
                                    5000)
 
             logger.info(f"Extension '{extension_name}' successfully launched with process PID: {process.pid}")

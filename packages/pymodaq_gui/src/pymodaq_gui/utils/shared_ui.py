@@ -167,30 +167,38 @@ class SharedUI(CustomApp):
         if menubar is None:
             menubar = self.menubar
 
-        runtime_toolbar = self.add_toolbar(MenuToolbarNames.RUNTIME, 'Runtime', parent=self.mainwindow, add_break=False)
+        runtime_toolbar = self.add_toolbar(
+            MenuToolbarNames.RUNTIME, QtCore.QCoreApplication.translate('SharedUI', 'Runtime'),
+            parent=self.mainwindow, add_break=False)
         runtime_toolbar.setMovable(False)
 
-        help_toolbar = self.add_toolbar(MenuToolbarNames.HELP, 'Help', parent=self.mainwindow, add_break=False)
+        help_toolbar = self.add_toolbar(
+            MenuToolbarNames.HELP, QtCore.QCoreApplication.translate('SharedUI', 'Help'),
+            parent=self.mainwindow, add_break=False)
         help_toolbar.setVisible(False)
 
         # File menu
-        self.add_menu(MenuToolbarNames.FILE, MenuToolbarNames.FILE.capitalize(), parent_menu=menubar)
+        self.add_menu(MenuToolbarNames.FILE, QtCore.QCoreApplication.translate('SharedUI', 'File'),
+                      parent_menu=menubar)
         self.get_menu(MenuToolbarNames.FILE).addSeparator()
 
         # View menu
-        self.add_menu(MenuToolbarNames.VIEW, MenuToolbarNames.VIEW.capitalize(), parent_menu=menubar)
+        self.add_menu(MenuToolbarNames.VIEW, QtCore.QCoreApplication.translate('SharedUI', 'View'),
+                      parent_menu=menubar)
         self.get_menu(MenuToolbarNames.VIEW).addSeparator()
 
-        self.add_menu(MenuToolbarNames.TOOLBARS, MenuToolbarNames.TOOLBARS.capitalize(), parent_menu=MenuToolbarNames.VIEW,
-                      menu=StickyMenu())
+        self.add_menu(MenuToolbarNames.TOOLBARS, QtCore.QCoreApplication.translate('SharedUI', 'Toolbars'),
+                      parent_menu=MenuToolbarNames.VIEW, menu=StickyMenu())
         self.setup_toolbar_style_menu(MenuToolbarNames.VIEW)
 
         # Tools menu
-        self.add_menu(MenuToolbarNames.TOOLS, MenuToolbarNames.TOOLS.capitalize(), parent_menu=menubar)
+        self.add_menu(MenuToolbarNames.TOOLS, QtCore.QCoreApplication.translate('SharedUI', 'Tools'),
+                      parent_menu=menubar)
         self.get_menu(MenuToolbarNames.TOOLS).addSeparator()
 
         # Help menu
-        self.add_menu(MenuToolbarNames.HELP, MenuToolbarNames.HELP.capitalize(), parent_menu=menubar)
+        self.add_menu(MenuToolbarNames.HELP, QtCore.QCoreApplication.translate('SharedUI', 'Help'),
+                      parent_menu=menubar)
 
 
     def setup_actions(self):
@@ -270,7 +278,7 @@ class SharedUI(CustomApp):
                 QtCore.QCoreApplication.translate('SharedUI', "You have to restart the application to take the"
                 " modifications into account!"),
             )
-            mssg.setInformativeText("Do you want to restart?")
+            mssg.setInformativeText(QtCore.QCoreApplication.translate('SharedUI', "Do you want to restart?"))
             mssg.setStandardButtons(QMessageBox.StandardButton.Ok | QMessageBox.StandardButton.Cancel)
             ret = mssg.exec()
 
@@ -331,7 +339,9 @@ class SharedUI(CustomApp):
                 table.setRowCount(len(packages_data))
                 table.setColumnCount(3)
                 table.setHorizontalHeaderLabels(
-                    ["Package", "Current version", "New version"],
+                    [QtCore.QCoreApplication.translate('SharedUI', "Package"),
+                     QtCore.QCoreApplication.translate('SharedUI', "Current version"),
+                     QtCore.QCoreApplication.translate('SharedUI', "New version")],
                 )
 
                 for p in packages_data:
