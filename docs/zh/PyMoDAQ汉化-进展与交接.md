@@ -335,6 +335,29 @@ showMessage / setDetailedText / addMenu / addAction`；对 17 个文件自动改
 
 ---
 
+## 9.4 2026-10-13（三）审计/打包的"空结果"守卫（已修）
+
+**来源**：ChatGPT 网页版指出"提取结果为空时，审计工具会误报 100% 覆盖率"。
+**本地复现确认属实**：`i18n_audit.py` 里 `ratio = translated / (total - allowed) if total - allowed else 1.0`，
+`total == 0` 时走 `else` 分支 → 打印 `✅ 全译 100.0%`。也就是说 pylupdate6 静默失败、
+镜像复制不全、`.ts` 被截断这类事故，会被审计报成"通过"——正好掩盖最需要发现的问题。
+
+| 改动 | 文件 | 效果 |
+|---|---|---|
+| 空提取守卫 | `tools/i18n/i18n_audit.py` | 条目为 0 且源码里有 `translate()/tr()` 调用 → **退出码 2** + 排查顺序；确实没有界面文案的包显示 `—`，不再按 100% 计 |
+| 条目底线 | 同上 | 新增 `--min-entries PACKAGE=N`（可重复），供 CI 钉住底线 |
+| fail-closed | 同上 | 没有可审计条目却设了 `--fail-under` → 退出码 2，不放行 |
+| 打包写前自检 | `packages/pymodaq_utils/src/pymodaq_utils/i18n.py` | 生成的 TOML 解析失败或条目数不符 → **拒绝写出**并保留上一版（对应 `2a657d5e7` 那次"裸换行 → 语言包 0 条 → 界面空白"）；另有"条目从 N 条降到 0 条"的提醒 |
+| Python 3.10 兼容 | 同上 + `pymodaq_utils/pyproject.toml` | `tomllib` → `tomli` 回退。原实现让 3.10 直接 `ImportError`，而 `mkQApp()` 会导入本模块 → 3.10 用户起不来 PyMoDAQ |
+
+退出码语义（写进 docstring）：`0` 正常 / `1` 覆盖率低于 `--fail-under` / `2` **结果不可信**。
+
+**验证（实测）**：13 项守卫自测全通过（空提取、门禁、`--min-entries`、写前自检、`tomli` 回退分支）；
+真实 `pack` 与全量审计仍为 **983 条 / 未译 0 / 退出码 0**；
+`pytest packages/pymodaq_utils/tests packages/pymodaq/tests/launcher` → **161 passed**。提交 `cf60ba803`。
+
+---
+
 ## 附录 A：`wngln/i18n` 的 13 个提交（相对 `9c8105cb`）
 
 | 提交 | 说明 |
