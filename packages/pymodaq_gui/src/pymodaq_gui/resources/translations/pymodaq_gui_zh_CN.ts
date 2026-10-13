@@ -6,12 +6,12 @@
         <message>
             <location filename="pymodaq_gui\managers\action_manager.py" line="766" />
             <source>Toolbar style</source>
-            <translation type="unfinished" />
+            <translation>工具栏样式</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\action_manager.py" line="963" />
             <source>Default</source>
-            <translation type="unfinished" />
+            <translation>默认</translation>
         </message>
     </context>
     <context>
@@ -24,12 +24,12 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="82" />
             <source>File</source>
-            <translation type="unfinished" />
+            <translation>文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="85" />
             <source>New</source>
-            <translation type="unfinished" />
+            <translation>新建</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="86" />
@@ -39,7 +39,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="87" />
             <source>Open...</source>
-            <translation type="unfinished" />
+            <translation>打开…</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="88" />
@@ -49,7 +49,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="89" />
             <source>Save</source>
-            <translation type="unfinished" />
+            <translation>保存</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="90" />
@@ -59,7 +59,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="93" />
             <source>Recent Files</source>
-            <translation type="unfinished" />
+            <translation>最近文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="98" />
@@ -69,7 +69,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="105" />
             <source>Export</source>
-            <translation type="unfinished" />
+            <translation>导出</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="109" />
@@ -89,12 +89,12 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="114" />
             <source>Edit</source>
-            <translation type="unfinished" />
+            <translation>编辑</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="117" />
             <source>Undo</source>
-            <translation type="unfinished" />
+            <translation>撤销</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="118" />
@@ -104,7 +104,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="119" />
             <source>Redo</source>
-            <translation type="unfinished" />
+            <translation>重做</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="120" />
@@ -114,7 +114,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="124" />
             <source>Cut</source>
-            <translation type="unfinished" />
+            <translation>剪切</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="125" />
@@ -124,7 +124,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="126" />
             <source>Copy</source>
-            <translation type="unfinished" />
+            <translation>复制</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="127" />
@@ -134,7 +134,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="128" />
             <source>Paste</source>
-            <translation type="unfinished" />
+            <translation>粘贴</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="129" />
@@ -144,7 +144,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="132" />
             <source>View</source>
-            <translation type="unfinished" />
+            <translation>视图</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="135" />
@@ -154,7 +154,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="138" />
             <source>Left Panel</source>
-            <translation type="unfinished" />
+            <translation>左侧面板</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="140" />
@@ -169,7 +169,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="143" />
             <source>Search</source>
-            <translation type="unfinished" />
+            <translation>搜索</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="144" />
@@ -189,7 +189,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="149" />
             <source>Right Panel</source>
-            <translation type="unfinished" />
+            <translation>右侧面板</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="151" />
@@ -209,7 +209,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="159" />
             <source>Console</source>
-            <translation type="unfinished" />
+            <translation>控制台</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="161" />
@@ -229,7 +229,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="174" />
             <source>Theme</source>
-            <translation type="unfinished" />
+            <translation>主题</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="175" />
@@ -284,7 +284,7 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="187" />
             <source>Tools</source>
-            <translation type="unfinished" />
+            <translation>工具</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="190" />
@@ -299,12 +299,12 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="193" />
             <source>Settings</source>
-            <translation type="unfinished" />
+            <translation>设置</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="198" />
             <source>General</source>
-            <translation type="unfinished" />
+            <translation>常规</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="199" />
@@ -334,17 +334,17 @@
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="213" />
             <source>Help</source>
-            <translation type="unfinished" />
+            <translation>帮助</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="214" />
             <source>Documentation</source>
-            <translation type="unfinished" />
+            <translation>文档</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="215" />
             <source>About</source>
-            <translation type="unfinished" />
+            <translation>关于</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\action_manager_example.py" line="242" />
@@ -462,7 +462,7 @@ Connected Widgets: {} ({} temporary + 1 master)
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="40" />
             <source>Grab</source>
-            <translation type="unfinished" />
+            <translation>连续采集</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="47" />
@@ -672,7 +672,7 @@ Connections: {}</source>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="351" />
             <source>Legend</source>
-            <translation type="unfinished" />
+            <translation>图例</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="352" />
@@ -687,7 +687,7 @@ Connections: {}</source>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="417" />
             <source>Default</source>
-            <translation type="unfinished" />
+            <translation>默认</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="425" />
@@ -710,12 +710,12 @@ Connections: {}</source>
         <message>
             <location filename="pymodaq_gui\managers\config_manager.py" line="47" />
             <source>{} Manager</source>
-            <translation type="unfinished" />
+            <translation>{} 管理器</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\config_manager.py" line="167" />
             <source>Fill in information about this managers</source>
-            <translation type="unfinished" />
+            <translation>填写该管理器的信息</translation>
         </message>
     </context>
     <context>
@@ -787,42 +787,42 @@ FPS:       {:&gt;4s} ({:.2f}ms/frame)</source>
         <message>
             <location filename="pymodaq_gui\utils\custom_app.py" line="392" />
             <source>Actions</source>
-            <translation type="unfinished" />
+            <translation>操作</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\custom_app.py" line="394" />
             <source>Start Workflow</source>
-            <translation type="unfinished" />
+            <translation>启动工作流</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\custom_app.py" line="395" />
             <source>Start the workflow</source>
-            <translation type="unfinished" />
+            <translation>启动工作流</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\custom_app.py" line="397" />
             <source>Stop Workflow</source>
-            <translation type="unfinished" />
+            <translation>停止工作流</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\custom_app.py" line="397" />
             <source>Stop the workflow</source>
-            <translation type="unfinished" />
+            <translation>停止工作流</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\custom_app.py" line="399" />
             <source>Pause Workflow</source>
-            <translation type="unfinished" />
+            <translation>暂停工作流</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\custom_app.py" line="404" />
             <source>Do Logging</source>
-            <translation type="unfinished" />
+            <translation>记录数据</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\custom_app.py" line="405" />
             <source>Log all data generated within the workflow</source>
-            <translation type="unfinished" />
+            <translation>记录工作流中产生的所有数据</translation>
         </message>
     </context>
     <context>
@@ -924,7 +924,7 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
         <message>
             <location filename="pymodaq_gui\examples\data_picker.py" line="57" />
             <source>Actions</source>
-            <translation type="unfinished" />
+            <translation>操作</translation>
         </message>
     </context>
     <context>
@@ -932,7 +932,7 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
         <message>
             <location filename="pymodaq_gui\utils\widgets\search_lineedit.py" line="108" />
             <source>Search Widget Demo</source>
-            <translation type="unfinished" />
+            <translation>搜索控件示例</translation>
         </message>
     </context>
     <context>
@@ -995,7 +995,7 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="112" />
             <source>Progress:</source>
-            <translation type="unfinished" />
+            <translation>进度：</translation>
         </message>
     </context>
     <context>
@@ -1018,17 +1018,17 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="214" />
             <source>Name:</source>
-            <translation type="unfinished" />
+            <translation>名称：</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="221" />
             <source>Port:</source>
-            <translation type="unfinished" />
+            <translation>端口：</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="229" />
             <source>Enabled</source>
-            <translation type="unfinished" />
+            <translation>已启用</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\4_dynamic_widgets_example.py" line="233" />
@@ -1059,7 +1059,7 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="153" />
             <source>Name:</source>
-            <translation type="unfinished" />
+            <translation>名称：</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="159" />
@@ -1094,7 +1094,7 @@ coord.bind_center(c_x, c_y)          # Origin at center</source>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="238" />
             <source>Author:</source>
-            <translation type="unfinished" />
+            <translation>作者：</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="262" />
@@ -1376,12 +1376,12 @@ Most users only need Options 1 or 2. Option 3 is for advanced cases.</source>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\5_extending_sync_example.py" line="169" />
             <source>Min:</source>
-            <translation type="unfinished" />
+            <translation>最小值：</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\5_extending_sync_example.py" line="174" />
             <source>Max:</source>
-            <translation type="unfinished" />
+            <translation>最大值：</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\5_extending_sync_example.py" line="193" />
@@ -1438,7 +1438,7 @@ sync = MySync.for_range_spinbox(min_spin, max_spin)</source>
         <message>
             <location filename="pymodaq_gui\examples\function_plotter.py" line="108" />
             <source>Save</source>
-            <translation type="unfinished" />
+            <translation>保存</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\function_plotter.py" line="108" />
@@ -1451,97 +1451,97 @@ sync = MySync.for_range_spinbox(min_spin, max_spin)</source>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="196" />
             <source>File</source>
-            <translation type="unfinished" />
+            <translation>文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="199" />
             <source>Export as</source>
-            <translation type="unfinished" />
+            <translation>导出为</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="199" />
             <source>Export node content (and children) as </source>
-            <translation type="unfinished" />
+            <translation>导出节点内容（含子节点）为 </translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="201" />
             <source>Add Comment</source>
-            <translation type="unfinished" />
+            <translation>添加注释</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="201" />
             <source>Add comments to the node</source>
-            <translation type="unfinished" />
+            <translation>为节点添加注释</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="203" />
             <source>Plot Node</source>
-            <translation type="unfinished" />
+            <translation>绘制节点</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="203" />
             <source>Plot the current node</source>
-            <translation type="unfinished" />
+            <translation>绘制当前节点</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="205" />
             <source>Plot Nodes</source>
-            <translation type="unfinished" />
+            <translation>绘制全部节点</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="205" />
             <source>Plot all nodes hanging from the same parent</source>
-            <translation type="unfinished" />
+            <translation>绘制同一父节点下的所有节点</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="207" />
             <source>Plot Node With Bkg</source>
-            <translation type="unfinished" />
+            <translation>绘制节点（含背景）</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="207" />
             <source>Plot the current node with background substraction if possible</source>
-            <translation type="unfinished" />
+            <translation>尽可能扣除背景后绘制当前节点</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="210" />
             <source>Plot Nodes With Bkg</source>
-            <translation type="unfinished" />
+            <translation>绘制全部节点（含背景）</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="210" />
             <source>Plot all nodes hanging from the same parent with background substraction if possible</source>
-            <translation type="unfinished" />
+            <translation>尽可能扣除背景后绘制同一父节点下的所有节点</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="220" />
             <source>Load File</source>
-            <translation type="unfinished" />
+            <translation>加载文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="220" />
             <source>Open a new file</source>
-            <translation type="unfinished" />
+            <translation>打开新文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="221" />
             <source>Save File as</source>
-            <translation type="unfinished" />
+            <translation>文件另存为</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="221" />
             <source>Save as another file</source>
-            <translation type="unfinished" />
+            <translation>另存为其他文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="222" />
             <source>Refresh</source>
-            <translation type="unfinished" />
+            <translation>刷新</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\h5modules\browsing.py" line="223" />
             <source>Refresh the file view (useful for SWMR live files)</source>
-            <translation type="unfinished" />
+            <translation>刷新文件视图（对 SWMR 实时写入的文件有用）</translation>
         </message>
     </context>
     <context>
@@ -1549,63 +1549,63 @@ sync = MySync.for_range_spinbox(min_spin, max_spin)</source>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="94" />
             <source>FileActions</source>
-            <translation type="unfinished" />
+            <translation>文件操作</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="98" />
             <source>Show file content</source>
-            <translation type="unfinished" />
+            <translation>显示文件内容</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="99" />
             <source>Browse the content of the current HDF5 file</source>
-            <translation type="unfinished" />
+            <translation>浏览当前 HDF5 文件内容</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="105" />
             <source>New file</source>
-            <translation type="unfinished" />
+            <translation>新建文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="111" />
             <source>Open file to append...</source>
-            <translation type="unfinished" />
+            <translation>打开文件以追加…</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="118" />
             <source>Save copy as...</source>
-            <translation type="unfinished" />
+            <translation>副本另存为…</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="125" />
             <source>Show h5 settings</source>
-            <translation type="unfinished" />
+            <translation>显示 H5 设置</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="134" />
             <source>Open Current File</source>
-            <translation type="unfinished" />
+            <translation>打开当前文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="140" />
             <source>Close Current File</source>
-            <translation type="unfinished" />
+            <translation>关闭当前文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="357" />
             <location filename="pymodaq_gui\managers\h5manager.py" line="186" />
             <source>H5 file closed</source>
-            <translation type="unfinished" />
+            <translation>H5 文件已关闭</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="189" />
             <source>File:</source>
-            <translation type="unfinished" />
+            <translation>文件：</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="285" />
             <source>File Locked</source>
-            <translation type="unfinished" />
+            <translation>文件已锁定</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="286" />
@@ -1613,17 +1613,20 @@ sync = MySync.for_range_spinbox(min_spin, max_spin)</source>
 {}
 
 The file may be open in another application.</source>
-            <translation type="unfinished" />
+            <translation>无法打开文件：
+{}
+
+该文件可能已被其它程序打开。</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="360" />
             <source>H5 file open and accessible</source>
-            <translation type="unfinished" />
+            <translation>H5 文件已打开且可访问</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\h5manager.py" line="382" />
             <source>H5 file open — SWMR mode active</source>
-            <translation type="unfinished" />
+            <translation>H5 文件已打开 — SWMR 模式已启用</translation>
         </message>
     </context>
     <context>
@@ -1666,7 +1669,7 @@ The file may be open in another application.</source>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="404" />
             <source>Remove</source>
-            <translation type="unfinished" />
+            <translation>移除</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="411" />
@@ -1691,7 +1694,7 @@ The file may be open in another application.</source>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="432" />
             <source>Update</source>
-            <translation type="unfinished" />
+            <translation>更新</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\2_dict_sync_example.py" line="456" />
@@ -1735,7 +1738,7 @@ The widget starts at 100, sync starts at 50 - who wins?</source>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="486" />
             <source>Sync Value:</source>
-            <translation type="unfinished" />
+            <translation>同步值：</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="505" />
@@ -1752,7 +1755,7 @@ The widget starts at 100, sync starts at 50 - who wins?</source>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="530" />
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="513" />
             <source>Reset</source>
-            <translation type="unfinished" />
+            <translation>重置</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="522" />
@@ -1853,7 +1856,7 @@ AFTER: BOTH will have (name='MyWidget' from widget, enabled=False from sync)</so
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="641" />
             <source>Name:</source>
-            <translation type="unfinished" />
+            <translation>名称：</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="865" />
@@ -1864,7 +1867,7 @@ AFTER: BOTH will have (name='MyWidget' from widget, enabled=False from sync)</so
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="647" />
             <source>Enabled</source>
-            <translation type="unfinished" />
+            <translation>已启用</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\3_advanced_sync_example.py" line="656" />
@@ -1933,7 +1936,7 @@ KEY POINT: Different properties can initialize from different sources!</source>
         <message>
             <location filename="pymodaq_gui\parameter\pymodaq_ptypes\list.py" line="124" />
             <source>Not installed</source>
-            <translation type="unfinished" />
+            <translation>未安装</translation>
         </message>
     </context>
     <context>
@@ -1941,7 +1944,7 @@ KEY POINT: Different properties can initialize from different sources!</source>
         <message>
             <location filename="pymodaq_gui\utils\list_picker.py" line="30" />
             <source>Select an entry in the list</source>
-            <translation type="unfinished" />
+            <translation>在列表中选择一项</translation>
         </message>
     </context>
     <context>
@@ -1949,72 +1952,72 @@ KEY POINT: Different properties can initialize from different sources!</source>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="264" />
             <source>Name of the current {}</source>
-            <translation type="unfinished" />
+            <translation>当前 {} 的名称</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="268" />
             <source>Copy {}</source>
-            <translation type="unfinished" />
+            <translation>复制 {}</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="271" />
             <source>New {}</source>
-            <translation type="unfinished" />
+            <translation>新建 {}</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="272" />
             <source>Create a new {} file ("Ctrl+N")</source>
-            <translation type="unfinished" />
+            <translation>新建 {} 文件 (Ctrl+N)</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="276" />
             <source>Delete {}</source>
-            <translation type="unfinished" />
+            <translation>删除 {}</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="278" />
             <source>Delete the current {} ("Ctrl+Delete")</source>
-            <translation type="unfinished" />
+            <translation>删除当前 {} (Ctrl+Delete)</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="281" />
             <source>Save {}</source>
-            <translation type="unfinished" />
+            <translation>保存 {}</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="283" />
             <source>Save/Update the current {} ("Ctrl+S")</source>
-            <translation type="unfinished" />
+            <translation>保存/更新当前 {} (Ctrl+S)</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="286" />
             <source>Reload {}</source>
-            <translation type="unfinished" />
+            <translation>重新加载 {}</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="287" />
             <source>Reload the current {} file ("Ctrl+Shift+R")</source>
-            <translation type="unfinished" />
+            <translation>重新加载当前 {} 文件 (Ctrl+Shift+R)</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="291" />
             <source>Execute {}</source>
-            <translation type="unfinished" />
+            <translation>执行 {}</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="295" />
             <source>Execute the current {} file ("Ctrl+Shift+E")</source>
-            <translation type="unfinished" />
+            <translation>执行当前 {} 文件 (Ctrl+Shift+E)</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="297" />
             <source>{} Manager</source>
-            <translation type="unfinished" />
+            <translation>{} 管理器</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="300" />
             <source>Open the {} Manager</source>
-            <translation type="unfinished" />
+            <translation>打开 {} 管理器</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="312" />
@@ -2024,17 +2027,17 @@ KEY POINT: Different properties can initialize from different sources!</source>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="320" />
             <source>List of possible {}s</source>
-            <translation type="unfinished" />
+            <translation>可用的 {} 列表</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="571" />
             <source>Load the {} entry</source>
-            <translation type="unfinished" />
+            <translation>加载 {} 条目</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\manager_base.py" line="589" />
             <source>Execute the selected {} entry: {} ("Ctrl+A")</source>
-            <translation type="unfinished" />
+            <translation>执行所选 {} 条目：{} (Ctrl+A)</translation>
         </message>
     </context>
     <context>
@@ -2068,7 +2071,7 @@ Shows WidgetSync works with ANY Qt widget type</source>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="317" />
             <source>Progress:</source>
-            <translation type="unfinished" />
+            <translation>进度：</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\widget_sync\1_basic_sync_example.py" line="322" />
@@ -2126,72 +2129,72 @@ settings_sync.bind(json_editor, getter=parse_json, setter=format_json)</source>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="215" />
             <source>File</source>
-            <translation type="unfinished" />
+            <translation>文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="216" />
             <source>Recent Files</source>
-            <translation type="unfinished" />
+            <translation>最近文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="221" />
             <source>New File</source>
-            <translation type="unfinished" />
+            <translation>新建文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="221" />
             <source>Create a new file</source>
-            <translation type="unfinished" />
+            <translation>新建文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="224" />
             <source>Open File</source>
-            <translation type="unfinished" />
+            <translation>打开文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="224" />
             <source>Load file </source>
-            <translation type="unfinished" />
+            <translation>加载文件 </translation>
         </message>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="227" />
             <source>Save File</source>
-            <translation type="unfinished" />
+            <translation>保存文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="227" />
             <source>Save file</source>
-            <translation type="unfinished" />
+            <translation>保存文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="230" />
             <source>Save File As</source>
-            <translation type="unfinished" />
+            <translation>文件另存为</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="230" />
             <source>Save file As</source>
-            <translation type="unfinished" />
+            <translation>文件另存为</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="233" />
             <source>Save a Copy As</source>
-            <translation type="unfinished" />
+            <translation>副本另存为</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="233" />
             <source>Save a copy of the file as</source>
-            <translation type="unfinished" />
+            <translation>将文件副本另存为</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="235" />
             <source>Run current File</source>
-            <translation type="unfinished" />
+            <translation>运行当前文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\editor\monaco.py" line="235" />
             <source>Run the currently selected file</source>
-            <translation type="unfinished" />
+            <translation>运行当前选中的文件</translation>
         </message>
     </context>
     <context>
@@ -2252,12 +2255,12 @@ List1 participates in: items_sync + index_sync</source>
         <message>
             <location filename="pymodaq_gui\examples\shared_ui.py" line="29" />
             <source>File</source>
-            <translation type="unfinished" />
+            <translation>文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\shared_ui.py" line="30" />
             <source>Tools</source>
-            <translation type="unfinished" />
+            <translation>工具</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\shared_ui.py" line="31" />
@@ -2267,17 +2270,17 @@ List1 participates in: items_sync + index_sync</source>
         <message>
             <location filename="pymodaq_gui\examples\shared_ui.py" line="36" />
             <source>New File</source>
-            <translation type="unfinished" />
+            <translation>新建文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\shared_ui.py" line="36" />
             <source>Create a new file</source>
-            <translation type="unfinished" />
+            <translation>新建文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\shared_ui.py" line="38" />
             <source>Save File</source>
-            <translation type="unfinished" />
+            <translation>保存文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\shared_ui.py" line="38" />
@@ -2287,12 +2290,12 @@ List1 participates in: items_sync + index_sync</source>
         <message>
             <location filename="pymodaq_gui\examples\shared_ui.py" line="40" />
             <source>Load File</source>
-            <translation type="unfinished" />
+            <translation>加载文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\shared_ui.py" line="40" />
             <source>Load file </source>
-            <translation type="unfinished" />
+            <translation>加载文件 </translation>
         </message>
         <message>
             <location filename="pymodaq_gui\examples\shared_ui.py" line="43" />
@@ -2318,77 +2321,77 @@ List1 participates in: items_sync + index_sync</source>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="106" />
             <source>Load Scan file</source>
-            <translation type="unfinished" />
+            <translation>加载扫描文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="106" />
             <source>Load scan file (.h5)</source>
-            <translation type="unfinished" />
+            <translation>加载扫描文件 (.h5)</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="107" />
             <source>Load Image File</source>
-            <translation type="unfinished" />
+            <translation>加载图像文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="107" />
             <source>Load image file (.h5)</source>
-            <translation type="unfinished" />
+            <translation>加载图像文件 (.h5)</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="108" />
             <source>Viewbox Aspect Ratio</source>
-            <translation type="unfinished" />
+            <translation>视图纵横比</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="108" />
             <source>Set viewbox aspect ratio to 1</source>
-            <translation type="unfinished" />
+            <translation>把视图纵横比设为 1</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="109" />
             <source>Move at DoubleClicked</source>
-            <translation type="unfinished" />
+            <translation>双击移动</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="110" />
             <source>When selected, double clicking on viewbox will move DAQ_Move modules</source>
-            <translation type="unfinished" />
+            <translation>勾选后，在视图上双击会移动 DAQ_Move 模块</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="112" />
             <source>Select All</source>
-            <translation type="unfinished" />
+            <translation>全选</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="112" />
             <source>Select (show) all 2D scans on the viewer</source>
-            <translation type="unfinished" />
+            <translation>在视图中选中（显示）所有二维扫描</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="113" />
             <source>Select None</source>
-            <translation type="unfinished" />
+            <translation>全不选</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="113" />
             <source>Unselect (hide) all 2D scans on the viewer</source>
-            <translation type="unfinished" />
+            <translation>在视图中取消选中（隐藏）所有二维扫描</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="114" />
             <source>Show Histograms</source>
-            <translation type="unfinished" />
+            <translation>显示直方图</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="114" />
             <source>Show (hide) histograms</source>
-            <translation type="unfinished" />
+            <translation>显示（隐藏）直方图</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\navigator.py" line="313" />
             <source>Initializing</source>
-            <translation type="unfinished" />
+            <translation>正在初始化</translation>
         </message>
     </context>
     <context>
@@ -2476,42 +2479,42 @@ sync.add(opposite_checkbox, match='property',
         <message>
             <location filename="pymodaq_gui\managers\parameter_manager.py" line="159" />
             <source>Save Settings</source>
-            <translation type="unfinished" />
+            <translation>保存设置</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\parameter_manager.py" line="161" />
             <source>Save current settings in an xml file</source>
-            <translation type="unfinished" />
+            <translation>将当前设置保存为 XML 文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\parameter_manager.py" line="167" />
             <source>Update Settings</source>
-            <translation type="unfinished" />
+            <translation>更新设置</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\parameter_manager.py" line="169" />
             <source>Update the settings from an xml file, the settings structure loaded must be identical to the current one</source>
-            <translation type="unfinished" />
+            <translation>从 XML 文件更新设置：所加载的设置结构必须与当前结构完全一致</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\parameter_manager.py" line="175" />
             <source>Load Settings</source>
-            <translation type="unfinished" />
+            <translation>加载设置</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\parameter_manager.py" line="177" />
             <source>Load current settings from an xml file, the current settings structure is erased and is replaced by the new one</source>
-            <translation type="unfinished" />
+            <translation>从 XML 文件加载设置：当前设置结构会被清空并替换为新结构</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\parameter_manager.py" line="183" />
             <source>Clear Settings</source>
-            <translation type="unfinished" />
+            <translation>清除设置</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\parameter_manager.py" line="185" />
             <source>Clear the settings tree</source>
-            <translation type="unfinished" />
+            <translation>清空设置树</translation>
         </message>
     </context>
     <context>
@@ -2627,7 +2630,7 @@ sync.add(opposite_checkbox, match='property',
         <message>
             <location filename="pymodaq_gui\plotting\items\roi.py" line="593" />
             <source>Set Precise positions for the ROI</source>
-            <translation type="unfinished" />
+            <translation>为 ROI 设置精确位置</translation>
         </message>
     </context>
     <context>
@@ -2635,52 +2638,52 @@ sync.add(opposite_checkbox, match='property',
         <message>
             <location filename="pymodaq_gui\managers\settings\settings_manager.py" line="215" />
             <source>Show All Settings</source>
-            <translation type="unfinished" />
+            <translation>显示全部设置</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\settings\settings_manager.py" line="217" />
             <source>If Checked: display all settings (in green, settings that can be configured) otherwise only configurables ones</source>
-            <translation type="unfinished" />
+            <translation>勾选后显示全部设置（绿色为可配置项），否则只显示可配置项</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\settings\settings_manager.py" line="221" />
             <source>Add</source>
-            <translation type="unfinished" />
+            <translation>添加</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\settings\settings_manager.py" line="222" />
             <source>Add the current Parameter item</source>
-            <translation type="unfinished" />
+            <translation>添加当前参数项</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\settings\settings_manager.py" line="224" />
             <source>Remove</source>
-            <translation type="unfinished" />
+            <translation>移除</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\settings\settings_manager.py" line="225" />
             <source>Delete the current Configuration item ("Del")</source>
-            <translation type="unfinished" />
+            <translation>删除当前配置项 (Del)</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\settings\settings_manager.py" line="228" />
             <source>Move Up</source>
-            <translation type="unfinished" />
+            <translation>上移</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\settings\settings_manager.py" line="229" />
             <source>Move UP the current Configuration item ("Ctrl+Up")</source>
-            <translation type="unfinished" />
+            <translation>上移当前配置项 (Ctrl+Up)</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\settings\settings_manager.py" line="232" />
             <source>Move Down</source>
-            <translation type="unfinished" />
+            <translation>下移</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\managers\settings\settings_manager.py" line="234" />
             <source>Move Down the current Configuration item ("Ctrl+Down")</source>
-            <translation type="unfinished" />
+            <translation>下移当前配置项 (Ctrl+Down)</translation>
         </message>
     </context>
     <context>
@@ -2688,104 +2691,105 @@ sync.add(opposite_checkbox, match='property',
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="199" />
             <source>Restart</source>
-            <translation type="unfinished" />
+            <translation>重启</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="200" />
             <source>Restart PyMoDAQ</source>
-            <translation type="unfinished" />
+            <translation>重启 PyMoDAQ</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="202" />
             <source>Quit</source>
-            <translation type="unfinished" />
+            <translation>退出</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="203" />
             <source>Quit PyMoDAQ</source>
-            <translation type="unfinished" />
+            <translation>退出 PyMoDAQ</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="207" />
             <source>Logs</source>
-            <translation type="unfinished" />
+            <translation>日志</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="208" />
             <source>Open logs file</source>
-            <translation type="unfinished" />
+            <translation>打开日志文件</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="210" />
             <source>Preferences</source>
-            <translation type="unfinished" />
+            <translation>首选项</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="211" />
             <source>PyMoDAQ preferences</source>
-            <translation type="unfinished" />
+            <translation>PyMoDAQ 首选项</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="214" />
             <source>Documentation</source>
-            <translation type="unfinished" />
+            <translation>文档</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="215" />
             <source>Online documentation</source>
-            <translation type="unfinished" />
+            <translation>在线文档</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="221" />
             <source>Application help</source>
-            <translation type="unfinished" />
+            <translation>应用帮助</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="222" />
             <source>Show how to use this application</source>
-            <translation type="unfinished" />
+            <translation>查看本应用的使用方法</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="226" />
             <source>Check updates</source>
-            <translation type="unfinished" />
+            <translation>检查更新</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="229" />
             <source>About PyMoDAQ</source>
-            <translation type="unfinished" />
+            <translation>关于 PyMoDAQ</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="270" />
             <source>You have to restart the application to take the modifications into account!</source>
-            <translation type="unfinished" />
+            <translation>需要重启应用才能使修改生效！</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="351" />
             <location filename="pymodaq_gui\utils\shared_ui.py" line="321" />
             <source>Update check</source>
-            <translation type="unfinished" />
+            <translation>更新检查</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="326" />
             <source>New versions of PyMoDAQ packages available!
 Use your package manager to update.</source>
-            <translation type="unfinished" />
+            <translation>有可用的 PyMoDAQ 新版本！
+请用包管理器更新。</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="352" />
             <source>Everything is up to date!</source>
-            <translation type="unfinished" />
+            <translation>一切都已是最新版本！</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="379" />
             <source>Close</source>
-            <translation type="unfinished" />
+            <translation>关闭</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\shared_ui.py" line="382" />
             <source>{} help</source>
-            <translation type="unfinished" />
+            <translation>{} 帮助</translation>
         </message>
     </context>
     <context>
@@ -2851,7 +2855,7 @@ Use your package manager to update.</source>
         <message>
             <location filename="pymodaq_gui\managers\settings\subentries.py" line="140" />
             <source>Fill in information about this {}</source>
-            <translation type="unfinished" />
+            <translation>填写该 {} 的信息</translation>
         </message>
     </context>
     <context>
@@ -2924,12 +2928,12 @@ in place is not an option. Use the combobox below to switch themes live.</source
         <message>
             <location filename="pymodaq_gui\utils\widgets\tree_toml.py" line="117" />
             <source>Please enter new configuration values!</source>
-            <translation type="unfinished" />
+            <translation>请输入新的配置值！</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\widgets\tree_toml.py" line="131" />
             <source>Preferences entries</source>
-            <translation type="unfinished" />
+            <translation>首选项条目</translation>
         </message>
     </context>
     <context>
@@ -2937,17 +2941,17 @@ in place is not an option. Use the combobox below to switch themes live.</source
         <message>
             <location filename="pymodaq_gui\utils\widgets\tree_layout.py" line="63" />
             <source>Open Tree</source>
-            <translation type="unfinished" />
+            <translation>展开树</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\widgets\tree_layout.py" line="69" />
             <source>Open Selected</source>
-            <translation type="unfinished" />
+            <translation>打开所选</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\widgets\tree_layout.py" line="75" />
             <source>Close Tree</source>
-            <translation type="unfinished" />
+            <translation>折叠树</translation>
         </message>
     </context>
     <context>
@@ -3044,67 +3048,67 @@ sync = WidgetSync(
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer0D.py" line="297" />
             <source>Clear plot</source>
-            <translation type="unfinished" />
+            <translation>清除绘图</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer0D.py" line="297" />
             <source>Clear the current plots</source>
-            <translation type="unfinished" />
+            <translation>清除当前绘图</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer0D.py" line="298" />
             <source>Set the history length of the plot</source>
-            <translation type="unfinished" />
+            <translation>设置绘图的历史长度</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer0D.py" line="300" />
             <source>Show numbers</source>
-            <translation type="unfinished" />
+            <translation>显示数值</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer0D.py" line="300" />
             <source>If triggered, will display last data as numbersin a side panel</source>
-            <translation type="unfinished" />
+            <translation>勾选后在侧栏以数字显示最新数据</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer0D.py" line="304" />
             <source>Use Timestamps</source>
-            <translation type="unfinished" />
+            <translation>使用时间戳</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer0D.py" line="305" />
             <source>Use timestamps as axis</source>
-            <translation type="unfinished" />
+            <translation>以时间戳为坐标轴</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer0D.py" line="307" />
             <source>Scatter</source>
-            <translation type="unfinished" />
+            <translation>散点图</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer0D.py" line="307" />
             <source>Switch between line or scatter plots</source>
-            <translation type="unfinished" />
+            <translation>在折线与散点之间切换</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer0D.py" line="309" />
             <source>XYPlotting</source>
-            <translation type="unfinished" />
+            <translation>XY 绘图</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer0D.py" line="310" />
             <source>Switch between normal or XY representation (valid for 2 channels)</source>
-            <translation type="unfinished" />
+            <translation>在普通与 XY 表示之间切换（对两个通道有效）</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer0D.py" line="313" />
             <source>Sync X axis</source>
-            <translation type="unfinished" />
+            <translation>同步 X 轴</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer0D.py" line="314" />
             <source>If checked, adding a new channel resets all histories so curves share the same x-axis origin</source>
-            <translation type="unfinished" />
+            <translation>勾选后，新增通道会重置所有历史，使各曲线共享同一 x 轴原点</translation>
         </message>
     </context>
     <context>
@@ -3112,87 +3116,87 @@ sync = WidgetSync(
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="493" />
             <source>Math</source>
-            <translation type="unfinished" />
+            <translation>数学运算</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="493" />
             <source>Do Math using ROI</source>
-            <translation type="unfinished" />
+            <translation>用 ROI 做数学运算</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="495" />
             <source>Crosshair</source>
-            <translation type="unfinished" />
+            <translation>十字光标</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="495" />
             <source>Show data cursor</source>
-            <translation type="unfinished" />
+            <translation>显示数据游标</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="496" />
             <source>AspectRatio</source>
-            <translation type="unfinished" />
+            <translation>纵横比</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="496" />
             <source>Fix the aspect ratio</source>
-            <translation type="unfinished" />
+            <translation>固定纵横比</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="498" />
             <source>Scatter</source>
-            <translation type="unfinished" />
+            <translation>散点图</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="498" />
             <source>Switch between line or scatter plots</source>
-            <translation type="unfinished" />
+            <translation>在折线与散点之间切换</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="500" />
             <source>XYPlotting</source>
-            <translation type="unfinished" />
+            <translation>XY 绘图</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="501" />
             <source>Switch between normal or XY representation (valid for 2 channels)</source>
-            <translation type="unfinished" />
+            <translation>在普通与 XY 表示之间切换（对两个通道有效）</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="504" />
             <source>Overlay</source>
-            <translation type="unfinished" />
+            <translation>叠加</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="504" />
             <source>Plot overlays of current data</source>
-            <translation type="unfinished" />
+            <translation>叠加绘制当前数据</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="506" />
             <source>Errors</source>
-            <translation type="unfinished" />
+            <translation>误差棒</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="507" />
             <source>Plot boundaries (~error bars) of the data</source>
-            <translation type="unfinished" />
+            <translation>绘制数据边界（近似误差棒）</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="509" />
             <source>Sort Data</source>
-            <translation type="unfinished" />
+            <translation>数据排序</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="510" />
             <source>Display data in a sorted fashion with respect to axis</source>
-            <translation type="unfinished" />
+            <translation>按坐标轴排序显示数据</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="512" />
             <source>ROI Select</source>
-            <translation type="unfinished" />
+            <translation>ROI 选择</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer1D.py" line="514" />
@@ -3220,113 +3224,113 @@ sync = WidgetSync(
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="557" />
             <source>Red Channel</source>
-            <translation type="unfinished" />
+            <translation>红色通道</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="558" />
             <source>Green Channel</source>
-            <translation type="unfinished" />
+            <translation>绿色通道</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="559" />
             <source>Blue Channel</source>
-            <translation type="unfinished" />
+            <translation>蓝色通道</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="564" />
             <source>AutoLevels</source>
-            <translation type="unfinished" />
+            <translation>自动色阶</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="566" />
             <source>AutoLevels Sym.</source>
-            <translation type="unfinished" />
+            <translation>对称自动色阶</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="567" />
             <source>Make the autoscale of the histograms symetric with respect to 0</source>
-            <translation type="unfinished" />
+            <translation>使直方图自动缩放相对 0 对称</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="569" />
             <source>Histogram</source>
-            <translation type="unfinished" />
+            <translation>直方图</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="572" />
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="572" />
             <source>Link Lineouts</source>
-            <translation type="unfinished" />
+            <translation>联动剖线</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="576" />
             <source>IsoCurve</source>
-            <translation type="unfinished" />
+            <translation>等值线</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="577" />
             <source>Aspect Ratio</source>
-            <translation type="unfinished" />
+            <translation>纵横比</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="577" />
             <source>Fix Aspect Ratio</source>
-            <translation type="unfinished" />
+            <translation>固定纵横比</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="578" />
             <source>CrossHair</source>
-            <translation type="unfinished" />
+            <translation>十字光标</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="579" />
             <source>ROI Select</source>
-            <translation type="unfinished" />
+            <translation>ROI 选择</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="581" />
             <source>Flip UD</source>
-            <translation type="unfinished" />
+            <translation>上下翻转</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="584" />
             <source>Flip LR</source>
-            <translation type="unfinished" />
+            <translation>左右翻转</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="586" />
             <source>Rotate</source>
-            <translation type="unfinished" />
+            <translation>旋转</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="587" />
             <source>Rotate the image</source>
-            <translation type="unfinished" />
+            <translation>旋转图像</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="588" />
             <source>Opposite</source>
-            <translation type="unfinished" />
+            <translation>反相</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="589" />
             <source>Take the opposite of the image</source>
-            <translation type="unfinished" />
+            <translation>把图像反相</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="590" />
             <source>Legend</source>
-            <translation type="unfinished" />
+            <translation>图例</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="591" />
             <source>Show the legend</source>
-            <translation type="unfinished" />
+            <translation>显示图例</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="804" />
             <source>Show/Hide - {}</source>
-            <translation type="unfinished" />
+            <translation>显示/隐藏 - {}</translation>
         </message>
     </context>
     <context>
@@ -3334,12 +3338,12 @@ sync = WidgetSync(
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewerND.py" line="728" />
             <source>Filter type to apply to signal data</source>
-            <translation type="unfinished" />
+            <translation>对信号数据应用的滤波类型</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewerND.py" line="730" />
             <source>Integrate the navigation data</source>
-            <translation type="unfinished" />
+            <translation>对导航数据做积分</translation>
         </message>
     </context>
     <context>
@@ -3356,7 +3360,7 @@ sync = WidgetSync(
             <location filename="pymodaq_gui\h5modules\browsing.py" line="557" />
             <location filename="pymodaq_gui\h5modules\browsing.py" line="555" />
             <source>Select a data node in the tree</source>
-            <translation type="unfinished" />
+            <translation>在树中选择一个数据节点</translation>
         </message>
     </context>
     <context>
@@ -3374,17 +3378,17 @@ sync = WidgetSync(
         <message>
             <location filename="pymodaq_gui\utils\widgets\collapsible_widget.py" line="214" />
             <source>Left Panel</source>
-            <translation type="unfinished" />
+            <translation>左侧面板</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\widgets\collapsible_widget.py" line="215" />
             <source>Option 1</source>
-            <translation type="unfinished" />
+            <translation>选项 1</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\widgets\collapsible_widget.py" line="216" />
             <source>Option 2</source>
-            <translation type="unfinished" />
+            <translation>选项 2</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\widgets\collapsible_widget.py" line="231" />
@@ -3394,7 +3398,7 @@ sync = WidgetSync(
         <message>
             <location filename="pymodaq_gui\utils\widgets\collapsible_widget.py" line="248" />
             <source>Right Panel</source>
-            <translation type="unfinished" />
+            <translation>右侧面板</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\widgets\collapsible_widget.py" line="265" />
@@ -3404,12 +3408,12 @@ sync = WidgetSync(
         <message>
             <location filename="pymodaq_gui\utils\widgets\collapsible_widget.py" line="281" />
             <source>Top Content Area</source>
-            <translation type="unfinished" />
+            <translation>顶部内容区</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\widgets\collapsible_widget.py" line="282" />
             <source>Action Button</source>
-            <translation type="unfinished" />
+            <translation>动作按钮</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\widgets\collapsible_widget.py" line="292" />
@@ -3419,12 +3423,12 @@ sync = WidgetSync(
         <message>
             <location filename="pymodaq_gui\utils\widgets\collapsible_widget.py" line="310" />
             <source>Bottom Content Area</source>
-            <translation type="unfinished" />
+            <translation>底部内容区</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\widgets\collapsible_widget.py" line="311" />
             <source>Additional Information</source>
-            <translation type="unfinished" />
+            <translation>附加信息</translation>
         </message>
     </context>
     <context>
@@ -3432,7 +3436,7 @@ sync = WidgetSync(
         <message>
             <location filename="pymodaq_gui\examples\curves.py" line="106" />
             <source>New Data</source>
-            <translation type="unfinished" />
+            <translation>新数据</translation>
         </message>
     </context>
     <context>
@@ -3546,7 +3550,7 @@ sync = WidgetSync(
         <message>
             <location filename="pymodaq_gui\utils\widgets\tree_layout.py" line="169" />
             <source>Grab from camera</source>
-            <translation type="unfinished" />
+            <translation>从相机采集</translation>
         </message>
     </context>
     <context>
@@ -3554,7 +3558,7 @@ sync = WidgetSync(
         <message>
             <location filename="pymodaq_gui\plotting\data_viewers\viewer2D.py" line="1186" />
             <source>New Data</source>
-            <translation type="unfinished" />
+            <translation>新数据</translation>
         </message>
     </context>
     <context>
@@ -3562,672 +3566,673 @@ sync = WidgetSync(
         <message>
             <location filename="pymodaq_gui\utils\widgets\widget_with_title_in_toolbar.py" line="55" />
             <source>Quit</source>
-            <translation type="unfinished" />
+            <translation>退出</translation>
         </message>
         <message>
             <location filename="pymodaq_gui\utils\widgets\widget_with_title_in_toolbar.py" line="56" />
             <source>Quit PyMoDAQ</source>
-            <translation type="unfinished" />
+            <translation>退出 PyMoDAQ</translation>
         </message>
     </context>
     <context>
         <name>general</name>
         <message>
             <source>Positions</source>
-            <translation type="unfinished" />
+            <translation>位置</translation>
         </message>
         <message>
             <source>picker status</source>
-            <translation type="unfinished" />
+            <translation>选择器状态</translation>
         </message>
         <message>
             <source>Save base path:</source>
-            <translation type="unfinished" />
+            <translation>保存根目录：</translation>
         </message>
         <message>
             <source>File name:</source>
-            <translation type="unfinished" />
+            <translation>文件名：</translation>
         </message>
         <message>
             <source>Date:</source>
-            <translation type="unfinished" />
+            <translation>日期：</translation>
         </message>
         <message>
             <source>Functions:</source>
-            <translation type="unfinished" />
+            <translation>函数：</translation>
         </message>
         <message>
             <source>Function:</source>
-            <translation type="unfinished" />
+            <translation>函数：</translation>
         </message>
         <message>
             <source>Add function:</source>
-            <translation type="unfinished" />
+            <translation>添加函数：</translation>
         </message>
         <message>
             <source>Plot refresh (ms):</source>
-            <translation type="unfinished" />
+            <translation>绘图刷新(ms)：</translation>
         </message>
         <message>
             <source>Xaxis:</source>
-            <translation type="unfinished" />
+            <translation>X 轴：</translation>
         </message>
         <message>
             <source>Npts:</source>
-            <translation type="unfinished" />
+            <translation>点数：</translation>
         </message>
         <message>
             <source>Xstart:</source>
-            <translation type="unfinished" />
+            <translation>X 起点：</translation>
         </message>
         <message>
             <source>Xstop:</source>
-            <translation type="unfinished" />
+            <translation>X 终点：</translation>
         </message>
         <message>
             <source>Text Editing with pattern completion (@ for users, # for languages):</source>
-            <translation type="unfinished" />
+            <translation>带模式补全的文本编辑（@ 用户，# 语言）：</translation>
         </message>
         <message>
             <source>Groups:</source>
-            <translation type="unfinished" />
+            <translation>分组：</translation>
         </message>
         <message>
             <source>Numbers:</source>
-            <translation type="unfinished" />
+            <translation>数值：</translation>
         </message>
         <message>
             <source>Booleans:</source>
-            <translation type="unfinished" />
+            <translation>布尔值：</translation>
         </message>
         <message>
             <source>DateTime:</source>
-            <translation type="unfinished" />
+            <translation>日期时间：</translation>
         </message>
         <message>
             <source>An action</source>
-            <translation type="unfinished" />
+            <translation>一个动作</translation>
         </message>
         <message>
             <source>Lists:</source>
-            <translation type="unfinished" />
+            <translation>列表：</translation>
         </message>
         <message>
             <source>Browsing files:</source>
-            <translation type="unfinished" />
+            <translation>浏览文件：</translation>
         </message>
         <message>
             <source>Selectable items:</source>
-            <translation type="unfinished" />
+            <translation>可选择项：</translation>
         </message>
         <message>
             <source>Plain text:</source>
-            <translation type="unfinished" />
+            <translation>纯文本：</translation>
         </message>
         <message>
             <source>Tables:</source>
-            <translation type="unfinished" />
+            <translation>表格：</translation>
         </message>
         <message>
             <source>A visible group:</source>
-            <translation type="unfinished" />
+            <translation>可见分组：</translation>
         </message>
         <message>
             <source>An hidden group:</source>
-            <translation type="unfinished" />
+            <translation>隐藏分组：</translation>
         </message>
         <message>
             <source>An expandable group:</source>
-            <translation type="unfinished" />
+            <translation>可展开分组：</translation>
         </message>
         <message>
             <source>A bool with children:</source>
-            <translation type="unfinished" />
+            <translation>带子项的布尔：</translation>
         </message>
         <message>
             <source>Any Parameter can have its own children</source>
-            <translation type="unfinished" />
+            <translation>任何参数都可以有自己的子项</translation>
         </message>
         <message>
             <source>Standard float</source>
-            <translation type="unfinished" />
+            <translation>标准浮点数</translation>
         </message>
         <message>
             <source>displays this text as a tooltip</source>
-            <translation type="unfinished" />
+            <translation>把这段文本作为工具提示显示</translation>
         </message>
         <message>
             <source>Another float</source>
-            <translation type="unfinished" />
+            <translation>另一个浮点数</translation>
         </message>
         <message>
             <source>Linear Slide float</source>
-            <translation type="unfinished" />
+            <translation>线性滑块（浮点）</translation>
         </message>
         <message>
             <source>Linear Slide float w limits</source>
-            <translation type="unfinished" />
+            <translation>带限值的线性滑块（浮点）</translation>
         </message>
         <message>
             <source>Linear int Slide</source>
-            <translation type="unfinished" />
+            <translation>线性滑块（整数）</translation>
         </message>
         <message>
             <source>Linear Slide with suffix</source>
-            <translation type="unfinished" />
+            <translation>带后缀的线性滑块</translation>
         </message>
         <message>
             <source>Log Slide float</source>
-            <translation type="unfinished" />
+            <translation>对数滑块（浮点）</translation>
         </message>
         <message>
             <source>Standard bool</source>
-            <translation type="unfinished" />
+            <translation>标准布尔量</translation>
         </message>
         <message>
             <source>bool push</source>
-            <translation type="unfinished" />
+            <translation>布尔按钮</translation>
         </message>
         <message>
             <source>LED (read-only)</source>
-            <translation type="unfinished" />
+            <translation>LED（只读）</translation>
         </message>
         <message>
             <source>Status indicator — cannot be toggled by the user</source>
-            <translation type="unfinished" />
+            <translation>状态指示 — 用户无法切换</translation>
         </message>
         <message>
             <source>LED (clickable)</source>
-            <translation type="unfinished" />
+            <translation>LED（可点击）</translation>
         </message>
         <message>
             <source>Click to toggle — pointer cursor indicates interactivity</source>
-            <translation type="unfinished" />
+            <translation>点击切换 — 指针样式表示可交互</translation>
         </message>
         <message>
             <source>Action + LED</source>
-            <translation type="unfinished" />
+            <translation>动作 + LED</translation>
         </message>
         <message>
             <source>Button fires sigActivated; LED state reflects outcome. label opt sets button text.</source>
-            <translation type="unfinished" />
+            <translation>按钮会发出 sigActivated；LED 状态反映结果；label 选项用于设置按钮文本。</translation>
         </message>
         <message>
             <source>Multi-state LED</source>
-            <translation type="unfinished" />
+            <translation>多状态 LED</translation>
         </message>
         <message>
             <source>Click to cycle states, or set programmatically via param.setValue("running")</source>
-            <translation type="unfinished" />
+            <translation>点击可循环切换状态，也可用 param.setValue("running") 以编程方式设置</translation>
         </message>
         <message>
             <source>Time:</source>
-            <translation type="unfinished" />
+            <translation>时间：</translation>
         </message>
         <message>
             <source>Standard list:</source>
-            <translation type="unfinished" />
+            <translation>标准列表：</translation>
         </message>
         <message>
             <source>List with add:</source>
-            <translation type="unfinished" />
+            <translation>可添加的列表：</translation>
         </message>
         <message>
             <source>when using the "show_pb" option, displays a plus button to add elt to the list</source>
-            <translation type="unfinished" />
+            <translation>使用 show_pb 选项时会显示加号按钮，可向列表添加元素</translation>
         </message>
         <message>
             <source>List defined from a dict:</source>
-            <translation type="unfinished" />
+            <translation>由字典定义的列表：</translation>
         </message>
         <message>
             <source>Such a parameter display text that are keys of a dict whilevalues could be any object</source>
-            <translation type="unfinished" />
+            <translation>此类参数把字典的键显示为文本，而值可以是任意对象</translation>
         </message>
         <message>
             <source>List with unavailable items:</source>
-            <translation type="unfinished" />
+            <translation>含不可用项的列表：</translation>
         </message>
         <message>
             <source>Items listed in "unavailable" are shown greyed-out and cannot be selected (used e.g. to display backends that are not installed)</source>
-            <translation type="unfinished" />
+            <translation>列在 unavailable 中的项会置灰且不可选（例如用于显示未安装的后端）</translation>
         </message>
         <message>
             <source>Look for a file:</source>
-            <translation type="unfinished" />
+            <translation>查找文件：</translation>
         </message>
         <message>
             <source>If filetype is True select a file otherwise a directory</source>
-            <translation type="unfinished" />
+            <translation>filetype 为 True 时选择文件，否则选择目录</translation>
         </message>
         <message>
             <source>Look for a dir:</source>
-            <translation type="unfinished" />
+            <translation>查找目录：</translation>
         </message>
         <message>
             <source>Selectable items</source>
-            <translation type="unfinished" />
+            <translation>可选择项</translation>
         </message>
         <message>
             <source>Press Ctrl+click  to select items in any order</source>
-            <translation type="unfinished" />
+            <translation>按 Ctrl+点击 可以任意顺序选择条目</translation>
         </message>
         <message>
             <source>If show_pb is True, user can add items to the list</source>
-            <translation type="unfinished" />
+            <translation>show_pb 为 True 时用户可向列表添加条目</translation>
         </message>
         <message>
             <source>Removable items</source>
-            <translation type="unfinished" />
+            <translation>可移除项</translation>
         </message>
         <message>
             <source>If show_mb is True, user can remove selected items from the list</source>
-            <translation type="unfinished" />
+            <translation>show_mb 为 True 时用户可从列表移除选中项</translation>
         </message>
         <message>
             <source>Checkable items</source>
-            <translation type="unfinished" />
+            <translation>可勾选项</translation>
         </message>
         <message>
             <source>Dragable items</source>
-            <translation type="unfinished" />
+            <translation>可拖拽项</translation>
         </message>
         <message>
             <source>If dragdrop is True, user can drag or drop items inside the list</source>
-            <translation type="unfinished" />
+            <translation>dragdrop 为 True 时用户可在列表内拖放条目</translation>
         </message>
         <message>
             <source>Standard str</source>
-            <translation type="unfinished" />
+            <translation>标准字符串</translation>
         </message>
         <message>
             <source>Plain text</source>
-            <translation type="unfinished" />
+            <translation>纯文本</translation>
         </message>
         <message>
             <source>If text_pb type is used, user can add text to the parameter</source>
-            <translation type="unfinished" />
+            <translation>使用 text_pb 类型时，用户可以为该参数添加文本</translation>
         </message>
         <message>
             <source>Table widget</source>
-            <translation type="unfinished" />
+            <translation>表格控件</translation>
         </message>
         <message>
             <source>Table view</source>
-            <translation type="unfinished" />
+            <translation>表格视图</translation>
         </message>
         <message>
             <source>The advantage of the Table model lies in its modularity.
  For concrete examples see theTableModelTabular and the TableModelSequential custom models in the pymodaq.utils.scanner module</source>
-            <translation type="unfinished" />
+            <translation>表格模型的优势在于模块化。
+具体示例见 pymodaq.utils.scanner 模块中的 TableModelTabular 与 TableModelSequential 自定义模型</translation>
         </message>
         <message>
             <source>A bool in a bool</source>
-            <translation type="unfinished" />
+            <translation>布尔中的布尔</translation>
         </message>
         <message>
             <source>A push with children</source>
-            <translation type="unfinished" />
+            <translation>带子项的按钮</translation>
         </message>
         <message>
             <source>A string in a group</source>
-            <translation type="unfinished" />
+            <translation>分组中的字符串</translation>
         </message>
         <message>
             <source>Refresh Grab:</source>
-            <translation type="unfinished" />
+            <translation>刷新采集：</translation>
         </message>
         <message>
             <source>Refresh Plot:</source>
-            <translation type="unfinished" />
+            <translation>刷新绘图：</translation>
         </message>
         <message>
             <source>Time Flow:</source>
-            <translation type="unfinished" />
+            <translation>时间流：</translation>
         </message>
         <message>
             <source>Wait time step (ms)</source>
-            <translation type="unfinished" />
+            <translation>步进等待(ms)</translation>
         </message>
         <message>
             <source>Wait time in ms after each step of acquisition (move and grab)</source>
-            <translation type="unfinished" />
+            <translation>每步采集（移动与采集）之后的等待时间，单位 ms</translation>
         </message>
         <message>
             <source>Wait time between (ms)</source>
-            <translation type="unfinished" />
+            <translation>间隔等待(ms)</translation>
         </message>
         <message>
             <source>Wait time in ms between move and grab processes</source>
-            <translation type="unfinished" />
+            <translation>移动与采集两个过程之间的等待时间，单位 ms</translation>
         </message>
         <message>
             <source>Processing:</source>
-            <translation type="unfinished" />
+            <translation>处理：</translation>
         </message>
         <message>
             <source>Acquisition:</source>
-            <translation type="unfinished" />
+            <translation>采集：</translation>
         </message>
         <message>
             <source>Position:</source>
-            <translation type="unfinished" />
+            <translation>位置：</translation>
         </message>
         <message>
             <source>Algorithm:</source>
-            <translation type="unfinished" />
+            <translation>算法：</translation>
         </message>
         <message>
             <source>Buffer Size:</source>
-            <translation type="unfinished" />
+            <translation>缓冲区大小：</translation>
         </message>
         <message>
             <source>Threshold:</source>
-            <translation type="unfinished" />
+            <translation>阈值：</translation>
         </message>
         <message>
             <source>Auto Process:</source>
-            <translation type="unfinished" />
+            <translation>自动处理：</translation>
         </message>
         <message>
             <source>Mode:</source>
-            <translation type="unfinished" />
+            <translation>模式：</translation>
         </message>
         <message>
             <source>Samples:</source>
-            <translation type="unfinished" />
+            <translation>采样数：</translation>
         </message>
         <message>
             <source>Averaging:</source>
-            <translation type="unfinished" />
+            <translation>平均：</translation>
         </message>
         <message>
             <source>Enable Trigger:</source>
-            <translation type="unfinished" />
+            <translation>启用触发：</translation>
         </message>
         <message>
             <source>Units:</source>
-            <translation type="unfinished" />
+            <translation>单位：</translation>
         </message>
         <message>
             <source>Target:</source>
-            <translation type="unfinished" />
+            <translation>目标：</translation>
         </message>
         <message>
             <source>Label:</source>
-            <translation type="unfinished" />
+            <translation>标签：</translation>
         </message>
         <message>
             <source>Save 2D datas and above:</source>
-            <translation type="unfinished" />
+            <translation>保存二维及以上数据：</translation>
         </message>
         <message>
             <source>Save raw datas only:</source>
-            <translation type="unfinished" />
+            <translation>仅保存原始数据：</translation>
         </message>
         <message>
             <source>Do Save:</source>
-            <translation type="unfinished" />
+            <translation>保存：</translation>
         </message>
         <message>
             <source>N saved:</source>
-            <translation type="unfinished" />
+            <translation>已保存数：</translation>
         </message>
         <message>
             <source>custom_name?:</source>
-            <translation type="unfinished" />
+            <translation>自定义名称？</translation>
         </message>
         <message>
             <source>Close file after scan:</source>
-            <translation type="unfinished" />
+            <translation>扫描后关闭文件：</translation>
         </message>
         <message>
             <source>Base path:</source>
-            <translation type="unfinished" />
+            <translation>基础路径：</translation>
         </message>
         <message>
             <source>Base name:</source>
-            <translation type="unfinished" />
+            <translation>基础名称：</translation>
         </message>
         <message>
             <source>Current scan:</source>
-            <translation type="unfinished" />
+            <translation>当前扫描：</translation>
         </message>
         <message>
             <source>Current path:</source>
-            <translation type="unfinished" />
+            <translation>当前路径：</translation>
         </message>
         <message>
             <source>h5file:</source>
-            <translation type="unfinished" />
+            <translation>H5 文件：</translation>
         </message>
         <message>
             <source>Browse file content</source>
-            <translation type="unfinished" />
+            <translation>浏览文件内容</translation>
         </message>
         <message>
             <source>Browse the content of the current HDF5 file with a H5Browser</source>
-            <translation type="unfinished" />
+            <translation>用 H5 浏览器查看当前 HDF5 文件的内容</translation>
         </message>
         <message>
             <source>Backend:</source>
-            <translation type="unfinished" />
+            <translation>后端：</translation>
         </message>
         <message>
             <source>Data format:</source>
-            <translation type="unfinished" />
+            <translation>数据格式：</translation>
         </message>
         <message>
             <source>Save type:</source>
-            <translation type="unfinished" />
+            <translation>保存类型：</translation>
         </message>
         <message>
             <source>Backend type:</source>
-            <translation type="unfinished" />
+            <translation>后端类型：</translation>
         </message>
         <message>
             <source>SWMR options:</source>
-            <translation type="unfinished" />
+            <translation>SWMR 选项：</translation>
         </message>
         <message>
             <source>HSDS Server:</source>
-            <translation type="unfinished" />
+            <translation>HSDS 服务器：</translation>
         </message>
         <message>
             <source>Fill value:</source>
-            <translation type="unfinished" />
+            <translation>填充值：</translation>
         </message>
         <message>
             <source>Compression:</source>
-            <translation type="unfinished" />
+            <translation>压缩：</translation>
         </message>
         <message>
             <source>Enable SWMR:</source>
-            <translation type="unfinished" />
+            <translation>启用 SWMR：</translation>
         </message>
         <message>
             <source>Flush interval:</source>
-            <translation type="unfinished" />
+            <translation>刷新间隔：</translation>
         </message>
         <message>
             <source>Endpoint:</source>
-            <translation type="unfinished" />
+            <translation>端点：</translation>
         </message>
         <message>
             <source>User:</source>
-            <translation type="unfinished" />
+            <translation>用户：</translation>
         </message>
         <message>
             <source>password:</source>
-            <translation type="unfinished" />
+            <translation>密码：</translation>
         </message>
         <message>
             <source>Library:</source>
-            <translation type="unfinished" />
+            <translation>库：</translation>
         </message>
         <message>
             <source>Level:</source>
-            <translation type="unfinished" />
+            <translation>级别：</translation>
         </message>
         <message>
             <source>Filename:</source>
-            <translation type="unfinished" />
+            <translation>文件名：</translation>
         </message>
         <message>
             <source>Worker Running:</source>
-            <translation type="unfinished" />
+            <translation>工作线程运行中：</translation>
         </message>
         <message>
             <source>Pending save tasks:</source>
-            <translation type="unfinished" />
+            <translation>待保存任务：</translation>
         </message>
         <message>
             <source>Overlays</source>
-            <translation type="unfinished" />
+            <translation>叠加显示</translation>
         </message>
         <message>
             <source>Spectro Settings:</source>
-            <translation type="unfinished" />
+            <translation>光谱仪设置：</translation>
         </message>
         <message>
             <source>Home Wavelength (nm):</source>
-            <translation type="unfinished" />
+            <translation>起始波长(nm)：</translation>
         </message>
         <message>
             <source>Grating Settings:</source>
-            <translation type="unfinished" />
+            <translation>光栅设置：</translation>
         </message>
         <message>
             <source>Grating:</source>
-            <translation type="unfinished" />
+            <translation>光栅：</translation>
         </message>
         <message>
             <source>Blaze WL (nm):</source>
-            <translation type="unfinished" />
+            <translation>闪耀波长(nm)：</translation>
         </message>
         <message>
             <source>Set data spread 1D-0D</source>
-            <translation type="unfinished" />
+            <translation>设置数据离散 1D-0D</translation>
         </message>
         <message>
             <source>Set data spread 1D-1D</source>
-            <translation type="unfinished" />
+            <translation>设置数据离散 1D-1D</translation>
         </message>
         <message>
             <source>Set data spread 1D-2D</source>
-            <translation type="unfinished" />
+            <translation>设置数据离散 1D-2D</translation>
         </message>
         <message>
             <source>Set data spread 2D-0D</source>
-            <translation type="unfinished" />
+            <translation>设置数据离散 2D-0D</translation>
         </message>
         <message>
             <source>Set data spread 2D-1D</source>
-            <translation type="unfinished" />
+            <translation>设置数据离散 2D-1D</translation>
         </message>
         <message>
             <source>Set data spread 2D-2D</source>
-            <translation type="unfinished" />
+            <translation>设置数据离散 2D-2D</translation>
         </message>
         <message>
             <source>Set data spread 3D-0D</source>
-            <translation type="unfinished" />
+            <translation>设置数据离散 3D-0D</translation>
         </message>
         <message>
             <source>Set data 4D</source>
-            <translation type="unfinished" />
+            <translation>设置四维数据</translation>
         </message>
         <message>
             <source>Set data 3D</source>
-            <translation type="unfinished" />
+            <translation>设置三维数据</translation>
         </message>
         <message>
             <source>Set data 2D</source>
-            <translation type="unfinished" />
+            <translation>设置二维数据</translation>
         </message>
         <message>
             <source>Set data 1D</source>
-            <translation type="unfinished" />
+            <translation>设置一维数据</translation>
         </message>
         <message>
             <source>Signal shape</source>
-            <translation type="unfinished" />
+            <translation>信号形状</translation>
         </message>
         <message>
             <source>Initial Data shape:</source>
-            <translation type="unfinished" />
+            <translation>初始数据形状：</translation>
         </message>
         <message>
             <source>Axes shape:</source>
-            <translation type="unfinished" />
+            <translation>坐标轴形状：</translation>
         </message>
         <message>
             <source>Data shape:</source>
-            <translation type="unfinished" />
+            <translation>数据形状：</translation>
         </message>
         <message>
             <source>Navigator axes:</source>
-            <translation type="unfinished" />
+            <translation>导航轴：</translation>
         </message>
         <message>
             <source>Set Nav axes:</source>
-            <translation type="unfinished" />
+            <translation>设置导航轴：</translation>
         </message>
         <message>
             <source>Z-level</source>
-            <translation type="unfinished" />
+            <translation>Z 层级</translation>
         </message>
         <message>
             <source>Math type:</source>
-            <translation type="unfinished" />
+            <translation>数学类型：</translation>
         </message>
         <message>
             <source>Process data</source>
-            <translation type="unfinished" />
+            <translation>处理数据</translation>
         </message>
         <message>
             <source>Use channel</source>
-            <translation type="unfinished" />
+            <translation>使用通道</translation>
         </message>
         <message>
             <source>Type</source>
-            <translation type="unfinished" />
+            <translation>类型</translation>
         </message>
         <message>
             <source>Center</source>
-            <translation type="unfinished" />
+            <translation>居中</translation>
         </message>
         <message>
             <source>Left</source>
-            <translation type="unfinished" />
+            <translation>左</translation>
         </message>
         <message>
             <source>Right</source>
-            <translation type="unfinished" />
+            <translation>右</translation>
         </message>
         <message>
             <source>Image</source>
-            <translation type="unfinished" />
+            <translation>图像</translation>
         </message>
         <message>
             <source>Load h5:</source>
-            <translation type="unfinished" />
+            <translation>加载 H5：</translation>
         </message>
         <message>
             <source>h5 path:</source>
-            <translation type="unfinished" />
+            <translation>H5 路径：</translation>
         </message>
         <message>
             <source>Load Image:</source>
-            <translation type="unfinished" />
+            <translation>加载图像：</translation>
         </message>
         <message>
             <source>Image path:</source>
-            <translation type="unfinished" />
+            <translation>图像路径：</translation>
         </message>
         <message>
             <source>Config path</source>
-            <translation type="unfinished" />
+            <translation>配置路径</translation>
         </message>
     </context>
 </TS>
