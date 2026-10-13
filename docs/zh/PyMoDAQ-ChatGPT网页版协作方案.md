@@ -316,10 +316,10 @@ jobs:
 
 | 项 | 状态 |
 |---|---|
-| 三份文档写入仓库 `docs/zh/`（默认分支 `5.3.x` 与 `wngln/i18n` 都有） | ✅ 见下方提交号 |
-| 本方案 `docs/zh/PyMoDAQ-ChatGPT网页版协作方案.md` | ✅ |
-| 仓库根 `AGENTS.md`（给 AI 助手的仓库约定入口） | ✅ |
-| `docs/zh/README.md`（索引 + 与工作区母本的同步方法） | ✅ |
+| 三份文档写入仓库 `docs/zh/`（默认分支 `5.3.x` 与 `wngln/i18n` 都有） | ✅ `wngln/i18n` = `ee3554894`、`5.3.x` = `d5b6b3b44`（已推送） |
+| 本方案 `docs/zh/PyMoDAQ-ChatGPT网页版协作方案.md` | ✅ 同上两个提交 |
+| 仓库根 `AGENTS.md`（给 AI 助手的仓库约定入口） | ✅ 同上两个提交 |
+| `docs/zh/README.md`（索引 + 与工作区母本的同步方法） | ✅ 同上两个提交 |
 | 过期结论更正（"汉化 WIP 在 stash 里"、"旧库地址"、"必须迁移的修复"） | ✅ 已改，避免 ChatGPT 按错前提开工 |
 | `dev\pull-chatgpt.ps1` 落地 | ⬜ 待你确认（内容见 §4.3，可直接落） |
 | `.github/workflows/i18n-audit.yml` | ⬜ 待你确认（内容见 §6） |
