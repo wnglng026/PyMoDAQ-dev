@@ -336,4 +336,51 @@ jobs:
 
 ---
 
+## 11. 在线写入被拒（HTTP 403）怎么处置
+
+**现象**：ChatGPT 网页版在 `wngln/i18n` 上写文件返回
+`403 Resource not accessible by integration`，没有产生提交。
+
+**这是哪一类错误（判断，附依据）**：`Resource not accessible by integration` 是 **GitHub App
+安装令牌（installation token）**的标准错误文案——App 装上了，但**没拿到 `Contents: write`**，
+或者目标仓库**没被纳入该 App 的安装范围**（组织仓库还可能被组织策略限制）。
+它**不等于**"你本人没有仓库权限"：本地 `git push origin wngln/i18n` 一直是通的（本文件所在的
+`faf443948`/`cf60ba803` 等都是这么推上去的），说明服务端并没有拒绝写入。
+
+**恢复权限（只能在浏览器里点，本机代不了）**
+
+| 步 | 位置 | 要做什么 |
+|---|---|---|
+| 1 | ChatGPT → 设置 → 已连接的应用 / GitHub 连接 | 看连接状态与授权范围；能重连就重连一次 |
+| 2 | GitHub → Settings → Applications → 对应 App → Configure | **Repository access** 勾上 `wnglng026/PyMoDAQ-dev`；**Permissions → Contents: Read and write**（有 Pull requests 权限一并给） |
+| 3 | 回到 ChatGPT | 先**读一次**目标分支与文件，再改**一个小文件**提交，核对是否真的产生了提交（别一上来就批量改） |
+
+**恢复之前不必停工**：走 §2 的 **C 模式**（ChatGPT 给补丁/完整文件内容 → 本机 `git apply`
+或本地编辑 → 跑验收 → 本地推送）。本轮"审计空结果守卫"就是这么落地的：网页版只描述了改动意图，
+本机实现 + 验证 + 推送（`cf60ba803`）。
+
+---
+
+## 12. ⚠️ 已经做完的部分（在线助手请勿重复实现）
+
+在线助手在 403 报告里列了一份"恢复权限后的修改顺序"，其中第 2–5 项**大部分已经完成并验证过**，
+照那份清单去"调试/修复"很可能把已验证的代码改坏。逐条核对如下：
+
+| 在线助手的计划项 | 实际状态 | 证据（可自行核对） |
+|---|---|---|
+| 1. 修 `i18n_audit.py` 的"提取为空却报 100%" | ✅ **本机已修**（本项确实存在，已复现并修掉） | `cf60ba803`；`tools/i18n/i18n_audit.py` 顶部 docstring 有退出码语义 |
+| 2. "检查并修复 `i18n_codemod.py` 的只读模式与写入边界" | ✅ 已有：`--dry-run` / `--report-only` / `--files` / `--max-targets`；10-13 还修了"含 `/` 就跳过"的路径误判、补齐对话框类汇聚点 | `tools/i18n/i18n_codemod.py`；提交 `9e295aa3f` |
+| 3. "调试 `pymodaq_utils.i18n` 的语言解析、加载、回退、缓存" | ✅ 已实现并按此设计工作：`PYMODAQ_LANG` > 配置 `[i18n] language` > 系统区域 > `en`；语言包按文件名排序、后者覆盖前者；`load_pack(refresh=True)` 用于切换语言 | `packages/pymodaq_utils/src/pymodaq_utils/i18n.py`；交接文档 §4 |
+| 4. "调试 Qt 翻译器的安装、上下文匹配与生命周期" | ✅ 已实现：`pymodaq_gui.i18n.PackTranslator` 在 `mkQApp()` 安装；查找顺序 `[contexts.<上下文>]` → `[general]` → 回退语言包 → 原文；查不到必须回退原文（返回空串会让界面变空白，实测踩过） | `packages/pymodaq_gui/src/pymodaq_gui/i18n.py`；提交 `2a657d5e7` |
+| 5. "补测试、检查翻译资源打包与 Dashboard 集成" | ⚠️ **部分完成**：打包链路（extract → seed → pack）已完成并加了写前自检；**仍缺**：CI 门禁接线、`tools/` 的正式自动化测试（目前只有一次性自测脚本） | §6、交接文档 §9.3 |
+
+**真正剩下的活**（按优先级）：
+
+1. 50 处未包装界面文案（清单见交接文档 §9.3）——纯体力活，最适合在线助手做；
+2. `.github/workflows/i18n-audit.yml` 门禁接线（§6）；
+3. 给 `tools/i18n/` 加正式测试（把本轮的一次性自测固化成 `tools/i18n/tests/`）；
+4. USB2830 采集插件（方案见 `PyMoDAQ-dev-方案.md` §3，代码未开工）。
+
+---
+
 *本文"实测"项均可复现：分支/worktree/默认分支来自 `git worktree list`、`git ls-remote --symref origin HEAD`、`git stash list`；能力边界来自产品行为（网页版无本地执行环境）。*
