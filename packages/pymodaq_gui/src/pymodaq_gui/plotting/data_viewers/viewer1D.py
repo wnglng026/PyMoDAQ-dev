@@ -510,7 +510,7 @@ class View1D(ActionManager, QObject):
                         QtCore.QCoreApplication.translate('View1D', 'Display data in a sorted fashion with respect to axis'),
                         checkable=True)
         self.add_action('ROIselect', QtCore.QCoreApplication.translate('View1D', 'ROI Select'), 'select',
-                        tip='Show/Hide ROI selection area', checkable=True)
+                        tip=QtCore.QCoreApplication.translate('View1D', 'Show/Hide ROI selection area'), checkable=True)
         self.add_action('x_label', QtCore.QCoreApplication.translate('View1D', 'x:'))
         self.add_action('y_label', QtCore.QCoreApplication.translate('View1D', 'y:'))
 
