@@ -409,3 +409,10 @@ showMessage / setDetailedText / addMenu / addAction`；对 17 个文件自动改
 - GitHub 文件更新成功，所有更改均位于独立分支。
 - 尚未在本地运行 `extract → seed → pack → audit`、Python 编译检查或 PyQt GUI 回归测试；因此当前不能宣称语言包已更新或运行时汉化已验证。
 - 下一步：在项目工作区运行完整流水线，检查提取条目数、占位符一致性和审计覆盖率；若通过，再执行相关 viewer / settings / parameter 测试，并继续处理剩余未包装文案。
+
+
+### 9.7 同日追加：Pixmap 参数控件
+
+- `pymodaq_gui/parameter/pymodaq_ptypes/pixmap.py`：将 `Show/Hide` 复选框接入 Qt 翻译系统。
+- `zh_map.toml`：补充“显示/隐藏”。
+- 本追加仍待完整提取、打包、审计与运行测试验证。
