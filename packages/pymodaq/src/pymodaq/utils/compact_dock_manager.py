@@ -193,15 +193,17 @@ class CompactDockManager(QtCore.QObject, ActionManager):
         """Create the lock action and the position picker.  Subclasses call ``super()`` first."""
         self.add_action('lock', QtCore.QCoreApplication.translate('CompactDockManager', 'Lock'), icon_name='lock_open_right', checkable=True,
                         toolbar=self.control_toolbar,
-                        tip='Lock/Unlock all module actions',
+                        tip=QtCore.QCoreApplication.translate('CompactDockManager', 'Lock/Unlock all module actions'),
                         icon_checked='lock', icon_color='green', icon_checked_color='orange')
         self.connect_action('lock', self.toggle_lock)
 
         # ── Position picker: QToolButton with a drop-down menu ─────────────────
         # Each entry shows the icon for that position and checks itself when active.
         self._position_menu = QtWidgets.QMenu(self._position_btn)
-        _labels = {'right': 'Dock right', 'left': 'Dock left',
-                   'top': 'Dock top', 'bottom': 'Dock bottom'}
+        _labels = {'right': QtCore.QCoreApplication.translate('CompactDockManager', 'Dock right'),
+                   'left': QtCore.QCoreApplication.translate('CompactDockManager', 'Dock left'),
+                   'top': QtCore.QCoreApplication.translate('CompactDockManager', 'Dock top'),
+                   'bottom': QtCore.QCoreApplication.translate('CompactDockManager', 'Dock bottom')}
         for pos, cfg in _POSITION_ICONS.items():
             icon = create_icon(cfg['icon_name'], flip_h=cfg['flip_h'], flip_v=cfg['flip_v'])
             act = self._position_menu.addAction(icon, _labels[pos])
@@ -531,7 +533,7 @@ class ActuatorCompactDock(ModuleCompactDock):
         self.control_toolbar.addSeparator()
         self.add_action('show_graph', QtCore.QCoreApplication.translate('ActuatorCompactDock', 'Graph'), icon_name='bid_landscape',
                         checkable=True, toolbar=self.control_toolbar,
-                        tip='Show/Hide graphs on all actuators',
+                        tip=QtCore.QCoreApplication.translate('ActuatorCompactDock', 'Show/Hide graphs on all actuators'),
                         icon_checked='bid_landscape_disabled',
                         icon_color='green', icon_checked_color='red', checked=True)
         self.connect_action('show_graph', lambda checked: self._apply_to_modules('show_graph', checked))
@@ -571,7 +573,7 @@ class DetectorCompactDock(ModuleCompactDock):
 
         self.add_action('show_graphs', QtCore.QCoreApplication.translate('DetectorCompactDock', 'Show'), icon_name='bid_landscape',
                         checkable=True, toolbar=self.control_toolbar,
-                        tip='Show/Hide graphs on all detectors',
+                        tip=QtCore.QCoreApplication.translate('DetectorCompactDock', 'Show/Hide graphs on all detectors'),
                         icon_checked='bid_landscape_disabled',
                         icon_color='green', icon_checked_color='red')
         self.connect_action('show_graphs', lambda checked: self._apply_to_modules('show_graphs', checked))
