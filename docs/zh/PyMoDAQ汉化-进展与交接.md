@@ -391,3 +391,21 @@ showMessage / setDetailedText / addMenu / addAction`；对 17 个文件自动改
 | `dev/*.ps1` | 环境搭建、运行、调试、体检、抓官方引用 |
 | `调试启动核心.py` + 各项目 `*运行调试脚本.py` | 每项目一个运行调试入口（解释器守卫 + 依赖探测 + 异常钩子） |
 | `pymodaq_zh/` | L3 运行时词典（650 条 + hooks + selfcheck + debug） |
+
+
+## 9.6 2026-10-13：第三批绘图/表格控件补译（已提交，待本地流水线验证）
+
+在独立分支 `wngln/chatgpt-i18n-ui-batch1` 上处理，不直接修改 `wngln/i18n`。
+
+**本批改动**
+- `viewer2D.py`：将 11 处图像工具提示（通道显隐、直方图缩放/显隐、ROI 管理器、等值线、十字光标、ROI 选择区、图像翻转）接入 `QCoreApplication.translate('View2D', ...)`。
+- `managers/settings/utils.py`：翻译配置表格菜单，并把动态的 `Load/Save {entry_type}Manager file` 改为可提取的翻译模板格式。
+- `parameter/pymodaq_ptypes/tableview.py`：翻译新增、删除行、清空、txt 加载/保存菜单。
+- `compact_dock_manager.py`：翻译锁定提示、停靠位置，以及执行器/探测器图形显隐提示。
+- `viewer0D.py`、`viewer1D.py`、`viewerND.py`：补齐最小值/最大值线、ROI 选择区和多维坐标轴切换提示。
+- `tools/i18n/zh_map.toml`：新增对应人工译文（含动态占位模板）。
+
+**验证状态（如实记录）**
+- GitHub 文件更新成功，所有更改均位于独立分支。
+- 尚未在本地运行 `extract → seed → pack → audit`、Python 编译检查或 PyQt GUI 回归测试；因此当前不能宣称语言包已更新或运行时汉化已验证。
+- 下一步：在项目工作区运行完整流水线，检查提取条目数、占位符一致性和审计覆盖率；若通过，再执行相关 viewer / settings / parameter 测试，并继续处理剩余未包装文案。
