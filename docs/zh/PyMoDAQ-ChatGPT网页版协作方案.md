@@ -321,7 +321,8 @@ jobs:
 | 仓库根 `AGENTS.md`（给 AI 助手的仓库约定入口） | ✅ 同上两个提交 |
 | `docs/zh/README.md`（索引 + 与工作区母本的同步方法） | ✅ 同上两个提交 |
 | 过期结论更正（"汉化 WIP 在 stash 里"、"旧库地址"、"必须迁移的修复"） | ✅ 已改，避免 ChatGPT 按错前提开工 |
-| `dev\pull-chatgpt.ps1` 落地 | ⬜ 待你确认（内容见 §4.3，可直接落） |
+| `dev\pull-chatgpt.ps1` 落地 | ✅ 已落地（与 §4.3 同款：语法检查通过；用不存在的分支实测了"早退不建目录"路径。**happy path 未实测**——需要真实 ChatGPT 分支才能验） |
+| CC worktree `PyMoDAQ-dev-cc` + 独立 venv | ⬜ 待你确认（§4.2，一次 `worktree add` + 一次 `setup-dev.ps1`，约几分钟） |
 | `.github/workflows/i18n-audit.yml` | ⬜ 待你确认（内容见 §6） |
 | `dev\` 脚本是否搬进仓库（让 ChatGPT 能读/改） | ⬜ 待你决定（搬的话建议放 `tools/dev/`，脚本已支持 `-RepoRoot`） |
 
@@ -331,7 +332,7 @@ jobs:
 
 1. **ChatGPT 走哪种接法**：A 网页编辑 / B GitHub 连接器 / C 补丁文本？（我建议 **B + C**：批量改走 B，高风险改走 C）
 2. **CC worktree 建在哪个盘/目录、是否要我顺手建好**（§4.2，一次 `worktree add` + 一次 `setup-dev.ps1`）
-3. **要不要现在接 CI 门禁**（§6）+ 落 `dev\pull-chatgpt.ps1`（§4.3）——这两项做完，网页版协作才算闭环
+3. **要不要现在接 CI 门禁**（§6）+ 建 CC worktree（§4.2）——`dev\pull-chatgpt.ps1` 已落地，这两项做完网页版协作才算闭环
 
 ---
 
