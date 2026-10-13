@@ -59,10 +59,10 @@ class BatchManager(ParameterManager):
         if msgbox:
             msgBox = QMessageBox()
             msgBox.setText(QtCore.QCoreApplication.translate('BatchManager', "Scan Batch Manager?"))
-            msgBox.setInformativeText("What do you want to do?")
+            msgBox.setInformativeText(QtCore.QCoreApplication.translate('BatchManager', "What do you want to do?"))
             cancel_button = msgBox.addButton(QMessageBox.StandardButton.Cancel)
-            new_button = msgBox.addButton("New", QMessageBox.ButtonRole.AcceptRole)
-            modify_button = msgBox.addButton('Modify', QMessageBox.ButtonRole.AcceptRole)
+            new_button = msgBox.addButton(QtCore.QCoreApplication.translate('BatchManager', "New"), QMessageBox.ButtonRole.AcceptRole)
+            modify_button = msgBox.addButton(QtCore.QCoreApplication.translate('BatchManager', 'Modify'), QMessageBox.ButtonRole.AcceptRole)
             msgBox.setDefaultButton(QMessageBox.StandardButton.Cancel)
             ret = msgBox.exec()
 
@@ -159,9 +159,9 @@ class BatchManager(ParameterManager):
 
         dialog.layout().addWidget(widget_all_settings)
         buttonBox = QDialogButtonBox(parent=dialog)
-        buttonBox.addButton("Save", QDialogButtonBox.ButtonRole.AcceptRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('BatchManager', "Save"), QDialogButtonBox.ButtonRole.AcceptRole)
         buttonBox.accepted.connect(dialog.accept)
-        buttonBox.addButton("Cancel", QDialogButtonBox.ButtonRole.RejectRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('BatchManager', "Cancel"), QDialogButtonBox.ButtonRole.RejectRole)
         buttonBox.rejected.connect(dialog.reject)
 
         dialog.layout().addWidget(buttonBox)
@@ -278,13 +278,13 @@ class BatchScanner(QtCore.QObject):
             menubar = QtWidgets.QMenuBar()
             self.widget.layout().insertWidget(0, menubar)
 
-        self.batch_menu = menubar.addMenu('Batch Configs')
-        action_new = self.batch_menu.addAction('New Batch')
+        self.batch_menu = menubar.addMenu(QtCore.QCoreApplication.translate('BatchScanner', 'Batch Configs'))
+        action_new = self.batch_menu.addAction(QtCore.QCoreApplication.translate('BatchScanner', 'New Batch'))
         action_new.triggered.connect(self.batchmanager.set_new_batch)
-        action_modify = self.batch_menu.addAction('Modify Batch')
+        action_modify = self.batch_menu.addAction(QtCore.QCoreApplication.translate('BatchScanner', 'Modify Batch'))
         action_modify.triggered.connect(self.batchmanager.set_file_batch)
         self.batch_menu.addSeparator()
-        self.load_batch = self.batch_menu.addMenu('Load Batchs')
+        self.load_batch = self.batch_menu.addMenu(QtCore.QCoreApplication.translate('BatchScanner', 'Load Batchs'))
 
         slots = dict([])
         for ind_file, file in enumerate(batch_path.iterdir()):

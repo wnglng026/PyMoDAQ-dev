@@ -122,7 +122,7 @@ class ScanStatusBarManager:
             ],
             readonly=True,
         )
-        self._scan_done_LED.setToolTip('Scan state: idle / running / complete / error')
+        self._scan_done_LED.setToolTip(QtCore.QCoreApplication.translate('ScanStatusBarManager', 'Scan state: idle / running / complete / error'))
 
         self.statusbar.insertPermanentWidget(1, self._n_scan_steps_sb) # 1 because there is already the permanent label
         self.statusbar.insertPermanentWidget(2, self._indice_scan_sb)
@@ -461,14 +461,14 @@ class DAQScan(CustomExt):
         self.set_action_visible('start_batch', False)
 
         self.add_action('show_general_settings', QtCore.QCoreApplication.translate('DAQScan', 'Show General Settings'), 'settings',
-                        "Show/hide the General settings panel (Time Flow, Scan options, Save..."
-                        " - double-click its title bar to detach it into its own window)",
+                        QtCore.QCoreApplication.translate('DAQScan', "Show/hide the General settings panel (Time Flow, Scan options, Save..."
+                        " - double-click its title bar to detach it into its own window)"),
                         checkable=True, checked=config('pymodaq', 'scan', 'show_general_settings'),
                         icon_checked_color=self.get_theme().green,
                         menu='actions', before=WorkFlowActions.LOG)
         self.add_action('show_live_plots', QtCore.QCoreApplication.translate('DAQScan', 'Show Live Plots'), 'bid_landscape_disabled',
-                        "Show/hide the Live Plots panel (double-click its title bar to detach "
-                        "it into its own window)",
+                        QtCore.QCoreApplication.translate('DAQScan', "Show/hide the Live Plots panel (double-click its title bar to detach "
+                        "it into its own window)"),
                         checkable=True, checked=True, icon_checked='bid_landscape',
                         icon_checked_color=self.get_theme().green,
                         menu='actions', before=WorkFlowActions.LOG)
@@ -669,13 +669,14 @@ class DAQScan(CustomExt):
             vlayout.addWidget(tree)
             dialog.setLayout(vlayout)
             buttonBox = QDialogButtonBox(parent=dialog)
-            buttonBox.addButton("Cancel", QDialogButtonBox.ButtonRole.RejectRole)
-            buttonBox.addButton("Apply", QDialogButtonBox.ButtonRole.AcceptRole)
+            buttonBox.addButton(QtCore.QCoreApplication.translate('DAQScan', "Cancel"), QDialogButtonBox.ButtonRole.RejectRole)
+            buttonBox.addButton(QtCore.QCoreApplication.translate('DAQScan', "Apply"), QDialogButtonBox.ButtonRole.AcceptRole)
             buttonBox.rejected.connect(dialog.reject)
             buttonBox.accepted.connect(dialog.accept)
 
             vlayout.addWidget(buttonBox)
-            dialog.setWindowTitle('Fill in information about this {}'.format(type_info))
+            dialog.setWindowTitle(
+                QtCore.QCoreApplication.translate('DAQScan', 'Fill in information about this {}').format(type_info))
             res = dialog.exec()
         else:
             res = True

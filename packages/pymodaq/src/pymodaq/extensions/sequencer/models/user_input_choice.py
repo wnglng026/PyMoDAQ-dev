@@ -15,9 +15,9 @@ class UserInput(ChoiceModelBase):
 
         msgBox = QtWidgets.QMessageBox()
         msgBox.setText(QtCore.QCoreApplication.translate('UserInput', "Previous steps are finished"))
-        msgBox.setInformativeText("Are you ok to proceed or go back?")
-        button_proceed = msgBox.addButton('Proceed', QtWidgets.QMessageBox.ButtonRole.AcceptRole)
-        button_goback = msgBox.addButton('Go back', QtWidgets.QMessageBox.ButtonRole.RejectRole)
+        msgBox.setInformativeText(QtCore.QCoreApplication.translate('UserInput', "Are you ok to proceed or go back?"))
+        button_proceed = msgBox.addButton(QtCore.QCoreApplication.translate('UserInput', 'Proceed'), QtWidgets.QMessageBox.ButtonRole.AcceptRole)
+        button_goback = msgBox.addButton(QtCore.QCoreApplication.translate('UserInput', 'Go back'), QtWidgets.QMessageBox.ButtonRole.RejectRole)
         msgBox.setDefaultButton(button_proceed)
         msgBox.exec()
 

@@ -471,7 +471,7 @@ class DAQ_PID(CustomExt):
         logger.debug("setting actions")
         self.add_widget("model_label", QtWidgets.QLabel, "Init Model:")
         self.add_action("ini_model", QtCore.QCoreApplication.translate('DAQ_PID', "Init Model"), "ini",
-            tip="Initialize the selected model: algo/data conversion")
+            tip=QtCore.QCoreApplication.translate('DAQ_PID', "Initialize the selected model: algo/data conversion"))
         self.add_widget("model_led", MultistateLED(
             states=[
                 (ModelLedState.UNINITIALIZED, StatusPalette.color(Status.OFF)),
@@ -735,7 +735,8 @@ class DAQ_PID(CustomExt):
             self.stabpoints_sb.append(self.make_spinbox())
             self.toolbar_layout.addWidget(self.stabpoints_sb[-1], 5, col_ind, 1, 1)
             self.syncvalue_pb.append(
-                QtWidgets.QPushButton("Synchro {}".format(ind_set)),
+            QtWidgets.QPushButton(
+                QtCore.QCoreApplication.translate('DAQ_PID', "Synchro {}").format(ind_set)),
             )
             self.syncvalue_pb[ind_set].clicked.connect(
                 partial(self.currpoint_as_setpoint, ind_set),

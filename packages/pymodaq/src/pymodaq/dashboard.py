@@ -405,7 +405,7 @@ class DashBoard(CustomApp, LECOComponentMixin):
         self.add_action("save_layout", QtCore.QCoreApplication.translate('DashBoard', "Save Layout"), "",
                         QtCore.QCoreApplication.translate('DashBoard', "Save the Saved Docks layout corresponding to the current experiment"),
                         auto_toolbar=False, menu='docked')
-        self.add_action("show_log_widget", "Show/hide log window", "", checkable=True, auto_toolbar=False,
+        self.add_action("show_log_widget", QtCore.QCoreApplication.translate('DashBoard', "Show/hide log window"), "", checkable=True, auto_toolbar=False,
                         menu=MenuToolbarNames.VIEW)
 
         for ext_name in ExtensionEnum.names():
@@ -565,7 +565,7 @@ class DashBoard(CustomApp, LECOComponentMixin):
                 QtCore.QCoreApplication.translate('DashBoard', "You have to restart the application to take the"
                 " modifications into account!"),
             )
-            mssg.setInformativeText("Do you want to restart?")
+            mssg.setInformativeText(QtCore.QCoreApplication.translate('DashBoard', "Do you want to restart?"))
             mssg.setStandardButtons(QMessageBox.StandardButton.Ok | QMessageBox.StandardButton.Cancel)
             ret = mssg.exec()
 
@@ -1035,13 +1035,14 @@ class DashBoard(CustomApp, LECOComponentMixin):
         vlayout.addWidget(tree)
         dialog.setLayout(vlayout)
         buttonBox = QDialogButtonBox(parent=dialog)
-        buttonBox.addButton("Cancel", QDialogButtonBox.ButtonRole.RejectRole)
-        buttonBox.addButton("Apply", QDialogButtonBox.ButtonRole.AcceptRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('DashBoard', "Cancel"), QDialogButtonBox.ButtonRole.RejectRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('DashBoard', "Apply"), QDialogButtonBox.ButtonRole.AcceptRole)
         buttonBox.rejected.connect(dialog.reject)
         buttonBox.accepted.connect(dialog.accept)
 
         vlayout.addWidget(buttonBox)
-        dialog.setWindowTitle("Fill in information about this {}".format(type_info))
+        dialog.setWindowTitle(
+            QtCore.QCoreApplication.translate('DashBoard', 'Fill in information about this {}').format(type_info))
         res = dialog.exec()
         return res
 

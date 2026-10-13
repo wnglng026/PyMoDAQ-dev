@@ -60,6 +60,16 @@ SINK_RULES: Dict[str, Tuple[Sequence[int], Sequence[str]]] = {
     "QMenu": ((0,), ("title",)),
     "QDockWidget": ((0,), ("title",)),
     "QAction": ((0, 1), ("text",)),
+    # 对话框 / 消息框：按钮文案、补充说明、占位符、状态栏消息
+    "addButton": ((0,), ("text",)),
+    "setInformativeText": ((0,), ()),
+    "setPlaceholderText": ((0,), ()),
+    "setLabelText": ((0,), ()),
+    "showMessage": ((0,), ("message",)),
+    "setDetailedText": ((0,), ()),
+    # Qt 原生菜单/动作（与 ActionManager 的 add_action 不同名，不会冲突）
+    "addMenu": ((0,), ("title",)),
+    "addAction": ((0,), ("text",)),
 }
 
 # 明确不该翻译的整串（插件/模块标识、库名、数据值）
@@ -72,7 +82,16 @@ SKIP_VALUES = {
 
 _IDENTIFIER_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 _NAME_WITH_DIGITS_RE = re.compile(r"^[A-Za-z_]+[0-9]+$")
-_TECHNICAL_RE = re.compile(r"(://|\\\\|/|\\)")
+# 路径/URL 判定：**不能**写成"含 / 就跳过"——实测把
+# 'Scan state: idle / running / complete / error'、'Show/hide log window'
+# 这类正常界面文案误判成路径，整批 tooltip 因此漏译。
+_TECHNICAL_RE = re.compile(
+    r"(://"                                     # URL 协议
+    r"|\\\\"                                    # Windows 反斜杠路径
+    r"|^[A-Za-z]:[\\/]"                         # D:\ 或 D:/
+    r"|^[~.]?[\\/]"                             # /home、./run、~/data
+    r"|\.(?:png|jpe?g|svg|ico|bmp|txt|csv|h5|hdf5|toml|json|xml|ts|qm|py|ui|md|log|ini)(?:$|[\\/])"
+    r")")
 _PLACEHOLDER_RE = re.compile(r"%[sdf]|\{[^{}]*\}")
 
 

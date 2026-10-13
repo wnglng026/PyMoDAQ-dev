@@ -284,11 +284,11 @@ class H5Manager(QtCore.QObject, ActionManager):
                     msg.setIcon(QtWidgets.QMessageBox.Icon.Warning)
                     msg.setWindowTitle(QtCore.QCoreApplication.translate('H5Manager', "File Locked"))
                     msg.setText(QtCore.QCoreApplication.translate('H5Manager', 'Cannot open file:\n{}\n\nThe file may be open in another application.').format(current_file))
-                    msg.setInformativeText("Close the file elsewhere and click Retry, "
-                                           "or select a different file.")
-                    retry_btn = msg.addButton("Retry", QtWidgets.QMessageBox.ButtonRole.ActionRole)
-                    new_auto_btn = msg.addButton("New File (Auto)", QtWidgets.QMessageBox.ButtonRole.AcceptRole)
-                    browse_btn = msg.addButton("Browse...", QtWidgets.QMessageBox.ButtonRole.ActionRole)
+                    msg.setInformativeText(QtCore.QCoreApplication.translate('H5Manager', "Close the file elsewhere and click Retry, "
+                                           "or select a different file."))
+                    retry_btn = msg.addButton(QtCore.QCoreApplication.translate('H5Manager', "Retry"), QtWidgets.QMessageBox.ButtonRole.ActionRole)
+                    new_auto_btn = msg.addButton(QtCore.QCoreApplication.translate('H5Manager', "New File (Auto)"), QtWidgets.QMessageBox.ButtonRole.AcceptRole)
+                    browse_btn = msg.addButton(QtCore.QCoreApplication.translate('H5Manager', "Browse..."), QtWidgets.QMessageBox.ButtonRole.ActionRole)
                     msg.addButton(QtWidgets.QMessageBox.StandardButton.Cancel)
                     msg.exec()
 

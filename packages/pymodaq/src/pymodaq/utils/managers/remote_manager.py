@@ -265,13 +265,13 @@ class RemoteManager(QObject):
         if msgbox:
             msgBox = QMessageBox()
             msgBox.setText(QtCore.QCoreApplication.translate('RemoteManager', "Experiment Manager?"))
-            msgBox.setInformativeText("What do you want to do?")
+            msgBox.setInformativeText(QtCore.QCoreApplication.translate('RemoteManager', "What do you want to do?"))
             cancel_button = msgBox.addButton(QMessageBox.StandardButton.Cancel)
             new_button = msgBox.addButton(
-                "New", QMessageBox.ButtonRole.ActionRole,
+                QtCore.QCoreApplication.translate('RemoteManager', "New"), QMessageBox.ButtonRole.ActionRole,
             )
             modify_button = msgBox.addButton(
-                "Modify", QMessageBox.ButtonRole.AcceptRole,
+                QtCore.QCoreApplication.translate('RemoteManager', "Modify"), QMessageBox.ButtonRole.AcceptRole,
             )
             msgBox.setDefaultButton(QMessageBox.StandardButton.Cancel)
             ret = msgBox.exec()
@@ -460,9 +460,9 @@ class RemoteManager(QObject):
         dialog.setLayout(vlayout)
         buttonBox = QDialogButtonBox(parent=dialog)
 
-        buttonBox.addButton("Save", QDialogButtonBox.ButtonRole.AcceptRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('RemoteManager', "Save"), QDialogButtonBox.ButtonRole.AcceptRole)
         buttonBox.accepted.connect(dialog.accept)
-        buttonBox.addButton("Cancel", QDialogButtonBox.ButtonRole.RejectRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('RemoteManager', "Cancel"), QDialogButtonBox.ButtonRole.RejectRole)
         buttonBox.rejected.connect(dialog.reject)
 
         vlayout.addWidget(buttonBox)

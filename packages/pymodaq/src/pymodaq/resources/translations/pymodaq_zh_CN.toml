@@ -271,8 +271,19 @@ generated_from = "pymodaq_zh_CN.ts"
 
 [contexts."BatchManager"]
 "Add Scan" = "添加扫描"
+"Cancel" = "取消"
 "Fill in information about this Scan batch" = "填写该扫描批次的信息"
+"Modify" = "修改"
+"New" = "新建"
+"Save" = "保存"
 "Scan Batch Manager?" = "扫描批次管理器？"
+"What do you want to do?" = "你想做什么？"
+
+[contexts."BatchScanner"]
+"Batch Configs" = "批次配置"
+"Load Batchs" = "加载批次"
+"Modify Batch" = "修改批次"
+"New Batch" = "新建批次"
 
 [contexts."ChoiceElt"]
 "Choice Model" = "选择模型"
@@ -297,6 +308,7 @@ generated_from = "pymodaq_zh_CN.ts"
 
 [contexts."DAQLogger"]
 "Grab All" = "全部采集"
+"Grab/Stop all selected detectors's data and actuators's value" = "连续采集/停止所有选定探测器的数据与执行器的值"
 
 [contexts."DAQMoveUI"]
 "Move Abs" = "绝对移动"
@@ -315,6 +327,9 @@ generated_from = "pymodaq_zh_CN.ts"
 "{} graph" = "{} 图形"
 
 [contexts."DAQScan"]
+"Apply" = "应用"
+"Cancel" = "取消"
+"Fill in information about this {}" = "填写该 {} 的信息"
 "Init Positions" = "初始位置"
 "Move at doubleClicked" = "双击移动"
 "Move to positions where you double clicked" = "移动到双击位置"
@@ -323,6 +338,8 @@ generated_from = "pymodaq_zh_CN.ts"
 "Show General Settings" = "显示通用设置"
 "Show Live Plots" = "显示实时绘图"
 "Show Navigator" = "显示导航器"
+"Show/hide the General settings panel (Time Flow, Scan options, Save... - double-click its title bar to detach it into its own window)" = "显示/隐藏常规设置面板（时间流、扫描选项、保存…… —— 双击标题栏可将其拆分为独立窗口）"
+"Show/hide the Live Plots panel (double-click its title bar to detach it into its own window)" = "显示/隐藏实时绘图面板（双击标题栏可将其拆分为独立窗口）"
 "Start ScanBatches" = "启动批量扫描"
 "Start the batch of scans" = "启动批量扫描"
 
@@ -347,11 +364,13 @@ generated_from = "pymodaq_zh_CN.ts"
 "Init Model" = "初始化模型"
 "Init the PID loop" = "初始化 PID 回路"
 "Init the PID thread" = "初始化 PID 线程"
+"Initialize the selected model: algo/data conversion" = "初始化所选模型：算法/数据转换"
 "Pause the PID loop" = "暂停 PID 回路"
 "Run The PID loop" = "运行 PID 回路"
 "Setpoints:" = "设定值："
 "Stability:" = "稳定性："
 "Sync Value:" = "同步值："
+"Synchro {}" = "同步 {}"
 "Value:" = "值："
 "run or stop the pid loop" = "运行/停止 PID 回路"
 
@@ -369,10 +388,14 @@ generated_from = "pymodaq_zh_CN.ts"
 "Take a snapshot from the detector" = "从探测器单次采集"
 
 [contexts."DashBoard"]
+"Apply" = "应用"
+"Cancel" = "取消"
+"Do you want to restart?" = "是否要重启？"
 "Docked" = "已停靠"
 "Experiment" = "实验"
 "Extensions" = "扩展"
 "File" = "文件"
+"Fill in information about this {}" = "填写该 {} 的信息"
 "Load Layout" = "加载布局"
 "Load the Saved Docks layout corresponding to the current experiment" = "加载当前实验对应的已保存停靠布局"
 "Overshooter" = "过冲器"
@@ -380,6 +403,7 @@ generated_from = "pymodaq_zh_CN.ts"
 "Save Layout" = "保存布局"
 "Save the Saved Docks layout corresponding to the current experiment" = "保存当前实验对应的停靠布局"
 "Select a Module to add to this Dashboard" = "选择要添加到本仪表板的模块"
+"Show/hide log window" = "显示/隐藏日志窗口"
 "State" = "状态"
 "Tools" = "工具"
 "View" = "视图"
@@ -418,6 +442,7 @@ generated_from = "pymodaq_zh_CN.ts"
 "Initializing" = "正在初始化"
 "Initializing Algorithm and thread" = "正在初始化算法与线程"
 "List of available models" = "可用模型列表"
+"Optimisation state: idle / running / complete / error" = "优化状态：空闲 / 运行中 / 完成 / 错误"
 "Optimization Done" = "优化完成"
 "Pausing Optimization" = "正在暂停优化"
 "Quitting Runner Thread" = "正在退出运行线程"
@@ -470,6 +495,7 @@ generated_from = "pymodaq_zh_CN.ts"
 
 [contexts."LoggerStatusBarManager"]
 "Logging started at:" = "记录开始于："
+"Logging state: idle / running / error" = "记录状态：空闲 / 运行中 / 错误"
 "Total number of saved data" = "已保存数据总数"
 
 [contexts."ModulesManager"]
@@ -488,8 +514,13 @@ generated_from = "pymodaq_zh_CN.ts"
 "Update the histogram given its settings" = "按设置更新直方图"
 
 [contexts."RemoteManager"]
+"Cancel" = "取消"
 "Experiment Manager?" = "实验管理器？"
 "Fill in information about the actions and their shortcuts" = "填写操作及其快捷键信息"
+"Modify" = "修改"
+"New" = "新建"
+"Save" = "保存"
+"What do you want to do?" = "你想做什么？"
 
 [contexts."ScanManager"]
 "Start Scan" = "开始扫描"
@@ -498,6 +529,7 @@ generated_from = "pymodaq_zh_CN.ts"
 [contexts."ScanStatusBarManager"]
 "Current average value" = "当前平均值"
 "Current step value" = "当前步数值"
+"Scan state: idle / running / complete / error" = "扫描状态：空闲 / 运行中 / 完成 / 错误"
 "Total number of steps" = "总步数"
 
 [contexts."SeqEltBase"]
@@ -533,6 +565,7 @@ generated_from = "pymodaq_zh_CN.ts"
 "Save as a sequence file" = "另存为序列文件"
 
 [contexts."SharedUI"]
+"Disable scripting" = "禁用脚本控制"
 "Enable scripting" = "启用脚本控制"
 "Enable usage of scripting to control this component. Also runs a Coordinator" = "允许用脚本控制该组件（同时启动协调器）"
 "Opens the Plugin Manager" = "打开插件管理器"
@@ -566,7 +599,10 @@ generated_from = "pymodaq_zh_CN.ts"
 "Stop Module:" = "停止模块："
 
 [contexts."UserInput"]
+"Are you ok to proceed or go back?" = "继续还是返回？"
+"Go back" = "返回"
 "Previous steps are finished" = "前面的步骤已完成"
+"Proceed" = "继续"
 
 [contexts."WaitSubEntryHandler"]
 "Waiting Time:" = "等待时间："

@@ -215,7 +215,12 @@ generated_from = "pymodaq_gui_zh_CN.ts"
 "Legend" = "图例"
 
 [contexts."ConfigManager"]
+"Cancel" = "取消"
 "Fill in information about this managers" = "填写该管理器的信息"
+"Modify" = "修改"
+"New" = "新建"
+"Save" = "保存"
+"What do you want to do?" = "你想做什么？"
 "{} Manager" = "{} 管理器"
 
 [contexts."CustomApp"]
@@ -276,17 +281,21 @@ generated_from = "pymodaq_gui_zh_CN.ts"
 
 [contexts."H5Manager"]
 "Browse the content of the current HDF5 file" = "浏览当前 HDF5 文件内容"
+"Browse..." = "浏览…"
 "Cannot open file:\n{}\n\nThe file may be open in another application." = "无法打开文件：\n{}\n\n该文件可能已被其它程序打开。"
 "Close Current File" = "关闭当前文件"
+"Close the file elsewhere and click Retry, or select a different file." = "请在其他程序中关闭该文件后点击“重试”，或选择其他文件。"
 "File Locked" = "文件已锁定"
 "File:" = "文件："
 "FileActions" = "文件操作"
 "H5 file closed" = "H5 文件已关闭"
 "H5 file open and accessible" = "H5 文件已打开且可访问"
 "H5 file open — SWMR mode active" = "H5 文件已打开 — SWMR 模式已启用"
+"New File (Auto)" = "新建文件（自动）"
 "New file" = "新建文件"
 "Open Current File" = "打开当前文件"
 "Open file to append..." = "打开文件以追加…"
+"Retry" = "重试"
 "Save copy as..." = "副本另存为…"
 "Show file content" = "显示文件内容"
 "Show h5 settings" = "显示 H5 设置"
@@ -301,10 +310,17 @@ generated_from = "pymodaq_gui_zh_CN.ts"
 "Reset" = "重置"
 "Sync Value:" = "同步值："
 
+[contexts."LinearROI"]
+"Copy ROI" = "复制 ROI"
+"Copy ROI to clipboard" = "将 ROI 复制到剪贴板"
+"Remove ROI" = "删除 ROI"
+
 [contexts."ListParameterItem"]
 "Not installed" = "未安装"
 
 [contexts."ListPicker"]
+"Apply" = "应用"
+"Cancel" = "取消"
 "Select an entry in the list" = "在列表中选择一项"
 
 [contexts."ManagerBase"]
@@ -381,7 +397,14 @@ generated_from = "pymodaq_gui_zh_CN.ts"
 "Update Settings" = "更新设置"
 "Update the settings from an xml file, the settings structure loaded must be identical to the current one" = "从 XML 文件更新设置：所加载的设置结构必须与当前结构完全一致"
 
+[contexts."ROI"]
+"Copy ROI" = "复制 ROI"
+"Copy ROI slice to clipboard" = "将 ROI 切片复制到剪贴板"
+"Remove ROI" = "删除 ROI"
+
 [contexts."ROIPositionMapper"]
+"Apply" = "应用"
+"Cancel" = "取消"
 "Set Precise positions for the ROI" = "为 ROI 设置精确位置"
 
 [contexts."SearchLineEdit"]
@@ -418,6 +441,7 @@ generated_from = "pymodaq_gui_zh_CN.ts"
 "Package" = "软件包"
 "Preferences" = "首选项"
 "PyMoDAQ preferences" = "PyMoDAQ 首选项"
+"PyMoDAQ version {}\nModular Acquisition with Python\nWritten by Sébastien Weber" = "PyMoDAQ 版本 {}\n基于 Python 的模块化采集\n作者：Sébastien Weber"
 "Quit" = "退出"
 "Quit PyMoDAQ" = "退出 PyMoDAQ"
 "Restart" = "重启"
@@ -432,11 +456,15 @@ generated_from = "pymodaq_gui_zh_CN.ts"
 "{} help" = "{} 帮助"
 
 [contexts."SubEntryHandler"]
+"Cancel" = "取消"
 "Fill in information about this {}" = "填写该 {} 的信息"
+"Ok" = "确定"
 
 [contexts."TreeFromToml"]
+"Cancel" = "取消"
 "Please enter new configuration values!" = "请输入新的配置值！"
 "Preferences entries" = "首选项条目"
+"Save" = "保存"
 
 [contexts."TreeLayout"]
 "Close Tree" = "折叠树"
@@ -506,6 +534,8 @@ generated_from = "pymodaq_gui_zh_CN.ts"
 "Integrate the navigation data" = "对导航数据做积分"
 
 [contexts."browsing"]
+"Cancel" = "取消"
+"OK" = "确定"
 "Select a data node in the tree" = "在树中选择一个数据节点"
 
 [contexts."collapsible_widget"]

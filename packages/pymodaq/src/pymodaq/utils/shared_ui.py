@@ -63,7 +63,9 @@ class SharedUI(SharedUI):
         if hasattr(self, '_main_application') and isinstance(self._main_application, LECOComponentMixin):
             self._enable_scripting = not self._enable_scripting
             self._main_application.connect_leco(self._enable_scripting)
-            self.get_action('scripting').setText("Disable scripting" if self._enable_scripting else "Enable scripting")
+            self.get_action('scripting').setText(
+                QtCore.QCoreApplication.translate('SharedUI', "Disable scripting") if self._enable_scripting
+                else QtCore.QCoreApplication.translate('SharedUI', "Enable scripting"))
             self._main_application._connect_leco_request.emit(self._enable_scripting)
 
     def start_plugin_manager(self):

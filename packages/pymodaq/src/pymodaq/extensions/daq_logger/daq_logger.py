@@ -99,7 +99,7 @@ class LoggerStatusBarManager:
             ],
             readonly=True,
         )
-        self._logging_state.setToolTip('Logging state: idle / running / error')
+        self._logging_state.setToolTip(QtCore.QCoreApplication.translate('LoggerStatusBarManager', 'Logging state: idle / running / error'))
         self.statusbar.addPermanentWidget(self._logging_state)
 
         self._n_saved_sb = QSpinBox_ro()
@@ -181,7 +181,7 @@ class DAQLogger(CustomExt):
 
         self.toolbar.addSeparator()
         self.add_action('grab_all', QtCore.QCoreApplication.translate('DAQLogger', 'Grab All'), ActionIconNames.GRAB,
-                        "Grab/Stop all selected detectors's data and actuators's value",
+                        QtCore.QCoreApplication.translate('DAQLogger', "Grab/Stop all selected detectors's data and actuators's value"),
                         checkable=True,
                         icon_checked=ActionIconNames.GRAB_STOP,
                         icon_checked_color=self.get_theme().green)

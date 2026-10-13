@@ -304,9 +304,7 @@ class SharedUI(CustomApp):
     def show_about(self):
         self.splash_sc.setVisible(True)
         self.splash_sc.showMessage(
-            f"PyMoDAQ version {get_version('pymodaq')}\n"
-            f"Modular Acquisition with Python\n"
-            f"Written by Sébastien Weber",
+            QtCore.QCoreApplication.translate('SharedUI', 'PyMoDAQ version {}\nModular Acquisition with Python\nWritten by Sébastien Weber').format(get_version('pymodaq')),
         )
 
     def check_update(self, show=True):

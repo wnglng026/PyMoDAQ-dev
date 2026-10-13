@@ -237,9 +237,9 @@ class ROI(pgROI, ROIBase):
         if self.menu is None:
             self.menu = QtWidgets.QMenu()
             self.menu.setTitle(translate("ROI", "ROI"))
-            self.menu.addAction('Copy ROI slice to clipboard', self.copy_clipboard)
-            self.menu.addAction("Copy ROI", self._emitCopyRequest)
-            self.menu.addAction("Remove ROI", self._emitRemoveRequest)
+            self.menu.addAction(QtCore.QCoreApplication.translate('ROI', 'Copy ROI slice to clipboard'), self.copy_clipboard)
+            self.menu.addAction(QtCore.QCoreApplication.translate('ROI', "Copy ROI"), self._emitCopyRequest)
+            self.menu.addAction(QtCore.QCoreApplication.translate('ROI', "Remove ROI"), self._emitRemoveRequest)
         return self.menu
 
     def contextMenuEnabled(self):
@@ -368,9 +368,9 @@ class LinearROI(pgLinearROI, ROIBase):
         if self.menu is None:
             self.menu = QtWidgets.QMenu()
             self.menu.setTitle(translate("ROI", "ROI"))
-            self.menu.addAction('Copy ROI to clipboard', self.copy_clipboard)
-            self.menu.addAction("Copy ROI", self._emitCopyRequest)
-            self.menu.addAction("Remove ROI", self._emitRemoveRequest)
+            self.menu.addAction(QtCore.QCoreApplication.translate('LinearROI', 'Copy ROI to clipboard'), self.copy_clipboard)
+            self.menu.addAction(QtCore.QCoreApplication.translate('LinearROI', "Copy ROI"), self._emitCopyRequest)
+            self.menu.addAction(QtCore.QCoreApplication.translate('LinearROI', "Remove ROI"), self._emitRemoveRequest)
         return self.menu
 
     def contextMenuEnabled(self):
@@ -584,9 +584,9 @@ class ROIPositionMapper(QtWidgets.QWidget):
         dialog.setLayout(vlayout)
 
         buttonBox = QtWidgets.QDialogButtonBox(parent=self)
-        buttonBox.addButton('Apply', buttonBox.AcceptRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('ROIPositionMapper', 'Apply'), buttonBox.AcceptRole)
         buttonBox.accepted.connect(dialog.accept)
-        buttonBox.addButton('Cancel', buttonBox.RejectRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('ROIPositionMapper', 'Cancel'), buttonBox.RejectRole)
         buttonBox.rejected.connect(dialog.reject)
 
         vlayout.addWidget(buttonBox)

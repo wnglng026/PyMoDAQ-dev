@@ -45,10 +45,10 @@ class ConfigManager(ParameterManager):
         if msgbox:
             msgBox = QMessageBox()
             msgBox.setText(QtCore.QCoreApplication.translate('ConfigManager', '{} Manager').format(self.title))
-            msgBox.setInformativeText("What do you want to do?")
+            msgBox.setInformativeText(QtCore.QCoreApplication.translate('ConfigManager', "What do you want to do?"))
             cancel_button = msgBox.addButton(QMessageBox.StandardButton.Cancel)
-            new_button = msgBox.addButton("New", QMessageBox.ButtonRole.ActionRole)
-            modify_button = msgBox.addButton("Modify", QMessageBox.ButtonRole.AcceptRole)
+            new_button = msgBox.addButton(QtCore.QCoreApplication.translate('ConfigManager', "New"), QMessageBox.ButtonRole.ActionRole)
+            modify_button = msgBox.addButton(QtCore.QCoreApplication.translate('ConfigManager', "Modify"), QMessageBox.ButtonRole.AcceptRole)
             msgBox.setDefaultButton(QMessageBox.StandardButton.Cancel)
             ret = msgBox.exec()
 
@@ -158,9 +158,9 @@ class ConfigManager(ParameterManager):
         dialog.setLayout(vlayout)
         buttonBox = QDialogButtonBox(parent=dialog)
 
-        buttonBox.addButton("Save", QDialogButtonBox.ButtonRole.AcceptRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('ConfigManager', "Save"), QDialogButtonBox.ButtonRole.AcceptRole)
         buttonBox.accepted.connect(dialog.accept)
-        buttonBox.addButton("Cancel", QDialogButtonBox.ButtonRole.RejectRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('ConfigManager', "Cancel"), QDialogButtonBox.ButtonRole.RejectRole)
         buttonBox.rejected.connect(dialog.reject)
 
         vlayout.addWidget(buttonBox)

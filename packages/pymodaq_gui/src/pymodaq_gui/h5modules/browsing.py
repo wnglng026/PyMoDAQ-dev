@@ -546,9 +546,10 @@ def browse_data(fname=None, ret_all=False, message=None) -> Tuple[data_saving.Da
         dialog.setLayout(vlayout)
         buttonBox = QtWidgets.QDialogButtonBox(parent=dialog)
 
-        buttonBox.addButton("OK", QtWidgets.QDialogButtonBox.ButtonRole.AcceptRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('browsing', "OK"),
+                            QtWidgets.QDialogButtonBox.ButtonRole.AcceptRole)
         buttonBox.accepted.connect(dialog.accept)
-        buttonBox.addButton("Cancel", QtWidgets.QDialogButtonBox.ButtonRole.RejectRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('browsing', "Cancel"), QtWidgets.QDialogButtonBox.ButtonRole.RejectRole)
         buttonBox.rejected.connect(dialog.reject)
         vlayout.addWidget(buttonBox)
 

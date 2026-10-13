@@ -21,9 +21,9 @@ class ListPicker(QObject):
         self.dialog.setLayout(vlayout)
 
         buttonBox = QtWidgets.QDialogButtonBox()
-        buttonBox.addButton("Apply", QtWidgets.QDialogButtonBox.ButtonRole.AcceptRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('ListPicker', "Apply"), QtWidgets.QDialogButtonBox.ButtonRole.AcceptRole)
         buttonBox.accepted.connect(self.dialog.accept)
-        buttonBox.addButton('Cancel', QtWidgets.QDialogButtonBox.ButtonRole.RejectRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('ListPicker', 'Cancel'), QtWidgets.QDialogButtonBox.ButtonRole.RejectRole)
         buttonBox.rejected.connect(self.dialog.reject)
 
         vlayout.addWidget(buttonBox)

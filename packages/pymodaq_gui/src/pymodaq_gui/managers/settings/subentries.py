@@ -131,9 +131,9 @@ class SubEntryHandler(QtCore.QObject):
         self.dialog.setLayout(vlayout)
         buttonBox = QtWidgets.QDialogButtonBox(parent=self.dialog)
 
-        buttonBox.addButton("Ok", QtWidgets.QDialogButtonBox.ButtonRole.AcceptRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('SubEntryHandler', "Ok"), QtWidgets.QDialogButtonBox.ButtonRole.AcceptRole)
         buttonBox.accepted.connect(self.subentry_set)
-        buttonBox.addButton("Cancel", QtWidgets.QDialogButtonBox.ButtonRole.RejectRole)
+        buttonBox.addButton(QtCore.QCoreApplication.translate('SubEntryHandler', "Cancel"), QtWidgets.QDialogButtonBox.ButtonRole.RejectRole)
         buttonBox.rejected.connect(self.dialog.reject)
 
         vlayout.addWidget(buttonBox)

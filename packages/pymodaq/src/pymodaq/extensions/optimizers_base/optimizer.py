@@ -471,7 +471,7 @@ class GenericOptimization(CustomExt):
             ],
             readonly=True,
         )
-        self._optimizing_done_LED.setToolTip('Optimisation state: idle / running / complete / error')
+        self._optimizing_done_LED.setToolTip(QtCore.QCoreApplication.translate('GenericOptimization', 'Optimisation state: idle / running / complete / error'))
         self._statusbar.addPermanentWidget(self._status_message_label)
 
         self._statusbar.addPermanentWidget(self._optimizing_step)

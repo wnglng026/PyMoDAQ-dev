@@ -118,11 +118,11 @@ class TreeFromToml(ParameterManager, QObject):
         self.dialog.setLayout(QtWidgets.QVBoxLayout())
         button_box = QtWidgets.QDialogButtonBox(parent=self.dialog)
 
-        save_button = button_box.addButton('Save', QtWidgets.QDialogButtonBox.ButtonRole.AcceptRole)
+        save_button = button_box.addButton(QtCore.QCoreApplication.translate('TreeFromToml', 'Save'), QtWidgets.QDialogButtonBox.ButtonRole.AcceptRole)
         save_button.setObjectName('save')
         button_box.accepted.connect(self.dialog.accept)
 
-        cancel_button = button_box.addButton("Cancel", QtWidgets.QDialogButtonBox.ButtonRole.RejectRole)
+        cancel_button = button_box.addButton(QtCore.QCoreApplication.translate('TreeFromToml', "Cancel"), QtWidgets.QDialogButtonBox.ButtonRole.RejectRole)
         cancel_button.setObjectName('cancel')
         button_box.rejected.connect(self.dialog.reject)
 

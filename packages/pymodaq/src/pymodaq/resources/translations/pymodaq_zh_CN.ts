@@ -27,6 +27,31 @@
             <translation>扫描批次管理器？</translation>
         </message>
         <message>
+            <location filename="pymodaq\utils\managers\batchscan_manager.py" line="62" />
+            <source>What do you want to do?</source>
+            <translation>你想做什么？</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\utils\managers\batchscan_manager.py" line="64" />
+            <source>New</source>
+            <translation>新建</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\utils\managers\batchscan_manager.py" line="65" />
+            <source>Modify</source>
+            <translation>修改</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\utils\managers\batchscan_manager.py" line="162" />
+            <source>Save</source>
+            <translation>保存</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\utils\managers\batchscan_manager.py" line="164" />
+            <source>Cancel</source>
+            <translation>取消</translation>
+        </message>
+        <message>
             <location filename="pymodaq\utils\managers\batchscan_manager.py" line="168" />
             <source>Fill in information about this Scan batch</source>
             <translation>填写该扫描批次的信息</translation>
@@ -35,6 +60,29 @@
             <location filename="pymodaq\utils\managers\batchscan_manager.py" line="178" />
             <source>Add Scan</source>
             <translation>添加扫描</translation>
+        </message>
+    </context>
+    <context>
+        <name>BatchScanner</name>
+        <message>
+            <location filename="pymodaq\utils\managers\batchscan_manager.py" line="281" />
+            <source>Batch Configs</source>
+            <translation>批次配置</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\utils\managers\batchscan_manager.py" line="282" />
+            <source>New Batch</source>
+            <translation>新建批次</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\utils\managers\batchscan_manager.py" line="284" />
+            <source>Modify Batch</source>
+            <translation>修改批次</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\utils\managers\batchscan_manager.py" line="287" />
+            <source>Load Batchs</source>
+            <translation>加载批次</translation>
         </message>
     </context>
     <context>
@@ -114,6 +162,11 @@
             <location filename="pymodaq\extensions\daq_logger\daq_logger.py" line="183" />
             <source>Grab All</source>
             <translation>全部采集</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\extensions\daq_logger\daq_logger.py" line="184" />
+            <source>Grab/Stop all selected detectors's data and actuators's value</source>
+            <translation>连续采集/停止所有选定探测器的数据与执行器的值</translation>
         </message>
     </context>
     <context>
@@ -238,9 +291,34 @@
             <translation>显示通用设置</translation>
         </message>
         <message>
+            <location filename="pymodaq\extensions\scan\daq_scan.py" line="464" />
+            <source>Show/hide the General settings panel (Time Flow, Scan options, Save... - double-click its title bar to detach it into its own window)</source>
+            <translation>显示/隐藏常规设置面板（时间流、扫描选项、保存…… —— 双击标题栏可将其拆分为独立窗口）</translation>
+        </message>
+        <message>
             <location filename="pymodaq\extensions\scan\daq_scan.py" line="469" />
             <source>Show Live Plots</source>
             <translation>显示实时绘图</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\extensions\scan\daq_scan.py" line="470" />
+            <source>Show/hide the Live Plots panel (double-click its title bar to detach it into its own window)</source>
+            <translation>显示/隐藏实时绘图面板（双击标题栏可将其拆分为独立窗口）</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\extensions\scan\daq_scan.py" line="672" />
+            <source>Cancel</source>
+            <translation>取消</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\extensions\scan\daq_scan.py" line="673" />
+            <source>Apply</source>
+            <translation>应用</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\extensions\scan\daq_scan.py" line="679" />
+            <source>Fill in information about this {}</source>
+            <translation>填写该 {} 的信息</translation>
         </message>
     </context>
     <context>
@@ -319,6 +397,11 @@
             <translation>初始化模型</translation>
         </message>
         <message>
+            <location filename="pymodaq\extensions\pid\pid_controller.py" line="474" />
+            <source>Initialize the selected model: algo/data conversion</source>
+            <translation>初始化所选模型：算法/数据转换</translation>
+        </message>
+        <message>
             <location filename="pymodaq\extensions\pid\pid_controller.py" line="483" />
             <source>Create SetPoint Actuators</source>
             <translation>创建设定值执行器</translation>
@@ -373,6 +456,11 @@
             <location filename="pymodaq\extensions\pid\pid_controller.py" line="525" />
             <source>Sync Value:</source>
             <translation>同步值：</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\extensions\pid\pid_controller.py" line="739" />
+            <source>Synchro {}</source>
+            <translation>同步 {}</translation>
         </message>
     </context>
     <context>
@@ -516,6 +604,11 @@
             <translation>保存当前实验对应的停靠布局</translation>
         </message>
         <message>
+            <location filename="pymodaq\dashboard.py" line="408" />
+            <source>Show/hide log window</source>
+            <translation>显示/隐藏日志窗口</translation>
+        </message>
+        <message>
             <location filename="pymodaq\dashboard.py" line="418" />
             <source>Select a Module to add to this Dashboard</source>
             <translation>选择要添加到本仪表板的模块</translation>
@@ -524,6 +617,26 @@
             <location filename="pymodaq\dashboard.py" line="565" />
             <source>You have to restart the application to take the modifications into account!</source>
             <translation>需要重启应用才能使修改生效！</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\dashboard.py" line="568" />
+            <source>Do you want to restart?</source>
+            <translation>是否要重启？</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\dashboard.py" line="1038" />
+            <source>Cancel</source>
+            <translation>取消</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\dashboard.py" line="1039" />
+            <source>Apply</source>
+            <translation>应用</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\dashboard.py" line="1045" />
+            <source>Fill in information about this {}</source>
+            <translation>填写该 {} 的信息</translation>
         </message>
     </context>
     <context>
@@ -614,6 +727,11 @@
             <location filename="pymodaq\extensions\optimizers_base\optimizer.py" line="463" />
             <source>Current Optimizing step</source>
             <translation>当前优化步</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\extensions\optimizers_base\optimizer.py" line="474" />
+            <source>Optimisation state: idle / running / complete / error</source>
+            <translation>优化状态：空闲 / 运行中 / 完成 / 错误</translation>
         </message>
         <message>
             <location filename="pymodaq\extensions\optimizers_base\optimizer.py" line="569" />
@@ -897,6 +1015,11 @@ Please wait...</source>
             <translation>记录开始于：</translation>
         </message>
         <message>
+            <location filename="pymodaq\extensions\daq_logger\daq_logger.py" line="102" />
+            <source>Logging state: idle / running / error</source>
+            <translation>记录状态：空闲 / 运行中 / 错误</translation>
+        </message>
+        <message>
             <location filename="pymodaq\extensions\daq_logger\daq_logger.py" line="106" />
             <source>Total number of saved data</source>
             <translation>已保存数据总数</translation>
@@ -983,6 +1106,31 @@ Please wait...</source>
             <translation>实验管理器？</translation>
         </message>
         <message>
+            <location filename="pymodaq\utils\managers\remote_manager.py" line="268" />
+            <source>What do you want to do?</source>
+            <translation>你想做什么？</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\utils\managers\remote_manager.py" line="271" />
+            <source>New</source>
+            <translation>新建</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\utils\managers\remote_manager.py" line="274" />
+            <source>Modify</source>
+            <translation>修改</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\utils\managers\remote_manager.py" line="463" />
+            <source>Save</source>
+            <translation>保存</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\utils\managers\remote_manager.py" line="465" />
+            <source>Cancel</source>
+            <translation>取消</translation>
+        </message>
+        <message>
             <location filename="pymodaq\utils\managers\remote_manager.py" line="469" />
             <source>Fill in information about the actions and their shortcuts</source>
             <translation>填写操作及其快捷键信息</translation>
@@ -1022,6 +1170,11 @@ Please wait...</source>
             <location filename="pymodaq\extensions\scan\daq_scan.py" line="114" />
             <source>Current average value</source>
             <translation>当前平均值</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\extensions\scan\daq_scan.py" line="125" />
+            <source>Scan state: idle / running / complete / error</source>
+            <translation>扫描状态：空闲 / 运行中 / 完成 / 错误</translation>
         </message>
     </context>
     <context>
@@ -1159,6 +1312,7 @@ Please wait...</source>
     <context>
         <name>SharedUI</name>
         <message>
+            <location filename="pymodaq\utils\shared_ui.py" line="68" />
             <location filename="pymodaq\utils\shared_ui.py" line="46" />
             <source>Enable scripting</source>
             <translation>启用脚本控制</translation>
@@ -1189,7 +1343,12 @@ Please wait...</source>
             <translation>打开插件管理器</translation>
         </message>
         <message>
-            <location filename="pymodaq\utils\shared_ui.py" line="71" />
+            <location filename="pymodaq\utils\shared_ui.py" line="67" />
+            <source>Disable scripting</source>
+            <translation>禁用脚本控制</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\utils\shared_ui.py" line="73" />
             <source>PyMoDAQ Plugin Manager</source>
             <translation>PyMoDAQ 插件管理器</translation>
         </message>
@@ -1272,6 +1431,21 @@ Please wait...</source>
             <source>Previous steps are finished</source>
             <translation>前面的步骤已完成</translation>
         </message>
+        <message>
+            <location filename="pymodaq\extensions\sequencer\models\user_input_choice.py" line="18" />
+            <source>Are you ok to proceed or go back?</source>
+            <translation>继续还是返回？</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\extensions\sequencer\models\user_input_choice.py" line="19" />
+            <source>Proceed</source>
+            <translation>继续</translation>
+        </message>
+        <message>
+            <location filename="pymodaq\extensions\sequencer\models\user_input_choice.py" line="20" />
+            <source>Go back</source>
+            <translation>返回</translation>
+        </message>
     </context>
     <context>
         <name>WaitSubEntryHandler</name>
@@ -1292,7 +1466,7 @@ Please wait...</source>
     <context>
         <name>dashboard</name>
         <message>
-            <location filename="pymodaq\dashboard.py" line="1160" />
+            <location filename="pymodaq\dashboard.py" line="1161" />
             <source>The default file specified in the configuration file does not exists!
 {}
 Impossible to load the {} extension</source>
@@ -2400,7 +2574,7 @@ Impossible to load the {} extension</source>
     <context>
         <name>shared_ui</name>
         <message>
-            <location filename="pymodaq\utils\shared_ui.py" line="89" />
+            <location filename="pymodaq\utils\shared_ui.py" line="91" />
             <source>PyMoDAQ Dashboard</source>
             <translation>PyMoDAQ 仪表板</translation>
         </message>
