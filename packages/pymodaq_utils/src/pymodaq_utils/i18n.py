@@ -38,11 +38,15 @@ import shutil
 import subprocess
 import sys
 import tempfile
-import tomllib
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Sequence
+
+try:  # Python 3.11+
+    import tomllib
+except ModuleNotFoundError:  # Python 3.10（pyproject 声明 requires-python >= 3.10）
+    import tomli as tomllib  # type: ignore[no-redef]
 
 from pymodaq_utils.logger import get_module_name, set_logger
 
@@ -530,10 +534,36 @@ def _toml_quote(text: str) -> str:
     return '"' + escaped + '"'
 
 
+def _count_pack_entries(data: dict) -> int:
+    """统计语言包 dict 里的条目数（``[general]`` + 各 ``[contexts.*]``）。"""
+    total = len(data.get(GENERAL, {}) or {})
+    for entries in (data.get("contexts", {}) or {}).values():
+        total += len(entries or {})
+    return total
+
+
+def _verify_pack_body(body: str, expected: int) -> Optional[str]:
+    """写盘**前**自检：产物必须能被 tomllib 解析，且条目数与预期一致。
+
+    实测踩坑：一个含换行的译文曾让 TOML 解析失败（裸换行）→ 语言包 0 条 →
+    界面上所有未译条目变成空白。这里在写出之前拦住这类产物，而不是等运行期发现。
+    返回 ``None`` 表示通过，否则返回失败原因。
+    """
+    try:
+        data = tomllib.loads(body)
+    except Exception as exc:  # tomllib 的解析异常类型随版本不同，这里统一兜住
+        return f"TOML 解析失败：{exc}"
+    actual = _count_pack_entries(data)
+    if actual != expected:
+        return f"条目数不一致：解析出 {actual} 条，预期 {expected} 条"
+    return None
+
+
 def cmd_pack(args) -> int:
     """把 ``.ts`` 编译成运行时用的 TOML 语言包（承担 lrelease 的职责）。"""
     packages = args.packages or list(CORE_PACKAGES)
     generated = 0
+    failures = 0
     for package in packages:
         package_dir = repo_package_dir(package)
         if package_dir is None:
@@ -574,12 +604,36 @@ def cmd_pack(args) -> int:
                 for source, translation in sorted(entries.items()):
                     lines.append(f"{_toml_quote(source)} = {_toml_quote(translation)}")
             out_file = target_dir / f"{package}_{language}.toml"
-            out_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
             total = len(general) + sum(len(v) for v in contexts.values())
+
+            # 写盘前自检：解析不了 / 条目数对不上就拒绝写，保留旧语言包
+            body = "\n".join(lines) + "\n"
+            problem = _verify_pack_body(body, total)
+            if problem:
+                print(f"[pack] ⛔ {ts_file.name}: 产物未通过自检（{problem}）——"
+                      f"已拒绝写出 {out_file.name}（保留上一版），避免“语言包 0 条 → 界面空白”")
+                failures += 1
+                continue
+
+            # 回归提醒：不是硬错误，但"从有到无"通常是提取/种子环节出了事
+            previous = 0
+            if out_file.is_file():
+                try:
+                    previous = _count_pack_entries(tomllib.loads(out_file.read_text(encoding="utf-8")))
+                except Exception:
+                    previous = 0
+            if previous > 0 and total == 0:
+                print(f"[pack] ⚠ {out_file.name}: 条目从 {previous} 条降到 0 条"
+                      f"（检查 .ts 是否被清空、或种子是否漏跑）")
+
+            out_file.write_text(body, encoding="utf-8")
             print(f"[pack] {ts_file.name} -> {out_file.name}  词条 {total}")
             generated += 1
     if not generated:
         print("没有可编译的 .ts（先运行 extract，并在 .ts 里填写译文）")
+    if failures:
+        print(f"[pack] ⛔ {failures} 个语言包未通过自检（见上），旧文件已保留 → 退出码 1")
+        return 1
     return 0
 
 
